@@ -8,9 +8,11 @@ import static com.amz.reviews.UserTestData.*;
 
 import java.util.List;
 
+import static com.amz.reviews.UserTestData.assertMatch;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class DataJpaUserServiceTest extends AbstractServiceTest {
+class DataJpaUserServiceTest extends AbstractServiceTest {
 
     @Autowired
     private UserService service;
@@ -19,6 +21,13 @@ public class DataJpaUserServiceTest extends AbstractServiceTest {
     void getAllTest() {
         List<User> allUsers = service.getAll();
         assertEquals(2, allUsers.size());
-        assertMatch(allUsers, Alex, Myke);
+        assertMatch(allUsers, ALEX, MYKE);
+    }
+
+    @Test
+    void getTest() {
+        User user = service.get(ALEX.getId());
+        assertNotNull(user);
+        assertMatch(user, ALEX);
     }
 }

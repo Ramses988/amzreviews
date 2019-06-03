@@ -1,18 +1,16 @@
 package com.amz.reviews.repository;
 
-import com.amz.reviews.model.User;
+
+import com.amz.reviews.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Transactional(readOnly = true)
-public interface CrudUserRepository extends JpaRepository<User, Integer> {
+public interface CrudProductRepository extends JpaRepository<Product, Integer> {
 
     @Override
-    List<User> findAll();
+    List<Product> findAll();
 
-    @Override
-    Optional<User> findById(Integer id);
 }

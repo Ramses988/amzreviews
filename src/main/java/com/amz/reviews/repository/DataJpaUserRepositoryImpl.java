@@ -16,4 +16,9 @@ public class DataJpaUserRepositoryImpl implements UserRepository {
     public List<User> getAll() {
         return crudRepository.findAll();
     }
+
+    @Override
+    public User get(int id) {
+        return crudRepository.findById(id).orElse(null);
+    }
 }
