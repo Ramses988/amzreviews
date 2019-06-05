@@ -19,7 +19,7 @@ public abstract class AbstractBaseEntity {
 
     protected AbstractBaseEntity() {}
 
-    protected AbstractBaseEntity(int id, LocalDateTime date) {
+    protected AbstractBaseEntity(Integer id, LocalDateTime date) {
         this.id = id;
         this.date = date;
     }

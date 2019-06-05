@@ -6,6 +6,12 @@ import java.util.List;
 
 public interface ProductRepository {
 
-    List<Product> getAll();
+    List<Product> getAll(int userId);
+
+    Product get(int id, int userId);
+
+    void delete(int id, int userId);
+
+    void save(Product product, int userId);
 
 }

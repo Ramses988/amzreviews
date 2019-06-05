@@ -10,7 +10,7 @@ public abstract class AbstractNamedEntity extends AbstractBaseEntity {
 
     protected AbstractNamedEntity() {}
 
-    protected AbstractNamedEntity(int id, LocalDateTime date, String name) {
+    protected AbstractNamedEntity(Integer id, LocalDateTime date, String name) {
         super(id, date);
         this.name = name;
     }

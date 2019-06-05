@@ -1,13 +1,16 @@
 package com.amz.reviews.service;
 
 import com.amz.reviews.model.Product;
+import org.assertj.core.util.diff.myers.MyersDiff;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 import static com.amz.reviews.ProductTestData.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static com.amz.reviews.UserTestData.ALEX;
+import static com.amz.reviews.UserTestData.MYKE;
+import static org.junit.jupiter.api.Assertions.*;
 
 class DataJpaProductServiceTest extends AbstractServiceTest {
 
@@ -16,9 +19,61 @@ class DataJpaProductServiceTest extends AbstractServiceTest {
 
     @Test
     void getAllTest() {
-        List<Product> allProduct = service.getAll();
-        assertEquals(5, allProduct.size());
-        assertMatch(allProduct, PRODUCT_1, PRODUCT_2, PRODUCT_3, PRODUCT_4, PRODUCT_5);
+        List<Product> allProduct = service.getAll(ALEX.getId());
+        assertEquals(3, allProduct.size());
+        assertMatch(allProduct, PRODUCT_1, PRODUCT_2, PRODUCT_3);
     }
 
+    @Test
+    void getTest() {
+        Product product = service.get(3, ALEX.getId());
+        assertNotNull(product);
+        assertMatch(product, PRODUCT_3);
+    }
+
+    @Test
+    void getNotFoundTest() {
+        Product product = service.get(3, MYKE.getId());
+        assertNull(product);
+    }
+
+    @Test
+    void deleteTest() {
+        service.delete(4, MYKE.getId());
+        List<Product> allProduct = service.getAll(MYKE.getId());
+        assertEquals(1, allProduct.size());
+        assertMatch(allProduct, PRODUCT_5);
+    }
+
+    @Test
+    void deleteNotFoundTest() {
+        service.delete(4, ALEX.getId());
+        List<Product> allProduct = service.getAll(MYKE.getId());
+        assertEquals(2, allProduct.size());
+        assertMatch(allProduct, PRODUCT_4, PRODUCT_5);
+    }
+
+    @Test
+    void saveTest() {
+        service.create(NEW_PRODUCT, MYKE.getId());
+        List<Product> allProduct = service.getAll(MYKE.getId());
+        assertEquals(3, allProduct.size());
+        assertMatch(allProduct, PRODUCT_4, PRODUCT_5, NEW_PRODUCT);
+    }
+
+    @Test
+    void updateTest() {
+        service.update(PRODUCT_MODIFED, ALEX.getId());
+        List<Product> allProduct = service.getAll(ALEX.getId());
+        assertEquals(3, allProduct.size());
+        assertMatch(allProduct, PRODUCT_2, PRODUCT_3, PRODUCT_MODIFED);
+    }
+
+    @Test
+    void updateNotFoundTest() {
+        service.update(PRODUCT_MODIFED, MYKE.getId());
+        List<Product> allProduct = service.getAll(ALEX.getId());
+        assertEquals(3, allProduct.size());
+        assertMatch(allProduct, PRODUCT_1, PRODUCT_2, PRODUCT_3);
+    }
 }

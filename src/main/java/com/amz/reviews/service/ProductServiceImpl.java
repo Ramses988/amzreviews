@@ -14,7 +14,27 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository repository;
 
     @Override
-    public List<Product> getAll() {
-        return repository.getAll();
+    public List<Product> getAll(int userId) {
+        return repository.getAll(userId);
+    }
+
+    @Override
+    public Product get(int id, int userId) {
+        return repository.get(id, userId);
+    }
+
+    @Override
+    public void delete(int id, int userId) {
+        repository.delete(id, userId);
+    }
+
+    @Override
+    public void create(Product product, int userId) {
+        repository.save(product, userId);
+    }
+
+    @Override
+    public void update(Product product, int userId) {
+        repository.save(product, userId);
     }
 }

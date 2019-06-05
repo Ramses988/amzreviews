@@ -26,6 +26,8 @@ CREATE TABLE products
   image               VARCHAR                     NOT NULL,
   description         VARCHAR                     NOT NULL,
   active_orders       INTEGER DEFAULT 0           NOT NULL,
-  completed_orders    INTEGER DEFAULT 0           NOT NULL
+  completed_orders    INTEGER DEFAULT 0           NOT NULL,
+  user_id             INTEGER                     NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES USERS (id) ON DELETE CASCADE
 );
 CREATE UNIQUE INDEX products_unique_asin ON products (asin);

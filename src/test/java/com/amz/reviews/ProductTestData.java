@@ -21,8 +21,14 @@ public class ProductTestData {
     public static final Product PRODUCT_5 = new Product(5, of(2019, Month.MAY, 30, 19, 0), "Product_5", "B07JB8BMJT",
             "Etekcity EK5150", 15.29, "Image1", "Etekcity EK5150 Digital Food Kitchen Scale for Cooking", 0, 0);
 
+    public static final Product NEW_PRODUCT = new Product(null, of(2019, Month.MAY, 31, 13, 0), "Product_New", "B07C3Y4Q8S",
+            "AmazonBasics Fade-Resistant", 7, "Image1", "AmazonBasics Fade-Resistant Cotton Hand Towel", 0, 0);
+
+    public static final Product PRODUCT_MODIFED = new Product(1, of(2019, Month.MAY, 30, 10, 0), "Modifed", "B079JD7F7G",
+            "TP-Link AC1750 Smart WiFi Router", 53, "Image1", "TP-Link AC1750 Smart WiFi Router", 0, 0);
+
     public static void assertMatch(Product actual, Product expected) {
-        assertThat(actual).isEqualToComparingFieldByField(expected);
+        assertThat(actual).isEqualToIgnoringGivenFields(expected,"user");
     }
 
     public static void assertMatch(Iterable<Product> actual, Product... expected) {
@@ -30,7 +36,7 @@ public class ProductTestData {
     }
 
     public static void assertMatch(Iterable<Product> actual, Iterable<Product> expected) {
-        assertThat(actual).usingElementComparatorIgnoringFields().isEqualTo(expected);
+        assertThat(actual).usingElementComparatorIgnoringFields("user").isEqualTo(expected);
     }
 
 }

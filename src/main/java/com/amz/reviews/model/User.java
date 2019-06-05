@@ -1,8 +1,11 @@
 package com.amz.reviews.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -14,6 +17,9 @@ public class User extends AbstractNamedEntity {
     private String country;
     private String city;
     private int balance;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Product> products;
 
     public User() {}
 
@@ -73,5 +79,13 @@ public class User extends AbstractNamedEntity {
 
     public void setBalance(int balance) {
         this.balance = balance;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }

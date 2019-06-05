@@ -1,9 +1,10 @@
 package com.amz.reviews.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -22,9 +23,14 @@ public class Product extends AbstractNamedEntity {
     @Column(name = "completed_orders")
     private int completedOrders;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private User user;
+
     public Product() {}
 
-    public Product(int id, LocalDateTime date, String name, String asin, String title, double price,
+    public Product(Integer id, LocalDateTime date, String name, String asin, String title, double price,
                    String image, String description, int activeOrders, int completedOrders) {
         super(id, date, name);
         this.asin = asin;
@@ -90,5 +96,13 @@ public class Product extends AbstractNamedEntity {
 
     public void setCompletedOrders(int completedOrders) {
         this.completedOrders = completedOrders;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
