@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 
@@ -27,12 +28,12 @@ public class DataJpaOrderRepositoryImpl implements OrderRepository {
     }
 
     @Override
-    public List<Order> sellerGetActiveOrder(int productId, int userId) {
+    public List<Order> sellerGetActiveOrCompleted(int productId, int userId, Predicate<Order> status) {
         Product product = crudProductRepository.get(productId, userId);
 
         if (product != null ) {
             return crudOrderRepository.findByProduct(product)
-                    .stream().filter(order -> !"Completed".equals(order.getStatus()))
+                    .stream().filter(status)
                     .collect(Collectors.toList());
         }
         return null;

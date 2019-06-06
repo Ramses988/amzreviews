@@ -12,8 +12,9 @@ public class OrderTestData {
 
     public static final Order ORDER1 = new Order(1, of(2019, Month.MAY, 31, 10, 0), "New", "Not paid");
     public static final Order ORDER2 = new Order(2, of(2019, Month.MAY, 31, 10, 0), "New", "Not paid");
-    public static final Order ORDER3 = new Order(3, of(2019, Month.MAY, 31, 10, 0), "Completed", "Not paid");
+    public static final Order ORDER3 = new Order(3, of(2019, Month.MAY, 31, 10, 0), "New", "Not paid");
     public static final Order ORDER4 = new Order(4, of(2019, Month.MAY, 31, 10, 0), "Completed", "Not paid");
+    public static final Order ORDER5 = new Order(5, of(2019, Month.MAY, 31, 10, 0), "Completed", "Not paid");
 
     public static final Order ORDER_NEW = new Order(null, of(2019, Month.MAY, 31, 15, 0), "New", "Not paid");
 
@@ -22,6 +23,7 @@ public class OrderTestData {
         ORDER2.setPrice(57.99);
         ORDER3.setPrice(57.99);
         ORDER4.setPrice(57.99);
+        ORDER5.setPrice(57.99);
     }
 
     public static void assertMatch(Order actual, Order expected) {

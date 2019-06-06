@@ -14,5 +14,6 @@ INSERT INTO products (name, date, asin, title, price, image, description, user_i
 INSERT INTO orders (date, price, status, payment, product_id) VALUES
     ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 1),
     ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 1),
+    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 1),
     ('2019-05-31 10:00:00', 57.99, 'Completed', 'Not paid', 1),
     ('2019-05-31 10:00:00', 57.99, 'Completed', 'Not paid', 1);

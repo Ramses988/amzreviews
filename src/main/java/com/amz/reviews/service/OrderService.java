@@ -12,4 +12,6 @@ public interface OrderService {
 
     List<Order> sellerGetActiveOrder(int productId, int userId);
 
+    List<Order> sellerGetCompletedOrder(int productId, int userId);
+
 }

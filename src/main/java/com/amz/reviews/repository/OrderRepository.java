@@ -3,6 +3,7 @@ package com.amz.reviews.repository;
 import com.amz.reviews.model.Order;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public interface OrderRepository {
 
@@ -10,6 +11,6 @@ public interface OrderRepository {
 
     void sellerCreate(Order order, int productId, int userId);
 
-    List<Order> sellerGetActiveOrder(int productId, int userId);
+    List<Order> sellerGetActiveOrCompleted(int productId, int userId, Predicate<Order> status);
 
 }

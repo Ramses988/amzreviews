@@ -20,12 +20,17 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void sellerCreate(Order order, int productId, int userId) {
-        repository.sellerCreate(order, productId, userId);
+    public List<Order> sellerGetActiveOrder(int productId, int userId) {
+        return repository.sellerGetActiveOrCompleted(productId, userId, order -> !"Completed".equals(order.getStatus()));
     }
 
     @Override
-    public List<Order> sellerGetActiveOrder(int productId, int userId) {
-        return repository.sellerGetActiveOrder(productId, userId);
+    public List<Order> sellerGetCompletedOrder(int productId, int userId) {
+        return repository.sellerGetActiveOrCompleted(productId, userId, order -> "Completed".equals(order.getStatus()));
+    }
+
+    @Override
+    public void sellerCreate(Order order, int productId, int userId) {
+        repository.sellerCreate(order, productId, userId);
     }
 }
