@@ -1,4 +1,4 @@
-package com.amz.reviews.repository;
+package com.amz.reviews.repository.datajpa;
 
 
 import com.amz.reviews.model.Product;
@@ -9,10 +9,12 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Transactional(readOnly = true)
 public interface CrudProductRepository extends JpaRepository<Product, Integer> {
+
+    @Query("SELECT p FROM Product p WHERE p.id=:id AND p.user.id=:userId")
+    Product get(@Param("id") int id, @Param("userId") int userId);
 
     @Query("SELECT p FROM Product p WHERE p.user.id=:userId")
     List<Product> getAll(@Param("userId") int userId);

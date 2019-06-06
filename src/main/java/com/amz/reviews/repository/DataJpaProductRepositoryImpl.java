@@ -2,6 +2,8 @@ package com.amz.reviews.repository;
 
 
 import com.amz.reviews.model.Product;
+import com.amz.reviews.repository.datajpa.CrudProductRepository;
+import com.amz.reviews.repository.datajpa.CrudUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -23,7 +25,8 @@ public class DataJpaProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Product get(int id, int userId) {
-        return crudProductRepository.findById(id).filter(product -> product.getUser().getId() == userId).orElse(null);
+        return crudProductRepository.get(id, userId);
+//        return crudProductRepository.findById(id).filter(product -> product.getUser().getId() == userId).orElse(null);
     }
 
     @Override

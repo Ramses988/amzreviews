@@ -1,4 +1,4 @@
-package com.amz.reviews.repository;
+package com.amz.reviews.repository.datajpa;
 
 import com.amz.reviews.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

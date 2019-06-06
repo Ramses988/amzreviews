@@ -6,6 +6,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -27,6 +28,9 @@ public class Product extends AbstractNamedEntity {
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+    private Set<Order> orders;
 
     public Product() {}
 
@@ -104,5 +108,13 @@ public class Product extends AbstractNamedEntity {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 }

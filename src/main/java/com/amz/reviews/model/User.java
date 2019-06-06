@@ -1,11 +1,9 @@
 package com.amz.reviews.model;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -20,6 +18,9 @@ public class User extends AbstractNamedEntity {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Product> products;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<Order> orders;
 
     public User() {}
 
@@ -87,5 +88,13 @@ public class User extends AbstractNamedEntity {
 
     public void setProducts(List<Product> products) {
         this.products = products;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 }

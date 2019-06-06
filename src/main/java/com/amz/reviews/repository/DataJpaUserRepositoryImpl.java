@@ -1,6 +1,7 @@
 package com.amz.reviews.repository;
 
 import com.amz.reviews.model.User;
+import com.amz.reviews.repository.datajpa.CrudUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

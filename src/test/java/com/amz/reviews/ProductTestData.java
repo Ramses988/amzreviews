@@ -28,7 +28,7 @@ public class ProductTestData {
             "TP-Link AC1750 Smart WiFi Router", 53, "Image1", "TP-Link AC1750 Smart WiFi Router", 0, 0);
 
     public static void assertMatch(Product actual, Product expected) {
-        assertThat(actual).isEqualToIgnoringGivenFields(expected,"user");
+        assertThat(actual).isEqualToIgnoringGivenFields(expected,"user", "orders");
     }
 
     public static void assertMatch(Iterable<Product> actual, Product... expected) {
@@ -36,7 +36,6 @@ public class ProductTestData {
     }
 
     public static void assertMatch(Iterable<Product> actual, Iterable<Product> expected) {
-        assertThat(actual).usingElementComparatorIgnoringFields("user").isEqualTo(expected);
+        assertThat(actual).usingElementComparatorIgnoringFields("user", "orders").isEqualTo(expected);
     }
-
 }
