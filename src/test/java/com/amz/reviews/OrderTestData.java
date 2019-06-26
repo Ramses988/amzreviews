@@ -15,8 +15,12 @@ public class OrderTestData {
     public static final Order ORDER3 = new Order(3, of(2019, Month.MAY, 31, 10, 0), "New", "Not paid");
     public static final Order ORDER4 = new Order(4, of(2019, Month.MAY, 31, 10, 0), "Completed", "Not paid");
     public static final Order ORDER5 = new Order(5, of(2019, Month.MAY, 31, 10, 0), "Completed", "Not paid");
+    public static final Order ORDER6 = new Order(6, of(2019, Month.MAY, 31, 10, 0), "Reserved", "Not paid");
+    public static final Order ORDER7 = new Order(7, of(2019, Month.MAY, 31, 10, 0), "Completed", "Paid");
 
     public static final Order ORDER_NEW = new Order(null, of(2019, Month.MAY, 31, 15, 0), "New", "Not paid");
+
+    public static final Order ORDER_MODIFED = new Order(6, of(2019, Month.MAY, 31, 10, 0), "Reserved", "Not paid");
 
     static {
         ORDER1.setPrice(57.99);
@@ -24,6 +28,12 @@ public class OrderTestData {
         ORDER3.setPrice(57.99);
         ORDER4.setPrice(57.99);
         ORDER5.setPrice(57.99);
+        ORDER6.setPrice(57.99);
+        ORDER7.setPrice(57.99);
+        ORDER_NEW.setPrice(57.99);
+        ORDER_MODIFED.setPrice(57.99);
+        ORDER_MODIFED.setOrderId("111-1662308-2149008");
+        ORDER_MODIFED.setReviews("https://www.amazon.com/hz/feedback");
     }
 
     public static void assertMatch(Order actual, Order expected) {

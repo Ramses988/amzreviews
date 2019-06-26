@@ -20,6 +20,36 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Order get(int orderId, int userId) {
+        return repository.get(orderId, userId);
+    }
+
+    @Override
+    public void customerUpdate(Order order, int userId) {
+        repository.customerUpdate(order, userId);
+    }
+
+    @Override
+    public List<Order> customerGetOrder() {
+        return repository.customerGetOrder();
+    }
+
+    @Override
+    public void customerReserve(int orderId, int userId) {
+        repository.customerReserve(orderId, userId);
+    }
+
+    @Override
+    public List<Order> customerGetActiveOrder(int userId) {
+        return repository.customerGetActiveOrCompleted(userId, order -> !"Completed".equals(order.getStatus()));
+    }
+
+    @Override
+    public List<Order> customerGetCompletedOrder(int userId) {
+        return repository.customerGetActiveOrCompleted(userId, order -> "Completed".equals(order.getStatus()));
+    }
+
+    @Override
     public List<Order> sellerGetActiveOrder(int productId, int userId) {
         return repository.sellerGetActiveOrCompleted(productId, userId, order -> !"Completed".equals(order.getStatus()));
     }

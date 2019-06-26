@@ -1,7 +1,8 @@
 
 INSERT INTO users (name, date, email, password, country, city) VALUES
     ('Alex', '2019-05-30 10:00:00', 'alex@yandex.ru', 'password', 'Russia', 'Moscow'),
-    ('Myke', '2019-05-30 13:00:00', 'myke@gmail.com', 'password', 'USA', 'New York');
+    ('Myke', '2019-05-30 13:00:00', 'myke@gmail.com', 'password', 'USA', 'New York'),
+    ('Bob', '2019-05-31 09:00:00', 'bob@gmail.com', 'password', 'USA', 'San Francisco');
 
 
 INSERT INTO products (name, date, asin, title, price, image, description, user_id) VALUES
@@ -11,9 +12,11 @@ INSERT INTO products (name, date, asin, title, price, image, description, user_i
     ('Product_4', '2019-05-30 17:00:00', 'B07GPHG3L7', 'Tea Tree Body Wash', 12.59, 'Image1', 'Tea Tree Body Wash, Helps Nail Fungus, Athletes Foot', 2),
     ('Product_5', '2019-05-30 19:00:00', 'B07JB8BMJT', 'Etekcity EK5150', 15.29, 'Image1', 'Etekcity EK5150 Digital Food Kitchen Scale for Cooking', 2);
 
-INSERT INTO orders (date, price, status, payment, product_id) VALUES
-    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 1),
-    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 1),
-    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 1),
-    ('2019-05-31 10:00:00', 57.99, 'Completed', 'Not paid', 1),
-    ('2019-05-31 10:00:00', 57.99, 'Completed', 'Not paid', 1);
+INSERT INTO orders (date, price, status, payment, product_id, user_id) VALUES
+    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 1, null),
+    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 1, null),
+    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 1, null),
+    ('2019-05-31 10:00:00', 57.99, 'Completed', 'Not paid', 1, null),
+    ('2019-05-31 10:00:00', 57.99, 'Completed', 'Not paid', 1, null),
+    ('2019-05-31 10:00:00', 57.99, 'Reserved', 'Not paid', 3, 3),
+    ('2019-05-31 10:00:00', 57.99, 'Completed', 'Paid', 3, 3);

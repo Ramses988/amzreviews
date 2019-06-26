@@ -20,8 +20,8 @@ class DataJpaUserServiceTest extends AbstractServiceTest {
     @Test
     void getAllTest() {
         List<User> allUsers = service.getAll();
-        assertEquals(2, allUsers.size());
-        assertMatch(allUsers, ALEX, MYKE);
+        assertEquals(3, allUsers.size());
+        assertMatch(allUsers, ALEX, MYKE, BOB);
     }
 
     @Test
