@@ -6,6 +6,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -15,7 +16,6 @@ public class Product extends AbstractNamedEntity {
     private String asin;
     private String title;
     private double price;
-    private String image;
     private String description;
 
     @Column(name = "active_orders")
@@ -32,15 +32,17 @@ public class Product extends AbstractNamedEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
     private Set<Order> orders;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "product")
+    private List<Image> images;
+
     public Product() {}
 
     public Product(Integer id, LocalDateTime date, String name, String asin, String title, double price,
-                   String image, String description, int activeOrders, int completedOrders) {
+                   String description, int activeOrders, int completedOrders) {
         super(id, date, name);
         this.asin = asin;
         this.title = title;
         this.price = price;
-        this.image = image;
         this.description = description;
         this.activeOrders = activeOrders;
         this.completedOrders = completedOrders;
@@ -68,14 +70,6 @@ public class Product extends AbstractNamedEntity {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getDescription() {
@@ -116,5 +110,13 @@ public class Product extends AbstractNamedEntity {
 
     public void setOrders(Set<Order> orders) {
         this.orders = orders;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
     }
 }

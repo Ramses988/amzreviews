@@ -14,14 +14,10 @@ public abstract class AbstractBaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
 
-    @DateTimeFormat
-    protected LocalDateTime date;
-
     protected AbstractBaseEntity() {}
 
-    protected AbstractBaseEntity(Integer id, LocalDateTime date) {
+    protected AbstractBaseEntity(Integer id) {
         this.id = id;
-        this.date = date;
     }
 
     public boolean isNew() {
@@ -51,13 +47,5 @@ public abstract class AbstractBaseEntity {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
     }
 }

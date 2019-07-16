@@ -2,18 +2,23 @@ package com.amz.reviews.model;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "orders")
-public class Order extends AbstractBaseEntity {
+public class Order extends AbstractDateEntity {
 
     private double price;
     private String status;
     private String payment;
     private String reviews;
+    private String key;
+
+    @Column(name = "review_enable")
+    private boolean reviewEnable;
 
     @Column(name = "order_id")
     private String orderId;
@@ -30,10 +35,11 @@ public class Order extends AbstractBaseEntity {
 
     public Order() {}
 
-    public Order(Integer id, LocalDateTime date, String status, String payment) {
+    public Order(Integer id, LocalDateTime date, String status, String payment, String key) {
         super(id, date);
         this.status = status;
         this.payment = payment;
+        this.key = key;
     }
 
     public double getPrice() {
@@ -90,5 +96,21 @@ public class Order extends AbstractBaseEntity {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public boolean isReviewEnable() {
+        return reviewEnable;
+    }
+
+    public void setReviewEnable(boolean reviewEnable) {
+        this.reviewEnable = reviewEnable;
     }
 }
