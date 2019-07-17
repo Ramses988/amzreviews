@@ -34,7 +34,7 @@ public class DataJpaOrderRepositoryImpl implements OrderRepository {
 
     @Override
     public Order get(int orderId, int userId) {
-        Order order = crudOrderRepository.get(orderId);
+        Order order = crudOrderRepository.findById(orderId).orElse(null);
 
         if(order != null && "New".equals(order.getStatus()))
             return order;
@@ -71,8 +71,13 @@ public class DataJpaOrderRepositoryImpl implements OrderRepository {
 
     @Override
     public List<Order> customerGetOrder() {
-        return crudOrderRepository.findByStatus("New");
+        return crudOrderRepository.GetOrdersNew();
     }
+
+//    @Override
+//    public List<Order> customerGetOrder() {
+//        return crudOrderRepository.findByStatus("New");
+//    }
 
     @Override
     public List<Order> customerGetActiveOrCompleted(int userId, Predicate<Order> status) {
@@ -104,6 +109,7 @@ public class DataJpaOrderRepositoryImpl implements OrderRepository {
 
         if (order.isNew() && product != null ) {
             order.setPrice(product.getPrice());
+            order.setName((product.getTitle().length() >= 63) ? product.getTitle().substring(0, 63) : product.getTitle());
             order.setProduct(product);
             crudOrderRepository.save(order);
         }

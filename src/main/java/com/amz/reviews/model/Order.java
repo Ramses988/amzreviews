@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "orders")
-public class Order extends AbstractDateEntity {
+public class Order extends AbstractNamedEntity {
 
     private double price;
     private String status;
@@ -35,8 +35,15 @@ public class Order extends AbstractDateEntity {
 
     public Order() {}
 
+    public Order(Integer id, LocalDateTime date, String name, String status, String payment, String key) {
+        super(id, date, name);
+        this.status = status;
+        this.payment = payment;
+        this.key = key;
+    }
+
     public Order(Integer id, LocalDateTime date, String status, String payment, String key) {
-        super(id, date);
+        super(id, date, "");
         this.status = status;
         this.payment = payment;
         this.key = key;

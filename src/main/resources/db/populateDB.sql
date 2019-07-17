@@ -17,11 +17,11 @@ INSERT INTO images (url, product_id) VALUES
     ('https://images-na.ssl-images-amazon.com/images/I/61q2haSNcyL.jpg', 1),
     ('https://images-na.ssl-images-amazon.com/images/I/51syw17qDFL.jpg', 1);
 
-INSERT INTO orders (date, price, status, payment, key, product_id, user_id) VALUES
-    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 'Wi-Fi', 1, null),
-    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 'Wi-Fi', 1, null),
-    ('2019-05-31 10:00:00', 57.99, 'New', 'Not paid', 'Wi-Fi', 1, null),
-    ('2019-05-31 10:00:00', 57.99, 'Completed', 'Not paid', 'Wi-Fi', 1, null),
-    ('2019-05-31 10:00:00', 57.99, 'Completed', 'Not paid', 'Wi-Fi', 1, null),
-    ('2019-05-31 10:00:00', 57.99, 'Reserved', 'Not paid', 'Wi-Fi', 3, 3),
-    ('2019-05-31 10:00:00', 57.99, 'Completed', 'Paid', 'Wi-Fi', 3, 3);
+INSERT INTO orders (date, name, price, status, payment, key, product_id, user_id) VALUES
+    ('2019-05-31 10:00:00', 'WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink', 57.99, 'New', 'Not paid', 'Wi-Fi', 1, null),
+    ('2019-05-31 10:00:00', 'WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink', 57.99, 'New', 'Not paid', 'Wi-Fi', 1, null),
+    ('2019-05-31 10:00:00', 'WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink', 57.99, 'New', 'Not paid', 'Wi-Fi', 1, null),
+    ('2019-05-31 10:00:00', 'WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink', 57.99, 'Completed', 'Not paid', 'Wi-Fi', 1, null),
+    ('2019-05-31 10:00:00', 'WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink', 57.99, 'Completed', 'Not paid', 'Wi-Fi', 1, null),
+    ('2019-05-31 10:00:00', 'WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink', 57.99, 'Reserved', 'Not paid', 'Wi-Fi', 3, 3),
+    ('2019-05-31 10:00:00', 'WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink', 57.99, 'Completed', 'Paid', 'Wi-Fi', 3, 3);

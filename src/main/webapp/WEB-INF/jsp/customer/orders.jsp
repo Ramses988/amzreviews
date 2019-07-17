@@ -18,7 +18,7 @@
                     <a href="/customer/product/${order.id}"><img class="img-fluid d-inline-block" src="${order.product.images.get(0).url}" alt=""></a>
                     <div class="text-md-center offset-top-24">
                         <div class="fixed-md-title">
-                            <p><a href="/customer/product/${order.id}">${order.product.title}...</a></p>
+                            <p><a href="/customer/product/${order.id}">${order.name}...</a></p>
                         </div>
                         <h6 class="offset-top-10">&#36;${order.price}</h6>
                     </div>

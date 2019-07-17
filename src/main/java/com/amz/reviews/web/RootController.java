@@ -8,7 +8,7 @@ public class RootController {
 
     @GetMapping("/")
     public String root() {
-        return "redirect:customer/order";
+        return "redirect:customer";
     }
 
 }

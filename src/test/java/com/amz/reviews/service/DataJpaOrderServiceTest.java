@@ -1,7 +1,6 @@
 package com.amz.reviews.service;
 
 import com.amz.reviews.model.Order;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

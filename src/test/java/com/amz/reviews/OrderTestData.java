@@ -10,17 +10,25 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class OrderTestData {
 
-    public static final Order ORDER1 = new Order(1, of(2019, Month.MAY, 31, 10, 0), "New", "Not paid", "Wi-Fi");
-    public static final Order ORDER2 = new Order(2, of(2019, Month.MAY, 31, 10, 0), "New", "Not paid", "Wi-Fi");
-    public static final Order ORDER3 = new Order(3, of(2019, Month.MAY, 31, 10, 0), "New", "Not paid", "Wi-Fi");
-    public static final Order ORDER4 = new Order(4, of(2019, Month.MAY, 31, 10, 0), "Completed", "Not paid", "Wi-Fi");
-    public static final Order ORDER5 = new Order(5, of(2019, Month.MAY, 31, 10, 0), "Completed", "Not paid", "Wi-Fi");
-    public static final Order ORDER6 = new Order(6, of(2019, Month.MAY, 31, 10, 0), "Reserved", "Not paid", "Wi-Fi");
-    public static final Order ORDER7 = new Order(7, of(2019, Month.MAY, 31, 10, 0), "Completed", "Paid", "Wi-Fi");
+    public static final Order ORDER1 = new Order(1, of(2019, Month.MAY, 31, 10, 0), "WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink",
+            "New", "Not paid", "Wi-Fi");
+    public static final Order ORDER2 = new Order(2, of(2019, Month.MAY, 31, 10, 0), "WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink",
+            "New", "Not paid", "Wi-Fi");
+    public static final Order ORDER3 = new Order(3, of(2019, Month.MAY, 31, 10, 0), "WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink",
+            "New", "Not paid", "Wi-Fi");
+    public static final Order ORDER4 = new Order(4, of(2019, Month.MAY, 31, 10, 0), "WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink",
+            "Completed", "Not paid", "Wi-Fi");
+    public static final Order ORDER5 = new Order(5, of(2019, Month.MAY, 31, 10, 0), "WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink",
+            "Completed", "Not paid", "Wi-Fi");
+    public static final Order ORDER6 = new Order(6, of(2019, Month.MAY, 31, 10, 0), "WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink",
+            "Reserved", "Not paid", "Wi-Fi");
+    public static final Order ORDER7 = new Order(7, of(2019, Month.MAY, 31, 10, 0), "WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink",
+            "Completed", "Paid", "Wi-Fi");
 
     public static final Order ORDER_NEW = new Order(null, of(2019, Month.MAY, 31, 15, 0), "New", "Not paid", "Wi-Fi");
 
-    public static final Order ORDER_MODIFED = new Order(6, of(2019, Month.MAY, 31, 10, 0), "Reserved", "Not paid", "Wi-Fi");
+    public static final Order ORDER_MODIFED = new Order(6, of(2019, Month.MAY, 31, 10, 0), "WiFi Router,Wavlink Remote AC1200 Smart WiFi Router with Touchlink",
+            "Reserved", "Not paid", "Wi-Fi");
 
     static {
         ORDER1.setPrice(57.99);

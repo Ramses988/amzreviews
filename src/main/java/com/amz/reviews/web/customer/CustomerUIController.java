@@ -11,10 +11,10 @@ import java.util.List;
 @Controller
 public class CustomerUIController extends AbstractCustomerController {
 
-    @GetMapping("/customer/order")
+    @GetMapping("/customer")
     public String get(Model model) {
         model.addAttribute("orders", super.getAll());
-        return "customer/order";
+        return "customer/orders";
     }
 
     @GetMapping("/customer/product/{id}")
