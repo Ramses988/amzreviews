@@ -10,6 +10,7 @@
     <jsp:useBean id="order" scope="request" type="com.amz.reviews.model.Order" />
 
     <div class="owl-carousel owl-theme">
+        <div><img src="${order.product.image}" alt="" /></div>
         <c:forEach items="${order.product.images}" var="image">
             <div><img src="${image.getUrl()}" alt="" /></div>
         </c:forEach>

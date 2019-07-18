@@ -13,17 +13,17 @@
         <div class="row row-65-new">
 
             <c:forEach items="${orders}" var="order">
-                <jsp:useBean id="order" scope="page" type="com.amz.reviews.model.Order" />
+                <jsp:useBean id="order" scope="page" type="com.amz.reviews.to.OrderTo" />
                 <div class="col-md-6-new col-lg-4-new">
-                    <a href="/customer/product/${order.id}"><img class="img-fluid d-inline-block" src="${order.product.images.get(0).url}" alt=""></a>
+                    <a href="/customer/product/${order.name}"><img class="img-fluid d-inline-block" src="${order.image}" alt=""></a>
                     <div class="text-md-center offset-top-24">
                         <div class="fixed-md-title">
-                            <p><a href="/customer/product/${order.id}">${order.name}...</a></p>
+                            <p><a href="/customer/product/${order.name}">${order.name}...</a></p>
                         </div>
                         <h6 class="offset-top-10">&#36;${order.price}</h6>
                     </div>
                     <div>
-                        <a class="btn btn-primary-catalog" href="/customer/product/${order.id}">View Product</a>
+                        <a class="btn btn-primary-catalog" href="/customer/product/${order.name}">View Product</a>
                     </div>
                 </div>
 

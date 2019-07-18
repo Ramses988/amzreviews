@@ -24,6 +24,7 @@ CREATE TABLE products
   date                TIMESTAMP                   NOT NULL,
   asin                VARCHAR                     NOT NULL,
   title               VARCHAR                     NOT NULL,
+  image               VARCHAR                     NOT NULL,
   price               DOUBLE PRECISION            NOT NULL,
   description         VARCHAR                     NOT NULL,
   active_orders       INTEGER DEFAULT 0           NOT NULL,

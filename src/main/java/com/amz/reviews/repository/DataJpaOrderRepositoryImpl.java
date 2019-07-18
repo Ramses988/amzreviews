@@ -6,6 +6,7 @@ import com.amz.reviews.model.User;
 import com.amz.reviews.repository.datajpa.CrudOrderRepository;
 import com.amz.reviews.repository.datajpa.CrudProductRepository;
 import com.amz.reviews.repository.datajpa.CrudUserRepository;
+import com.amz.reviews.to.OrderTo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -30,6 +31,14 @@ public class DataJpaOrderRepositoryImpl implements OrderRepository {
     @Override
     public List<Order> getAll() {
         return crudOrderRepository.findAll();
+    }
+
+
+    @Override
+    public Order getName(String orderId, int userId) {
+        return crudOrderRepository.findByNameAndStatus(orderId, "New")
+                .stream()
+                .findFirst().orElse(null);
     }
 
     @Override
@@ -70,7 +79,7 @@ public class DataJpaOrderRepositoryImpl implements OrderRepository {
     }
 
     @Override
-    public List<Order> customerGetOrder() {
+    public List<OrderTo> customerGetOrder() {
         return crudOrderRepository.GetOrdersNew();
     }
 

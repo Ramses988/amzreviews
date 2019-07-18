@@ -1,6 +1,7 @@
 package com.amz.reviews.web.customer;
 
 import com.amz.reviews.model.Order;
+import com.amz.reviews.to.OrderTo;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,12 +18,12 @@ public class CustomerRestController extends AbstractCustomerController {
 
     @Override
     @GetMapping
-    public List<Order> getAll() {
+    public List<OrderTo> getAll() {
         return super.getAll();
     }
 
-    @GetMapping("/order/{id}")
-    public Order get(@PathVariable int id) {
-        return super.get(id);
-    }
+//    @GetMapping("/order/{id}")
+//    public Order get(@PathVariable int id) {
+//        return super.get(id);
+//    }
 }

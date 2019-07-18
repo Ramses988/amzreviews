@@ -17,6 +17,7 @@ public class Product extends AbstractNamedEntity {
     private String title;
     private double price;
     private String description;
+    private String image;
 
     @Column(name = "active_orders")
     private int activeOrders;
@@ -32,18 +33,18 @@ public class Product extends AbstractNamedEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
     private Set<Order> orders;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "product")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
     private List<Image> images;
 
     public Product() {}
 
-    public Product(Integer id, LocalDateTime date, String name, String asin, String title, double price,
-                   String description, int activeOrders, int completedOrders) {
+    public Product(Integer id, LocalDateTime date, String name, String asin, String title, double price, String description, String image, int activeOrders, int completedOrders) {
         super(id, date, name);
         this.asin = asin;
         this.title = title;
         this.price = price;
         this.description = description;
+        this.image = image;
         this.activeOrders = activeOrders;
         this.completedOrders = completedOrders;
     }
@@ -118,5 +119,13 @@ public class Product extends AbstractNamedEntity {
 
     public void setImages(List<Image> images) {
         this.images = images;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

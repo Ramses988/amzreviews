@@ -3,6 +3,7 @@ package com.amz.reviews.service;
 
 import com.amz.reviews.model.Order;
 import com.amz.reviews.repository.OrderRepository;
+import com.amz.reviews.to.OrderTo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Order getName(String orderId, int userId) {
+        return repository.getName(orderId, userId);
+    }
+
+    @Override
     public Order get(int orderId, int userId) {
         return repository.get(orderId, userId);
     }
@@ -30,7 +36,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> customerGetOrder() {
+    public List<OrderTo> customerGetOrder() {
         return repository.customerGetOrder();
     }
 

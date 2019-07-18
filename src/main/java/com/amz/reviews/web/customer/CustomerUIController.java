@@ -17,9 +17,9 @@ public class CustomerUIController extends AbstractCustomerController {
         return "customer/orders";
     }
 
-    @GetMapping("/customer/product/{id}")
-    public String getOrder(@PathVariable("id") int id, Model model) {
-        model.addAttribute("order", super.get(id));
+    @GetMapping("/customer/product/{name}")
+    public String getOrder(@PathVariable("name") String name, Model model) {
+        model.addAttribute("order", super.getName(name));
         return "customer/product";
     }
 }
