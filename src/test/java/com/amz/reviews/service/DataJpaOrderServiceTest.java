@@ -1,29 +1,16 @@
 package com.amz.reviews.service;
 
-import com.amz.reviews.model.Order;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
-
-import static com.amz.reviews.OrderTestData.*;
-import static com.amz.reviews.ProductTestData.PRODUCT_1;
-import static com.amz.reviews.ProductTestData.PRODUCT_3;
-import static com.amz.reviews.UserTestData.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 class DataJpaOrderServiceTest extends AbstractServiceTest {
 
-    @BeforeEach
-    void setUp() {
-        ORDER_NEW.setId(null);
-        ORDER_MODIFED.setId(6);
-        ORDER3.setStatus("New");
-    }
-
-    @Autowired
-    private OrderService service;
+//    @BeforeEach
+//    void setUp() {
+//        ORDER_NEW.setId(null);
+//        ORDER_MODIFED.setId(6);
+//        ORDER3.setStatus("New");
+//    }
+//
+//    @Autowired
+//    private OrderService service;
 
 //    @Test
 //    void customerGetOrderTest() {
@@ -46,7 +33,7 @@ class DataJpaOrderServiceTest extends AbstractServiceTest {
 //        order = service.get(ORDER3.getId(), MYKE.getId());
 //        assertNull(order);
 //    }
-
+//
 //    @Test
 //    void customerGetTest() {
 //        Order order = service.get(ORDER1.getId(), BOB.getId());
@@ -83,62 +70,62 @@ class DataJpaOrderServiceTest extends AbstractServiceTest {
 //        service.customerUpdate(ORDER_MODIFED, BOB.getId());
 //        assertMatch(ORDER7, service.get(ORDER_MODIFED.getId(), BOB.getId()));
 //    }
-
-    @Test
-    void customerGetActiveOrderTest() {
-        List<Order> allOrders = service.customerGetActiveOrder(BOB.getId());
-        assertEquals(1, allOrders.size());
-        assertMatch(allOrders, ORDER6);
-    }
-
-    @Test
-    void customerGetCompletedOrderTest() {
-        List<Order> allOrders = service.customerGetCompletedOrder(BOB.getId());
-        assertEquals(1, allOrders.size());
-        assertMatch(allOrders, ORDER7);
-    }
-
-    @Test
-    void sellerCreateTest() {
-        service.sellerCreate(ORDER_NEW, PRODUCT_3.getId(), ALEX.getId());
-        List<Order> allOrders = service.getAll();
-        assertEquals(8, allOrders.size());
-        assertMatch(allOrders, ORDER1, ORDER2, ORDER3, ORDER4, ORDER5, ORDER6, ORDER7, ORDER_NEW);
-    }
-
-    @Test
-    void sellerCreateNotFoundTest() {
-        service.sellerCreate(ORDER_NEW, PRODUCT_3.getId(), MYKE.getId());
-        List<Order> allOrders = service.getAll();
-        assertEquals(7, allOrders.size());
-        assertMatch(allOrders, ORDER1, ORDER2, ORDER3, ORDER4, ORDER5, ORDER6, ORDER7);
-    }
-
-    @Test
-    void sellerGetActiveOrderTest() {
-        List<Order> allOrders = service.sellerGetActiveOrder(PRODUCT_1.getId(), ALEX.getId());
-        assertEquals(3, allOrders.size());
-        assertMatch(allOrders, ORDER1, ORDER2, ORDER3);
-    }
-
-
-    @Test
-    void sellerGetActiveOrderNotFoundTest() {
-        List<Order> allOrders = service.sellerGetActiveOrder(PRODUCT_1.getId(), MYKE.getId());
-        assertNull(allOrders);
-    }
-
-    @Test
-    void sellerGetCompletedOrderTest() {
-        List<Order> allOrders = service.sellerGetCompletedOrder(PRODUCT_1.getId(), ALEX.getId());
-        assertEquals(2, allOrders.size());
-        assertMatch(allOrders, ORDER4, ORDER5);
-    }
-
-
-    @Test
-    void sellerGetCompletedOrderNotFoundTest() {
-        List<Order> allOrders = service.sellerGetCompletedOrder(PRODUCT_1.getId(), MYKE.getId());
-        assertNull(allOrders);
-    }
+//
+//    @Test
+//    void customerGetActiveOrderTest() {
+//        List<Order> allOrders = service.customerGetActiveOrder(BOB.getId());
+//        assertEquals(1, allOrders.size());
+//        assertMatch(allOrders, ORDER6);
+//    }
+//
+//    @Test
+//    void customerGetCompletedOrderTest() {
+//        List<Order> allOrders = service.customerGetCompletedOrder(BOB.getId());
+//        assertEquals(1, allOrders.size());
+//        assertMatch(allOrders, ORDER7);
+//    }
+//
+//    @Test
+//    void sellerCreateTest() {
+//        service.sellerCreate(ORDER_NEW, PRODUCT_3.getId(), ALEX.getId());
+//        List<Order> allOrders = service.getAll();
+//        assertEquals(8, allOrders.size());
+//        assertMatch(allOrders, ORDER1, ORDER2, ORDER3, ORDER4, ORDER5, ORDER6, ORDER7, ORDER_NEW);
+//    }
+//
+//    @Test
+//    void sellerCreateNotFoundTest() {
+//        service.sellerCreate(ORDER_NEW, PRODUCT_3.getId(), MYKE.getId());
+//        List<Order> allOrders = service.getAll();
+//        assertEquals(7, allOrders.size());
+//        assertMatch(allOrders, ORDER1, ORDER2, ORDER3, ORDER4, ORDER5, ORDER6, ORDER7);
+//    }
+//
+//    @Test
+//    void sellerGetActiveOrderTest() {
+//        List<Order> allOrders = service.sellerGetActiveOrder(PRODUCT_1.getId(), ALEX.getId());
+//        assertEquals(3, allOrders.size());
+//        assertMatch(allOrders, ORDER1, ORDER2, ORDER3);
+//    }
+//
+//
+//    @Test
+//    void sellerGetActiveOrderNotFoundTest() {
+//        List<Order> allOrders = service.sellerGetActiveOrder(PRODUCT_1.getId(), MYKE.getId());
+//        assertNull(allOrders);
+//    }
+//
+//    @Test
+//    void sellerGetCompletedOrderTest() {
+//        List<Order> allOrders = service.sellerGetCompletedOrder(PRODUCT_1.getId(), ALEX.getId());
+//        assertEquals(2, allOrders.size());
+//        assertMatch(allOrders, ORDER4, ORDER5);
+//    }
+//
+//
+//    @Test
+//    void sellerGetCompletedOrderNotFoundTest() {
+//        List<Order> allOrders = service.sellerGetCompletedOrder(PRODUCT_1.getId(), MYKE.getId());
+//        assertNull(allOrders);
+//    }
 }

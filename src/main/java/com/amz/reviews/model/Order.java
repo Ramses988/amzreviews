@@ -35,20 +35,6 @@ public class Order extends AbstractNamedEntity {
 
     public Order() {}
 
-    public Order(Integer id, LocalDateTime date, String name, String status, String payment, String key) {
-        super(id, date, name);
-        this.status = status;
-        this.payment = payment;
-        this.key = key;
-    }
-
-    public Order(Integer id, LocalDateTime date, String status, String payment, String key) {
-        super(id, date, "");
-        this.status = status;
-        this.payment = payment;
-        this.key = key;
-    }
-
     public double getPrice() {
         return price;
     }

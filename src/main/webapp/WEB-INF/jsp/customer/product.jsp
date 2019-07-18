@@ -7,17 +7,17 @@
 
 
 <section class="section section-50 bg-lighter novi-background">
-    <jsp:useBean id="order" scope="request" type="com.amz.reviews.model.Order" />
+    <jsp:useBean id="product" scope="request" type="com.amz.reviews.model.Product" />
 
     <div class="owl-carousel owl-theme">
-        <div><img src="${order.product.image}" alt="" /></div>
-        <c:forEach items="${order.product.images}" var="image">
+        <div><img src="${product.image}" alt="" /></div>
+        <c:forEach items="${product.images}" var="image">
             <div><img src="${image.getUrl()}" alt="" /></div>
         </c:forEach>
     </div>
 
     <div class="container">
-        <h2 class="text-left">${order.product.title}</h2>
+        <h2 class="text-left">${product.title}</h2>
         <div>
             <div class="row row-65 row-fix">
                 <div class="col-lg-7 col-xl-8">
@@ -40,16 +40,16 @@
                     <div class="row row-50-new">
                         <div class="col-sm-12">
                             <div class="offset-top-20">
-                                ASIN: ${order.product.asin}
+                                ASIN: ${product.asin}
                             </div>
                             <div class="offset-top-20 text-gr">
-                                Ключ для выкупа: "${order.key}"
+                                Ключ для выкупа: "${product.key}"
                             </div>
                             <div class="offset-top-20 text-gr">
                                 Выкуп с отзывом
                             </div>
                             <div class="offset-top-20">
-                                <h5 class="font-weight-bold price">Цена: &#36;${order.price}</h5>
+                                <h5 class="font-weight-bold price">Цена: &#36;${product.price}</h5>
                             </div>
                         </div>
                         <div class="col-sm-12"><a class="btn btn-primary-orange" href="#">Выкупить продукт</a>

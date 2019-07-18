@@ -14,10 +14,17 @@ import java.util.Set;
 public class Product extends AbstractNamedEntity {
 
     private String asin;
+
+    @Column(name = "date_of_change")
+    private LocalDateTime dateOfChange;
     private String title;
     private double price;
     private String description;
     private String image;
+    private String key;
+
+    @Column(name = "count_orders")
+    private Integer countOrders;
 
     @Column(name = "active_orders")
     private int activeOrders;
@@ -127,5 +134,29 @@ public class Product extends AbstractNamedEntity {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public LocalDateTime getDateOfChange() {
+        return dateOfChange;
+    }
+
+    public void setDateOfChange(LocalDateTime dateOfChange) {
+        this.dateOfChange = dateOfChange;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public Integer getCountOrders() {
+        return countOrders;
+    }
+
+    public void setCountOrders(Integer countOrders) {
+        this.countOrders = countOrders;
     }
 }

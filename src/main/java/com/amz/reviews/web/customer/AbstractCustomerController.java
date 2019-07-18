@@ -1,9 +1,8 @@
 package com.amz.reviews.web.customer;
 
-import com.amz.reviews.model.Order;
+import com.amz.reviews.model.Product;
 import com.amz.reviews.service.OrderService;
-import com.amz.reviews.to.OrderTo;
-import com.amz.reviews.web.SecurityUtil;
+import com.amz.reviews.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -11,19 +10,30 @@ import java.util.List;
 public abstract class AbstractCustomerController {
 
     @Autowired
-    private OrderService service;
+    private OrderService orderService;
 
-    public List<OrderTo> getAll() {
-        return service.customerGetOrder();
+    @Autowired
+    private ProductService productService;
+
+    public List<Product> getActiveProducts() {
+        return productService.getActiveProducts();
     }
 
-    public Order getName(String orderId) {
-        int userId = 3;
-        return service.getName(orderId, userId);
+    public Product get(int productId) {
+        return productService.get(productId);
     }
 
-    public Order get(int orderId) {
-        int userId = 3;
-        return service.get(orderId, userId);
-    }
+//    public List<OrderTo> getAll() {
+//        return service.customerGetOrder();
+//    }
+//
+//    public Order getName(String orderId) {
+//        int userId = 3;
+//        return service.getName(orderId, userId);
+//    }
+//
+//    public Order get(int orderId) {
+//        int userId = 3;
+//        return service.get(orderId, userId);
+//    }
 }
