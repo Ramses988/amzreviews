@@ -22,4 +22,9 @@ public class DataJpaUserRepositoryImpl implements UserRepository {
     public User get(int id) {
         return crudRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public User getOne(int id) {
+        return crudRepository.getOne(id);
+    }
 }

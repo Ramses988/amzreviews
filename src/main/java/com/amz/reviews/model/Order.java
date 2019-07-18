@@ -35,6 +35,17 @@ public class Order extends AbstractNamedEntity {
 
     public Order() {}
 
+    public Order(Integer id, LocalDateTime date, String name, double price, String status, String key, User user, Product product) {
+        super(id, date, name);
+        this.price = price;
+        this.status = status;
+        this.key = key;
+        this.user = user;
+        this.product = product;
+        this.reviewEnable = true;
+        this.payment = "Not paid";
+    }
+
     public double getPrice() {
         return price;
     }

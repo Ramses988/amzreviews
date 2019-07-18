@@ -10,6 +10,8 @@ public interface ProductService {
 
     Product get(int productId);
 
+    void customerReserve(Integer productId, int userId);
+
 //    List<Product> getAll(int userId);
 //
 //    Product get(int id, int userId);

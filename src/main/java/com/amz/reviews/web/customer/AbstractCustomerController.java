@@ -23,6 +23,11 @@ public abstract class AbstractCustomerController {
         return productService.get(productId);
     }
 
+    public void customerReserve(Integer productId) {
+        int userId = 3;
+        productService.customerReserve(productId, userId);
+    }
+
 //    public List<OrderTo> getAll() {
 //        return service.customerGetOrder();
 //    }

@@ -10,6 +10,8 @@ public interface ProductRepository {
 
     Product get(int productId);
 
+    void save(Product product);
+
 //    List<Product> getAll(int userId);
 //
 //    Product get(int id, int userId);

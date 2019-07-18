@@ -3,7 +3,6 @@ package com.amz.reviews.repository;
 
 import com.amz.reviews.model.Product;
 import com.amz.reviews.repository.datajpa.CrudProductRepository;
-import com.amz.reviews.repository.datajpa.CrudUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,19 +12,21 @@ import java.util.List;
 public class DataJpaProductRepositoryImpl implements ProductRepository {
 
     @Autowired
-    private CrudProductRepository crudProductRepository;
-
-    @Autowired
-    private CrudUserRepository crudUserRepository;
+    private CrudProductRepository crudRepository;
 
     @Override
     public List<Product> getActiveProducts() {
-        return crudProductRepository.findAllByCountOrdersGreaterThanOrderByDateOfChangeDesc(0);
+        return crudRepository.findAllByCountOrdersGreaterThanOrderByDateOfChangeDesc(0);
     }
 
     @Override
     public Product get(int productId) {
-        return crudProductRepository.findById(productId).orElse(null);
+        return crudRepository.findById(productId).orElse(null);
+    }
+
+    @Override
+    public void save(Product product) {
+        crudRepository.save(product);
     }
 
     //    @Override

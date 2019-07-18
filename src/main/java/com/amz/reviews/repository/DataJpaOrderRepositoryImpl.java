@@ -1,8 +1,7 @@
 package com.amz.reviews.repository;
 
+import com.amz.reviews.model.Order;
 import com.amz.reviews.repository.datajpa.CrudOrderRepository;
-import com.amz.reviews.repository.datajpa.CrudProductRepository;
-import com.amz.reviews.repository.datajpa.CrudUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -11,16 +10,14 @@ import org.springframework.stereotype.Repository;
 public class DataJpaOrderRepositoryImpl implements OrderRepository {
 
     @Autowired
-    private CrudOrderRepository crudOrderRepository;
+    private CrudOrderRepository crudRepository;
 
-    @Autowired
-    private CrudProductRepository crudProductRepository;
+    @Override
+    public void save(Order order) {
+        crudRepository.save(order);
+    }
 
-    @Autowired
-    private CrudUserRepository crudUserRepository;
-
-
-//    @Override
+    //    @Override
 //    public List<Order> getAll() {
 //        return crudOrderRepository.findAll();
 //    }

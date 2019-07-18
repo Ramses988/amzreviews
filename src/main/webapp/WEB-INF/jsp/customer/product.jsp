@@ -52,8 +52,16 @@
                                 <h5 class="font-weight-bold price">Цена: &#36;${product.price}</h5>
                             </div>
                         </div>
-                        <div class="col-sm-12"><a class="btn btn-primary-orange" href="#">Выкупить продукт</a>
-                            <div class="offset-top-10"><a class="btn btn-info" href="#">Перейти на Amazon</a></div>
+                        <div class="col-sm-12">
+
+                            <form method="POST" action="/customer/product">
+                                <input type="hidden" id="id" name="id" value="${product.id}">
+                                <button type="submit">Выкупить продукт</button>
+                            </form>
+
+                            <div class="offset-top-10">
+                                <a class="btn btn-info" href="#">Перейти на Amazon</a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,10 @@
 package com.amz.reviews.repository;
 
+import com.amz.reviews.model.Order;
+
 public interface OrderRepository {
+
+    void save(Order order);
 
 //    List<Order> getAll();
 //
