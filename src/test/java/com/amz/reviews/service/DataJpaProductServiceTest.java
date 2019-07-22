@@ -1,11 +1,17 @@
 package com.amz.reviews.service;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 class DataJpaProductServiceTest extends AbstractServiceTest {
 
     @Autowired
     private ProductService service;
+
+    @Test
+    void CreateProduct() {
+        service.CreateProduct("B07QWNM1VF", 3);
+    }
 
 //    @Test
 //    void getAllTest() {

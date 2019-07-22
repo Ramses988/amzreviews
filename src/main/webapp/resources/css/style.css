@@ -12392,6 +12392,10 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     vertical-align: middle
 }
 
+#price-red {
+    color: indianred;
+}
+
 .fa-stack-1x, .fa-stack-2x {
     position: absolute;
     left: 0;

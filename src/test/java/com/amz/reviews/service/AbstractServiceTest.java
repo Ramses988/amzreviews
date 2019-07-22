@@ -8,10 +8,10 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
         "classpath:spring/spring-app.xml",
         "classpath:spring/spring-db.xml"
 })
-@Sql(scripts = {
-        "classpath:db/initDB.sql",
-        "classpath:db/populateDB.sql"
-}, config = @SqlConfig(encoding = "UTF-8"))
+//@Sql(scripts = {
+//        "classpath:db/initDB.sql",
+//        "classpath:db/populateDB.sql"
+//}, config = @SqlConfig(encoding = "UTF-8"))
 abstract class AbstractServiceTest {
 
 }

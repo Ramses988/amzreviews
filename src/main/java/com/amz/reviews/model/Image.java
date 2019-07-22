@@ -18,6 +18,11 @@ public class Image extends AbstractBaseEntity {
 
     public Image() {}
 
+    public Image(Integer id, String url) {
+        super(id);
+        this.url = url;
+    }
+
     public Product getProduct() {
         return product;
     }

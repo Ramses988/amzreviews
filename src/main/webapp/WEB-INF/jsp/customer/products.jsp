@@ -18,7 +18,7 @@
                     <a href="/customer/product/${product.id}"><img class="img-fluid d-inline-block" src="${product.image}" alt=""></a>
                     <div class="text-md-center offset-top-24">
                         <div class="fixed-md-title">
-                            <p><a href="/customer/product/${product.id}">${product.title}...</a></p>
+                            <p><a href="/customer/product/${product.id}">${product.name}...</a></p>
                         </div>
                         <h6 class="offset-top-10">&#36;${product.price}</h6>
                     </div>

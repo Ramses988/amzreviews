@@ -45,15 +45,14 @@ public class Product extends AbstractNamedEntity {
 
     public Product() {}
 
-    public Product(Integer id, LocalDateTime date, String name, String asin, String title, double price, String description, String image, int activeOrders, int completedOrders) {
+    public Product(Integer id, LocalDateTime date, String name, String asin, String title, double price, String description, String image, List<Image> images) {
         super(id, date, name);
         this.asin = asin;
         this.title = title;
         this.price = price;
         this.description = description;
         this.image = image;
-        this.activeOrders = activeOrders;
-        this.completedOrders = completedOrders;
+        this.images = images;
     }
 
     public String getAsin() {

@@ -6,6 +6,7 @@ import com.amz.reviews.model.User;
 import com.amz.reviews.repository.OrderRepository;
 import com.amz.reviews.repository.ProductRepository;
 import com.amz.reviews.repository.UserRepository;
+import com.amz.reviews.util.ParseHTMLUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -25,6 +26,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private OrderRepository orderRepository;
+
+    @Autowired
+    private ImageService imageService;
 
     @Override
     public List<Product> getActiveProducts() {
@@ -49,14 +53,30 @@ public class ProductServiceImpl implements ProductService {
 
             if(Objects.nonNull(product)) {
                 User user = userRepository.getOne(userId);
-                Order order = new Order(null, LocalDateTime.now(), (product.getTitle().length() >= 63) ? product.getTitle().substring(0, 63) : product.getTitle(),
+                Order order = new Order(null, LocalDateTime.now(), product.getName(),
                         product.getPrice(), "Reserved", product.getKey(), user, product);
                 product.setCountOrders(product.getCountOrders() - 1);
                 productRepository.save(product);
                 orderRepository.save(order);
             }
         }
+    }
 
+    @Override
+    public void CreateProduct(String asin, int userId) {
+        Product product = ParseHTMLUtil.createAndUpdateProduct(asin);
+        if(Objects.nonNull(product)) {
+            product.setCountOrders(1);
+            product.setActiveOrders(0);
+            product.setCompletedOrders(0);
+            product.setUser(userRepository.getOne(userId));
+
+            productRepository.save(product);
+
+            product.getImages().forEach(i -> i.setProduct(product));
+
+            imageService.saveAll(product.getImages());
+        }
     }
 
     //    @Override

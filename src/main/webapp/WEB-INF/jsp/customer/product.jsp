@@ -24,11 +24,7 @@
                     <div class="text-md-left offset-top-50">
                         <h5 class="font-weight-bold">Описание</h5>
                         <ul>
-                            <li>AN ELEGANT PRESENTATION. Whether you are toasting to the 7th successful year of your friendship, wedding anniversary or business, hosting a formal gathering or thinking of a perfect gift for a whiskey enthusiast, RMOB WHISKY GLASSES will be your #1 CHOICE!</li>
-                            <li>BEAUTIFUL AND ERGONOMIC DESIGN. Elegant and understated, these glasses are designed with the focus on “beauty and simplicity”. The design makes them really durable, so they’re great for special occasions as well as everyday use. Each holds an impressive 11 oz of your favorite pour, so you can get a pretty nice size drink!</li>
-                            <li>EXPERT CRAFTSMANSHIP. RMOB Whiskey Glasses are hand blown from the world's most transparent and lustrous glass, giving them maximum clarity and brilliance. They are 100% lead free, laser engraved and features an oversized, weighted bottom for a good feel in your hand!</li>
-                            <li>MAKES A STATELY GIFT. Surprise your loving whiskey connoisseurs on their birthdays, anniversaries, Christmas or thanksgiving with RMOB Whiskey Glasses. The quotes "Limited Edition”, “Vintage" and "Aged to Perfection" will make them feel great while they are enjoying their favorite aged spirits!</li>
-                            <li> WE ARE HERE FOR YOU. We have made a complete commitment in making you happy with your purchase. but for any reason, if you are not completely satisfied, simply let us know and we do everything to make you 100% satisfied with your purchase. SO WHY WAIT? CHOOSE US TODAY!</li>
+                            ${product.description}
                         </ul>
                     </div>
                     <div class="offset-top-30">
@@ -49,14 +45,14 @@
                                 Выкуп с отзывом
                             </div>
                             <div class="offset-top-20">
-                                <h5 class="font-weight-bold price">Цена: &#36;${product.price}</h5>
+                                <h5 class="font-weight-bold price">Цена: <span id="price-red">&#36;${product.price}</span></h5>
                             </div>
                         </div>
                         <div class="col-sm-12">
 
                             <form method="POST" action="/customer/product">
                                 <input type="hidden" id="id" name="id" value="${product.id}">
-                                <button type="submit">Выкупить продукт</button>
+                                <button type="submit" class="btn btn-primary-orange">Выкупить продукт</button>
                             </form>
 
                             <div class="offset-top-10">
