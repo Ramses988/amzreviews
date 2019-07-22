@@ -52,6 +52,50 @@ $document.ready(function () {
         //     initLightGalleryItem(c.find('[data-lightgallery="item"]'), 'lightGallery-in-carousel'); }); 
         //     c.owlCarousel({ autoplay: isNoviBuilder ? false : c.attr("data-autoplay") === "true", loop: isNoviBuilder ? false : c.attr("data-loop") !== "false", items: 1, center: c.attr("data-center") === "true", dotsContainer: c.attr("data-pagination-class") || false, navContainer: c.attr("data-navigation-class") || false, mouseDrag: isNoviBuilder ? false : c.attr("data-mouse-drag") !== "false", nav: c.attr("data-nav") === "true", dots: (isNoviBuilder && c.attr("data-nav") !== "true") ? true : c.attr("data-dots") === "true", dotsEach: c.attr("data-dots-each") ? parseInt(c.attr("data-dots-each"), 10) : false, animateIn: c.attr('data-animation-in') ? c.attr('data-animation-in') : false, animateOut: c.attr('data-animation-out') ? c.attr('data-animation-out') : false, responsive: responsive, navText: c.attr("data-nav-text") ? $.parseJSON(c.attr("data-nav-text")) : [], navClass: c.attr("data-nav-class") ? $.parseJSON(c.attr("data-nav-class")) : ['owl-prev', 'owl-next'] });
     }
+
+
+    $('.popup-open').click(function() {
+        $(':input').val("");
+        $('.popup-fade').fadeIn();
+        return false;
+    });
+
+    $('.popup-close').click(function() {
+        $(this).parents('.popup-fade').fadeOut();
+        return false;
+    });
+
+    $('.btn-cancel').click(function() {
+        $(this).parents('.popup-fade').fadeOut();
+        return false;
+    });
+
+    $('.btn-add').click(function() {
+        $.ajax({
+            type: "POST",
+            url: "/rest/seller/add-product",
+            data: $('#detailsForm').serialize()
+        }).done(function() {
+            $('.popup-fade').fadeOut();
+            console.log("done");
+        })
+    });
+
+    $(document).keydown(function(e) {
+        if (e.keyCode === 27) {
+            e.stopPropagation();
+            $('.popup-fade').fadeOut();
+        }
+    });
+
+    $('.popup-fade').click(function(e) {
+        if ($(e.target).closest('.popup').length == 0) {
+            $(this).fadeOut();
+        }
+    });
+
+
+
     function attachFormValidator(elements) {
         for (var i = 0; i < elements.length; i++) { var o = $(elements[i]), v; o.addClass("form-control-has-validation").after("<span class='form-validation'></span>"); v = o.parent().find(".form-validation"); if (v.is(":last-child")) { o.addClass("form-control-last-child"); } }
         elements.on('input change propertychange blur', function (e) {

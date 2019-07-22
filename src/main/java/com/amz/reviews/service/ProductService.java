@@ -14,6 +14,8 @@ public interface ProductService {
 
     void CreateProduct(String asin, int userId);
 
+    List<Product> getAllSeller(int userId);
+
 //    List<Product> getAll(int userId);
 //
 //    Product get(int id, int userId);

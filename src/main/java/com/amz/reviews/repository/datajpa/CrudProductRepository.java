@@ -2,6 +2,7 @@ package com.amz.reviews.repository.datajpa;
 
 
 import com.amz.reviews.model.Product;
+import com.amz.reviews.model.User;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -14,6 +15,8 @@ import java.util.Optional;
 
 @Transactional(readOnly = true)
 public interface CrudProductRepository extends JpaRepository<Product, Integer> {
+
+    List<Product> findAllByUserOrderByDateDesc(User user);
 
     List<Product> findAllByCountOrdersGreaterThanOrderByDateOfChangeDesc(int count);
 

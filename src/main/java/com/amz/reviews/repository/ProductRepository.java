@@ -12,6 +12,8 @@ public interface ProductRepository {
 
     void save(Product product);
 
+    List<Product> getAllSeller(int userId);
+
 //    List<Product> getAll(int userId);
 //
 //    Product get(int id, int userId);

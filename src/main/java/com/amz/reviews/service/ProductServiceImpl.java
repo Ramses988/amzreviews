@@ -31,6 +31,11 @@ public class ProductServiceImpl implements ProductService {
     private ImageService imageService;
 
     @Override
+    public List<Product> getAllSeller(int userId) {
+        return productRepository.getAllSeller(userId);
+    }
+
+    @Override
     public List<Product> getActiveProducts() {
         return productRepository.getActiveProducts();
     }
