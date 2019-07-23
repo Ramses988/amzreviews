@@ -12395,10 +12395,11 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
 
 
 
-.popup-fade {
+.product-modal, .order-modal, .info-modal {
     display: none;
 }
-.popup-fade:before {
+
+.product-modal:before, .order-modal:before, .info-modal:before {
     content: '';
     background: #000;
     position: fixed;
@@ -12409,12 +12410,13 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     opacity: 0.7;
     z-index: 9999;
 }
-.popup {
+
+.modal-container {
     position: fixed;
     top: 20%;
     left: 50%;
     padding: 20px;
-    width: 360px;
+    width: 400px;
     margin-left: -200px;
     background: #fff;
     border: 1px solid orange;
@@ -12422,6 +12424,7 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     z-index: 99999;
     opacity: 1;
 }
+
 .popup-close {
     position: absolute;
     top: 10px;
@@ -12467,9 +12470,46 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     text-align: right
 }
 
-#price-red {
+.price-red {
     color: indianred;
 }
+
+/*Preload*/
+
+#p_prldr{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right:0;
+    bottom:0;
+    background: #fff;
+    z-index: 30;
+}
+
+.contpre{
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    left: 50%;top: 48%;
+    margin-left:-125px;
+    margin-top:-75px;
+    color:#fff;
+    font-size:40px;
+    letter-spacing:-2px;
+    text-align:center;
+    line-height:35px;}
+
+#p_prldr .svg_anm {
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    background: url(/resources/images/35.gif) center center no-repeat;
+    background-size:41px;
+    margin: -16px 0 0 -16px;
+}
+
+/*Finished Preload*/
+
 
 .fa-stack-1x, .fa-stack-2x {
     position: absolute;

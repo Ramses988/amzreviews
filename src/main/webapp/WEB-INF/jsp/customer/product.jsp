@@ -45,7 +45,7 @@
                                 Выкуп с отзывом
                             </div>
                             <div class="offset-top-20">
-                                <h5 class="font-weight-bold price">Цена: <span id="price-red">&#36;${product.price}</span></h5>
+                                <h5 class="font-weight-bold price">Цена: <span class="price-red">&#36;${product.price}</span></h5>
                             </div>
                         </div>
                         <div class="col-sm-12">
