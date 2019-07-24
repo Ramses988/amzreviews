@@ -99,7 +99,6 @@
 <!-- Global Mailform Output-->
 <div class="snackbars" id="form-output-global"></div>
 <!-- Java script-->
-    <script src="/resources/js/owl.carousel.min.js"></script>
     <script src="/resources/js/core.min.js"></script>
     <script src="/resources/js/script.js"></script>
     <%--<script src="/resources/js/amz.reviews.min.js"></script>--%>

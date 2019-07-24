@@ -3,9 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="../fragments/_header.jsp" />
-<jsp:include page="../fragments/_menu.jsp" />
 
-<!-- Preload -->
+<!-- Start Preload -->
 <div id="p_prldr">
     <div class="contpre">
         <span class="svg_anm"></span>
@@ -14,16 +13,18 @@
 
 <script>
     $(window).on('load', function () {
-    var $preloader = $('#p_prldr'),
-        $svg_anm   = $preloader.find('.svg_anm');
-    $svg_anm.fadeOut();
-    $preloader.delay(500).fadeOut('slow');
-});
+        var $preloader = $('#p_prldr'),
+            $svg_anm   = $preloader.find('.svg_anm');
+        $svg_anm.fadeOut();
+        $preloader.delay(500).fadeOut('slow');
+    });
 </script>
 <!-- Finished Preload -->
 
+<script src="/resources/js/angular.min.js"></script>
 <script src="/resources/js/products.js"></script>
 
+<jsp:include page="../fragments/_menu.jsp" />
 
 <section class="section section-99 section-lg-111 bg-default" ng-app="sellerApp">
     <div class="container" ng-controller="getAllController">
@@ -36,40 +37,49 @@
     </div>
 
     <div class="row col-lg-borders" ng-repeat="product in products">
-    <div class="col-lg-4">
-    <img ng-src="{{product.image}}" alt="" width="300" height="250" />
+        <div class="col-lg-4">
+            <img ng-src="{{product.image}}" alt="" width="300" height="250" />
+        </div>
+
+        <div class="col-lg-4 text-lg-left">
+            <p>{{product.name}}...</p>
+            <div class="table-responsive clearfix">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th>ASIN</th>
+                            <th>{{product.asin}}</th>
+                         </tr>
+                        <tr>
+                            <th>Цена</th>
+                            <td><span class="price-red">&#36;{{product.price}}</span></td>
+                        </tr>
+                        <tr>
+                            <th>Активные заказы</th>
+                            <td>{{product.activeOrders}}</td>
+                        </tr>
+                        <tr>
+                            <th>Завершенные заказы</th>
+                            <td>{{product.completedOrders}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-lg-2">
+             <p>
+                 <button class="btn btn-primary-orange" ng-click="orderAdd(product.id, product.price)">Добавить выкупы</button>
+             </p>
+             <p>
+                 <a href="#" class="btn btn-primary-grey">История выкупов</a>
+             </p>
+             <p>
+                 Заявки на выкуп: {{product.countOrders}}
+             </p>
+        </div>
     </div>
-    <div class="col-lg-4 text-lg-left">
-    <p>{{product.name}}...</p>
-    <div class="table-responsive clearfix">
-    <table class="table table-striped">
-    <tbody>
-    <tr>
-    <th>ASIN</th>
-    <th>{{product.asin}}</th>
-    </tr>
-    <tr>
-    <th>Цена</th>
-    <td><span class="price-red">&#36;{{product.price}}</span></td>
-    </tr>
-    <tr>
-    <th>Активные заказы</th>
-    <td>{{product.activeOrders}}</td>
-    </tr>
-    <tr>
-    <th>Завершенные заказы</th>
-    <td>{{product.completedOrders}}</td>
-    </tr>
-    </tbody>
-    </table>
-    </div>
-    </div>
-    <div class="col-lg-2">
-    <p><button class="btn btn-primary-orange open-order" id="{{product.id}}">Добавить выкупы</button></p>
-    <p><a href="#" class="btn btn-primary-grey">История выкупов</a></p>
-    <p>Заявки на выкуп: {{product.countOrders}}</p>
-    </div>
-    </div>
+
     </div>
 </section>
 
@@ -104,6 +114,7 @@
             <form id="detailsFormOrder">
                 <div class="form-group">
                     <input type="hidden" id="id" name="id" value="">
+                    <input type="hidden" id="price" name="price" value="">
                     <label class="col-form-label">Укажите ключ для выкупа</label>
                     <input id="key" name="key" class="form-control" placeholder="Введите ключ" autocomplete="off" type="text">
                 </div>
@@ -138,5 +149,7 @@
         </div>
     </div>
 </div>
+
+<!-- End Modal Windows -->
 
 <jsp:include page="../fragments/_footer.jsp" />

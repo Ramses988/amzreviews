@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/resources/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="/resources/css/style.css">
 
-    <script src="/resources/js/angular.min.js"></script>
     <script src="/resources/js/jquery-3.4.1.min.js"></script>
 
 </head>

@@ -6,8 +6,6 @@ function lazyInit(element, func) { var scrollHandler = function () { if ((!eleme
 $document.ready(function () {
     // isNoviBuilder = window.xMode; function getLatLngObject(str, marker, map, callback) { var coordinates = {}; try { coordinates = JSON.parse(str); callback(new google.maps.LatLng(coordinates.lat, coordinates.lng), marker, map) } catch (e) { map.geocoder.geocode({ 'address': str }, function (results, status) { if (status === google.maps.GeocoderStatus.OK) { var latitude = results[0].geometry.location.lat(); var longitude = results[0].geometry.location.lng(); callback(new google.maps.LatLng(parseFloat(latitude), parseFloat(longitude)), marker, map) } }) } }
 
-    setTimeout(function() {
-
         function toggleSwiperInnerVideos(swiper) {
             var videos;
             $.grep(swiper.slides, function (element, index) {
@@ -581,5 +579,4 @@ $document.ready(function () {
                 initDynamicLightGallery(plugins.lightDynamicGalleryItem[i]);
             }
         }
-    }, 300);
 });
