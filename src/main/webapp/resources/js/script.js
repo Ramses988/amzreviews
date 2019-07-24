@@ -97,13 +97,6 @@ $document.ready(function () {
             return false;
         });
 
-        $('.open-order').click(function () {
-            $(':input').val("");
-            $('.order-modal').find('#id').val($(this).attr("id"));
-            $('.order-modal').fadeIn();
-            return false;
-        });
-
         $('.popup-close').click(function () {
             $(this).parents('.modal').fadeOut();
             return false;
@@ -143,6 +136,31 @@ $document.ready(function () {
         $('.modal').click(function (e) {
             if ($(e.target).closest('.modal-container').length == 0) {
                 $(this).fadeOut();
+            }
+        });
+
+        $('.order-modal').find('#count').keyup(function () {
+            var Value = parseInt($(this).val());
+            var main = $('.order-modal');
+            var fees = 5.0;
+            var percent = 5;
+
+            if(Value >= 1 && Value < 1000) {
+                var price = parseFloat(main.find('#price').val());
+                var priceFees = (price + fees) * Value;
+                var percentPrice = (priceFees / 100) * percent;
+                var totalPrice = priceFees + percentPrice;
+                main.find('.price-red').text("$"+parseInt(totalPrice));
+                main.find('#small-fees').text("Сбор Сервиса: $"+fees*Value);
+                main.find('#small-percent').text("Комиссия: 5%");
+                main.find('#small-price').text("Цена продукта: $"+price);
+                main.find('#label-hide').css({"display":"inline"});
+            } else {
+                main.find('#label-hide').css({"display":"none"});
+                main.find('#small-price').empty();
+                main.find('.price-red').empty();
+                main.find('#small-fees').empty();
+                main.find('#small-percent').empty();
             }
         });
 

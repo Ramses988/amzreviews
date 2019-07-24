@@ -13,6 +13,11 @@ app.controller("getAllController", function($scope, $http) {
                 $(':input').val("");
                 base.find('#id').val(userId);
                 base.find('#price').val(price);
+                base.find('#label-hide').css({"display":"none"});
+                base.find('#small-price').empty();
+                base.find('.price-red').empty();
+                base.find('#small-fees').empty();
+                base.find('#small-percent').empty();
                 base.fadeIn();
             }
         },

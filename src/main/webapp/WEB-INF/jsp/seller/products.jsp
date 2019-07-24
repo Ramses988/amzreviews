@@ -123,7 +123,14 @@
                     <input id="count" name="count" class="form-control" placeholder="0" autocomplete="off" type="text">
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label">Общая сумма:<span class="price-red"></span></label>
+                    <div id="label-hide" style="display: none">
+                    <p>
+                        <span id="small-price"></span><br/>
+                        <span id="small-fees"></span><br/>
+                        <span id="small-percent"></span>
+                    </p>
+                    </div>
+                    <label class="col-form-label">ИТОГО: <b><span class="price-red"></span></b></label>
                 </div>
             </form>
         </div>
