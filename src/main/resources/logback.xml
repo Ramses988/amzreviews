@@ -9,6 +9,7 @@
     </appender>
 
     <logger name="com.amz.reviews" level="debug"/>
+    <logger name="org.springframework.data.jpa" level="debug"/>
 
     <root level="info">
         <appender-ref ref="console"/>

@@ -8,18 +8,12 @@ public interface ProductRepository {
 
     List<Product> getActiveProducts();
 
-    Product get(int productId);
+    Product getCustomer(int productId);
 
     void save(Product product);
 
     List<Product> getAllSeller(int userId);
 
-//    List<Product> getAll(int userId);
-//
-//    Product get(int id, int userId);
-//
-//    void delete(int id, int userId);
-//
-//    void save(Product product, int userId);
+    Product getSeller(int productId, int userId);
 
 }

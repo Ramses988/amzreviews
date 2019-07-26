@@ -6,16 +6,18 @@ import com.amz.reviews.model.User;
 import com.amz.reviews.repository.OrderRepository;
 import com.amz.reviews.repository.ProductRepository;
 import com.amz.reviews.repository.UserRepository;
+import com.amz.reviews.to.OrderTo;
 import com.amz.reviews.util.ParseHTMLUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
 @Service
+@Transactional(readOnly = true)
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
@@ -31,6 +33,25 @@ public class ProductServiceImpl implements ProductService {
     private ImageService imageService;
 
     @Override
+    @Transactional
+    public void createOrdersSeller(OrderTo orderTo, int userId) {
+        Product product = getSeller(orderTo.getId(), userId);
+
+        if(Objects.nonNull(product)) {
+            product.setKey(orderTo.getKey());
+            product.setCountOrders(orderTo.getCount());
+//            product.setReviewEnable(orderTo.isReview());
+            product.setDateOfChange(LocalDateTime.now());
+            productRepository.save(product);
+        }
+    }
+
+    @Override
+    public Product getSeller(int productId, int userId) {
+        return productRepository.getSeller(productId, userId);
+    }
+
+    @Override
     public List<Product> getAllSeller(int userId) {
         return productRepository.getAllSeller(userId);
     }
@@ -41,8 +62,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product get(int productId) {
-        Product product = productRepository.get(productId);
+    public Product getCustomer(int productId) {
+        Product product = productRepository.getCustomer(productId);
 
         if(Objects.nonNull(product) && product.getCountOrders() > 0)
             return product;
@@ -52,9 +73,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public void customerReserve(Integer productId, int userId) {
         if(Objects.nonNull(productId)) {
-            Product product = get(productId);
+            Product product = getCustomer(productId);
 
             if(Objects.nonNull(product)) {
                 User user = userRepository.getOne(userId);
@@ -68,6 +90,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public void CreateProduct(String asin, int userId) {
         Product product = ParseHTMLUtil.createAndUpdateProduct(asin);
         if(Objects.nonNull(product)) {

@@ -19,6 +19,11 @@ public class DataJpaProductRepositoryImpl implements ProductRepository {
     private CrudUserRepository crudUserRepository;
 
     @Override
+    public Product getSeller(int productId, int userId) {
+        return crudRepository.findByIdAndUser(productId, crudUserRepository.getOne(userId)).orElse(null);
+    }
+
+    @Override
     public List<Product> getAllSeller(int userId) {
         return crudRepository.findAllByUserOrderByDateDesc(crudUserRepository.getOne(userId));
     }
@@ -29,7 +34,7 @@ public class DataJpaProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
-    public Product get(int productId) {
+    public Product getCustomer(int productId) {
         return crudRepository.findById(productId).orElse(null);
     }
 

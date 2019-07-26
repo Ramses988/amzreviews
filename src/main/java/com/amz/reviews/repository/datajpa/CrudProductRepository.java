@@ -20,6 +20,8 @@ public interface CrudProductRepository extends JpaRepository<Product, Integer> {
 
     List<Product> findAllByCountOrdersGreaterThanOrderByDateOfChangeDesc(int count);
 
+    Optional<Product> findByIdAndUser(Integer id, User user);
+
     @EntityGraph(attributePaths = "images", type = EntityGraph.EntityGraphType.LOAD)
     Optional<Product> findById(int productId);
 

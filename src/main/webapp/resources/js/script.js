@@ -92,7 +92,7 @@ $document.ready(function () {
 
 
         $('.open-product').click(function () {
-            $(':input').val("");
+            $(':input[type=text]').val("");
             $('.product-modal').fadeIn();
             return false;
         });
@@ -112,6 +112,8 @@ $document.ready(function () {
                 type: "POST",
                 url: "/rest/seller/add-order",
                 data: $('#detailsFormOrder').serialize()
+            }).done(function () {
+                $('.modal').fadeOut();
             })
         });
 
@@ -139,10 +141,21 @@ $document.ready(function () {
             }
         });
 
+        $('input[type=radio][name=review]').change(function () {
+            constructerPrice();
+        });
+
         $('.order-modal').find('#count').keyup(function () {
-            var Value = parseInt($(this).val());
+            constructerPrice();
+        });
+
+        function constructerPrice() {
+            var fees = 5;
+            if(parseInt($('input[name=review]:checked').val()) < 1) {
+                fees = 3;
+            }
             var main = $('.order-modal');
-            var fees = 5.0;
+            var Value = parseInt(main.find('#count').val());
             var percent = 5;
 
             if(Value >= 1 && Value < 1000) {
@@ -162,7 +175,7 @@ $document.ready(function () {
                 main.find('#small-fees').empty();
                 main.find('#small-percent').empty();
             }
-        });
+        }
 
 
         function attachFormValidator(elements) {

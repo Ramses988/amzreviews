@@ -118,6 +118,22 @@
                     <label class="col-form-label">Укажите ключ для выкупа</label>
                     <input id="key" name="key" class="form-control" placeholder="Введите ключ" autocomplete="off" type="text">
                 </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <label>
+                            <input type="radio" name="review" id="review1" value="1">
+                            <span class="label-text">Выкупы с отзывом</span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label>
+                            <input type="radio" name="review" id="review2" value="0" checked>
+                            <span class="label-text">Выкупы без отзыва</span>
+                        </label>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label class="col-form-label">Укажите количество выкупов</label>
                     <input id="count" name="count" class="form-control" placeholder="0" autocomplete="off" type="text">

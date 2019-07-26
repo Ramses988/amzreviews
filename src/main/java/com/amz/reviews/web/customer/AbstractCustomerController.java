@@ -20,7 +20,7 @@ public abstract class AbstractCustomerController {
     }
 
     public Product get(int productId) {
-        return productService.get(productId);
+        return productService.getCustomer(productId);
     }
 
     public void customerReserve(Integer productId) {

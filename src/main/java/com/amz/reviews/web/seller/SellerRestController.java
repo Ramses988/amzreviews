@@ -1,6 +1,7 @@
 package com.amz.reviews.web.seller;
 
 import com.amz.reviews.model.Product;
+import com.amz.reviews.to.OrderTo;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,11 @@ public class SellerRestController extends AbstractSellerController {
     @PostMapping("/add-product")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void addProduct(@RequestBody String asin) {
-        System.out.println(asin);
+    }
+
+    @PostMapping("/add-order")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void createOrders(OrderTo orderTo) {
+        super.createOrdersSeller(orderTo);
     }
 }

@@ -32,17 +32,4 @@ public class CustomerUIController extends AbstractCustomerController {
         super.customerReserve(id);
         return "redirect:/customer/orders";
     }
-
-
-//    @GetMapping("/customer")
-//    public String get(Model model) {
-//        model.addAttribute("orders", super.getAll());
-//        return "customer/orders";
-//    }
-//
-//    @GetMapping("/customer/product/{name}")
-//    public String getOrder(@PathVariable("name") String name, Model model) {
-//        model.addAttribute("order", super.getName(name));
-//        return "customer/product";
-//    }
 }

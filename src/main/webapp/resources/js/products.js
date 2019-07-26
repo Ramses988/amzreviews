@@ -10,7 +10,7 @@ app.controller("getAllController", function($scope, $http) {
 
             $scope.orderAdd = function(userId, price) {
                 var base = $('.order-modal');
-                $(':input').val("");
+                $(':input[type=text]').val("");
                 base.find('#id').val(userId);
                 base.find('#price').val(price);
                 base.find('#label-hide').css({"display":"none"});
