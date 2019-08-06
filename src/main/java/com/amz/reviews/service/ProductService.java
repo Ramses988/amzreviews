@@ -7,18 +7,21 @@ import java.util.List;
 
 public interface ProductService {
 
-    List<Product> getActiveProducts();
-
-    Product getCustomer(int productId);
+    /* Customers methods */
 
     void customerReserve(Integer productId, int userId);
 
-    void CreateProduct(String asin, int userId);
+    Product customerGetProduct(int productId);
 
-    List<Product> getAllSeller(int userId);
+    List<Product> customerGetActiveProducts();
 
-    void createOrdersSeller(OrderTo orderTo, int userId);
 
-    Product getSeller(int productId, int userId);
+    /* Sellers methods */
+
+    List<Product> sellerGetAllProducts(int userId);
+
+    void sellerCreateProduct(String asin, int userId);
+
+    void sellerCreateOrders(OrderTo orderTo, int userId);
 
 }

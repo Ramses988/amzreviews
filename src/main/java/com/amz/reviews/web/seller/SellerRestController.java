@@ -16,7 +16,7 @@ public class SellerRestController extends AbstractSellerController {
 
     @GetMapping
     public List<Product> getAll() {
-        return super.getAllSeller();
+        return super.sellerGetAllProducts();
     }
 
     @PostMapping("/add-product")
@@ -27,6 +27,6 @@ public class SellerRestController extends AbstractSellerController {
     @PostMapping("/add-order")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void createOrders(OrderTo orderTo) {
-        super.createOrdersSeller(orderTo);
+        super.sellerCreateOrders(orderTo);
     }
 }

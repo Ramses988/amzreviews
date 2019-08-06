@@ -26,8 +26,8 @@
 
 <jsp:include page="../fragments/_menu.jsp" />
 
-<section class="section section-99 section-lg-111 bg-default" ng-app="sellerApp">
-    <div class="container" ng-controller="getAllController">
+<section class="section section-99 section-lg-111 bg-default">
+    <div class="container">
     <div class="col-add">
     <h2>Список продуктов</h2>
     <hr class="divider bg-saffron">
@@ -35,7 +35,7 @@
     <div id="col-add">
     <button class="btn btn-info open-product">Добавить продкут</button>
     </div>
-
+    <div id="getAllController" ng-app="sellerApp" ng-controller="getAllController">
     <div class="row col-lg-borders" ng-repeat="product in products">
         <div class="col-lg-4">
             <img ng-src="{{product.image}}" alt="" width="300" height="250" />
@@ -72,14 +72,14 @@
                  <button class="btn btn-primary-orange" ng-click="orderAdd(product.id, product.price)">Добавить выкупы</button>
              </p>
              <p>
-                 <a href="#" class="btn btn-primary-grey">История выкупов</a>
+                 <a href="/seller/history" class="btn btn-primary-grey">История выкупов</a>
              </p>
              <p>
                  Заявки на выкуп: {{product.countOrders}}
              </p>
         </div>
     </div>
-
+    </div>
     </div>
 </section>
 

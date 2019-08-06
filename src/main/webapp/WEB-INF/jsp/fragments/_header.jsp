@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLato:400,700">
     <link rel="stylesheet" href="/resources/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/resources/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/resources/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/resources/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/resources/css/style.css">
 
     <script src="/resources/js/jquery-3.4.1.min.js"></script>

@@ -13,13 +13,13 @@ public abstract class AbstractSellerController {
     @Autowired
     private ProductService service;
 
-    List<Product> getAllSeller() {
+    List<Product> sellerGetAllProducts() {
         int userId = 3;
-        return service.getAllSeller(userId);
+        return service.sellerGetAllProducts(userId);
     }
 
-    void createOrdersSeller(OrderTo orderTo) {
+    void sellerCreateOrders(OrderTo orderTo) {
         int userId = 3;
-        service.createOrdersSeller(orderTo, userId);
+        service.sellerCreateOrders(orderTo, userId);
     }
 }

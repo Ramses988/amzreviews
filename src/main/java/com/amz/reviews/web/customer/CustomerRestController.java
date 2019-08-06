@@ -11,15 +11,4 @@ import java.util.List;
 public class CustomerRestController extends AbstractCustomerController {
 
     static final String REST_URL = "/rest/customer";
-
-//    @Override
-//    @GetMapping
-//    public List<OrderTo> getAll() {
-//        return super.getAll();
-//    }
-
-//    @GetMapping("/order/{id}")
-//    public Order get(@PathVariable int id) {
-//        return super.get(id);
-//    }
 }

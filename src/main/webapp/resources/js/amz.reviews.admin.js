@@ -3,7 +3,7 @@ $(function() {
     $('#datatable').DataTable({
         "ajax": {
             "method": "GET",
-            "url": "rest/admin/",
+            "url": "/rest/admin/",
             "dataSrc": ""
         },
             "columns": [

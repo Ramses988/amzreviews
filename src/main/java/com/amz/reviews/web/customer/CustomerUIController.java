@@ -12,23 +12,18 @@ public class CustomerUIController extends AbstractCustomerController {
 
     @GetMapping("/customer")
     public String getAll(Model model) {
-        model.addAttribute("products", super.getActiveProducts());
+        model.addAttribute("products", super.customerGetActiveProducts());
         return "customer/products";
-    }
-
-    @GetMapping("/customer/orders")
-    public String getOrders() {
-        return "customer/orders";
     }
 
     @GetMapping("/customer/product/{id}")
     public String get(@PathVariable("id") int id, Model model) {
-        model.addAttribute("product", super.get(id));
+        model.addAttribute("product", super.customerGetProduct(id));
         return "customer/product";
     }
 
     @PostMapping("/customer/product")
-    public String Reserve(@RequestParam("id") Integer id) {
+    public String reserve(@RequestParam("id") Integer id) {
         super.customerReserve(id);
         return "redirect:/customer/orders";
     }

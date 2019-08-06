@@ -5,6 +5,8 @@
 <jsp:include page="../fragments/_header.jsp" />
 <jsp:include page="../fragments/_menu.jsp" />
 
+<script src="/resources/js/owl.carousel.min.js"></script>
+
 
 <section class="section section-50 bg-lighter novi-background">
     <jsp:useBean id="product" scope="request" type="com.amz.reviews.model.Product" />

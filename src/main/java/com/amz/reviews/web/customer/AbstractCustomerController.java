@@ -15,30 +15,16 @@ public abstract class AbstractCustomerController {
     @Autowired
     private ProductService productService;
 
-    public List<Product> getActiveProducts() {
-        return productService.getActiveProducts();
+    List<Product> customerGetActiveProducts() {
+        return productService.customerGetActiveProducts();
     }
 
-    public Product get(int productId) {
-        return productService.getCustomer(productId);
+    Product customerGetProduct(int productId) {
+        return productService.customerGetProduct(productId);
     }
 
-    public void customerReserve(Integer productId) {
+    void customerReserve(Integer productId) {
         int userId = 3;
         productService.customerReserve(productId, userId);
     }
-
-//    public List<OrderTo> getAll() {
-//        return service.customerGetOrder();
-//    }
-//
-//    public Order getName(String orderId) {
-//        int userId = 3;
-//        return service.getName(orderId, userId);
-//    }
-//
-//    public Order get(int orderId) {
-//        int userId = 3;
-//        return service.get(orderId, userId);
-//    }
 }

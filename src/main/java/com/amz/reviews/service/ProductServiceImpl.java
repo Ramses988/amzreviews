@@ -24,20 +24,20 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @Autowired
-    private OrderRepository orderRepository;
+    private OrderService orderService;
 
     @Autowired
     private ImageService imageService;
 
     @Override
     @Transactional
-    public void createOrdersSeller(OrderTo orderTo, int userId) {
-        Product product = getSeller(orderTo.getId(), userId);
+    public void sellerCreateOrders(OrderTo orderTo, int userId) {
+        Product product = sellerGetProduct(orderTo.getId(), userId);
 
-        if(Objects.nonNull(product)) {
+        if(Objects.nonNull(product) && product.getCountOrders() == 0) {
             product.setKey(orderTo.getKey());
             product.setCountOrders(orderTo.getCount());
 //            product.setReviewEnable(orderTo.isReview());
@@ -46,23 +46,22 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-    @Override
-    public Product getSeller(int productId, int userId) {
+    private Product sellerGetProduct(int productId, int userId) {
         return productRepository.getSeller(productId, userId);
     }
 
     @Override
-    public List<Product> getAllSeller(int userId) {
+    public List<Product> sellerGetAllProducts(int userId) {
         return productRepository.getAllSeller(userId);
     }
 
     @Override
-    public List<Product> getActiveProducts() {
+    public List<Product> customerGetActiveProducts() {
         return productRepository.getActiveProducts();
     }
 
     @Override
-    public Product getCustomer(int productId) {
+    public Product customerGetProduct(int productId) {
         Product product = productRepository.getCustomer(productId);
 
         if(Objects.nonNull(product) && product.getCountOrders() > 0)
@@ -76,28 +75,28 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public void customerReserve(Integer productId, int userId) {
         if(Objects.nonNull(productId)) {
-            Product product = getCustomer(productId);
+            Product product = customerGetProduct(productId);
 
             if(Objects.nonNull(product)) {
-                User user = userRepository.getOne(userId);
+                User user = userService.getOne(userId);
                 Order order = new Order(null, LocalDateTime.now(), product.getName(),
                         product.getPrice(), "Reserved", product.getKey(), user, product);
                 product.setCountOrders(product.getCountOrders() - 1);
                 productRepository.save(product);
-                orderRepository.save(order);
+                orderService.save(order);
             }
         }
     }
 
     @Override
     @Transactional
-    public void CreateProduct(String asin, int userId) {
+    public void sellerCreateProduct(String asin, int userId) {
         Product product = ParseHTMLUtil.createAndUpdateProduct(asin);
         if(Objects.nonNull(product)) {
             product.setCountOrders(1);
             product.setActiveOrders(0);
             product.setCompletedOrders(0);
-            product.setUser(userRepository.getOne(userId));
+            product.setUser(userService.getOne(userId));
 
             productRepository.save(product);
 
@@ -106,29 +105,4 @@ public class ProductServiceImpl implements ProductService {
             imageService.saveAll(product.getImages());
         }
     }
-
-    //    @Override
-//    public List<Product> getAll(int userId) {
-//        return repository.getAll(userId);
-//    }
-//
-//    @Override
-//    public Product get(int id, int userId) {
-//        return repository.get(id, userId);
-//    }
-//
-//    @Override
-//    public void delete(int id, int userId) {
-//        repository.delete(id, userId);
-//    }
-//
-//    @Override
-//    public void create(Product product, int userId) {
-//        repository.save(product, userId);
-//    }
-//
-//    @Override
-//    public void update(Product product, int userId) {
-//        repository.save(product, userId);
-//    }
 }

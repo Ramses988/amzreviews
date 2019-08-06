@@ -10,4 +10,9 @@ public class SellerUIController extends AbstractSellerController {
     public String get() {
         return "seller/products";
     }
+
+    @GetMapping("/seller/history")
+    public String getOrders() {
+        return "seller/history";
+    }
 }

@@ -114,6 +114,7 @@ $document.ready(function () {
                 data: $('#detailsFormOrder').serialize()
             }).done(function () {
                 $('.modal').fadeOut();
+                angular.element('#getAllController').scope().updateProducts();
             })
         });
 
