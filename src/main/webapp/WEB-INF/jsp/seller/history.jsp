@@ -15,10 +15,10 @@
         <div calss="offset-md-top-66">
 
             <div class="tabs">
-                <input type="radio" class="inset" name="inset" value="" id="tab_1" checked>
+                <input type="radio" name="inset" value="" id="tab_1" checked>
                 <label for="tab_1">Активные</label>
 
-                <input type="radio" class="inset" name="inset" value="" id="tab_2">
+                <input type="radio" name="inset" value="" id="tab_2">
                 <label for="tab_2">Завершенные</label>
 
                 <div id="txt_1">
