@@ -1,6 +1,23 @@
 package com.amz.reviews.service;
 
+import com.amz.reviews.model.Order;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class DataJpaOrderServiceTest extends AbstractServiceTest {
+
+    @Autowired
+    private OrderService service;
+
+    @Test
+    void Test() {
+        List<Order> orders = service.sellerGetActiveOrders(1, 3);
+        assertEquals(0, orders.size());
+    }
 
 //    @BeforeEach
 //    void setUp() {

@@ -72,7 +72,7 @@
                  <button class="btn btn-primary-orange" ng-click="orderAdd(product.id, product.price)">Добавить выкупы</button>
              </p>
              <p>
-                 <a href="/seller/history" class="btn btn-primary-grey">История выкупов</a>
+                 <a href="/seller/history/{{product.id}}" class="btn btn-primary-grey">История выкупов</a>
              </p>
              <p>
                  Заявки на выкуп: {{product.countOrders}}

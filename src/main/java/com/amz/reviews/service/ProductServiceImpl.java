@@ -46,7 +46,8 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-    private Product sellerGetProduct(int productId, int userId) {
+    @Override
+    public Product sellerGetProduct(int productId, int userId) {
         return productRepository.getSeller(productId, userId);
     }
 

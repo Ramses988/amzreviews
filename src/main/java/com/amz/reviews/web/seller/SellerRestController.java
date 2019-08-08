@@ -1,5 +1,6 @@
 package com.amz.reviews.web.seller;
 
+import com.amz.reviews.model.Order;
 import com.amz.reviews.model.Product;
 import com.amz.reviews.to.OrderTo;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,16 @@ public class SellerRestController extends AbstractSellerController {
     @GetMapping
     public List<Product> getAll() {
         return super.sellerGetAllProducts();
+    }
+
+    @GetMapping("/active-orders/{id}")
+    public List<Order> getActiveOrder(@PathVariable("id") int id) {
+        return super.sellerGetActiveOrders(id);
+    }
+
+    @GetMapping("/completed-orders/{id}")
+    public List<Order> getCompletedOrder(@PathVariable("id") int id) {
+        return super.sellerGetCompletedOrders(id);
     }
 
     @PostMapping("/add-product")

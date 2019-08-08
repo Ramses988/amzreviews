@@ -25554,11 +25554,48 @@ html .row-65-new>* {
     display: block;
 }
 
+.badges {
+    color: #fff;
+    padding: 2px;
+    font-weight: 600;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.original {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+.original:hover {
+    text-decoration: underline;
+    color: #0000FF;
+}
+
+.badge-completed {
+    background-color: #fa8513;
+    border: 1px solid #fa8513;
+}
+
+.badge-reserved {
+    background-color: #00ce68;
+    border: 1px solid #00ce68;
+}
+
+.badge-bought {
+    background-color: #1a84f9;
+    border: 1px solid #1a84f9;
+}
+
 .search_list {
     text-align: left;
     padding-left: 0;
     font-size: 18px;
     list-style-type: none
+}
+
+.paid {
+    color: #9b9b9b;
 }
 
 .result-item {
