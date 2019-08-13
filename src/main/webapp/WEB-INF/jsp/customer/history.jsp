@@ -31,7 +31,6 @@
                             <th>Номер Заказа</th>
                             <th>Отзыв</th>
                             <th>Статус</th>
-                            <th>Оплачен</th>
                         </tr>
                         </thead>
                     </table>
@@ -47,7 +46,6 @@
                             <th>Номер Заказа</th>
                             <th>Отзыв</th>
                             <th>Статус</th>
-                            <th>Оплачен</th>
                         </tr>
                         </thead>
                     </table>
@@ -58,7 +56,29 @@
     </div>
 </section>
 
+<!-- Modal Windows -->
+
+<div class="modal orderid-modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h4 class="modal-title modalTitle">Добавить номер заказа</h4>
+            <button type="button" class="close popup-close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="detailsFormOrderId">
+                <input type="hidden" id="number" name="id">
+                <label class="col-form-label">Укажите номер заказа</label>
+                <input id="orderid" name="orderid" class="form-control" placeholder="Введите номер заказа" autocomplete="off" type="text">
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-small btn-primary-orange btn-orderid">Добавить</button>
+            <button class="btn-small btn-primary-grey btn-cancel">Отменить</button>
+        </div>
+    </div>
+</div>
+
 <script src="/resources/js/jquery.dataTables.min.js"></script>
-<script src="/resources/js/seller.js"></script>
+<script src="/resources/js/customer.js"></script>
 
 <jsp:include page="../fragments/_footer.jsp" />

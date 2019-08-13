@@ -18,4 +18,8 @@ public interface OrderService {
 
     /* Customers methods */
 
+    List<Order> customerGetActiveOrders(int userId);
+
+    List<Order> customerCompletedOrders(int userId);
+
 }

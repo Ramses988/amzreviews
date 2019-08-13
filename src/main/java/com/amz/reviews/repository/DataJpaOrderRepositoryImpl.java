@@ -2,32 +2,46 @@ package com.amz.reviews.repository;
 
 import com.amz.reviews.model.Order;
 import com.amz.reviews.model.Product;
+import com.amz.reviews.model.User;
 import com.amz.reviews.repository.datajpa.CrudOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 
 @Repository
 public class DataJpaOrderRepositoryImpl implements OrderRepository {
 
     @Autowired
-    private CrudOrderRepository crudRepository;
+    private CrudOrderRepository repository;
 
     @Override
     public void save(Order order) {
-        crudRepository.save(order);
+        repository.save(order);
+    }
+
+    public DataJpaOrderRepositoryImpl() {
+        super();
+    }
+
+    @Override
+    public List<Order> customerGetActiveOrders(User user) {
+        return repository.findAllByStatusNotLikeAndUserOrderByDateDesc("Completed", user);
+    }
+
+    @Override
+    public List<Order> customerCompletedOrders(User user) {
+        return repository.findAllByStatusEqualsAndUserOrderByDateDesc("Completed", user);
     }
 
     @Override
     public List<Order> sellerGetActiveOrders(Product product) {
-        return crudRepository.findAllByStatusNotLikeAndProductOrderByDateDesc("Completed", product);
+        return repository.findAllByStatusNotLikeAndProductOrderByDateDesc("Completed", product);
     }
 
     @Override
     public List<Order> sellerGetCompletedOrders(Product product) {
-        return crudRepository.findAllByStatusEqualsAndProductOrderByDateDesc("Completed", product);
+        return repository.findAllByStatusEqualsAndProductOrderByDateDesc("Completed", product);
     }
 }

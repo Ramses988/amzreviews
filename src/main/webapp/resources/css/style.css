@@ -12430,11 +12430,11 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
 
 
 
-.product-modal, .order-modal, .info-modal {
+.product-modal, .order-modal, .info-modal, .orderid-modal {
     display: none;
 }
 
-.product-modal:before, .order-modal:before, .info-modal:before {
+.product-modal:before, .order-modal:before, .info-modal:before, .orderid-modal:before {
     content: '';
     background: #000;
     position: fixed;
@@ -25555,7 +25555,8 @@ html .row-65-new>* {
 }
 
 .badges {
-    color: #fff;
+    color: #fafafa;
+    height: 30px;
     padding: 2px;
     font-weight: 600;
     border-radius: 5px;
@@ -25583,8 +25584,22 @@ html .row-65-new>* {
 }
 
 .badge-bought {
-    background-color: #1a84f9;
-    border: 1px solid #1a84f9;
+    background-color: #0088cc;
+    border: 1px solid #0088cc;
+}
+
+.btn-border {
+    color: #e67e22;
+    border: 2px #e67e22 solid;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.btn-border:hover {
+    color: #fff;
+    border: 2px #e67e22 solid;
+    border-radius: 5px;
+    background-color: #e67e22;
 }
 
 .search_list {

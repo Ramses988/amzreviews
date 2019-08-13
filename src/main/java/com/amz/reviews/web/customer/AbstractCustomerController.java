@@ -1,5 +1,6 @@
 package com.amz.reviews.web.customer;
 
+import com.amz.reviews.model.Order;
 import com.amz.reviews.model.Product;
 import com.amz.reviews.service.OrderService;
 import com.amz.reviews.service.ProductService;
@@ -14,6 +15,16 @@ public abstract class AbstractCustomerController {
 
     @Autowired
     private ProductService productService;
+
+    List<Order> customerGetActiveOrders() {
+        int userId = 3;
+        return orderService.customerGetActiveOrders(userId);
+    }
+
+    List<Order> customerCompletedOrders() {
+        int userId = 3;
+        return orderService.customerCompletedOrders(userId);
+    }
 
     List<Product> customerGetActiveProducts() {
         return productService.customerGetActiveProducts();
