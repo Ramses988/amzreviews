@@ -9204,6 +9204,16 @@ mark, .mark {
     fill: #f5f5f5
 }
 
+a.a-orange {
+    color: #000;
+    text-decoration: underline;
+}
+
+a.a-orange:hover {
+    color: #fe9900;
+    text-decoration: underline;
+}
+
 .bg-lighter:not([style*=background-])+.bg-lighter:not([style*=background-]) {
     padding-top: 0
 }
@@ -12427,14 +12437,11 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     vertical-align: middle
 }
 
-
-
-
-.product-modal, .order-modal, .info-modal, .orderid-modal {
+.product-modal, .order-modal, .info-modal, .orderid-modal, .reviews-modal {
     display: none;
 }
 
-.product-modal:before, .order-modal:before, .info-modal:before, .orderid-modal:before {
+.product-modal:before, .order-modal:before, .info-modal:before, .orderid-modal:before, .reviews-modal:before {
     content: '';
     background: #000;
     position: fixed;

@@ -1,6 +1,8 @@
 package com.amz.reviews.web.customer;
 
 import com.amz.reviews.model.Order;
+import com.amz.reviews.to.OrderIdTo;
+import com.amz.reviews.to.OrderReviewTo;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +27,13 @@ public class CustomerRestController extends AbstractCustomerController {
 
     @PostMapping("/add-orderid")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void addOrderId() {
+    public void addOrderId(OrderIdTo orderid) {
+        super.customerAddOrderId(orderid);
+    }
 
+    @PostMapping("/add-review")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void addReviews(OrderReviewTo orderReviewTo) {
+        super.customerAddReview(orderReviewTo);
     }
 }

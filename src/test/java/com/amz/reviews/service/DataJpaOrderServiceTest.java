@@ -1,6 +1,7 @@
 package com.amz.reviews.service;
 
 import com.amz.reviews.model.Order;
+import com.amz.reviews.to.OrderIdTo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,8 +16,7 @@ class DataJpaOrderServiceTest extends AbstractServiceTest {
 
     @Test
     void Test() {
-        List<Order> orders = service.sellerGetActiveOrders(1, 3);
-        assertEquals(0, orders.size());
+        service.customerAddOrderId(new OrderIdTo(20, "111-9541053-2986639"), 3);
     }
 
 //    @BeforeEach

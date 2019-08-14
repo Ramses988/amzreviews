@@ -75,7 +75,8 @@ public class Order extends AbstractNamedEntity {
     }
 
     public void setReviews(String reviews) {
-        this.reviews = reviews;
+        if (reviews.startsWith("https://www.amazon.com/"))
+            this.reviews = reviews;
     }
 
     public String getOrderId() {

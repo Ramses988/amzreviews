@@ -68,11 +68,31 @@
             <form id="detailsFormOrderId">
                 <input type="hidden" id="number" name="id">
                 <label class="col-form-label">Укажите номер заказа</label>
-                <input id="orderid" name="orderid" class="form-control" placeholder="Введите номер заказа" autocomplete="off" type="text">
+                <input id="orderid" name="orderId" class="form-control" placeholder="Введите номер заказа" autocomplete="off" type="text">
             </form>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn-small btn-primary-orange btn-orderid">Добавить</button>
+            <button class="btn-small btn-primary-grey btn-cancel">Отменить</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal reviews-modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h4 class="modal-title modalTitle">Добавить ссылку</h4>
+            <button type="button" class="close popup-close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="detailsFormReviews">
+                <input type="hidden" id="reviews1" name="id">
+                <label class="col-form-label">Укажите ссылку на отзыв</label>
+                <input id="reviews" name="reviews" class="form-control" placeholder="Введите ссылку на отзыв" autocomplete="off" type="text">
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-small btn-primary-orange btn-reviews">Добавить</button>
             <button class="btn-small btn-primary-grey btn-cancel">Отменить</button>
         </div>
     </div>

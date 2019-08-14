@@ -23,4 +23,8 @@ public interface OrderRepository {
 
     List<Order> customerCompletedOrders(User user);
 
+    Order customerGetOrder(int id, User user);
+
+    Order customerGetOrderWithProduct(int id, int userId);
+
 }

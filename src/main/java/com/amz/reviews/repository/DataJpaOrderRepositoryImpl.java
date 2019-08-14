@@ -21,8 +21,14 @@ public class DataJpaOrderRepositoryImpl implements OrderRepository {
         repository.save(order);
     }
 
-    public DataJpaOrderRepositoryImpl() {
-        super();
+    @Override
+    public Order customerGetOrder(int id, User user) {
+        return repository.findByIdAndUser(id, user).orElse(null);
+    }
+
+    @Override
+    public Order customerGetOrderWithProduct(int id, int userId) {
+        return repository.getOrderWithProduct(id, userId);
     }
 
     @Override

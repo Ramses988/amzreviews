@@ -5,6 +5,9 @@ import com.amz.reviews.model.Order;
 import com.amz.reviews.model.Product;
 import com.amz.reviews.model.User;
 import com.amz.reviews.repository.OrderRepository;
+import com.amz.reviews.to.OrderIdTo;
+import com.amz.reviews.to.OrderReviewTo;
+import com.amz.reviews.util.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +33,40 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     public void save(Order order) {
         repository.save(order);
+    }
+
+    @Override
+    @Transactional
+    public void customerAddOrderId(OrderIdTo orderIdTo, int userId) {
+        if (Objects.nonNull(orderIdTo)) {
+            User user = userService.getOne(userId);
+            Order order = repository.customerGetOrder(orderIdTo.getId(), user);
+
+            if (Objects.nonNull(order) && Objects.isNull(order.getOrderId())) {
+                order.setOrderId(orderIdTo.getOrderId());
+                order.setStatus(Status.BOUGHT.getStatus());
+                repository.save(order);
+            }
+        }
+    }
+
+    @Override
+    @Transactional
+    public void customerAddReview(OrderReviewTo orderReviewTo, int userId) {
+        if (Objects.nonNull(orderReviewTo)) {
+            User user = userService.getOne(userId);
+            Order order = repository.customerGetOrder(orderReviewTo.getId(), user);
+
+            if (Objects.nonNull(order) && Objects.isNull(order.getReviews())) {
+                order.setReviews(orderReviewTo.getReviews());
+                repository.save(order);
+            }
+        }
+    }
+
+    @Override
+    public Order customerGetOrderWithProduct(int orderId, int userId) {
+        return repository.customerGetOrderWithProduct(orderId, userId);
     }
 
     @Override
