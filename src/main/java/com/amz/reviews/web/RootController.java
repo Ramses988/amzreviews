@@ -9,7 +9,10 @@ public class RootController {
     @GetMapping("/")
     public String root() {
         return "index";
-//        return "redirect:customer";
     }
 
+    @GetMapping(value = "/login")
+    public String login() {
+        return "login";
+    }
 }

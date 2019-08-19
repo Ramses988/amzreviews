@@ -22,6 +22,12 @@ public class User extends AbstractNamedEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private Set<Order> orders;
 
+    @Enumerated(EnumType.STRING)
+    @CollectionTable(name="user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name="role")
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Set<Role> roles;
+
     public User() {}
 
     public User(int id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, String city, int balance) {

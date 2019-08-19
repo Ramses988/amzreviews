@@ -1,8 +1,13 @@
 
 INSERT INTO users (name, date, email, password, country, city) VALUES
-    ('Alex', '2019-05-30 10:00:00', 'alex@yandex.ru', 'password', 'Russia', 'Moscow'),
-    ('Myke', '2019-05-30 13:00:00', 'myke@gmail.com', 'password', 'USA', 'New York'),
-    ('Bob', '2019-05-31 09:00:00', 'bob@gmail.com', 'password', 'USA', 'San Francisco');
+    ('Seller', '2019-05-31 09:00:00', 'seller@gmail.com', '12345', 'USA', 'San Francisco'),
+    ('Customer', '2019-05-31 09:00:00', 'customer@gmail.com', '12345', 'USA', 'New York'),
+    ('Admin', '2019-05-31 09:00:00', 'admin@gmail.com', '12345', 'Russia', 'Moscow');
+
+INSERT INTO user_roles (user_id, role) VALUES
+    (1, 'ROLE_SELLER'),
+    (2, 'ROLE_CUSTOMER'),
+    (3, 'ROLE_ADMIN');
 
 
 INSERT INTO products (name, date, date_of_change, asin, title, image, count_orders, key, price, description, user_id) VALUES
