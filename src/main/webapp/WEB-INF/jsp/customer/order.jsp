@@ -44,17 +44,17 @@
                                 Ключ для выкупа: "${order.key}"
                             </div>
                             <div class="offset-top-20 text-gr">
-                                Выкуп с отзывом
+                                ${order.product.reviewEnable ? "Выкуп с отзывом" : "Выкуп без отзыва"}
                             </div>
                             <div class="offset-top-20">
                                 <h5 class="font-weight-bold price">Цена: <span class="price-red">&#36;${order.price}</span></h5>
                             </div>
                         </div>
                         <div class="col-sm-12">
-
-                            <div class="offset-top-10">
-                                <a class="btn btn-info" href="#">Перейти на Amazon</a>
-                            </div>
+                            <form method="POST" action="/customer/cancel">
+                                <input type="hidden" id="id" name="id" value="${order.id}">
+                                <button type="submit" class="btn btn-md btn-primary-orange">Отказатся</button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -20,10 +20,14 @@ public interface ProductService {
 
     Product sellerGetProduct(int productId, int userId);
 
+    Product sellerGetProductWithImages(int productId, int userId);
+
     List<Product> sellerGetAllProducts(int userId);
 
     void sellerCreateProduct(String asin, int userId);
 
     void sellerCreateOrders(OrderTo orderTo, int userId);
+
+    void sellerDeleteProduct(Integer id, int userId);
 
 }

@@ -116,6 +116,16 @@ function loading(name, url) {
                             return data;
                     }
                 }
+            },
+            {
+                "data": "refund",
+                "render": function (data) {
+                    if(data) {
+                        return '<label class="paid">Возмещено</label>'
+                    } else {
+                        return "Не возмещено";
+                    }
+                }
             }
         ]
     });

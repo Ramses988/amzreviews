@@ -23,6 +23,9 @@ public class Product extends AbstractNamedEntity {
     private String image;
     private String key;
 
+    @Column(name = "review_enable")
+    private boolean reviewEnable;
+
     @Column(name = "count_orders")
     private Integer countOrders;
 
@@ -53,6 +56,14 @@ public class Product extends AbstractNamedEntity {
         this.description = description;
         this.image = image;
         this.images = images;
+    }
+
+    public boolean isReviewEnable() {
+        return reviewEnable;
+    }
+
+    public void setReviewEnable(boolean reviewEnable) {
+        this.reviewEnable = reviewEnable;
     }
 
     public String getAsin() {

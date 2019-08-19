@@ -18,6 +18,16 @@ public abstract class AbstractSellerController {
     @Autowired
     private OrderService orderService;
 
+    void sellerDeleteProduct(Integer id) {
+        int userId = 3;
+        productService.sellerDeleteProduct(id, userId);
+    }
+
+    Product sellerGetProductWithImages(int id) {
+        int userId = 3;
+        return productService.sellerGetProductWithImages(id, userId);
+    }
+
     List<Product> sellerGetAllProducts() {
         int userId = 3;
         return productService.sellerGetAllProducts(userId);

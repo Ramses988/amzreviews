@@ -23,6 +23,7 @@
 
 <script src="/resources/js/angular.min.js"></script>
 <script src="/resources/js/products.js"></script>
+<script src="/resources/js/bootstrap.bundle.min.js"></script>
 
 <jsp:include page="../fragments/_menu.jsp" />
 
@@ -38,11 +39,11 @@
     <div id="getAllController" ng-app="sellerApp" ng-controller="getAllController">
     <div class="row col-lg-borders" ng-repeat="product in products">
         <div class="col-lg-4">
-            <img ng-src="{{product.image}}" alt="" width="300" height="250" />
+            <img ng-src="{{product.image}}" alt="" width="270" height="250" />
         </div>
 
         <div class="col-lg-4 text-lg-left">
-            <p>{{product.name}}...</p>
+            <p><a class="a-orange" href="/seller/product/{{product.id}}">{{product.name}}...</a></p>
             <div class="table-responsive clearfix">
                 <table class="table table-striped">
                     <tbody>
@@ -93,7 +94,7 @@
         </div>
         <div class="modal-body">
             <form id="detailsFormProduct">
-                <label class="col-form-label">Укажите ASIN продукта</label>
+                <label class="col-form-label">Укажите ASIN продукта<span id="help-asin" class="icon novi-icon mdi mdi-help-circle-outline" title="ASIN можно посмотреть в личном кабинете или на странице с описанием товара."></span></label>
                 <input id="asin" name="asin" class="form-control" placeholder="Введите ASIN" autocomplete="off" type="text">
             </form>
         </div>
@@ -115,7 +116,7 @@
                 <div class="form-group">
                     <input type="hidden" id="id" name="id" value="">
                     <input type="hidden" id="price" name="price" value="">
-                    <label class="col-form-label">Укажите ключ для выкупа</label>
+                    <label class="col-form-label">Укажите ключ для выкупа<span id="help-key" class="icon novi-icon mdi mdi-help-circle-outline" title="Укажите ключ, по которому будут искать Ваш товар."></span></label>
                     <input id="key" name="key" class="form-control" placeholder="Введите ключ" autocomplete="off" type="text">
                 </div>
 
@@ -135,7 +136,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-form-label">Укажите количество выкупов</label>
+                    <label class="col-form-label">Укажите количество выкупов<span id="help-count" class="icon novi-icon mdi mdi-help-circle-outline" title="Количество выкупов, которые Вы хотите сделать."></span></label>
                     <input id="count" name="count" class="form-control" placeholder="0" autocomplete="off" type="text">
                 </div>
                 <div class="form-group">
@@ -160,7 +161,7 @@
 <div class="modal info-modal">
     <div class="modal-container">
         <div class="modal-header">
-            <h4 class="modal-title modalTitle"><img src="/resources/images/ok.png" alt="OK" width="45px" height="40px"/>
+            <h4 class="modal-title modalTitle"><img id="Success" src="/resources/images/ok.png" alt="OK"/>
             Запрос получен!</h4>
             <button type="button" class="close popup-close" data-dismiss="modal">&times;</button>
         </div>
@@ -174,5 +175,11 @@
 </div>
 
 <!-- End Modal Windows -->
+
+<script>
+    $('#help-asin').tooltip();
+    $('#help-key').tooltip();
+    $('#help-count').tooltip();
+</script>
 
 <jsp:include page="../fragments/_footer.jsp" />

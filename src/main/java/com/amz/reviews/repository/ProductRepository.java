@@ -1,6 +1,7 @@
 package com.amz.reviews.repository;
 
 import com.amz.reviews.model.Product;
+import com.amz.reviews.model.User;
 
 import java.util.List;
 
@@ -12,8 +13,10 @@ public interface ProductRepository {
 
     void save(Product product);
 
-    List<Product> getAllSeller(int userId);
+    List<Product> sellerGetAllProducts(User user);
 
-    Product getSeller(int productId, int userId);
+    Product sellerGetProduct(int productId, User user);
+
+    Product sellerGetProductWithImages(int productId, int userId);
 
 }

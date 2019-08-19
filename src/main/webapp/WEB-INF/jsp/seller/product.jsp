@@ -7,7 +7,6 @@
 
 <script src="/resources/js/owl.carousel.min.js"></script>
 
-
 <section class="section section-50 bg-lighter novi-background">
     <jsp:useBean id="product" scope="request" type="com.amz.reviews.model.Product" />
 
@@ -37,8 +36,8 @@
                 <div class="col-lg-5 col-xl-4 text-lg-left inset-lg-left-30">
                     <div class="row row-50-new">
                         <div class="col-sm-12">
-                            <div class="offset-top-20 text-gr">
-                                ${product.reviewEnable ? "Выкуп с отзывом" : "Выкуп без отзыва"}
+                            <div class="offset-top-20">
+                                ASIN: ${product.asin}
                             </div>
                             <div class="offset-top-20">
                                 <h5 class="font-weight-bold price">Цена: <span class="price-red">&#36;${product.price}</span></h5>
@@ -46,18 +45,23 @@
                         </div>
                         <div class="col-sm-12">
 
-                            <form method="POST" action="/customer/product">
-                                <input type="hidden" id="id" name="id" value="${product.id}">
-                                <button type="submit" class="btn btn-primary-orange">Выкупить продукт</button>
+                            <form method="POST" action="/rest/seller/product/update">
+                                <input type="hidden" name="id" value="${product.id}">
+                                <button type="submit" class="btn btn-md btn-info">Обновить</button>
                             </form>
+
+                            <div class="offset-top-10">
+                                <form method="POST" action="/seller/product/delete">
+                                    <input type="hidden" name="id" value="${product.id}">
+                                    <button type="submit" class="btn btn-md btn-delete">Удалить</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 </section>
 
 <jsp:include page="../fragments/_footer.jsp" />

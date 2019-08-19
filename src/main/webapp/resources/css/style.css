@@ -9214,6 +9214,15 @@ a.a-orange:hover {
     text-decoration: underline;
 }
 
+a.a-orange-un {
+    color: #000;
+}
+
+a.a-orange-un:hover {
+    color: #fe9900;
+    text-decoration: underline;
+}
+
 .bg-lighter:not([style*=background-])+.bg-lighter:not([style*=background-]) {
     padding-top: 0
 }
@@ -9765,14 +9774,26 @@ a.a-orange:hover {
     border-color: #f8d9aa
 }
 
+.btn-primary-orange:hover {
+    background-color: #feaf1a;
+}
+
 .btn-primary-catalog {
     color: #fff;
     background-color: #fe9900;
     border-color: #f8d9aa;
     width: 100%;
-    /* position: absolute;
-    left:0;
-    bottom: 0; */
+}
+
+.btn-primary-catalog:hover {
+    color: #fff;
+    background-color: #feaf1a;
+}
+
+#Success {
+    width:45px;
+    height:40px;
+    margin-right: 9px;
 }
 
 .btn-primary:focus, .btn-primary.focus, .btn-primary:hover, .btn-primary:active, .btn-primary.active, .open>.btn-primary.dropdown-toggle {
@@ -9869,6 +9890,21 @@ a.a-orange:hover {
     color: #fff;
     background-color: #79ccf2;
     border-color: #79ccf2
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.btn-delete:hover {
+    color: #fff;
+    background-color: #d93228;
+}
+
+.btn-md {
+    width: 200px;
 }
 
 .btn-info:focus, .btn-info.focus, .btn-info:hover, .btn-info:active, .btn-info.active, .open>.btn-info.dropdown-toggle {
@@ -12491,6 +12527,11 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     color: #fff;
     background-color: #ccc;
     border-color: #ccc;
+}
+
+.btn-primary-grey:hover {
+    color: #fff;
+    background-color: #b3b3b3;
 }
 
 .col-lg-borders {
@@ -15931,6 +15972,13 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
 
 .mdi-email-open:before {
     content: "\f1ef"
+}
+
+.mdi-help-circle-outline:before {
+    content: "\f625";
+    color: #055596;
+    max-width: 20px;
+    margin-left: 3px;
 }
 
 .mdi-phone:before {

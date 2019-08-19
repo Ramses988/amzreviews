@@ -35,6 +35,11 @@ public class SellerRestController extends AbstractSellerController {
     public void addProduct(@RequestBody String asin) {
     }
 
+    @PostMapping("/product/update")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void update(@RequestBody Integer id) {
+    }
+
     @PostMapping("/add-order")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void createOrders(OrderTo orderTo) {

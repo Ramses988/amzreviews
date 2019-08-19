@@ -8,7 +8,7 @@
 
 <section class="section section-bottom-98 section-top-34 section-lg-bottom-110 section-lg-top-66 bg-default novi-background">
     <div class="container">
-        <h2 class="font-weight-bold">Recent Properties</h2>
+        <h2>Каталог продуктов</h2>
         <hr class="divider bg-saffron">
         <div class="row row-65-new">
 
@@ -18,7 +18,7 @@
                     <a href="/customer/product/${product.id}"><img class="img-fluid d-inline-block" src="${product.image}" alt=""></a>
                     <div class="text-md-center offset-top-24">
                         <div class="fixed-md-title">
-                            <p><a href="/customer/product/${product.id}">${product.name}...</a></p>
+                            <p><a class="a-orange-un" href="/customer/product/${product.id}">${product.name}...</a></p>
                         </div>
                         <h6 class="offset-top-10">&#36;${product.price}</h6>
                     </div>
@@ -37,9 +37,9 @@
                 <ul class="pagination-classic">
                     <li><a href="#">Prev</a></li>
                     <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
+                    <%--<li><a href="#">2</a></li>--%>
+                    <%--<li><a href="#">3</a></li>--%>
+                    <%--<li><a href="#">4</a></li>--%>
                     <li><a href="#">Next</a></li>
                 </ul>
             </nav>

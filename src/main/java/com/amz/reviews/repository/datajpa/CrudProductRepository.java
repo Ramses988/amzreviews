@@ -25,4 +25,8 @@ public interface CrudProductRepository extends JpaRepository<Product, Integer> {
     @EntityGraph(attributePaths = "images", type = EntityGraph.EntityGraphType.LOAD)
     Optional<Product> findById(int productId);
 
+    @EntityGraph(attributePaths = "images", type = EntityGraph.EntityGraphType.LOAD)
+    @Query("SELECT p FROM Product p WHERE p.id=:id AND p.user.id=:userId")
+    Product sellerGetProductWithImages(@Param("id") int id, @Param("userId") int userId);
+
 }

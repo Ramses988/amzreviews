@@ -16,6 +16,7 @@ public class Order extends AbstractNamedEntity {
     private String payment;
     private String reviews;
     private String key;
+    private boolean refund;
 
     @Column(name = "review_enable")
     private boolean reviewEnable;
@@ -35,15 +36,24 @@ public class Order extends AbstractNamedEntity {
 
     public Order() {}
 
-    public Order(Integer id, LocalDateTime date, String name, double price, String status, String key, User user, Product product) {
+    public Order(Integer id, LocalDateTime date, String name, double price, String status, String key, boolean reviewEnable, User user, Product product) {
         super(id, date, name);
         this.price = price;
         this.status = status;
         this.key = key;
         this.user = user;
         this.product = product;
-        this.reviewEnable = true;
+        this.reviewEnable = reviewEnable;
         this.payment = "Not paid";
+        this.refund = false;
+    }
+
+    public boolean isRefund() {
+        return refund;
+    }
+
+    public void setRefund(boolean refund) {
+        this.refund = refund;
     }
 
     public double getPrice() {
@@ -75,8 +85,9 @@ public class Order extends AbstractNamedEntity {
     }
 
     public void setReviews(String reviews) {
-        if (reviews.startsWith("https://www.amazon.com/"))
-            this.reviews = reviews;
+        String tmp = reviews.trim();
+        if (tmp.startsWith("https://www.amazon.com/") || tmp.startsWith("https://amazon.com/"))
+            this.reviews = tmp;
     }
 
     public String getOrderId() {

@@ -8,6 +8,7 @@ import com.amz.reviews.repository.ProductRepository;
 import com.amz.reviews.repository.UserRepository;
 import com.amz.reviews.to.OrderTo;
 import com.amz.reviews.util.ParseHTMLUtil;
+import com.amz.reviews.util.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,20 +41,29 @@ public class ProductServiceImpl implements ProductService {
         if(Objects.nonNull(product) && product.getCountOrders() == 0) {
             product.setKey(orderTo.getKey());
             product.setCountOrders(orderTo.getCount());
-//            product.setReviewEnable(orderTo.isReview());
+            product.setReviewEnable(orderTo.isReview());
             product.setDateOfChange(LocalDateTime.now());
             productRepository.save(product);
         }
     }
 
+    private User getUser(int userId) {
+        return userService.getOne(userId);
+    }
+
     @Override
     public Product sellerGetProduct(int productId, int userId) {
-        return productRepository.getSeller(productId, userId);
+        return productRepository.sellerGetProduct(productId, getUser(userId));
+    }
+
+    @Override
+    public Product sellerGetProductWithImages(int productId, int userId) {
+        return productRepository.sellerGetProductWithImages(productId, userId);
     }
 
     @Override
     public List<Product> sellerGetAllProducts(int userId) {
-        return productRepository.getAllSeller(userId);
+        return productRepository.sellerGetAllProducts(getUser(userId));
     }
 
     @Override
@@ -74,15 +84,29 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
+    public void sellerDeleteProduct(Integer id, int userId) {
+        if (Objects.nonNull(id)) {
+            Product product = productRepository.sellerGetProduct(id, getUser(userId));
+
+            if(Objects.nonNull(product) && product.getCountOrders() == 0 && product.getActiveOrders() == 0) {
+                product.setUser(getUser(1));
+                productRepository.save(product);
+            }
+        }
+    }
+
+    @Override
+    @Transactional
     public void customerReserve(Integer productId, int userId) {
         if(Objects.nonNull(productId)) {
             Product product = customerGetProduct(productId);
 
             if(Objects.nonNull(product)) {
                 User user = userService.getOne(userId);
-                Order order = new Order(null, LocalDateTime.now(), product.getName(),
-                        product.getPrice(), "Reserved", product.getKey(), user, product);
+                Order order = new Order(null, LocalDateTime.now(), product.getName(), product.getPrice(),
+                        Status.RESERVED.getStatus(), product.getKey(), product.isReviewEnable(), user, product);
                 product.setCountOrders(product.getCountOrders() - 1);
+                product.setActiveOrders(product.getActiveOrders() + 1);
                 productRepository.save(product);
                 orderService.save(order);
             }
@@ -94,7 +118,7 @@ public class ProductServiceImpl implements ProductService {
     public void sellerCreateProduct(String asin, int userId) {
         Product product = ParseHTMLUtil.createAndUpdateProduct(asin);
         if(Objects.nonNull(product)) {
-            product.setCountOrders(1);
+            product.setCountOrders(0);
             product.setActiveOrders(0);
             product.setCompletedOrders(0);
             product.setUser(userService.getOne(userId));

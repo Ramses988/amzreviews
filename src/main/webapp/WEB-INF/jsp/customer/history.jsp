@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="../fragments/_header.jsp" />
+
+<script src="/resources/js/bootstrap.bundle.min.js"></script>
+
 <jsp:include page="../fragments/_menu.jsp" />
 
 <section>
@@ -31,6 +34,7 @@
                             <th>Номер Заказа</th>
                             <th>Отзыв</th>
                             <th>Статус</th>
+                            <th>Возмещение</th>
                         </tr>
                         </thead>
                     </table>
@@ -46,6 +50,7 @@
                             <th>Номер Заказа</th>
                             <th>Отзыв</th>
                             <th>Статус</th>
+                            <th>Возмещение</th>
                         </tr>
                         </thead>
                     </table>
@@ -67,7 +72,7 @@
         <div class="modal-body">
             <form id="detailsFormOrderId">
                 <input type="hidden" id="number" name="id">
-                <label class="col-form-label">Укажите номер заказа</label>
+                <label class="col-form-label">Укажите номер заказа<span id="help-orderid" class="icon novi-icon mdi mdi-help-circle-outline" title="Номер заказа появится в личном кабинете, после покупки продукта."></span></label>
                 <input id="orderid" name="orderId" class="form-control" placeholder="Введите номер заказа" autocomplete="off" type="text">
             </form>
         </div>
@@ -87,7 +92,7 @@
         <div class="modal-body">
             <form id="detailsFormReviews">
                 <input type="hidden" id="reviews1" name="id">
-                <label class="col-form-label">Укажите ссылку на отзыв</label>
+                <label class="col-form-label">Укажите ссылку на отзыв<span id="help-reviews" class="icon novi-icon mdi mdi-help-circle-outline" title="Скопировать URL ссылку на отзыв в Амазон. Пример: https://www.amazon.com/..."></span></label>
                 <input id="reviews" name="reviews" class="form-control" placeholder="Введите ссылку на отзыв" autocomplete="off" type="text">
             </form>
         </div>
@@ -100,5 +105,10 @@
 
 <script src="/resources/js/jquery.dataTables.min.js"></script>
 <script src="/resources/js/customer.js"></script>
+
+<script>
+    $('#help-orderid').tooltip();
+    $('#help-reviews').tooltip();
+</script>
 
 <jsp:include page="../fragments/_footer.jsp" />

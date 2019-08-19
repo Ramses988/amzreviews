@@ -48,12 +48,15 @@ $(function() {
                     }
                 },
                 {
-                    "data": "reviews",
-                    "render": function (data) {
-                        if(data != null) {
-                            return '<a class="original" href="'+data+'">'+data.substring(0, 29)+"..."+'</a>';
+                    "data": function (row) {
+                        if(row.reviewEnable) {
+                            if(row.reviews != null) {
+                                return '<a class="original" href="'+row.reviews+'">'+(row.reviews).substring(0, 29)+"..."+'</a>';
+                            } else {
+                                return "";
+                            }
                         } else {
-                            return "";
+                            return "Выкуп без отзыва";
                         }
                     }
                 },
