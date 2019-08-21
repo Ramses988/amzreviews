@@ -2255,6 +2255,21 @@ a.btn.disabled, .pagination-classic>li>a.disabled, fieldset:disabled a.btn, fiel
     box-shadow: 0 0 0 .2rem rgba(255, 162, 0, .5)
 }
 
+.btn-exit {
+    background: url(../images/btn_ext.png) no-repeat;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 28px;
+    border: 1px solid #ffa200;
+}
+
+.btn-exit:hover {
+    border: 1px solid #fff;
+    background-position: -30px 0px;
+    width: 30px;
+    height: 28px;
+}
+
 .btn-primary.disabled, .btn-primary:disabled {
     color: #212529;
     background-color: #ffa200;
@@ -4145,7 +4160,13 @@ input[type="radio"]:checked + .label-text:before{
     margin-bottom: 15px
 }
 
+    /*Add size*/
+
 @media(min-width:1px) and (max-width:480px) {
+
+    a#inf-small {
+        font-size: 15px;
+    }
 
     .text-left {
         font-size: 21px;
@@ -4167,6 +4188,10 @@ input[type="radio"]:checked + .label-text:before{
 
 @media(min-width:481px) and (max-width:768px) {
 
+    a#inf-small {
+        font-size: 15px;
+    }
+
     .text-left {
         font-size: 21px;
     }
@@ -4187,6 +4212,10 @@ input[type="radio"]:checked + .label-text:before{
 }
 
 @media(min-width:768px) and (max-width:1000px) {
+
+    a#inf-small {
+        font-size: 15px;
+    }
 
     .owl-carousel {
         max-width: 80%;

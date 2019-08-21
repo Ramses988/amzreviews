@@ -1,7 +1,14 @@
 package com.amz.reviews.model;
 
-public enum Role {
+import org.springframework.security.core.GrantedAuthority;
+
+public enum Role implements GrantedAuthority {
     ROLE_ADMIN,
     ROLE_SELLER,
-    ROLE_CUSTOMER
+    ROLE_CUSTOMER;
+
+    @Override
+    public String getAuthority() {
+        return name();
+    }
 }

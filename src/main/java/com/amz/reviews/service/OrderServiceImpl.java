@@ -35,12 +35,15 @@ public class OrderServiceImpl implements OrderService {
         repository.save(order);
     }
 
+    private User getUser(int userId) {
+        return userService.getOne(userId);
+    }
+
     @Override
     @Transactional
     public void customerAddOrderId(OrderIdTo orderIdTo, int userId) {
         if (Objects.nonNull(orderIdTo)) {
-            User user = userService.getOne(userId);
-            Order order = repository.customerGetOrder(orderIdTo.getId(), user);
+            Order order = repository.customerGetOrder(orderIdTo.getId(), getUser(userId));
 
             if (Objects.nonNull(order) && Objects.isNull(order.getOrderId())) {
                 order.setOrderId(orderIdTo.getOrderId());
@@ -54,8 +57,7 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     public void customerAddReview(OrderReviewTo orderReviewTo, int userId) {
         if (Objects.nonNull(orderReviewTo)) {
-            User user = userService.getOne(userId);
-            Order order = repository.customerGetOrder(orderReviewTo.getId(), user);
+            Order order = repository.customerGetOrder(orderReviewTo.getId(), getUser(userId));
 
             if (Objects.nonNull(order) && Objects.isNull(order.getReviews())) {
                 order.setReviews(orderReviewTo.getReviews());
@@ -71,7 +73,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> customerGetActiveOrders(int userId) {
-        User user = userService.getOne(userId);
+        User user = getUser(userId);
 
         if (Objects.nonNull(user))
             return repository.customerGetActiveOrders(user);
@@ -81,7 +83,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> customerCompletedOrders(int userId) {
-        User user = userService.getOne(userId);
+        User user = getUser(userId);
 
         if (Objects.nonNull(user))
             return repository.customerCompletedOrders(user);

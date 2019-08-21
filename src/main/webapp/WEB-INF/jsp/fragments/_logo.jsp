@@ -11,7 +11,7 @@
                         <div class="right-side">
                             <ul class="rd-navbar-top-links list-unstyled">
                                 <li><span class="icon novi-icon mdi mdi-account"></span>
-                                    <a class="text-uppercase text-ubold" href="login.html"><small>Войти</small></a></li>
+                                    <a class="text-uppercase text-ubold" href="/login"><small>Войти</small></a></li>
                                 <li><span class="icon novi-icon mdi mdi-key"></span>
                                     <a class="text-uppercase text-ubold" href="login.html"><small>Регистрация</small></a></li>
                             </ul>

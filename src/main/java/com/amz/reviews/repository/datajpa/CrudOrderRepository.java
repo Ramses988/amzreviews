@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Transactional(readOnly = true)
 public interface CrudOrderRepository extends JpaRepository<Order, Integer> {
 
     List<Order> findAllByStatusNotLikeAndProductOrderByDateDesc(String status, Product product);

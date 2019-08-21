@@ -2,15 +2,19 @@ package com.amz.reviews.service;
 
 import com.amz.reviews.model.User;
 import com.amz.reviews.repository.UserRepository;
+import com.amz.reviews.web.AuthorizedUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
-@Service
+@Service("userService")
 @Transactional(readOnly = true)
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Autowired
     private UserRepository repository;
@@ -21,13 +25,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAll() {
-        return repository.getAll();
+    public User getUser(int id) {
+        return repository.getUser(id);
     }
 
     @Override
-    public User get(int id) {
-        return repository.get(id);
-    }
+    public AuthorizedUser loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = repository.getByEmail(email.toLowerCase());
 
+        if(Objects.isNull(user))
+            throw new UsernameNotFoundException("User " + email + " is not found");
+
+        return new AuthorizedUser(user);
+
+    }
 }

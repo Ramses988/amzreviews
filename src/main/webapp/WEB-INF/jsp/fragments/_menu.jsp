@@ -1,4 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!-- IE panel-->
 <!-- <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div> -->
@@ -14,24 +16,38 @@
                     <div class="rd-navbar-top-panel">
                         <div class="right-side">
                             <ul class="rd-navbar-top-links list-unstyled">
-                                <li><span class="icon novi-icon mdi mdi-account"></span>
-                                    <a class="text-uppercase text-ubold" href="login.html"><small>Войти</small></a></li>
-                                <li><span class="icon novi-icon mdi mdi-key"></span>
-                                    <a class="text-uppercase text-ubold" href="login.html"><small>Регистрация</small></a></li>
+
+                                <sec:authorize access="isAnonymous()">
+                                    <li><span class="icon novi-icon mdi mdi-account"></span>
+                                        <a class="text-uppercase text-ubold" href="/login"><small>Войти</small></a></li>
+                                    <li><span class="icon novi-icon mdi mdi-key"></span>
+                                        <a class="text-uppercase text-ubold" href="login.html"><small>Регистрация</small></a></li>
+                                </sec:authorize>
+
+                                <sec:authorize access="isAuthenticated()">
+                                    <li><span class="icon novi-icon mdi mdi-account"></span>
+                                        <small>Привет, <sec:authentication property="principal.name" /></small>
+                                    </li>
+                                    <li>
+                                        <%--<form:form method="POST" action="/logout">--%>
+                                            <%--<button class="btn-exit"><span class="icon novi-icon mdi"></span></button>--%>
+                                        <%--</form:form>--%>
+                                        <div class=".url_exit">
+                                            <small><a href="/logout">Выход</a></small>
+                                        </div>
+                                    </li>
+                                    <%--<li><span class="icon novi-icon mdi mdi-wallet"></span>--%>
+                                        <%--<small>Баланс: 0$</small></li>--%>
+                                </sec:authorize>
+
                             </ul>
-                            <!-- <ul class="rd-navbar-top-links list-unstyled">
-                                <li><span class="icon novi-icon mdi mdi-account"></span>
-                                  <a class="text-uppercase text-ubold" href="login.html"><small>Роман</small></a></li>
-                                <li><span class="icon novi-icon mdi mdi-wallet"></span>
-                                  <small>Баланс 0$</small></li>
-                              </ul> -->
                         </div>
                         <div class="left-side">
                             <address class="contact-info text-left">
                                 <div class="p">
                                     <span class="icon novi-icon mdi mdi-email-open"></span>
                                     <!-- <a href="/cdn-cgi/l/email-protection#f1d2"><span class="__cf_email__" data-cfemail="7d14131b123d191810121114131653120f1a">[email&#160;protected]</span></a> -->
-                                    <a href="info@amzreviews.com">info@amzreviews.com</a>
+                                    <a id="inf-small" href="info@amzreviews.com">info@amzreviews.com</a>
                                     <!-- <a href=""> ENG</a>
                                     <a href=""> RUS</a> -->
                                 </div>

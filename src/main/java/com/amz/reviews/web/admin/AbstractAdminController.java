@@ -11,8 +11,8 @@ public abstract class AbstractAdminController {
     @Autowired
     private UserService service;
 
-    public List<User> getAll() {
-        return service.getAll();
-    }
+//    public List<User> getAll() {
+//        return service.getAll();
+//    }
 
 }

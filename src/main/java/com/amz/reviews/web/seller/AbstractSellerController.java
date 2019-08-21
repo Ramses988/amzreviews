@@ -19,32 +19,32 @@ public abstract class AbstractSellerController {
     private OrderService orderService;
 
     void sellerDeleteProduct(Integer id) {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         productService.sellerDeleteProduct(id, userId);
     }
 
     Product sellerGetProductWithImages(int id) {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         return productService.sellerGetProductWithImages(id, userId);
     }
 
     List<Product> sellerGetAllProducts() {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         return productService.sellerGetAllProducts(userId);
     }
 
     List<Order> sellerGetActiveOrders(int id) {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         return orderService.sellerGetActiveOrders(id, userId);
     }
 
     List<Order> sellerGetCompletedOrders(int id) {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         return orderService.sellerGetCompletedOrders(id, userId);
     }
 
     void sellerCreateOrders(OrderTo orderTo) {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         productService.sellerCreateOrders(orderTo, userId);
     }
 }

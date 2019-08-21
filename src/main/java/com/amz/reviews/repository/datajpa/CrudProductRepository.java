@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Transactional(readOnly = true)
 public interface CrudProductRepository extends JpaRepository<Product, Integer> {
 
     List<Product> findAllByUserOrderByDateDesc(User user);

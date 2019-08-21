@@ -6,6 +6,7 @@ import com.amz.reviews.service.OrderService;
 import com.amz.reviews.service.ProductService;
 import com.amz.reviews.to.OrderIdTo;
 import com.amz.reviews.to.OrderReviewTo;
+import com.amz.reviews.web.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -19,12 +20,12 @@ public abstract class AbstractCustomerController {
     private ProductService productService;
 
     List<Order> customerGetActiveOrders() {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         return orderService.customerGetActiveOrders(userId);
     }
 
     List<Order> customerCompletedOrders() {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         return orderService.customerCompletedOrders(userId);
     }
 
@@ -37,22 +38,22 @@ public abstract class AbstractCustomerController {
     }
 
     Order customerGetOrderWithProduct(int orderId) {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         return orderService.customerGetOrderWithProduct(orderId, userId);
     }
 
     void customerReserve(Integer productId) {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         productService.customerReserve(productId, userId);
     }
 
     void customerAddOrderId(OrderIdTo orderIdTo) {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         orderService.customerAddOrderId(orderIdTo, userId);
     }
 
     void customerAddReview(OrderReviewTo orderReviewTo) {
-        int userId = 3;
+        int userId = SecurityUtil.authUserId();
         orderService.customerAddReview(orderReviewTo, userId);
     }
 }

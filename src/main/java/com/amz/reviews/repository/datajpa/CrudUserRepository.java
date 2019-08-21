@@ -2,17 +2,15 @@ package com.amz.reviews.repository.datajpa;
 
 import com.amz.reviews.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-@Transactional(readOnly = true)
 public interface CrudUserRepository extends JpaRepository<User, Integer> {
 
-    @Override
-    List<User> findAll();
+    User findByEmail(String email);
 
-    @Override
-    Optional<User> findById(Integer id);
 }

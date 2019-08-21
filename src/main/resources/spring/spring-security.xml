@@ -13,24 +13,20 @@
 
         <intercept-url pattern="/customer/**" access="hasRole('ROLE_CUSTOMER')"/>
         <intercept-url pattern="/seller/**" access="hasRole('ROLE_SELLER')"/>
-        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <intercept-url pattern="/profile/**" access="isAuthenticated()"/>
 
         <form-login login-page="/login" default-target-url="/"
                     authentication-failure-url="/login?error=true"
                     login-processing-url="/spring_security_check"/>
-        <logout logout-success-url="/login"/>
+        <logout logout-success-url="/"/>
 
         <csrf disabled="true"/>
     </http>
 
     <authentication-manager>
-        <authentication-provider>
+        <authentication-provider user-service-ref="userService">
             <password-encoder ref="noopEncoder"/>
-            <user-service>
-                <user name="admin@gmail.com" password="12345" authorities="ROLE_ADMIN"/>
-                <user name="seller@gmail.com" password="12345" authorities="ROLE_SELLER"/>
-                <user name="customer@gmail.com" password="12345" authorities="ROLE_CUSTOMER"/>
-            </user-service>
+
         </authentication-provider>
     </authentication-manager>
 

@@ -14,17 +14,17 @@ public class DataJpaUserRepositoryImpl implements UserRepository {
     private CrudUserRepository crudRepository;
 
     @Override
-    public List<User> getAll() {
-        return crudRepository.findAll();
+    public User getOne(int id) {
+        return crudRepository.getOne(id);
     }
 
     @Override
-    public User get(int id) {
+    public User getUser(int id) {
         return crudRepository.findById(id).orElse(null);
     }
 
     @Override
-    public User getOne(int id) {
-        return crudRepository.getOne(id);
+    public User getByEmail(String email) {
+        return crudRepository.findByEmail(email);
     }
 }

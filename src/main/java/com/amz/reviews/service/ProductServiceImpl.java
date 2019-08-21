@@ -102,9 +102,8 @@ public class ProductServiceImpl implements ProductService {
             Product product = customerGetProduct(productId);
 
             if(Objects.nonNull(product)) {
-                User user = userService.getOne(userId);
                 Order order = new Order(null, LocalDateTime.now(), product.getName(), product.getPrice(),
-                        Status.RESERVED.getStatus(), product.getKey(), product.isReviewEnable(), user, product);
+                        Status.RESERVED.getStatus(), product.getKey(), product.isReviewEnable(), getUser(userId), product);
                 product.setCountOrders(product.getCountOrders() - 1);
                 product.setActiveOrders(product.getActiveOrders() + 1);
                 productRepository.save(product);
@@ -121,7 +120,7 @@ public class ProductServiceImpl implements ProductService {
             product.setCountOrders(0);
             product.setActiveOrders(0);
             product.setCompletedOrders(0);
-            product.setUser(userService.getOne(userId));
+            product.setUser(getUser(userId));
 
             productRepository.save(product);
 
