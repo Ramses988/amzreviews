@@ -19626,6 +19626,16 @@ textarea.form-control {
     position: relative
 }
 
+
+.form-group-registr {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+label.registr {
+    font-size: 15px;
+}
+
 .form-group-multiple {
     display: flex;
     justify-content: center;

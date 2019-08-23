@@ -21,7 +21,7 @@
                                     <li><span class="icon novi-icon mdi mdi-account"></span>
                                         <a class="text-uppercase text-ubold" href="/login"><small>Войти</small></a></li>
                                     <li><span class="icon novi-icon mdi mdi-key"></span>
-                                        <a class="text-uppercase text-ubold" href="login.html"><small>Регистрация</small></a></li>
+                                        <a class="text-uppercase text-ubold" href="/register"><small>Регистрация</small></a></li>
                                 </sec:authorize>
 
                                 <sec:authorize access="isAuthenticated()">
@@ -61,16 +61,16 @@
                         <!-- RD Navbar Top Panel Toggle-->
                         <button class="rd-navbar-top-panel-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-top-panel"><span></span></button>
                         <!--Navbar Brand-->
-                        <div class="rd-navbar-brand"><a href="#"><img width='217' height='36' src='/resources/images/logo-dark.png' alt=''/></a></div>
+                        <div class="rd-navbar-brand"><a href="/"><img width='217' height='36' src='/resources/images/logo-dark.png' alt=''/></a></div>
                     </div>
                     <div class="rd-navbar-menu-wrap">
                         <div class="rd-navbar-nav-wrap">
                             <div class="rd-navbar-mobile-scroll">
                                 <!--Navbar Brand Mobile-->
-                                <div class="rd-navbar-mobile-brand"><a href="#"><img width='217' height='36' src='/resources/images/logo-dark.png' alt=''/></a></div>
+                                <div class="rd-navbar-mobile-brand"><a href="/"><img width='217' height='36' src='/resources/images/logo-dark.png' alt=''/></a></div>
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li><a href="index.html"><span>Главная</span></a>
+                                    <li><a href="/"><span>Главная</span></a>
                                     </li>
                                     <li class="active"><a href="catalog.html"><span>Каталог</span></a>
                                     </li>

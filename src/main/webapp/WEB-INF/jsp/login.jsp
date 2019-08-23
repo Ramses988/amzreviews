@@ -7,17 +7,15 @@
 <jsp:include page="fragments/_logo.jsp" />
 
 <!--Section Sign In-->
-<section class="section section-bottom-66 bg-default novi-background">
+<section class="section section-34 section-bottom-66 bg-default novi-background">
     <div class="container">
-        <h2>Личный кабинет</h2>
+        <h3>Личный кабинет</h3>
         <hr class="divider bg-saffron">
         <div>
-
             <div class="responsive-tabs responsive-tabs-classic">
-
                 <div class="resp-tabs-container tabs-group-default">
                     <div>
-                        <div class="row row-fix justify-content-sm-center section-34">
+                        <div class="row row-fix justify-content-sm-center">
                             <div class="col-sm-8 col-md-6 col-lg-4">
 
                                 <form:form class="rd-form text-left" method="POST" action="spring_security_check">

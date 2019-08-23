@@ -12,4 +12,6 @@ public interface UserRepository {
 
     User getUser(int id);
 
+    void save(User user);
+
 }

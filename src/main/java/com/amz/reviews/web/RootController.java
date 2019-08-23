@@ -11,7 +11,7 @@ public class RootController {
         return "index";
     }
 
-    @GetMapping(value = "/login")
+    @GetMapping("/login")
     public String login() {
         return "login";
     }

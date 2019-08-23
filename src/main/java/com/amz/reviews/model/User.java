@@ -2,6 +2,7 @@ package com.amz.reviews.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
@@ -13,7 +14,6 @@ public class User extends AbstractNamedEntity {
     private String password;
     private boolean enabled;
     private String country;
-    private String city;
     private int balance;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
@@ -30,14 +30,23 @@ public class User extends AbstractNamedEntity {
 
     public User() {}
 
-    public User(int id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, String city, int balance) {
+    public User(int id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, int balance) {
         super(id, date, name);
         this.email = email;
         this.password = password;
         this.enabled = enabled;
         this.country = country;
-        this.city = city;
         this.balance = balance;
+    }
+
+    public User(Integer id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, int balance, Role... rolesSet) {
+        super(id, date, name);
+        this.email = email;
+        this.password = password;
+        this.enabled = enabled;
+        this.country = country;
+        this.balance = balance;
+        setRoles(Set.of(rolesSet));
     }
 
     public Set<Role> getRoles() {
@@ -78,14 +87,6 @@ public class User extends AbstractNamedEntity {
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public int getBalance() {
