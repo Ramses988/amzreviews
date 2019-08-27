@@ -32,7 +32,7 @@
                                         <%--<form:form method="POST" action="/logout">--%>
                                             <%--<button class="btn-exit"><span class="icon novi-icon mdi"></span></button>--%>
                                         <%--</form:form>--%>
-                                        <div class=".url_exit">
+                                        <div>
                                             <small><a href="/logout">Выход</a></small>
                                         </div>
                                     </li>

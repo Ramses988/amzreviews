@@ -97,6 +97,24 @@ $document.ready(function () {
             return false;
         });
 
+       $('#reset-password').click(function () {
+            $(':input[type=text]').val("");
+           $('.reset-modal').fadeIn();
+           return false;
+      });
+
+       $('.btn-reset').click(function () {
+         $.ajax({
+               type: "POST",
+               url: "/rest/account/reset-password",
+               data: $('#detailsFormReset').serialize()
+          }).done(function () {
+             $('.modal').fadeOut();
+             $('.info-modal').fadeIn();
+         })
+     });
+
+
         $('.popup-close').click(function () {
             $(this).parents('.modal').fadeOut();
             return false;

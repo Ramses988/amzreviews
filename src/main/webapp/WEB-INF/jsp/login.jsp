@@ -4,6 +4,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <jsp:include page="fragments/_header.jsp" />
+<script src="/resources/js/bootstrap.bundle.min.js"></script>
 <jsp:include page="fragments/_logo.jsp" />
 
 <!--Section Sign In-->
@@ -30,8 +31,10 @@
                                     <div class="offset-top-24">
                                         <button class="btn btn-primary-orange btn-block" type="submit">Вход</button>
                                     </div>
+                                    <div class="form-group offset-top-24">
+                                        <a href="javascript:void(0)" id="reset-password">Забыли пароль?</a>
+                                    </div>
                                 </form:form>
-
                             </div>
                         </div>
                     </div>
@@ -40,5 +43,46 @@
         </div>
     </div>
 </section>
+
+<!-- Modal Windows -->
+
+<div class="modal reset-modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h4 class="modal-title modalTitle">Введите Email</h4>
+            <button type="button" class="close popup-close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="detailsFormReset">
+                <label class="col-form-label">Укажите Email<span id="help-reset" class="icon novi-icon mdi mdi-help-circle-outline" title="Введите email, на который будет отправлена инструкция по восстановлению пароля."></span></label>
+                <input name="email" class="form-control" placeholder="Email" autocomplete="off" type="text">
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-small btn-primary-orange btn-reset">Отправить</button>
+            <button class="btn-small btn-primary-grey btn-cancel">Отменить</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal info-modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h4 class="modal-title modalTitle"><img id="Success" src="/resources/images/ok.png" alt="OK"/>
+                Запрос принят!</h4>
+            <button type="button" class="close popup-close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Инстркуция по восстановлению пароля отправлена на указанный email.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-small btn-primary-orange btn-cancel">Ok</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#help-reset').tooltip();
+</script>
 
 <jsp:include page="fragments/_footer.jsp" />

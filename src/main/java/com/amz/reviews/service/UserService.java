@@ -14,4 +14,10 @@ public interface UserService {
     void userRegister(UserRegisterTo newUser);
 
     void userActive(String token);
+
+    void resetPassword(String email);
+
+    void confirmResetPassword(String token);
+
+    void changeResetPassword(String token, String password, String confirmPassword);
 }

@@ -12502,11 +12502,11 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     vertical-align: middle
 }
 
-.product-modal, .order-modal, .info-modal, .orderid-modal, .reviews-modal {
+.product-modal, .order-modal, .info-modal, .orderid-modal, .reviews-modal, .reset-modal {
     display: none;
 }
 
-.product-modal:before, .order-modal:before, .info-modal:before, .orderid-modal:before, .reviews-modal:before {
+.product-modal:before, .order-modal:before, .info-modal:before, .orderid-modal:before, .reviews-modal:before, .reset-modal:before {
     content: '';
     background: #000;
     position: fixed;
@@ -19626,6 +19626,14 @@ textarea.form-control {
     position: relative
 }
 
+#reset-password {
+    color: #9b9b9b;
+    font-size: 15px;
+}
+
+#reset-password:hover {
+    color: #ffa200
+}
 
 .form-group-registr {
     margin-top: 20px;

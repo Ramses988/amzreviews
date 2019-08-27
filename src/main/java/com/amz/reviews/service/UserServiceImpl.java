@@ -8,10 +8,12 @@ import com.amz.reviews.to.UserRegisterTo;
 import com.amz.reviews.util.UserUtil;
 import com.amz.reviews.web.AuthorizedUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.Objects;
 
@@ -48,6 +50,31 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     @Transactional
+    public void resetPassword(String email) {
+        User user = repository.getByEmail(email);
+
+        if(Objects.nonNull(user)) {
+            ConfirmToken token = new ConfirmToken(user);
+            crudConfirmRepository.save(token);
+
+            mailSender.send(user.getEmail(), token.getConfirmToken());
+        }
+    }
+
+    @Override
+    @Transactional
+    public void changeResetPassword(String token, String password, String confirmPassword) {
+        ConfirmToken confirmToken = crudConfirmRepository.findByConfirmToken(token).orElse(null);
+
+        if(Objects.nonNull(confirmToken) && password.equals(confirmPassword)) {
+            confirmToken.getUser().setPassword(password);
+            repository.save(confirmToken.getUser());
+            crudConfirmRepository.delete(confirmToken);
+        }
+    }
+
+    @Override
+    @Transactional
     public void userActive(String token) {
         ConfirmToken confirmToken = crudConfirmRepository.findByConfirmToken(token).orElse(null);
 
@@ -55,6 +82,15 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             confirmToken.getUser().setEnabled(true);
             repository.save(confirmToken.getUser());
             crudConfirmRepository.delete(confirmToken);
+        }
+    }
+
+    @Override
+    public void confirmResetPassword(String token) {
+        ConfirmToken confirmToken = crudConfirmRepository.findByConfirmToken(token).orElse(null);
+
+        if(Objects.isNull(confirmToken)) {
+            throw new HttpClientErrorException(HttpStatus.NO_CONTENT);
         }
     }
 
