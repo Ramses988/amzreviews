@@ -9,6 +9,7 @@ import com.amz.reviews.repository.UserRepository;
 import com.amz.reviews.to.OrderTo;
 import com.amz.reviews.util.ParseHTMLUtil;
 import com.amz.reviews.util.Status;
+import com.amz.reviews.util.ValidationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -53,12 +54,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product sellerGetProduct(int productId, int userId) {
-        return productRepository.sellerGetProduct(productId, getUser(userId));
+        Product product = productRepository.sellerGetProduct(productId, getUser(userId));
+        ValidationUtil.checkNotFound(product);
+        return product;
     }
 
     @Override
     public Product sellerGetProductWithImages(int productId, int userId) {
-        return productRepository.sellerGetProductWithImages(productId, userId);
+        Product product = productRepository.sellerGetProductWithImages(productId, userId);
+        ValidationUtil.checkNotFound(product);
+        return product;
     }
 
     @Override

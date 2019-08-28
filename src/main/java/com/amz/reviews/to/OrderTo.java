@@ -1,12 +1,29 @@
 package com.amz.reviews.to;
 
 import com.amz.reviews.model.AbstractBaseEntity;
+import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.SafeHtml;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class OrderTo extends AbstractBaseEntity {
 
+    @NotNull
     private Double price;
+
+    @NotBlank
+    @Size(min = 3, max = 50)
+    @SafeHtml
     private String key;
+
+    @NotNull
+    @Size(max = 7)
     private boolean review;
+
+    @NotNull
+    @Range(min = 1, max = 50)
     private Integer count;
 
 

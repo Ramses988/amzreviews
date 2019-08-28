@@ -9,7 +9,7 @@
     </appender>
 
     <!--<logger name="com.amz.reviews" level="debug"/>-->
-    <!--<logger name="org.springframework.data.jpa" level="debug"/>-->
+    <logger name="javax.validation" level="debug"/>
     <!--<logger name="org.springframework.security" level="debug"/>-->
     <!--<logger name="org.springframework.mail" level="debug"/>-->
 

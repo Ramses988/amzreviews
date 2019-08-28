@@ -23,6 +23,8 @@
 
 <script src="/resources/js/angular.min.js"></script>
 <script src="/resources/js/products.js"></script>
+<script src="/resources/js/noty.min.js"></script>
+<script src="/resources/js/noty.valid.js"></script>
 <script src="/resources/js/bootstrap.bundle.min.js"></script>
 
 <jsp:include page="../fragments/_menu.jsp" />

@@ -10,7 +10,7 @@ class DataJpaProductServiceTest extends AbstractServiceTest {
 
     @Test
     void CreateProduct() {
-        service.sellerCreateProduct("B07B69LSJZ", 1);
+        service.sellerCreateProduct("B07B69LSJZ", 7);
     }
 
 //    @Test

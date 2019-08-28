@@ -29,6 +29,7 @@
 
         <!-- Hibernate -->
         <hibernate.version>5.4.1.Final</hibernate.version>
+        <hibernate-validator.version>6.0.15.Final</hibernate-validator.version>
 
         <!-- Test -->
         <junit.jupiter.version>5.4.1</junit.jupiter.version>
@@ -110,6 +111,12 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
         </dependency>
 
         <!-- DB -->

@@ -1,15 +1,37 @@
 package com.amz.reviews.to;
 
 import com.amz.reviews.model.AbstractBaseEntity;
+import org.hibernate.validator.constraints.SafeHtml;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 public class UserRegisterTo extends AbstractBaseEntity {
 
+    @NotBlank
+    @Size(min = 3, max = 50)
+    @SafeHtml
     private String name;
+
+    @Email
+    @NotBlank
+    @Size(max = 100)
+    @SafeHtml
     private String email;
+
+    @NotBlank
+    @Size(min = 7, max = 15)
     private String password;
+
+    @NotBlank
+    @Size(min = 7, max = 15)
     private String confirmPassword;
+
     private String roles;
     private String country;
+
+    public UserRegisterTo() {}
 
     public UserRegisterTo(Integer id, String name, String email, String password, String confirmPassword, String roles, String country) {
         super(id);

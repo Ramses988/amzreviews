@@ -15,7 +15,7 @@
                         <div class="row row-fix justify-content-sm-center">
                             <div class="col-sm-8 col-md-6 col-lg-4">
                                 <!-- RD Mailform-->
-                                <form:form class="rd-form text-left" method="POST" action="/register">
+                                <form:form class="rd-form text-left" modelAttribute="userRegisterTo" method="POST" action="/register">
                                     <div class="responsive-tabs-classic">
                                     <div class="form-group">
                                         <label class="form-label form-label-outside" for="form-register-username">Имя:</label>

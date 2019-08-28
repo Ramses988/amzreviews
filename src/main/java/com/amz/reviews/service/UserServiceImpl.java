@@ -6,6 +6,8 @@ import com.amz.reviews.repository.UserRepository;
 import com.amz.reviews.repository.datajpa.CrudConfirmRepository;
 import com.amz.reviews.to.UserRegisterTo;
 import com.amz.reviews.util.UserUtil;
+import com.amz.reviews.util.ValidationUtil;
+import com.amz.reviews.util.exception.NotFoundException;
 import com.amz.reviews.web.AuthorizedUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,7 +46,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             ConfirmToken token = new ConfirmToken(user);
             crudConfirmRepository.save(token);
 
-            mailSender.send(user.getEmail(), token.getConfirmToken());
+//            mailSender.send(user.getEmail(), token.getConfirmToken());
         }
     }
 
@@ -78,20 +80,16 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public void userActive(String token) {
         ConfirmToken confirmToken = crudConfirmRepository.findByConfirmToken(token).orElse(null);
 
-        if(Objects.nonNull(confirmToken)) {
-            confirmToken.getUser().setEnabled(true);
-            repository.save(confirmToken.getUser());
-            crudConfirmRepository.delete(confirmToken);
-        }
+        ValidationUtil.checkNotFound(confirmToken);
+        confirmToken.getUser().setEnabled(true);
+        repository.save(confirmToken.getUser());
+        crudConfirmRepository.delete(confirmToken);
     }
 
     @Override
     public void confirmResetPassword(String token) {
         ConfirmToken confirmToken = crudConfirmRepository.findByConfirmToken(token).orElse(null);
-
-        if(Objects.isNull(confirmToken)) {
-            throw new HttpClientErrorException(HttpStatus.NO_CONTENT);
-        }
+        ValidationUtil.checkNotFound(confirmToken);
     }
 
     @Override

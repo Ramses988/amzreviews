@@ -2,6 +2,6 @@
 out
 target
 *.iml
-log
-.properties
-.yml
+*.log
+*.properties
+*.yml
