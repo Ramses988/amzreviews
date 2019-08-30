@@ -2053,11 +2053,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg>select.form-
 }
 
 .invalid-feedback {
-    display: none;
-    width: 100%;
-    margin-top: .25rem;
-    font-size: 80%;
-    color: #dc3545
+    margin-top: 0.25rem;
+    color: #dc3545;
 }
 
 .invalid-tooltip {

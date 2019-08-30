@@ -2,6 +2,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="reviews" tagdir="/WEB-INF/tags" %>
 
 <jsp:include page="../fragments/_header.jsp" />
 <script src="/resources/js/bootstrap.bundle.min.js"></script>
@@ -15,24 +16,15 @@
                         <div class="row row-fix justify-content-sm-center">
                             <div class="col-sm-8 col-md-6 col-lg-4">
                                 <!-- RD Mailform-->
-                                <form:form class="rd-form text-left" modelAttribute="userRegisterTo" method="POST" action="/register">
+                                <form:form class="rd-form text-left" modelAttribute="userRegisterTo" method="POST" action="/register"
+                                           charset="utf-8" accept-charset="UTF-8">
                                     <div class="responsive-tabs-classic">
-                                    <div class="form-group">
-                                        <label class="form-label form-label-outside" for="form-register-username">Имя:</label>
-                                        <input class="form-control bg-white" id="form-register-username" type="text" name="name" data-constraints="@Required">
-                                    </div>
-                                    <div class="form-group offset-top-24">
-                                        <label class="form-label form-label-outside" for="form-register-email">Email:</label>
-                                        <input class="form-control bg-white" id="form-register-email" type="text" name="email" data-constraints="@Required @Email">
-                                    </div>
-                                    <div class="form-group offset-top-24">
-                                        <label class="form-label form-label-outside" for="form-register-password">Пароль:</label>
-                                        <input class="form-control bg-white" id="form-register-password" type="password" name="password" data-constraints="@Required">
-                                    </div>
-                                    <div class="form-group offset-top-24">
-                                        <label class="form-label form-label-outside" for="form-register-confirm-password">Подтвердите пароль:</label>
-                                        <input class="form-control bg-white" id="form-register-confirm-password" type="password" name="confirmPassword" data-constraints="@Required">
-                                    </div>
+                                        <reviews:inputField name="name" labelCode="Имя" valid='@Required @LenthRange(min=3, max=50, label="Имя должно")' />
+                                        <reviews:inputField name="email" labelCode="Email" valid="@Required @Email" />
+                                        <reviews:inputField name="password" labelCode="Пароль" inputType="password"
+                                                            valid='@Required @LenthRange(min=7, max=15, label="Пароль должен")' />
+                                        <reviews:inputField name="confirmPassword" labelCode="Подтвердите пароль" inputType="password"
+                                                            valid='@Required @LenthRange(min=7, max=15, label="Пароль должен")' />
                                     </div>
                                     <div class="form-group offset-top-24">
                                         <label class="orm-label-outside registr">Выбрать Роль:
@@ -53,7 +45,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group offset-top-24">
-                                        <label class="form-label-outside registr" for="form-register-confirm-password">Страна:</label>
+                                        <label class="form-label-outside registr">Страна:</label>
                                         <select name="country">
                                             <option value="US">United States</option>
                                             <option value="UK">United Kingdom</option>

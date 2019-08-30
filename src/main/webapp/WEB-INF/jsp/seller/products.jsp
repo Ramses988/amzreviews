@@ -96,8 +96,11 @@
         </div>
         <div class="modal-body">
             <form id="detailsFormProduct">
-                <label class="col-form-label">Укажите ASIN продукта<span id="help-asin" class="icon novi-icon mdi mdi-help-circle-outline" title="ASIN можно посмотреть в личном кабинете или на странице с описанием товара."></span></label>
-                <input id="asin" name="asin" class="form-control" placeholder="Введите ASIN" autocomplete="off" type="text">
+                <div class="form-group">
+                    <label class="col-form-label">Укажите ASIN продукта<span id="help-asin" class="icon novi-icon mdi mdi-help-circle-outline" title="ASIN можно посмотреть в личном кабинете или на странице с описанием товара."></span></label>
+                    <input id="asin" type="text" name="asin" class="form-control required lenth" placeholder="Введите ASIN" autocomplete="off">
+                    <span class="form-validation"></span>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
@@ -119,7 +122,8 @@
                     <input type="hidden" id="id" name="id" value="">
                     <input type="hidden" id="price" name="price" value="">
                     <label class="col-form-label">Укажите ключ для выкупа<span id="help-key" class="icon novi-icon mdi mdi-help-circle-outline" title="Укажите ключ, по которому будут искать Ваш товар."></span></label>
-                    <input id="key" name="key" class="form-control" placeholder="Введите ключ" autocomplete="off" type="text">
+                    <input id="key" name="key" class="form-control required lenth" placeholder="Введите ключ" autocomplete="off" type="text">
+                    <span class="form-validation"></span>
                 </div>
 
                 <div class="form-group">
@@ -139,7 +143,8 @@
 
                 <div class="form-group">
                     <label class="col-form-label">Укажите количество выкупов<span id="help-count" class="icon novi-icon mdi mdi-help-circle-outline" title="Количество выкупов, которые Вы хотите сделать."></span></label>
-                    <input id="count" name="count" class="form-control" placeholder="0" autocomplete="off" type="text">
+                    <input id="count" name="count" class="form-control required number range" placeholder="0" autocomplete="off" type="text">
+                    <span class="form-validation"></span>
                 </div>
                 <div class="form-group">
                     <div id="label-hide" style="display: none">

@@ -5,15 +5,15 @@
 <%@ attribute name="name" required="true" description="Name of corresponding property in bean object" %>
 <%@ attribute name="labelCode" required="true" description="Field label" %>
 <%@ attribute name="inputType" required="false" description="Input type" %>
+<%@ attribute name="valid" required="false" description="Input valid" %>
 
 <spring:bind path="${name}">
-    <div class="form-group ${status.error ? 'error' : '' }">
-        <label class="col-form-label">${labelCode}</label>
+    <div class="form-group offset-top-24">
+        <label class="form-label form-label-outside" for="${name}">${labelCode}:</label>
         <c:choose>
-            <c:when test="${inputType == 'password'}"><form:password path="${name}" class="form-control is-invalid"/></c:when>
-            <c:when test="${inputType == 'number'}"><form:input path="${name}" type="number" class="form-control is-invalid"/></c:when>
-            <c:otherwise><form:input path="${name}" class="form-control is-invalid"/></c:otherwise>
+            <c:when test="${inputType == 'password'}"><form:password path="${name}" class="form-control bg-white" data-constraints="${valid}" required="true"/></c:when>
+            <c:otherwise><form:input path="${name}" class="form-control bg-white" data-constraints="${valid}" required="true" autocomplete="off"/></c:otherwise>
         </c:choose>
-        <div class="invalid-feedback">${status.errorMessage}</div>
+        <div class="box-comment-body invalid-feedback">${status.errorMessage}</div>
     </div>
 </spring:bind>

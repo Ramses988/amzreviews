@@ -3,12 +3,12 @@ package com.amz.reviews.web.seller;
 import com.amz.reviews.model.Order;
 import com.amz.reviews.model.Product;
 import com.amz.reviews.to.OrderTo;
+import com.amz.reviews.web.View;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -44,11 +44,7 @@ public class SellerRestController extends AbstractSellerController {
 
     @PostMapping("/add-order")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void createOrders(@Valid OrderTo orderTo, BindingResult result) {
-        if(result.hasErrors()) {
-            result.getFieldErrors().forEach(e -> System.out.println(e.getDefaultMessage()));
-        }
-
-        super.sellerCreateOrders(orderTo);
+    public void createOrders(@Validated(View.Web.class) OrderTo orderTo) {
+//        super.sellerCreateOrders(orderTo);
     }
 }

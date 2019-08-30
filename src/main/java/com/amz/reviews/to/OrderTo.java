@@ -19,13 +19,13 @@ public class OrderTo extends AbstractBaseEntity {
     private String key;
 
     @NotNull
-    @Size(max = 7)
     private boolean review;
 
     @NotNull
-    @Range(min = 1, max = 50)
+    @Range(min = 1, max = 100)
     private Integer count;
 
+    public OrderTo() {}
 
     public OrderTo(Integer id, Double price, String key, boolean review, Integer count) {
         super(id);

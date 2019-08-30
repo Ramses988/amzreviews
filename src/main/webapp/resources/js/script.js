@@ -90,11 +90,6 @@ $document.ready(function () {
             //     c.owlCarousel({ autoplay: isNoviBuilder ? false : c.attr("data-autoplay") === "true", loop: isNoviBuilder ? false : c.attr("data-loop") !== "false", items: 1, center: c.attr("data-center") === "true", dotsContainer: c.attr("data-pagination-class") || false, navContainer: c.attr("data-navigation-class") || false, mouseDrag: isNoviBuilder ? false : c.attr("data-mouse-drag") !== "false", nav: c.attr("data-nav") === "true", dots: (isNoviBuilder && c.attr("data-nav") !== "true") ? true : c.attr("data-dots") === "true", dotsEach: c.attr("data-dots-each") ? parseInt(c.attr("data-dots-each"), 10) : false, animateIn: c.attr('data-animation-in') ? c.attr('data-animation-in') : false, animateOut: c.attr('data-animation-out') ? c.attr('data-animation-out') : false, responsive: responsive, navText: c.attr("data-nav-text") ? $.parseJSON(c.attr("data-nav-text")) : [], navClass: c.attr("data-nav-class") ? $.parseJSON(c.attr("data-nav-class")) : ['owl-prev', 'owl-next'] });
         }
 
-        $('.open-product').click(function () {
-            $(':input[type=text]').val("");
-            $('.product-modal').fadeIn();
-            return false;
-        });
 
        $('#reset-password').click(function () {
             $(':input[type=text]').val("");
@@ -122,29 +117,6 @@ $document.ready(function () {
         $('.btn-cancel').click(function () {
             $(this).parents('.modal').fadeOut();
             return false;
-        });
-
-        $('.btn-order').click(function () {
-            $.ajax({
-                type: "POST",
-                url: "/rest/seller/add-order",
-                data: $('#detailsFormOrder').serialize()
-            }).done(function () {
-                $('.modal').fadeOut();
-                angular.element('#getAllController').scope().updateProducts();
-                successNoty("Выкупы успешно добавлены");
-            })
-        });
-
-        $('.btn-add').click(function () {
-            $.ajax({
-                type: "POST",
-                url: "/rest/seller/add-product",
-                data: $('#detailsFormProduct').serialize()
-            }).done(function () {
-                $('.modal').fadeOut();
-                $('.info-modal').fadeIn();
-            })
         });
 
         $(document).keydown(function (e) {
@@ -177,7 +149,7 @@ $document.ready(function () {
             var Value = parseInt(main.find('#count').val());
             var percent = 5;
 
-            if(Value >= 1 && Value < 1000) {
+            if(Value >= 1 && Value <= 100) {
                 var price = parseFloat(main.find('#price').val());
                 var priceFees = (price + fees) * Value;
                 var percentPrice = (priceFees / 100) * percent;
@@ -198,6 +170,7 @@ $document.ready(function () {
 
 
         function attachFormValidator(elements) {
+
             for (var i = 0; i < elements.length; i++) {
                 var o = $(elements[i]), v;
                 o.addClass("form-control-has-validation").after("<span class='form-validation'></span>");
