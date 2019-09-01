@@ -1,5 +1,5 @@
 $(document).ajaxError(function (event, jqXHR, options, jsExc) {
-    failNoty(jqXHR);
+    warningNoty(jqXHR);
 });
 
 function successNoty(msg) {
@@ -12,23 +12,24 @@ function successNoty(msg) {
     }).show();
 }
 
-function failNoty(jqXHR) {
-    failedNote = new Noty({
-        text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;" + "Ошибка: " + jqXHR.status + (jqXHR.responseJSON ? "<br>" + jqXHR.responseJSON : ""),
-        type: "error",
+function warningNoty(jqXHR) {
+    new Noty({
+        theme: 'relax',
+        text: "<span class='fa fa-lg fa-warning'></span> &nbsp;" + jqXHR.responseJSON,
+        type: "warning",
         layout: "topRight"
     }).show();
 }
 
-// function failNoty(msg) {
-//     new Noty({
-//         theme: 'relax',
-//         text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;"+msg,
-//         type: 'error',
-//         layout: "topRight",
-//         timeout: 3000
-//     }).show();
-// }
+function failNoty(msg) {
+    new Noty({
+        theme: 'relax',
+        text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;"+msg,
+        type: 'error',
+        layout: "topRight",
+        timeout: 3000
+    }).show();
+}
 
 $(function () {
 
@@ -56,21 +57,19 @@ $(function () {
     });
 
     $('.btn-order').click(function () {
-        $.ajax({
-            type: "POST",
-            url: "/rest/seller/add-order",
-            data: $('#detailsFormOrder').serialize()
-        }).done(function () {
-            $('.modal').fadeOut();
-            angular.element('#getAllController').scope().updateProducts();
-            successNoty("Выкупы успешно добавлены");
-        })
-
-        // if(validForm("#detailsFormOrder")) {
-        //     successNoty("Валидация прошла успешна");
-        // } else {
-        //     failNoty("Проверьте правильность заплонения полей!");
-        // }
+        if(validForm("#detailsFormOrder")) {
+            $.ajax({
+                type: "POST",
+                url: "/rest/seller/add-order",
+                data: $('#detailsFormOrder').serialize()
+            }).done(function () {
+                $('.modal').fadeOut();
+                angular.element('#getAllController').scope().updateProducts();
+                successNoty("Выкупы успешно добавлены");
+            })
+        } else {
+            failNoty("Проверьте правильность заплонения полей!");
+        }
     });
 
     function required(data) {

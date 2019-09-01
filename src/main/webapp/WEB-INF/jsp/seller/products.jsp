@@ -36,7 +36,7 @@
     <hr class="divider bg-saffron">
     </div>
     <div id="col-add">
-    <button class="btn btn-info open-product">Добавить продкут</button>
+    <button class="btn btn-info open-product">Добавить продукт</button>
     </div>
     <div id="getAllController" ng-app="sellerApp" ng-controller="getAllController">
     <div class="row col-lg-borders" ng-repeat="product in products">

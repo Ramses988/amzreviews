@@ -3,9 +3,7 @@ package com.amz.reviews.service;
 import com.amz.reviews.model.Order;
 import com.amz.reviews.model.Product;
 import com.amz.reviews.model.User;
-import com.amz.reviews.repository.OrderRepository;
 import com.amz.reviews.repository.ProductRepository;
-import com.amz.reviews.repository.UserRepository;
 import com.amz.reviews.to.OrderTo;
 import com.amz.reviews.util.ParseHTMLUtil;
 import com.amz.reviews.util.Status;
@@ -17,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
+import com.amz.reviews.util.exception.ApplicationException;
 
 @Service
 @Transactional(readOnly = true)
@@ -38,8 +37,19 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public void sellerCreateOrders(OrderTo orderTo, int userId) {
         Product product = sellerGetProduct(orderTo.getId(), userId);
+        User user = getUser(userId);
 
-        if(Objects.nonNull(product) && product.getCountOrders() == 0) {
+        if(Objects.nonNull(product) && Objects.nonNull(user)) {
+            if(product.getCountOrders() > 0)
+                throw new ApplicationException("У Вас уже есть заявки на выкуп в очереди!");
+            if(user.getBalance() < 0)
+                throw new ApplicationException("У Вас недостаточно денег для выкупов. Пополните баланс!");
+            if(user.getBalance() == 0 && orderTo.getCount() > 1)
+                throw new ApplicationException("При нулевом балансе Вы можете сделать только один выкуп!");
+//            int totalPrice = 0;
+//            int fees = (orderTo.isReview()) ? 5 : 3;
+//            double priceFees = (product.getPrice() + fees) * orderTo.getCount();
+
             product.setKey(orderTo.getKey());
             product.setCountOrders(orderTo.getCount());
             product.setReviewEnable(orderTo.isReview());
