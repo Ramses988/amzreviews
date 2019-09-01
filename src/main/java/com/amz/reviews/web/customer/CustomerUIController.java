@@ -21,6 +21,11 @@ public class CustomerUIController extends AbstractCustomerController {
         return "customer/history";
     }
 
+    @GetMapping("/customer/help")
+    public String help() {
+        return "customer/help";
+    }
+
     @GetMapping("/customer/product/{id}")
     public String get(@PathVariable("id") int id, Model model) {
         model.addAttribute("product", super.customerGetProduct(id));

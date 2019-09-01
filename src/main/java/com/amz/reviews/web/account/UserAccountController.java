@@ -18,6 +18,11 @@ public class UserAccountController {
     @Autowired
     private UserService service;
 
+    @GetMapping("/profile")
+    public String registerDisplay() {
+        return "account/profile";
+    }
+
     @GetMapping("/register")
     public String registerDisplay(Model model) {
         model.addAttribute("userRegisterTo", new UserRegisterTo());

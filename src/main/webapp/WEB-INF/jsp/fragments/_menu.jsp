@@ -68,26 +68,3 @@
                             <div class="rd-navbar-mobile-scroll">
                                 <!--Navbar Brand Mobile-->
                                 <div class="rd-navbar-mobile-brand"><a href="/"><img width='217' height='36' src='/resources/images/logo-dark.png' alt=''/></a></div>
-                                <!-- RD Navbar Nav-->
-                                <ul class="rd-navbar-nav">
-                                    <li><a href="/"><span>Главная</span></a>
-                                    </li>
-                                    <li class="active"><a href="catalog.html"><span>Каталог</span></a>
-                                    </li>
-                                    <li><a href="submit-property.html"><span>Свойства</span></a>
-                                    </li>
-                                    <li><a href="services.html"><span>Служба</span></a>
-                                    </li>
-                                    <li><a href="about.html"><span>Команда</span></a>
-                                    </li>
-                                    <li><a href="contacts.html"><span>Контакты</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>

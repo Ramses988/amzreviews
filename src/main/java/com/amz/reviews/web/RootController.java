@@ -15,4 +15,9 @@ public class RootController {
     public String login() {
         return "login";
     }
+
+    @GetMapping("/contacts")
+    public String registerDisplay() {
+        return "contacts";
+    }
 }
