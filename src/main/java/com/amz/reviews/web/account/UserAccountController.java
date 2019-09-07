@@ -2,6 +2,7 @@ package com.amz.reviews.web.account;
 
 import com.amz.reviews.service.UserService;
 import com.amz.reviews.to.UserRegisterTo;
+import com.amz.reviews.web.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +20,8 @@ public class UserAccountController {
     private UserService service;
 
     @GetMapping("/profile")
-    public String registerDisplay() {
+    public String profile(Model model) {
+        model.addAttribute("user", service.getUser(SecurityUtil.authUserId()));
         return "account/profile";
     }
 

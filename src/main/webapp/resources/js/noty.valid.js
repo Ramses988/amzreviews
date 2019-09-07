@@ -33,6 +33,20 @@ function failNoty(msg) {
 
 $(function () {
 
+    $('.btn-updateProfile').click(function () {
+        if(validForm("#userProfile")) {
+            $.ajax({
+                type: "POST",
+                url: "/rest/account/update-profile",
+                data: $('#userProfile').serialize()
+            }).done(function () {
+                successNoty("Профиль обновлен");
+            })
+        } else {
+            failNoty("Проверьте правильность заплонения полей!");
+        }
+    });
+
     $('.btn-add').click(function () {
         if(validForm("#detailsFormProduct")) {
             $.ajax({
@@ -72,6 +86,21 @@ $(function () {
         }
     });
 
+    $('.btn-changePassword').click(function () {
+        if(validForm("#changePassword")) {
+            $.ajax({
+                type: "POST",
+                url: "/rest/account/change-password",
+                data: $('#changePassword').serialize()
+            }).done(function () {
+                $('#changePassword').trigger('reset');
+                successNoty("Пароль успешно изменен");
+            })
+        } else {
+            failNoty("Проверьте правильность заплонения полей!");
+        }
+    });
+
     function required(data) {
         return (data.trim() === '');
     }
@@ -86,6 +115,10 @@ $(function () {
 
     function range(data, count) {
         return (data <= 0 || data > count);
+    }
+
+    function password(data) {
+        return (data.length < 7 || data.length > 15);
     }
 
     function email(data) {
@@ -111,6 +144,11 @@ $(function () {
             }
             if($(el).hasClass("range")) {
                 if(range(v, 100)) {
+                    chek = false;
+                }
+            }
+            if($(el).hasClass("password")) {
+                if(password(v)) {
                     chek = false;
                 }
             }
@@ -145,6 +183,13 @@ $(function () {
             if(range(data, 100)) {
                 $(this).closest('.form-group').addClass('has-error');
                 $(this).closest('.form-group').find('.form-validation').text("Число должно быть от 1 до 100");
+                return false;
+            }
+        }
+        if($(this).hasClass("password")) {
+            if(password(data)) {
+                $(this).closest('.form-group').addClass('has-error');
+                $(this).closest('.form-group').find('.form-validation').text("Пароль должен быть от 7 до 15 символов");
                 return false;
             }
         }

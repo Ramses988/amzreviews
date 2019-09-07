@@ -14,11 +14,11 @@ public class GlobalControllerExceptionHandler {
 //        return mav;
 //    }
 
-    @ExceptionHandler(Exception.class)
-    public ModelAndView defaultErrorHandler() {
-        ModelAndView mav = new ModelAndView("exception/exception");
-        mav.addObject("typeMessage", "");
-        mav.addObject("message", "<img class='not-found' src='/resources/images/404.png'/>");
-        return mav;
-    }
+//    @ExceptionHandler(Exception.class)
+//    public ModelAndView defaultErrorHandler() {
+//        ModelAndView mav = new ModelAndView("exception/exception");
+//        mav.addObject("typeMessage", "");
+//        mav.addObject("message", "<img class='not-found' src='/resources/images/404.png'/>");
+//        return mav;
+//    }
 }

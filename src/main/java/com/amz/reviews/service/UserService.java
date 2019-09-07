@@ -15,9 +15,13 @@ public interface UserService {
 
     void userActive(String token);
 
+    void updateUser(String name, String payPal, int userId);
+
     void resetPassword(String email);
 
     void confirmResetPassword(String token);
 
     void changeResetPassword(String token, String password, String confirmPassword);
+
+    void changePassword(String oldPassword, String newPassword, String confirmPassword, int userId);
 }

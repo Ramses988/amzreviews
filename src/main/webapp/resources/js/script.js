@@ -169,91 +169,91 @@ $document.ready(function () {
         }
 
 
-        function attachFormValidator(elements) {
+        // function attachFormValidator(elements) {
+        //
+        //     for (var i = 0; i < elements.length; i++) {
+        //         var o = $(elements[i]), v;
+        //         o.addClass("form-control-has-validation").after("<span class='form-validation'></span>");
+        //         v = o.parent().find(".form-validation");
+        //         if (v.is(":last-child")) {
+        //             o.addClass("form-control-last-child");
+        //         }
+        //     }
+        //     elements.on('input change propertychange blur', function (e) {
+        //         var $this = $(this), results;
+        //         if (e.type !== "blur") {
+        //             if (!$this.parent().hasClass("has-error")) {
+        //                 return;
+        //             }
+        //         }
+        //         if ($this.parents('.rd-mailform').hasClass('success')) {
+        //             return;
+        //         }
+        //         if ((results = $this.regula('validate')).length) {
+        //             for (i = 0; i < results.length; i++) {
+        //                 $this.siblings(".form-validation").text(results[i].message).parent().addClass("has-error")
+        //             }
+        //         } else {
+        //             $this.siblings(".form-validation").text("").parent().removeClass("has-error")
+        //         }
+        //     }).regula('bind');
+        //     var regularConstraintsMessages = [{
+        //         type: regula.Constraint.Required,
+        //         newMessage: "The text field is required."
+        //     }, {
+        //         type: regula.Constraint.Email,
+        //         newMessage: "The email is not a valid email."
+        //     }, {
+        //         type: regula.Constraint.Numeric,
+        //         newMessage: "Only numbers are required"
+        //     }, {type: regula.Constraint.Selected, newMessage: "Please choose an option."}];
+        //     for (var i = 0; i < regularConstraintsMessages.length; i++) {
+        //         var regularConstraint = regularConstraintsMessages[i];
+        //         regula.override({constraintType: regularConstraint.type, defaultMessage: regularConstraint.newMessage});
+        //     }
+        // }
 
-            for (var i = 0; i < elements.length; i++) {
-                var o = $(elements[i]), v;
-                o.addClass("form-control-has-validation").after("<span class='form-validation'></span>");
-                v = o.parent().find(".form-validation");
-                if (v.is(":last-child")) {
-                    o.addClass("form-control-last-child");
-                }
-            }
-            elements.on('input change propertychange blur', function (e) {
-                var $this = $(this), results;
-                if (e.type !== "blur") {
-                    if (!$this.parent().hasClass("has-error")) {
-                        return;
-                    }
-                }
-                if ($this.parents('.rd-mailform').hasClass('success')) {
-                    return;
-                }
-                if ((results = $this.regula('validate')).length) {
-                    for (i = 0; i < results.length; i++) {
-                        $this.siblings(".form-validation").text(results[i].message).parent().addClass("has-error")
-                    }
-                } else {
-                    $this.siblings(".form-validation").text("").parent().removeClass("has-error")
-                }
-            }).regula('bind');
-            var regularConstraintsMessages = [{
-                type: regula.Constraint.Required,
-                newMessage: "The text field is required."
-            }, {
-                type: regula.Constraint.Email,
-                newMessage: "The email is not a valid email."
-            }, {
-                type: regula.Constraint.Numeric,
-                newMessage: "Only numbers are required"
-            }, {type: regula.Constraint.Selected, newMessage: "Please choose an option."}];
-            for (var i = 0; i < regularConstraintsMessages.length; i++) {
-                var regularConstraint = regularConstraintsMessages[i];
-                regula.override({constraintType: regularConstraint.type, defaultMessage: regularConstraint.newMessage});
-            }
-        }
+        // function isValidated(elements, captcha) {
+        //     var results, errors = 0;
+        //     if (elements.length) {
+        //         for (j = 0; j < elements.length; j++) {
+        //             var $input = $(elements[j]);
+        //             if ((results = $input.regula('validate')).length) {
+        //                 for (k = 0; k < results.length; k++) {
+        //                     errors++;
+        //                     $input.siblings(".form-validation").text(results[k].message).parent().addClass("has-error");
+        //                 }
+        //             } else {
+        //                 $input.siblings(".form-validation").text("").parent().removeClass("has-error")
+        //             }
+        //         }
+        //         if (captcha) {
+        //             if (captcha.length) {
+        //                 return validateReCaptcha(captcha) && errors == 0
+        //             }
+        //         }
+        //         return errors == 0;
+        //     }
+        //     return true;
+        // }
 
-        function isValidated(elements, captcha) {
-            var results, errors = 0;
-            if (elements.length) {
-                for (j = 0; j < elements.length; j++) {
-                    var $input = $(elements[j]);
-                    if ((results = $input.regula('validate')).length) {
-                        for (k = 0; k < results.length; k++) {
-                            errors++;
-                            $input.siblings(".form-validation").text(results[k].message).parent().addClass("has-error");
-                        }
-                    } else {
-                        $input.siblings(".form-validation").text("").parent().removeClass("has-error")
-                    }
-                }
-                if (captcha) {
-                    if (captcha.length) {
-                        return validateReCaptcha(captcha) && errors == 0
-                    }
-                }
-                return errors == 0;
-            }
-            return true;
-        }
-
-        function validateReCaptcha(captcha) {
-            var captchaToken = captcha.find('.g-recaptcha-response').val();
-            if (captchaToken.length === 0) {
-                captcha.siblings('.form-validation').html('Please, prove that you are not robot.').addClass('active');
-                captcha.closest('.form-group').addClass('has-error');
-                captcha.on('propertychange', function () {
-                    var $this = $(this), captchaToken = $this.find('.g-recaptcha-response').val();
-                    if (captchaToken.length > 0) {
-                        $this.closest('.form-group').removeClass('has-error');
-                        $this.siblings('.form-validation').removeClass('active').html('');
-                        $this.off('propertychange');
-                    }
-                });
-                return false;
-            }
-            return true;
-        }
+        // function validateReCaptcha(captcha) {
+        //     var captchaToken = captcha.find('.g-recaptcha-response').val();
+        //     if (captchaToken.length === 0) {
+        //         captcha.siblings('.form-validation').html('Please, prove that you are not robot.').addClass('active');
+        //         captcha.closest('.form-group').addClass('has-error');
+        //         captcha.on('propertychange', function () {
+        //             var $this = $(this), captchaToken = $this.find('.g-recaptcha-response').val();
+        //             if (captchaToken.length > 0) {
+        //                 $this.closest('.form-group').removeClass('has-error');
+        //                 $this.siblings('.form-validation').removeClass('active').html('');
+        //                 $this.off('propertychange');
+        //             }
+        //         });
+        //         return false;
+        //     }
+        //     return true;
+        // }
 
         window.onloadCaptchaCallback = function () {
             for (i = 0; i < plugins.captcha.length; i++) {
@@ -373,9 +373,9 @@ $document.ready(function () {
         if (plugins.rdInputLabel.length) {
             plugins.rdInputLabel.RDInputLabel();
         }
-        if (plugins.regula.length) {
-            attachFormValidator(plugins.regula);
-        }
+        // if (plugins.regula.length) {
+        //     attachFormValidator(plugins.regula);
+        // }
         if (!isNoviBuilder && $html.hasClass('desktop') && $html.hasClass("wow-animation") && $(".wow").length) {
             new WOW().init();
         }
@@ -533,42 +533,42 @@ $document.ready(function () {
                 });
             }
         }
-        if (plugins.additionalFields.length) {
-            var counter, i, j, k, fields;
-            for (i = 0; i < plugins.additionalFields.length; i++) {
-                counter = 0;
-                var additionalFields = $(plugins.additionalFields[i]),
-                    markup = additionalFields.attr('data-additional-field').replace(/\$num\$/g, counter),
-                    init = additionalFields.attr('data-init-count');
-                additionalFields.find('.additional-fields-add').on('click', function (e) {
-                    e.preventDefault();
-                    counter++;
-                    fields = $(this).parents('.additional-fields');
-                    fields.find('.additional-fields-wrap').append(markup);
-                    for (j = 0; j < fields.find('.additional-fields-wrap > *').length; j++) {
-                        var field = fields.find('.additional-fields-wrap > *')[j];
-                        if (field.className.indexOf('additional-field') == -1) {
-                            $(field).wrap('<div class="additional-field"></div>')
-                            attachFormValidator($(field).find('[data-constraints]'));
-                        }
-                    }
-                });
-                for (j = 0; j < init; j++) {
-                    additionalFields.find('.additional-fields-wrap').append(markup);
-                    for (k = 0; k < additionalFields.find('.additional-fields-wrap > *').length; k++) {
-                        var field = additionalFields.find('.additional-fields-wrap > *')[k];
-                        if (field.className.indexOf('additional-field') == -1) {
-                            $(field).wrap('<div class="additional-field"></div>')
-                            attachFormValidator($(field).find('[data-constraints]'));
-                        }
-                    }
-                }
-            }
-            $document.delegate('.additional-field-remove', 'click', function (e) {
-                e.preventDefault();
-                $(this).parents('.additional-field').remove();
-            });
-        }
+        // if (plugins.additionalFields.length) {
+        //     var counter, i, j, k, fields;
+        //     for (i = 0; i < plugins.additionalFields.length; i++) {
+        //         counter = 0;
+        //         var additionalFields = $(plugins.additionalFields[i]),
+        //             markup = additionalFields.attr('data-additional-field').replace(/\$num\$/g, counter),
+        //             init = additionalFields.attr('data-init-count');
+        //         additionalFields.find('.additional-fields-add').on('click', function (e) {
+        //             e.preventDefault();
+        //             counter++;
+        //             fields = $(this).parents('.additional-fields');
+        //             fields.find('.additional-fields-wrap').append(markup);
+        //             for (j = 0; j < fields.find('.additional-fields-wrap > *').length; j++) {
+        //                 var field = fields.find('.additional-fields-wrap > *')[j];
+        //                 if (field.className.indexOf('additional-field') == -1) {
+        //                     $(field).wrap('<div class="additional-field"></div>')
+        //                     attachFormValidator($(field).find('[data-constraints]'));
+        //                 }
+        //             }
+        //         });
+        //         for (j = 0; j < init; j++) {
+        //             additionalFields.find('.additional-fields-wrap').append(markup);
+        //             for (k = 0; k < additionalFields.find('.additional-fields-wrap > *').length; k++) {
+        //                 var field = additionalFields.find('.additional-fields-wrap > *')[k];
+        //                 if (field.className.indexOf('additional-field') == -1) {
+        //                     $(field).wrap('<div class="additional-field"></div>')
+        //                     attachFormValidator($(field).find('[data-constraints]'));
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     $document.delegate('.additional-field-remove', 'click', function (e) {
+        //         e.preventDefault();
+        //         $(this).parents('.additional-field').remove();
+        //     });
+        // }
         if (plugins.materialParallax.length) {
             if (!isNoviBuilder && !isIE && !isMobile) {
                 plugins.materialParallax.parallax();

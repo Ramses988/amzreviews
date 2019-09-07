@@ -13,6 +13,7 @@ CREATE TABLE users
   email        VARCHAR                     NOT NULL,
   password     VARCHAR                     NOT NULL,
   enabled      BOOL DEFAULT TRUE           NOT NULL,
+  paypal       VARCHAR                     NULL,
   country      VARCHAR                     NOT NULL,
   balance      INTEGER DEFAULT 0           NOT NULL
 );

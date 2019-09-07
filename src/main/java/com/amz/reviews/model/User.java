@@ -15,6 +15,7 @@ public class User extends AbstractNamedEntity {
     private boolean enabled;
     private String country;
     private int balance;
+    private String payPal;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Product> products;
@@ -47,6 +48,14 @@ public class User extends AbstractNamedEntity {
         this.country = country;
         this.balance = balance;
         setRoles(Set.of(rolesSet));
+    }
+
+    public String getPayPal() {
+        return payPal;
+    }
+
+    public void setPayPal(String payPal) {
+        this.payPal = payPal;
     }
 
     public Set<Role> getRoles() {

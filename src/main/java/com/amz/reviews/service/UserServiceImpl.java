@@ -7,6 +7,7 @@ import com.amz.reviews.repository.datajpa.CrudConfirmRepository;
 import com.amz.reviews.to.UserRegisterTo;
 import com.amz.reviews.util.UserUtil;
 import com.amz.reviews.util.ValidationUtil;
+import com.amz.reviews.util.exception.ApplicationException;
 import com.amz.reviews.util.exception.NotFoundException;
 import com.amz.reviews.web.AuthorizedUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,29 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 //            mailSender.send(user.getEmail(), token.getConfirmToken());
         }
+    }
+
+    @Override
+    @Transactional
+    public void updateUser(String name, String payPal, int userId) {
+        User user = getUser(userId);
+        user.setName(name);
+        user.setPayPal(payPal);
+        repository.save(user);
+    }
+
+    @Override
+    @Transactional
+    public void changePassword(String oldPassword, String newPassword, String confirmPassword, int userId) {
+        User user = getUser(userId);
+
+        if (!user.getPassword().equals(oldPassword))
+            throw new ApplicationException("Неверный пароль");
+        if (newPassword.length() < 7 || !newPassword.equals(confirmPassword))
+            throw new ApplicationException("Пароли не совподают");
+
+        user.setPassword(newPassword);
+        repository.save(user);
     }
 
     @Override

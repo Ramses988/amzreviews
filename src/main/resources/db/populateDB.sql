@@ -1,8 +1,8 @@
 
-INSERT INTO users (name, date, email, password, country, city) VALUES
-    ('Seller', '2019-05-31 09:00:00', 'seller@gmail.com', '12345', 'USA', 'San Francisco'),
-    ('Customer', '2019-05-31 09:00:00', 'customer@gmail.com', '12345', 'USA', 'New York'),
-    ('Admin', '2019-05-31 09:00:00', 'admin@gmail.com', '12345', 'Russia', 'Moscow');
+INSERT INTO users (name, date, email, password, country) VALUES
+    ('Seller', '2019-05-31 09:00:00', 'seller@gmail.com', '12345', 'USA'),
+    ('Customer', '2019-05-31 09:00:00', 'customer@gmail.com', '12345', 'USA'),
+    ('Admin', '2019-05-31 09:00:00', 'admin@gmail.com', '12345', 'Russia');
 
 INSERT INTO user_roles (user_id, role) VALUES
     (1, 'ROLE_SELLER'),
