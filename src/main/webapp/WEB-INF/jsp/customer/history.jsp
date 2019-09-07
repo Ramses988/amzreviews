@@ -15,7 +15,7 @@
         <script src="/resources/js/customer.js"></script>
     </jsp:attribute>
     <jsp:body>
-        <section>
+        <section class="section section-top-34">
             <div class="container">
                 <h2>История заказов</h2>
                 <hr class="divider bg-saffron" >

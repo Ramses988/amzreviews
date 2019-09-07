@@ -35,13 +35,14 @@
     <ul class="rd-navbar-nav">
         <li ${menu == 'index' ? "class='active'" : ""}><a href="/"><span>Главная</span></a></li>
         <sec:authorize access="isAnonymous()">
-            <li ${menu == 'help' ? "class='active'" : ""}><a href="/customer"><span>FAQ</span></a></li>
+            <li ${menu == 'help' ? "class='active'" : ""}><a href="/help"><span>FAQ</span></a></li>
+            <li ${menu == 'news' ? "class='active'" : ""}><a href="/news"><span>Новости</span></a></li>
         </sec:authorize>
 
         <sec:authorize access="hasRole('ROLE_SELLER')">
             <li ${menu == 'products' ? "class='active'" : ""}><a href="/seller"><span>Продукты</span></a></li>
-            <li ${menu == 'help' ? "class='active'" : ""}><a href="/customer"><span>FAQ</span></a></li>
-            <li ${menu == 'profile' ? "class='active'" : ""}><a href="about.html"><span>Профиль</span></a></li>
+            <li ${menu == 'help' ? "class='active'" : ""}><a href="/seller/help"><span>FAQ</span></a></li>
+            <li ${menu == 'profile' ? "class='active'" : ""}><a href="/profile"><span>Профиль</span></a></li>
         </sec:authorize>
 
         <sec:authorize access="hasRole('ROLE_CUSTOMER')">

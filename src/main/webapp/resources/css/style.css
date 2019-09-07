@@ -4868,6 +4868,10 @@ img.not-found {
 
 @media(min-width:1px) and (max-width:480px) {
 
+    div.col-menu {
+        display: none;
+    }
+
     img.not-found {
         max-width: 300px;
         max-height: 300px;
@@ -20335,12 +20339,13 @@ textarea.form-control {
     position: relative
 }
 
-#reset-password {
+.page-login {
     color: #9b9b9b;
     font-size: 15px;
+    margin-left: 30px;
 }
 
-#reset-password:hover {
+.page-login:hover {
     color: #ffa200
 }
 
@@ -25513,7 +25518,7 @@ html .row-65-new>* {
 }
 
 .rd-navbar-fixed.rd-navbar-top-panel .rd-navbar-top-panel-toggle span:before {
-    content: "";
+    content: "\f1d9";
     transform: rotate(0deg) scale(1);
     opacity: 1;
     visibility: visible;
@@ -25521,7 +25526,7 @@ html .row-65-new>* {
 }
 
 .rd-navbar-fixed.rd-navbar-top-panel .rd-navbar-top-panel-toggle span:after {
-    content: "";
+    content: "\f156";
     transform: rotate(-90deg) scale(0);
     opacity: 0;
     visibility: hidden;

@@ -20,4 +20,14 @@ public class RootController {
     public String registerDisplay() {
         return "contacts";
     }
+
+    @GetMapping("/help")
+    public String help() {
+        return "help";
+    }
+
+    @GetMapping("/news")
+    public String news() {
+        return "news";
+    }
 }

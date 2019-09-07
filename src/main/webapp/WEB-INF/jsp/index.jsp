@@ -6,7 +6,9 @@
 <reviews:genericPage menu="index">
     <jsp:attribute name="title">AmzReviews - Надежный инструмент для обмена</jsp:attribute>
     <jsp:body>
-        <p><a href="/customer" class="btn btn-primary-orange">Покупатель</a></p>
-        <p><a href="/seller" class="btn btn-primary-orange">Продавец</a></p>
+        <section class="section section-bottom-98 section-top-34">
+            <p><a href="/customer" class="btn btn-primary-orange">Покупатель</a></p>
+            <p><a href="/seller" class="btn btn-primary-orange">Продавец</a></p>
+        </section>
     </jsp:body>
 </reviews:genericPage>

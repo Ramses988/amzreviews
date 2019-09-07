@@ -7,7 +7,7 @@
         <script src="/resources/js/noty.min.js"></script>
         <script src="/resources/js/noty.valid.js"></script></jsp:attribute>
     <jsp:body>
-        <section>
+        <section class="section section-top-34">
             <div class="container">
                 <h2>Личный профиль</h2>
                 <hr class="divider bg-saffron" >

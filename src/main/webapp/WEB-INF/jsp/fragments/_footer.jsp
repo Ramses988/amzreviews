@@ -33,16 +33,15 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-sm-5 text-sm-left col-lg-3 col-xl-2">
+                    <div class="col-sm-5 text-sm-left col-lg-3 col-xl-2 col-menu">
                         <h6 class="text-uppercase text-spacing-60">Меню</h6>
                         <div class="d-block">
                             <div class="d-inline-block">
                                 <ul class="list list-marked">
-                                    <li><a href="#">Свойства</a></li>
-                                    <li><a href="#">Удобства</a></li>
-                                    <li><a href="#">Аренда</a></li>
-                                    <li><a href="#">Ипотеки</a></li>
-                                    <li><a href="#">Агенты</a></li>
+                                    <li><a href="/">Гавная</a></li>
+                                    <li><a href="/news">Новости</a></li>
+                                    <li><a href="/contacts">Контакты</a></li>
+                                    <li><a href="/profile">Профиль</a></li>
                                 </ul>
                             </div>
                         </div>

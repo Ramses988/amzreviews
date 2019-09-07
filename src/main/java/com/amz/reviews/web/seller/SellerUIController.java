@@ -15,6 +15,11 @@ public class SellerUIController extends AbstractSellerController {
         return "seller/products";
     }
 
+    @GetMapping("/seller/help")
+    public String help() {
+        return "seller/help";
+    }
+
     @GetMapping("/seller/history/{id}")
     public String getOrders(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("id", id);

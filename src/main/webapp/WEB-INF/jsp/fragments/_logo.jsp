@@ -42,15 +42,11 @@
                                 <ul class="rd-navbar-nav">
                                     <li><a href="/"><span>Главная</span></a>
                                     </li>
-                                    <li class="active"><a href="catalog.html"><span>Каталог</span></a>
+                                    <li><a href="/help"><span>FAQ</span></a>
                                     </li>
-                                    <li><a href="submit-property.html"><span>Свойства</span></a>
+                                    <li><a href="/news"><span>Новости</span></a>
                                     </li>
-                                    <li><a href="services.html"><span>Служба</span></a>
-                                    </li>
-                                    <li><a href="about.html"><span>Команда</span></a>
-                                    </li>
-                                    <li><a href="contacts.html"><span>Контакты</span></a>
+                                    <li><a href="/contacts"><span>Контакты</span></a>
                                     </li>
                                 </ul>
                             </div>
