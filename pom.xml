@@ -127,13 +127,6 @@
             <version>${hibernate-validator.version}</version>
         </dependency>
 
-        <!-- DB -->
-        <!--<dependency>-->
-            <!--<groupId>org.postgresql</groupId>-->
-            <!--<artifactId>postgresql</artifactId>-->
-            <!--<version>${postgresql.version}</version>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jdbc</artifactId>
@@ -199,6 +192,18 @@
     </dependencies>
 
     <profiles>
+
+        <profile>
+            <id>local</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                    <version>${postgresql.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
         <profile>
             <id>heroku</id>
             <!-- https://devcenter.heroku.com/articles/java-webapp-runner -->
