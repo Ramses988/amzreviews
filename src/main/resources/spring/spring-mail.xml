@@ -5,13 +5,13 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:mail.properties" />
+    <!--<context:property-placeholder location="classpath:mail.properties" />-->
 
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"
-          p:host="${mail.host}"
-          p:port="${mail.port}"
-          p:username="${mail.user}"
-          p:password="${mail.password}">
+          p:host="1"
+          p:port="2"
+          p:username="3"
+          p:password="5">
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.smtp.auth">true</prop>
