@@ -4863,10 +4863,58 @@ img.not-found {
 
 /*# sourceMappingURL=noty.css.map*/
 
+.product-modal, .order-modal, .info-modal, .orderid-modal, .reviews-modal, .reset-modal {
+    display: none;
+}
+
+.product-modal:before, .order-modal:before, .info-modal:before, .orderid-modal:before, .reviews-modal:before, .reset-modal:before {
+    content: '';
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    z-index: 9999;
+}
+
+.modal-container {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    padding: 20px;
+    width: 400px;
+    margin-left: -200px;
+    background: #fff;
+    border: 1px solid orange;
+    border-radius: 4px;
+    z-index: 99999;
+    opacity: 1;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.modal-body {
+    text-align: left!important
+}
+
 
     /* Add size */
 
 @media(min-width:1px) and (max-width:480px) {
+
+    .modal-container {
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        padding: 20px;
+        width: 350px;
+    }
 
     div.col-menu {
         display: none;
@@ -13213,46 +13261,6 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     height: 2em;
     line-height: 2em;
     vertical-align: middle
-}
-
-.product-modal, .order-modal, .info-modal, .orderid-modal, .reviews-modal, .reset-modal {
-    display: none;
-}
-
-.product-modal:before, .order-modal:before, .info-modal:before, .orderid-modal:before, .reviews-modal:before, .reset-modal:before {
-    content: '';
-    background: #000;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
-    z-index: 9999;
-}
-
-.modal-container {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    padding: 20px;
-    width: 400px;
-    margin-left: -200px;
-    background: #fff;
-    border: 1px solid orange;
-    border-radius: 4px;
-    z-index: 99999;
-    opacity: 1;
-}
-
-.popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.modal-body {
-    text-align: left!important
 }
 
 .btn-small {

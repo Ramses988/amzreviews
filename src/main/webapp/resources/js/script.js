@@ -158,9 +158,9 @@ $document.ready(function () {
                 main.find('#small-fees').text("Сбор Сервиса: $"+fees*Value);
                 main.find('#small-percent').text("Комиссия: 5%");
                 main.find('#small-price').text("Цена продукта: $"+price);
-                main.find('#label-hide').css({"display":"inline"});
+                // main.find('#label-hide').css({"display":"inline"});
             } else {
-                main.find('#label-hide').css({"display":"none"});
+                // main.find('#label-hide').css({"display":"none"});
                 main.find('#small-price').empty();
                 main.find('.price-red').empty();
                 main.find('#small-fees').empty();
