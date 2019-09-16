@@ -101,6 +101,20 @@ $(function () {
         }
     });
 
+    $('.btn-register').click(function () {
+        if(validForm("#userRegister")) {
+            $.ajax({
+                type: "POST",
+                url: "/rest/account/register",
+                data: $('#userRegister').serialize()
+            }).done(function () {
+                window.location.href = "/register-success";
+            })
+        } else {
+            failNoty("Проверьте правильность заплонения полей!");
+        }
+    });
+
     function required(data) {
         return (data.trim() === '');
     }
@@ -122,7 +136,7 @@ $(function () {
     }
 
     function email(data) {
-
+        return (!data.match(/\S+@\S+\.\S+/));
     }
 
     function validForm(data) {
@@ -134,6 +148,11 @@ $(function () {
             }
             if($(el).hasClass("lenth")) {
                 if(lenth(v, 50)) {
+                    chek = false;
+                }
+            }
+            if($(el).hasClass("email")) {
+                if(email(v)) {
                     chek = false;
                 }
             }
@@ -169,6 +188,13 @@ $(function () {
             if(lenth(data, 50)) {
                 $(this).closest('.form-group').addClass('has-error');
                 $(this).closest('.form-group').find('.form-validation').text("Значение поля не может привышать 50 символов");
+                return false;
+            }
+        }
+        if($(this).hasClass("email")) {
+            if(email(data)) {
+                $(this).closest('.form-group').addClass('has-error');
+                $(this).closest('.form-group').find('.form-validation').text("Неверный формат email");
                 return false;
             }
         }

@@ -41,14 +41,15 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     @Transactional
     public void userRegister(UserRegisterTo newUser) {
-        if(Objects.nonNull(newUser) && (newUser.getPassword().equals(newUser.getConfirmPassword()))) {
-            User user = UserUtil.createNewFromTo(newUser);
-            repository.save(user);
-            ConfirmToken token = new ConfirmToken(user);
-            crudConfirmRepository.save(token);
+        if(Objects.isNull(newUser) || !(newUser.getPassword().equals(newUser.getConfirmPassword())))
+            throw new ApplicationException("Пароли не совпадают!");
+
+        User user = UserUtil.createNewFromTo(newUser);
+        repository.save(user);
+        ConfirmToken token = new ConfirmToken(user);
+        crudConfirmRepository.save(token);
 
 //            mailSender.send(user.getEmail(), token.getConfirmToken());
-        }
     }
 
     @Override

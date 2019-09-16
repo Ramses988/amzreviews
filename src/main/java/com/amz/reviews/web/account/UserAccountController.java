@@ -1,17 +1,11 @@
 package com.amz.reviews.web.account;
 
 import com.amz.reviews.service.UserService;
-import com.amz.reviews.to.UserRegisterTo;
 import com.amz.reviews.web.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.validation.Valid;
 
 @Controller
 public class UserAccountController {
@@ -26,20 +20,24 @@ public class UserAccountController {
     }
 
     @GetMapping("/register")
-    public String registerDisplay(Model model) {
-        model.addAttribute("userRegisterTo", new UserRegisterTo());
+    public String registerDisplay() {
         return "account/register";
     }
 
-    @PostMapping("/register")
-    public String registerCreate(@Valid UserRegisterTo register, BindingResult result) {
-        if (result.hasErrors()) {
-            return "account/register";
-        }
-
-        service.userRegister(register);
-        return "info";
+    @GetMapping("/register-success")
+    public String registerSuccess() {
+        return "account/success";
     }
+
+//    @PostMapping("/register")
+//    public String registerCreate(@Valid UserRegisterTo register, BindingResult result) {
+//        if (result.hasErrors()) {
+//            return "account/register";
+//        }
+//
+//        service.userRegister(register);
+//        return "info";
+//    }
 
     @RequestMapping(value = "/confirm-account/{token}", method = {RequestMethod.GET, RequestMethod.POST})
     public String confirmUserAccount(@PathVariable("token") String token) {

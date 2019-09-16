@@ -8,6 +8,7 @@ import com.amz.reviews.repository.OrderRepository;
 import com.amz.reviews.to.OrderIdTo;
 import com.amz.reviews.to.OrderReviewTo;
 import com.amz.reviews.util.Status;
+import com.amz.reviews.util.ValidationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -68,7 +69,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order customerGetOrderWithProduct(int orderId, int userId) {
-        return repository.customerGetOrderWithProduct(orderId, userId);
+        Order order = repository.customerGetOrderWithProduct(orderId, userId);
+        ValidationUtil.checkNotFound(order);
+        return order;
     }
 
     @Override

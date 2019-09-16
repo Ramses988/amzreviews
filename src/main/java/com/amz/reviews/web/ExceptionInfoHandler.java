@@ -1,5 +1,6 @@
 package com.amz.reviews.web;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -18,5 +19,10 @@ public class ExceptionInfoHandler {
         return ResponseEntity.unprocessableEntity().body(e.getMessage());
     }
 
+    @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<String> conflict() {
+        return ResponseEntity.unprocessableEntity().body("Указанный email уже существует!");
+    }
 }
 
