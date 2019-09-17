@@ -4,6 +4,7 @@ import com.amz.reviews.model.ConfirmToken;
 import com.amz.reviews.model.User;
 import com.amz.reviews.repository.UserRepository;
 import com.amz.reviews.repository.datajpa.CrudConfirmRepository;
+import com.amz.reviews.to.FeedbackTo;
 import com.amz.reviews.to.UserRegisterTo;
 import com.amz.reviews.util.UserUtil;
 import com.amz.reviews.util.ValidationUtil;
@@ -59,6 +60,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         user.setName(name);
         user.setPayPal(payPal);
         repository.save(user);
+    }
+
+    @Override
+    public void feedback(FeedbackTo feedback) {
     }
 
     @Override

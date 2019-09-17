@@ -2,6 +2,7 @@ package com.amz.reviews.web.account;
 
 import com.amz.reviews.service.UserService;
 import com.amz.reviews.to.UserRegisterTo;
+import com.amz.reviews.to.FeedbackTo;
 import com.amz.reviews.util.exception.ApplicationException;
 import com.amz.reviews.web.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,14 @@ public class RestAccountController {
     @PostMapping("/reset-password")
     public void resetPassword(@RequestParam("email") String email) {
         service.resetPassword(email);
+    }
+
+    @PostMapping("/feedback")
+    public void feedback(@Valid FeedbackTo feedback, BindingResult result) {
+        if (result.hasErrors())
+            throw new ApplicationException("Проверьте правильность заплонения полей!");
+
+        service.feedback(feedback);
     }
 
     @PostMapping("/register")

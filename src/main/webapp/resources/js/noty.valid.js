@@ -101,6 +101,21 @@ $(function () {
         }
     });
 
+    $('.btn-feedback').click(function () {
+        if(validForm("#fromFeedback")) {
+            $.ajax({
+                type: "POST",
+                url: "/rest/account/feedback",
+                data: $('#fromFeedback').serialize()
+            }).done(function () {
+                $('#fromFeedback').trigger('reset');
+                successNoty("Запрос отправлен");
+            })
+        } else {
+            failNoty("Проверьте правильность заплонения полей!");
+        }
+    });
+
     $('.btn-register').click(function () {
         if(validForm("#userRegister")) {
             $.ajax({
@@ -151,6 +166,11 @@ $(function () {
                     chek = false;
                 }
             }
+            if($(el).hasClass("textarea")) {
+                if(lenth(v, 500)) {
+                    chek = false;
+                }
+            }
             if($(el).hasClass("email")) {
                 if(email(v)) {
                     chek = false;
@@ -188,6 +208,13 @@ $(function () {
             if(lenth(data, 50)) {
                 $(this).closest('.form-group').addClass('has-error');
                 $(this).closest('.form-group').find('.form-validation').text("Значение поля не может привышать 50 символов");
+                return false;
+            }
+        }
+        if($(this).hasClass("textarea")) {
+            if(lenth(data, 500)) {
+                $(this).closest('.form-group').addClass('has-error');
+                $(this).closest('.form-group').find('.form-validation').text("Текст не может привышать 500 символов");
                 return false;
             }
         }
