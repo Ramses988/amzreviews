@@ -4903,10 +4903,55 @@ img.not-found {
     text-align: left!important
 }
 
+.top-5 {
+    padding-top: 3%;
+}
+
+.image-main {
+    background: url("/resources/images/main.png") no-repeat;
+    background-size: 100%;
+    padding-bottom: 15%;
+}
+
+.slider-text {
+    color: #fff;
+    padding-top: 5%
+}
+
+.list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #919090;
+}
+
+#services-list {
+    color: #fff;
+    padding-top: 15%
+}
+
+#services-list a {
+    border: 1px solid #fff;
+    padding: 9px 17px 9px 17px
+}
+
+#services-list a:hover {
+    color: #000;
+    background: #fff;
+}
+
 
     /* Add size */
 
 @media(min-width:1px) and (max-width:480px) {
+
+    .slider-text {
+        font-size: 20px;
+    }
+
+    #services-list {
+        display: none;
+    }
 
     .modal-container {
         position: fixed;
@@ -4949,6 +4994,14 @@ img.not-found {
 
 @media(min-width:481px) and (max-width:768px) {
 
+    .slider-text {
+        font-size: 30px;
+    }
+
+    #services-list {
+        display: none;
+    }
+
     a#inf-small {
         font-size: 15px;
     }
@@ -4974,6 +5027,14 @@ img.not-found {
 
 @media(min-width:768px) and (max-width:1000px) {
 
+    .slider-text {
+        font-size: 40px;
+    }
+
+    #services-list {
+        display: none;
+    }
+
     a#inf-small {
         font-size: 15px;
     }
@@ -4983,6 +5044,26 @@ img.not-found {
         margin: auto
     }
     
+}
+
+@media(min-width:1001px) and (max-width:1500px) {
+    #services-list {
+        display: none;
+    }
+}
+
+@media(min-width:1501px) and (max-width:1700px) {
+    .image-main {
+        height: 500px;
+        padding-bottom: 0;
+    }
+}
+
+@media(min-width:1701px) {
+    .image-main {
+        height: 630px;
+        padding-bottom: 0;
+    }
 }
 
 @media(min-width:1000px) {
@@ -10011,6 +10092,10 @@ a.a-orange-un {
 a.a-orange-un:hover {
     color: #fe9900;
     text-decoration: underline;
+}
+
+.orange-text {
+    color: #fe9900;
 }
 
 .bg-lighter:not([style*=background-])+.bg-lighter:not([style*=background-]) {
