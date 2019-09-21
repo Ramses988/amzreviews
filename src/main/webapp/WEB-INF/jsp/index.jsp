@@ -15,11 +15,11 @@
             </div>
         </section>
 
-        <section id="Services" class="section section-bottom-98 section-lg-bottom-110 top-5 bg-default novi-background">
-            <div class="container">
-                <h2>НАШИ УСЛУГИ</h2>
+        <section id="Services" class="section top-5 bg-default novi-background">
+            <div class="container line-bot">
+                <h2>Наши услуги</h2>
                 <hr class="divider bg-saffron">
-                <div class="row row-65">
+                <div class="row">
                     <div class="col-md-6 col-lg-4"><img class="img-fluid d-inline-block" src="/resources/images/five.png" alt="">
                         <div class="text-md-left offset-top-24">
                             <div>
@@ -72,6 +72,62 @@
                 </div>
             </div>
         </section>
+
+        <section class="section-bottom-98">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">Последние публикации</h2>
+                    <hr class="divider bg-saffron">
+                    <p class="text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                        Мы всегда стараемся быть в тренде последних новостей и событий, связанных с торговой площадкой Amazon. Здесь мы делимся с Вами знаниями и опытом. В этих публикациях, вы
+                        найдете полезные советы по работе с площадкой.
+                    </p>
+                </div>
+                <div id="container-public">
+                    <div class="row col-lg-borders">
+                        <div class="col-lg-6 top-block wow fadeInLeft animated" data-wow-duration="300ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 0ms; animation-name: fadeInLeft;">
+                            <div class="fl-all">
+                                <img id="first-article" src="/resources/images/publications/public1.png" alt="" /></div>
+                            <div class="fl-all">
+                                <span class="bl">20 Сентебря 2019</span>
+                                <h2 class="entry-title">Топ-10 частых ошибок продовцов на Amazone</h2>
+                                <p>
+                                    Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить склад, как продавать и все продать и потом продавать
+                                    Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить склад, как продавать...
+                                </p>
+                                <a href="#">Читать дальше</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 text-lg-left wow fadeInLeft animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                            <div class="first-block">
+                                <img src="/resources/images/publications/public2.png" alt="" />
+                            </div>
+                            <div class="first-block text-block">
+                                <span class="bl">20 Сентебря 2019</span>
+                                <h2 class="entry-title">С чего начать бизнес на Amazon, лучшие советы</h2>
+                                <p>
+                                    Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить...
+                                </p>
+                                <a href="#">Читать дальше</a>
+                            </div>
+                            <div class="first-block">
+                                <img src="/resources/images/publications/public3.png" alt="" />
+                            </div>
+                            <div class="first-block text-block">
+                                <span class="bl">20 Сентебря 2019</span>
+                                <h2 class="entry-title">Не продается товар, залежался на складе ?</h2>
+                                <p>
+                                    Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить...
+                                </p>
+                                <a href="#">Читать дальше</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <script type="text/javascript">
             $(function(){
                 $("a[href^='#']").click(function(){
