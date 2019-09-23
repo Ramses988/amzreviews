@@ -16,7 +16,7 @@
         <section class="section section-50 bg-lighter novi-background">
             <jsp:useBean id="order" scope="request" type="com.amz.reviews.model.Order" />
 
-            <div class="owl-carousel owl-theme">
+            <div class="owl-carousel slider-product owl-theme">
                 <div><img src="${order.product.image}" alt="" /></div>
                 <c:forEach items="${order.product.images}" var="image">
                     <div><img src="${image.getUrl()}" alt="" /></div>

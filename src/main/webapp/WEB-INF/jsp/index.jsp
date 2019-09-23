@@ -5,6 +5,12 @@
 
 <reviews:genericPage menu="index">
     <jsp:attribute name="title">AmzReviews - Надежный инструмент для обмена</jsp:attribute>
+    <jsp:attribute name="styles">
+        <link rel="stylesheet" href="/resources/css/owl-main-page.css">
+    </jsp:attribute>
+    <jsp:attribute name="scripts">
+        <script src="/resources/js/owl.carousel.min.js"></script>
+    </jsp:attribute>
     <jsp:body>
         <section>
             <div class="image-main">
@@ -122,6 +128,65 @@
                                 </p>
                                 <a href="#">Читать дальше</a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-50 section-bottom-98 bg-lighter-new novi-background">
+            <div class="container">
+                <h2 class="font-weight-bold">Отзывы клиентов</h2>
+                <hr class="divider bg-saffron">
+                <div class="offset-top-66">
+                    <!-- Testimonials Slider v.4-->
+                    <div class="slider-main owl-carousel owl-carousel-classic owl-carousel-class-light veil-owl-nav owl-carousel-testimonials-3" data-items="1" data-md-items="2" data-lg-items="3" data-xl-items="3" data-nav="false" data-dots="true" data-margin="50px">
+                        <div>
+                            <blockquote class="quote quote-slider-4 unit uni-spacing-sm flex-md-row">
+                                <div class="unit-left">
+                                    <img class="quote-img rounded-circle" width="100" height="100" src="/resources/images/feedback/facebook.png" alt="Reviews facebook"/>
+                                </div>
+                                <div class="unit-body text-left">
+                                    <div>
+                                        <p>
+                                            <q>Thank you for your prompt response and the help that you gave me. You always have a quick solution to any problem. What an excellent level of customer service!</q>
+                                        </p>
+                                    </div>
+                                    <p class="font-weight-bold quote-author offset-top-10 offset-md-top-4">
+                                        <cite class="text-normal">Lisa Evans</cite>
+                                    </p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div>
+                            <blockquote class="quote quote-slider-4 unit uni-spacing-sm flex-md-row">
+                                <div class="unit-left"><img class="quote-img rounded-circle" width="100" height="100" src="/resources/images/feedback/facebook.png" alt="Reviews facebook"/></div>
+                                <div class="unit-body text-left">
+                                    <div>
+                                        <p>
+                                            <q>I just want to thank you for your help. I was so pleased and grateful. Keep up the excellent work. Your site provides the best support I have ever encountered.</q>
+                                        </p>
+                                    </div>
+                                    <p class="font-weight-bold quote-author offset-top-10 offset-md-top-4">
+                                        <cite class="text-normal">Nicholas Lane</cite>
+                                    </p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div>
+                            <blockquote class="quote quote-slider-4 unit uni-spacing-sm flex-md-row">
+                                <div class="unit-left"><img class="quote-img" width="100" height="100" src="/resources/images/feedback/instagram.png" alt="Reviews instagram"/></div>
+                                <div class="unit-body text-left">
+                                    <div>
+                                        <p>
+                                            <q>Thank you very much for your rapid response. It's no doubt that your company is worth admiring! I have experienced the fastest support ever. Thank you a thousand times.</q>
+                                        </p>
+                                    </div>
+                                    <p class="font-weight-bold quote-author offset-top-10 offset-md-top-4">
+                                        <cite class="text-normal">Ethan Dean</cite>
+                                    </p>
+                                </div>
+                            </blockquote>
                         </div>
                     </div>
                 </div>
