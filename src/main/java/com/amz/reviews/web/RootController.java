@@ -26,8 +26,8 @@ public class RootController {
         return "help";
     }
 
-    @GetMapping("/news")
-    public String news() {
-        return "news";
+    @GetMapping("/articles")
+    public String articles() {
+        return "articles";
     }
 }

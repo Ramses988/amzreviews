@@ -35,8 +35,8 @@
     <ul class="rd-navbar-nav">
         <li ${menu == 'index' ? "class='active'" : ""}><a href="/"><span>Главная</span></a></li>
         <sec:authorize access="isAnonymous()">
+            <li ${menu == 'articles' ? "class='active'" : ""}><a href="/articles"><span>Статьи</span></a></li>
             <li ${menu == 'help' ? "class='active'" : ""}><a href="/help"><span>FAQ</span></a></li>
-            <li ${menu == 'news' ? "class='active'" : ""}><a href="/news"><span>Новости</span></a></li>
         </sec:authorize>
 
         <sec:authorize access="hasRole('ROLE_SELLER')">

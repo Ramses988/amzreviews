@@ -27,60 +27,60 @@
                 <div class="row row-65 row-fix">
                     <div class="col-lg-9">
                         <div class="faq_item" id="ques1">
-                            <div class="faq_ques">
-                                <img src="/resources/images/faq_gues.png" />
-                                <p>Как я могу воспользоватся сайтом ?</p>
-                            </div>
-                            <div class="clear"></div>
                             <div class="faq_ans">
                                 <p>
-                                    Для того чтобы воспользоватся сайтом, необходимо зарегистрироваться в качестве продавца или покупателя. Продавцы могут выставлять свой продукт на выкуп, а
-                                    покупаетли выкупают товар. Для регистрации перейдите по <a href="/register">ссылке</a>.
+                                    Как я могу воспользоватся сайтом ?
                                 </p>
+                                <img src="/resources/images/faq_gues.png" />
+                            </div>
+                            <div class="clear"></div>
+                            <div class="faq_ques">
                                 <img src="/resources/images/faq_ans.png" />
+                                <p>Для того чтобы воспользоватся сайтом, необходимо зарегистрироваться в качестве продавца или покупателя. Продавцы могут выставлять свой продукт на выкуп, а
+                                    покупаетли выкупают товар. Для регистрации перейдите по <a href="/register">ссылке</a>.</p>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="faq_item" id="ques2">
-                            <div class="faq_ques">
-                                <img src="/resources/images/faq_gues.png" />
-                                <p>Сколько стоит регистрация на сайте ?</p>
-                            </div>
-                            <div class="clear"></div>
                             <div class="faq_ans">
                                 <p>
-                                    Регистрация на сайте бесплатная. Плата берется только с продавцов, за каждый выкуп. Стоимость выкупа для продавцов, стоит от $3-$5 + стоимость товара,
-                                    в зависимости от выбранной услуги.
+                                    Сколько стоит регистрация на сайте ?
                                 </p>
+                                <img src="/resources/images/faq_gues.png" />
+                            </div>
+                            <div class="clear"></div>
+                            <div class="faq_ques">
                                 <img src="/resources/images/faq_ans.png" />
+                                <p>Регистрация на сайте бесплатная. Плата берется только с продавцов, за каждый выкуп. Стоимость выкупа для продавцов, стоит от $3-$5 + стоимость товара,
+                                    в зависимости от выбранной услуги.</p>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="faq_item" id="ques3">
-                            <div class="faq_ques">
-                                <img src="/resources/images/faq_gues.png" />
-                                <p>Я хочу зарегистрироваться в качестве покупателя, что для этого надо ?</p>
-                            </div>
-                            <div class="clear"></div>
                             <div class="faq_ans">
                                 <p>
-                                    Для регистрации в качестве покупателя, необходимо проживать на територии США или Канады. Иметь активный аккаунт на Amazon и PayPal.
+                                    Я хочу зарегистрироваться в качестве покупателя, что для этого надо ?
                                 </p>
+                                <img src="/resources/images/faq_gues.png" />
+                            </div>
+                            <div class="clear"></div>
+                            <div class="faq_ques">
                                 <img src="/resources/images/faq_ans.png" />
+                                <p>Для регистрации в качестве покупателя, необходимо проживать на територии США или Канады. Иметь активный аккаунт на Amazon и PayPal.</p>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="faq_item" id="ques4">
-                            <div class="faq_ques">
-                                <img src="/resources/images/faq_gues.png" />
-                                <p>Сколько времени нужно чтобы получить верифай отзывы ?</p>
-                            </div>
-                            <div class="clear"></div>
                             <div class="faq_ans">
                                 <p>
-                                    Все зависит от Вашего товара, если товар популярный, то выкуп происходит быстро. После выкупа товара, ревьювер обычно пишет отзыв через 10-25 дней.
+                                    Сколько времени нужно чтобы получить верифай отзывы ?
                                 </p>
+                                <img src="/resources/images/faq_gues.png" />
+                            </div>
+                            <div class="clear"></div>
+                            <div class="faq_ques">
                                 <img src="/resources/images/faq_ans.png" />
+                                <p>Все зависит от Вашего товара, если товар популярный, то выкуп происходит быстро. После выкупа товара, ревьювер обычно пишет отзыв через 10-25 дней.</p>
                             </div>
                             <div class="clear"></div>
                         </div>

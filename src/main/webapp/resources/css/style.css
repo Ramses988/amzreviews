@@ -35753,9 +35753,8 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 .faq_ans p {
     margin: 0;
     padding: 30px;
-    text-align: left;
-    background: #ffdb95;
-    color: #575a5e;
+    background: #45aed6;
+    color: #fff;
     font-weight: 300;
     box-sizing: border-box;
     font-size: 16px;
@@ -35769,7 +35768,7 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
     right: -34px;
     top: 0px;
     position: absolute;
-    border-left: 38px #ffdb95 solid;
+    border-left: 38px #45aed6 solid;
     border-bottom: 25px transparent solid;
 }
 
@@ -35790,6 +35789,7 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 
 .faq_ques p {
     background: #f1f1f1;
+    text-align: left;
     box-sizing: border-box;
     padding: 30px;
     color: #000;
@@ -35829,6 +35829,33 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 .col-lg-3-new hr {
     max-width: 80%;
 }
+
+.oxegen-a {
+    color: #028fcc;
+    font-size: 19px;
+    font-weight: 500!important;
+}
+
+.oxegen-a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+.oxegen-date {
+    font-size: 12px;
+}
+
+/*.oxegen-date:after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    bottom: 200px;*/
+/*    width: 50px;*/
+/*    height: 2px;*/
+/*    margin-left: 15px;*/
+/*    background-color: #028fcc;*/
+/*}*/
 
 /* Add size */
 
