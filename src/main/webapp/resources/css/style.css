@@ -1115,6 +1115,12 @@ pre code {
         flex: 0 0 25%;
         max-width: 25%
     }
+
+    .col-lg-3-new {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
     .col-lg-4 {
         flex: 0 0 33.33333%;
         max-width: 33.33333%
@@ -35738,9 +35744,99 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
     color: #64686d;
 }
 
+.faq_ans {
+    display: block;
+    position: relative;
+    padding: 0 0 10px;
+}
+
+.faq_ans p {
+    margin: 0;
+    padding: 30px;
+    text-align: left;
+    background: #ffdb95;
+    color: #575a5e;
+    font-weight: 300;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 10px 0px 10px 10px;
+    position: relative;
+    width: calc(100% - 100px);
+}
+
+.faq_ans p:after{
+    content: '';
+    right: -34px;
+    top: 0px;
+    position: absolute;
+    border-left: 38px #ffdb95 solid;
+    border-bottom: 25px transparent solid;
+}
+
+.faq_ans img {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.faq_ques {
+    display: block;
+}
+
+.faq_ques img {
+    margin: 0;
+    float: left;
+}
+
+.faq_ques p {
+    background: #f1f1f1;
+    box-sizing: border-box;
+    padding: 30px;
+    color: #000;
+    line-height: 20px;
+    font-weight: 300;
+    border-radius: 0 10px 10px 10px;
+    position: relative;
+    float: right;
+    width: calc(100% - 100px);
+}
+
+.faq_ques p:before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 0;
+    border-right: 43px #f1f1f1 solid;
+    height: 0;
+    display: block;
+    border-bottom: 40px transparent solid;
+}
+
+.clear {
+    clear: both;
+    padding-bottom: 30px;
+}
+
+.blue-text {
+    color: #45aed6;
+}
+
+.col-lg-3-new p {
+    text-align: left;
+    padding-left: 30px;
+}
+
+.col-lg-3-new hr {
+    max-width: 80%;
+}
+
 /* Add size */
 
 @media(min-width:1px) and (max-width:480px) {
+
+    .col-lg-3-new {
+        display: none;
+    }
 
     #container-public a {
         margin-bottom: 9%;
@@ -35818,6 +35914,10 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 
 @media(min-width:481px) and (max-width:768px) {
 
+    .col-lg-3-new {
+        display: none;
+    }
+
     #container-public a {
         margin-bottom: 9%;
     }
@@ -35877,6 +35977,10 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 }
 
 @media(min-width:768px) and (max-width:991px) {
+
+    .col-lg-3-new {
+        display: none;
+    }
 
     .top-block {
         margin-bottom: 5%;
