@@ -23,47 +23,53 @@
             </div>
         </section>
 
-        <section class="section section-66 section-md-bottom-110 bg-default novi-background" data-preset='{"title":"Properties 3","category":"properties","reload":true,"id":"properties-3"}'>
+        <section class="section section-66 section-md-bottom-110 bg-default novi-background">
             <div class="container">
                 <div class="row row-65 row-fix justify-content-sm-center">
                     <div class="col-lg-8">
                         <div class="row row-65">
-                            <div class="col-md-6"><img class="img-fluid d-inline-block" src="/resources/images/publications/public1_full.png" width="370" height="300" alt="">
+                            <div class="col-md-6-new1">
+                                <img class="img-fluid1 d-inline-block" src="/resources/images/publications/public1_md.png" alt="">
                                 <div class="text-md-left offset-top-24">
                                     <div>
-                                        <h5><a class="oxegen-a" href="#">Топ-10 частых ошибок продовцов на Amazone</a></h5>
+                                        <b><a class="oxegen-a" href="#">Топ-10 частых ошибок продовцов на Amazone</a></b>
                                     </div>
                                     <h6 class="offset-top-10 oxegen-date">20 Сентебря 2019</h6>
                                     <div class="oxegen-text">
                                         <p>
                                             Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить Тут ответим на частые вопросы...
                                         </p>
+                                        <a class="oxegen-btn" href="#">Читать дальше</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6"><img class="img-fluid d-inline-block" src="/resources/images/publications/public1_full.png" width="350" height="300" alt="">
+                            <div class="col-md-6-new1">
+                                <img class="img-fluid1 d-inline-block" src="/resources/images/publications/public2_md.png" width="350" height="300" alt="">
                                 <div class="text-md-left offset-top-24">
                                     <div>
-                                        <h5><a class="oxegen-a" href="#">С чего начать бизнес на Amazon, лучшие советы</a></h5>
+                                        <b><a class="oxegen-a" href="#">С чего начать бизнес на Amazon, лучшие советы</a></b>
                                     </div>
                                     <h6 class="offset-top-10 oxegen-date">20 Сентебря 2019</h6>
                                     <div>
                                         <p>
                                             Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить Тут ответим на частые вопросы....
                                         </p>
+                                        <a class="oxegen-btn" href="#">Читать дальше</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6"><img class="img-fluid d-inline-block" src="/resources/images/publications/public1_full.png" width="370" height="300" alt="">
+                            <div class="col-md-6-new1">
+                                <img class="img-fluid1 d-inline-block" src="/resources/images/publications/public3_md.png" width="370" height="300" alt="">
                                 <div class="text-md-left offset-top-24">
                                     <div>
-                                        <h5><a class="oxegen-a" href="#">Не продается товар, залежался на складе ?</a></h5>
+                                        <b><a class="oxegen-a" href="#">Не продается товар, залежался на складе ?</a></b>
                                     </div>
                                     <h6 class="offset-top-10 oxegen-date">20 Сентебря 2019</h6>
                                     <div>
                                         <p>
                                             Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить Тут ответим на частые вопросы....
                                         </p>
+                                        <a class="oxegen-btn" href="#">Читать дальше</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,9 +78,9 @@
                             <!-- Classic Pagination-->
                             <nav>
                                 <ul class="pagination-classic">
-                                    <li><a href="#">Prev</a></li>
+                                    <li><a>Назад</a></li>
                                     <li class="active"><a>1</a></li>
-                                    <li><a href="#">Next</a></li>
+                                    <li><a>Далее</a></li>
                                 </ul>
                             </nav>
                         </div>
