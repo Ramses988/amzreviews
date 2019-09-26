@@ -22,7 +22,8 @@ public class MailSenderImpl implements MailSender {
             messageHelper.setFrom("www-75@list.ru");
             messageHelper.setTo(email);
             messageHelper.setSubject("Message for testing");
-            messageHelper.setText("<p>http://localhost:8080/confirm-account/"+token+"</p>", true);
+//            messageHelper.setText("<p>http://localhost:8080/confirm-account/"+token+"</p>", true);
+            messageHelper.setText(token, true);
         };
 
         try {

@@ -64,6 +64,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public void feedback(FeedbackTo feedback) {
+        mailSender.send("Ramses988@gmail.com", String.format("<p>%s</p>", feedback.getText()));
     }
 
     @Override

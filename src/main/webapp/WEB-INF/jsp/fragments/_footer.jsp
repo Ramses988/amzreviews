@@ -39,7 +39,7 @@
                             <div class="d-inline-block">
                                 <ul class="list list-marked">
                                     <li><a href="/">Гавная</a></li>
-                                    <li><a href="/news">Новости</a></li>
+                                    <li><a href="/articles">Статьи</a></li>
                                     <li><a href="/contacts">Контакты</a></li>
                                     <li><a href="/profile">Профиль</a></li>
                                 </ul>
