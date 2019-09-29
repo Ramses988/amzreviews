@@ -10,6 +10,6 @@ public class MailSenderTest extends AbstractServiceTest {
 
     @Test
     void sendTest() {
-        sender.send("TambovtsevRA@it.mos.ru", "edc6a6cb-e22c-494f-826e-82b9f869c25b");
+//        sender.send("TambovtsevRA@it.mos.ru", "edc6a6cb-e22c-494f-826e-82b9f869c25b");
     }
 }

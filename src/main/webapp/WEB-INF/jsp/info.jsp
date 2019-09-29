@@ -1,9 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="reviews" tagdir="/WEB-INF/tags" %>
 
-<jsp:include page="fragments/_header.jsp" />
-<jsp:include page="fragments/_logo.jsp" />
-
-<jsp:include page="fragments/_footer.jsp" />
+<reviews:genericPage>
+    <jsp:attribute name="title">${title}</jsp:attribute>
+    <jsp:body>
+        <section class="section section-34 section-bottom-66 bg-default novi-background">
+            <div class="container">
+                <h3><img id="Success" src="/resources/images/ok.png" alt="OK"/>${headline}.</h3>
+                <h5 class="font-weight-bold">На вашу почту отправлено подтверждение</h5>
+                <div>
+                    <div class="responsive-tabs-classic modal-body">
+                        <p>${text}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </jsp:body>
+</reviews:genericPage>

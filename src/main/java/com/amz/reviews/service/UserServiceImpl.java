@@ -6,6 +6,7 @@ import com.amz.reviews.repository.UserRepository;
 import com.amz.reviews.repository.datajpa.CrudConfirmRepository;
 import com.amz.reviews.to.FeedbackTo;
 import com.amz.reviews.to.UserRegisterTo;
+import com.amz.reviews.util.Mail;
 import com.amz.reviews.util.UserUtil;
 import com.amz.reviews.util.ValidationUtil;
 import com.amz.reviews.util.exception.ApplicationException;
@@ -19,6 +20,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.HttpClientErrorException;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 @Service("userService")
@@ -50,7 +53,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         ConfirmToken token = new ConfirmToken(user);
         crudConfirmRepository.save(token);
 
-//            mailSender.send(user.getEmail(), token.getConfirmToken());
+        Map<String, Object> values = new HashMap<>();
+        values.put("name", user.getName());
+        values.put("token", token.getConfirmToken());
+        Mail mail = new Mail(user.getEmail(), "Пожалуйста, подтвердите Вашу электронную почту", "verification_email", values);
+
+        mailSender.send(mail);
     }
 
     @Override
@@ -64,7 +72,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public void feedback(FeedbackTo feedback) {
-        mailSender.send("AmzBrothers@yandex.ru", String.format("<p>%s</p>", feedback.getText()));
+//        mailSender.send("Ramses988@gmail.com", String.format("<p>%s</p>", feedback.getText()));
     }
 
     @Override
@@ -90,7 +98,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             ConfirmToken token = new ConfirmToken(user);
             crudConfirmRepository.save(token);
 
-            mailSender.send(user.getEmail(), token.getConfirmToken());
+//            mailSender.send(user.getEmail(), token.getConfirmToken());
         }
     }
 

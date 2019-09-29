@@ -40,8 +40,11 @@ public class UserAccountController {
 //    }
 
     @RequestMapping(value = "/confirm-account/{token}", method = {RequestMethod.GET, RequestMethod.POST})
-    public String confirmUserAccount(@PathVariable("token") String token) {
+    public String confirmUserAccount(@PathVariable("token") String token, Model model) {
         service.userActive(token);
+        model.addAttribute("title", "Почтовый ящик успешно подтвержден");
+        model.addAttribute("headline", "Почтовый ящик успешно подтвержден");
+        model.addAttribute("text", "Почтовый ящик успешно подтвержден");
         return "info";
     }
 

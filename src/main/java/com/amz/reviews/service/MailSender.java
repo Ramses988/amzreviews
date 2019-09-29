@@ -1,5 +1,7 @@
 package com.amz.reviews.service;
 
+import com.amz.reviews.util.Mail;
+
 public interface MailSender {
-    void send(String email, String token);
+    void send(Mail mail);
 }
