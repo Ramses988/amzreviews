@@ -72,7 +72,13 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public void feedback(FeedbackTo feedback) {
-//        mailSender.send("Ramses988@gmail.com", String.format("<p>%s</p>", feedback.getText()));
+        Map<String, Object> values = new HashMap<>();
+        values.put("name", feedback.getName());
+        values.put("email", feedback.getEmail());
+        values.put("text", feedback.getText());
+
+        Mail mail = new Mail("Ramses988@gmail.com", "Запрос из формы обратной связи", "feedback", values);
+        mailSender.send(mail);
     }
 
     @Override
@@ -98,7 +104,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             ConfirmToken token = new ConfirmToken(user);
             crudConfirmRepository.save(token);
 
-//            mailSender.send(user.getEmail(), token.getConfirmToken());
+            Map<String, Object> values = new HashMap<>();
+            values.put("name", user.getName());
+            values.put("token", token.getConfirmToken());
+
+            Mail mail = new Mail(user.getEmail(), "Сброс пароля", "reset_password", values);
+            mailSender.send(mail);
         }
     }
 

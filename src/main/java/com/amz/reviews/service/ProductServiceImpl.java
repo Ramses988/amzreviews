@@ -5,7 +5,7 @@ import com.amz.reviews.model.Product;
 import com.amz.reviews.model.User;
 import com.amz.reviews.repository.ProductRepository;
 import com.amz.reviews.to.OrderTo;
-import com.amz.reviews.util.ParseHTMLUtil;
+import com.amz.reviews.util.Mail;
 import com.amz.reviews.util.Status;
 import com.amz.reviews.util.ValidationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import com.amz.reviews.util.exception.ApplicationException;
 
@@ -32,6 +34,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ImageService imageService;
+
+    @Autowired
+    private MailSender mailSender;
 
     @Override
     @Transactional
@@ -128,20 +133,28 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    @Transactional
     public void sellerCreateProduct(String asin, int userId) {
-        Product product = ParseHTMLUtil.createAndUpdateProduct(asin);
-        if(Objects.nonNull(product)) {
-            product.setCountOrders(0);
-            product.setActiveOrders(0);
-            product.setCompletedOrders(0);
-            product.setUser(getUser(userId));
+        if(Objects.nonNull(asin)) {
+            Map<String, Object> values = new HashMap<>();
+            values.put("user", userId);
+            values.put("asin", asin);
 
-            productRepository.save(product);
-
-            product.getImages().forEach(i -> i.setProduct(product));
-
-            imageService.saveAll(product.getImages());
+            Mail mail = new Mail("Ramses988@gmail.com", "Запрос на добавление продукта", "add_product", values);
+            mailSender.send(mail);
         }
+
+//        Product product = ParseHTMLUtil.createAndUpdateProduct(asin);
+//        if(Objects.nonNull(product)) {
+//            product.setCountOrders(0);
+//            product.setActiveOrders(0);
+//            product.setCompletedOrders(0);
+//            product.setUser(getUser(userId));
+//
+//            productRepository.save(product);
+//
+//            product.getImages().forEach(i -> i.setProduct(product));
+//
+//            imageService.saveAll(product.getImages());
+//        }
     }
 }

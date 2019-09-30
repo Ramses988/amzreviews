@@ -36,6 +36,7 @@ public class SellerRestController extends AbstractSellerController {
     @PostMapping("/add-product")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void addProduct(@RequestBody String asin) {
+        super.sellerCreateProduct(asin);
     }
 
     @PostMapping("/product/update")

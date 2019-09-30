@@ -18,6 +18,11 @@ public abstract class AbstractSellerController {
     @Autowired
     private OrderService orderService;
 
+    void sellerCreateProduct(String asin) {
+        int userId = SecurityUtil.authUserId();
+        productService.sellerCreateProduct(asin, userId);
+    }
+
     void sellerDeleteProduct(Integer id) {
         int userId = SecurityUtil.authUserId();
         productService.sellerDeleteProduct(id, userId);
