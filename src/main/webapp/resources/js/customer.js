@@ -72,6 +72,12 @@ function loading(name, url) {
                 }
             },
             {
+                "data": "key",
+                "render": function (data) {
+                    return data;
+                }
+            },
+            {
                 "data": "price",
                 "render": function (data) {
                     return "$"+data;
@@ -90,7 +96,7 @@ function loading(name, url) {
                 "data": function (row) {
                     if(row.reviewEnable) {
                         if(row.reviews != null) {
-                            return '<a class="original" href="'+row.reviews+'">'+(row.reviews).substring(0, 29)+"..."+'</a>';
+                            return '<a class="original" href="'+row.reviews+'">Отзыв</a>';
                         } else {
                             return '<button class="btn-border" onclick="reviews('+row.id+')">Добавить ссылку</button>';
                         }

@@ -24,7 +24,7 @@ public class UserAccountController {
         return "account/register";
     }
 
-    @GetMapping("/register-success")
+    @GetMapping("/success")
     public String registerSuccess() {
         return "account/success";
     }
@@ -42,9 +42,10 @@ public class UserAccountController {
     @RequestMapping(value = "/confirm-account/{token}", method = {RequestMethod.GET, RequestMethod.POST})
     public String confirmUserAccount(@PathVariable("token") String token, Model model) {
         service.userActive(token);
-        model.addAttribute("title", "Почтовый ящик успешно подтвержден");
-        model.addAttribute("headline", "Почтовый ящик успешно подтвержден");
-        model.addAttribute("text", "Почтовый ящик успешно подтвержден");
+        model.addAttribute("title", "Ваш email адрес успешно подтвержден");
+        model.addAttribute("headline", "Спасибо за регистрацию на нашем сайте");
+        model.addAttribute("text", "Спасибо за регистрацию на нашем сайте. Ваш email успешно подтвержден, теперь вы можете войти в Личный кабинет. Для входа в Личный кабинет перейдите по\n" +
+                "                                <a class=\"original\" href=\"/login\">ссылке</a>");
         return "info";
     }
 
@@ -57,8 +58,11 @@ public class UserAccountController {
 
     @PostMapping("/reset-password")
     public String confirmResetPassword(@RequestParam("token") String token, @RequestParam("password") String password,
-                                       @RequestParam("confirmPassword") String confirmPassword) {
+                                       @RequestParam("confirmPassword") String confirmPassword, Model model) {
         service.changeResetPassword(token, password, confirmPassword);
+        model.addAttribute("title", "Пароль успешно изменен!");
+        model.addAttribute("headline", " ");
+        model.addAttribute("text", "Вы успешно изменили пароль для входа в Личный кабинет. Для входа в Личный кабинет перейдите по <a class=\"original\" href=\"/login\">ссылке</a>");
         return "info";
     }
 }

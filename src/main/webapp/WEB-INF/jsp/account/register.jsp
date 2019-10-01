@@ -43,22 +43,13 @@
                                     <span class="form-validation"></span>
                                 </div>
                                 <div class="form-group offset-top-24">
-                                    <label class="orm-label-outside registr">Выбрать Роль:
-                                        <span id="help-role" class="icon novi-icon mdi mdi-help-circle-outline" title="Выберите роль Продавец, если будете продавать продукт. Роль Покупатель, если будете покупать продукт."></span></label>
-                                </div>
-                                <div class="form-group-registr">
-                                    <div class="form-check">
-                                        <label>
-                                            <input type="radio" name="roles" id="roles1" value="shopper" checked>
-                                            <span class="label-text">Покупатель</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label>
-                                            <input type="radio" name="roles" id="roles2" value="seller">
-                                            <span class="label-text">Продавец</span>
-                                        </label>
-                                    </div>
+                                    <label class="form-label-outside registr">Выберите Роль:
+                                        <span id="help-role" class="icon novi-icon mdi mdi-help-circle-outline" title="Выберите роль Продавец, если будете продавать продукт. Роль Покупатель, если будете покупать продукт."></span>
+                                    </label>
+                                    <select name="roles">
+                                        <option value="shopper">Покупатель</option>
+                                        <option value="seller">Продавец</option>
+                                    </select>
                                 </div>
                                 <div class="form-group offset-top-24">
                                     <label class="form-label-outside registr">Страна:</label>

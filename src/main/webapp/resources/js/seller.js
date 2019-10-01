@@ -32,6 +32,12 @@ $(function() {
                     }
                 },
                 {
+                    "data": "key",
+                    "render": function (data) {
+                        return data;
+                    }
+                },
+                {
                     "data": "price",
                     "render": function (data) {
                         return "$"+data;
@@ -51,7 +57,7 @@ $(function() {
                     "data": function (row) {
                         if(row.reviewEnable) {
                             if(row.reviews != null) {
-                                return '<a class="original" href="'+row.reviews+'">'+(row.reviews).substring(0, 29)+"..."+'</a>';
+                                return '<a class="original" href="'+row.reviews+'">Отзыв</a>';
                             } else {
                                 return "";
                             }

@@ -98,7 +98,7 @@ public class ProductServiceImpl implements ProductService {
         if(Objects.nonNull(product) && product.getCountOrders() > 0)
             return product;
 
-        // Обработка null
+        ValidationUtil.checkNotFound(product);
         return null;
     }
 

@@ -98,7 +98,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     @Transactional
     public void resetPassword(String email) {
-        User user = repository.getByEmail(email);
+        User user = repository.getByEmail(email.toLowerCase().trim());
 
         if(Objects.nonNull(user)) {
             ConfirmToken token = new ConfirmToken(user);
@@ -118,11 +118,15 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public void changeResetPassword(String token, String password, String confirmPassword) {
         ConfirmToken confirmToken = crudConfirmRepository.findByConfirmToken(token).orElse(null);
 
+        // Проверка значений
+
         if(Objects.nonNull(confirmToken) && password.equals(confirmPassword)) {
             confirmToken.getUser().setPassword(password);
             repository.save(confirmToken.getUser());
             crudConfirmRepository.delete(confirmToken);
         }
+
+        // Обработка ошибки
     }
 
     @Override

@@ -33464,7 +33464,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     right: 0;
     height: 20px;
     line-height: 20px;
-    content: "";
+    content: "\f140";
     font-family: material design icons;
     font-size: 20px
 }
@@ -35598,6 +35598,10 @@ html[class*=ie] .dtp-hand, html[class*=ie] .dtp-hour-hand {
     float: right
 }
 
+.col-center {
+    margin: 0 auto;
+}
+
 .ui-to-top {
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .15);
     position: fixed;
@@ -35836,11 +35840,15 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 }
 
 
-.oxegen-date {
+.oxegen-date, .oxegen-text {
     font-size: 12px;
     color: #9c9c9c;
     font-weight: 600!important;
     font-style: italic;
+}
+
+.oxegen-text {
+    font-size: 14px;
 }
 
 .img-fluid1 {

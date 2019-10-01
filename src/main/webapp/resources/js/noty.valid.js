@@ -123,7 +123,7 @@ $(function () {
                 url: "/rest/account/register",
                 data: $('#userRegister').serialize()
             }).done(function () {
-                window.location.href = "/register-success";
+                window.location.href = "/success";
             })
         } else {
             failNoty("Проверьте правильность заплонения полей!");

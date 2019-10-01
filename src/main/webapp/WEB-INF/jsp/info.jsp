@@ -6,13 +6,15 @@
     <jsp:body>
         <section class="section section-34 section-bottom-66 bg-default novi-background">
             <div class="container">
-                <h3><img id="Success" src="/resources/images/ok.png" alt="OK"/>${headline}.</h3>
-                <h5 class="font-weight-bold">На вашу почту отправлено подтверждение</h5>
-                <div>
-                    <div class="responsive-tabs-classic modal-body">
-                        <p>${text}</p>
+                <diV class="col-sm-8 col-center">
+                    <h3><img id="Success" src="/resources/images/ok.png" alt="OK"/>${title}</h3>
+                    <h5 class="font-weight-bold">${headline}</h5>
+                    <div>
+                        <div class="responsive-tabs-classic modal-body">
+                            <p>${text}</p>
+                        </div>
                     </div>
-                </div>
+                </diV>
             </div>
         </section>
     </jsp:body>

@@ -18,7 +18,8 @@
                             <a href="/customer/product/${product.id}"><img class="img-fluid d-inline-block" src="${product.image}" alt=""></a>
                             <div class="text-md-center offset-top-24">
                                 <div class="fixed-md-title">
-                                    <p><a class="a-orange-un" href="/customer/product/${product.id}">${product.name}...</a></p>
+                                    <a class="a-orange-un" href="/customer/product/${product.id}">${product.name}...</a><br>
+                                    <h6 class="offset-top-10 oxegen-text">${product.reviewEnable ? "Выкуп с отзывом" : "Выкуп без отзыва"}</h6>
                                 </div>
                                 <h6 class="offset-top-10">&#36;${product.price}</h6>
                             </div>
@@ -34,12 +35,12 @@
                     <!-- Classic Pagination-->
                     <nav>
                         <ul class="pagination-classic">
-                            <li><a href="#">Prev</a></li>
+                            <li><a href="#">Назад</a></li>
                             <li class="active"><a href="#">1</a></li>
                                 <%--<li><a href="#">2</a></li>--%>
                                 <%--<li><a href="#">3</a></li>--%>
                                 <%--<li><a href="#">4</a></li>--%>
-                            <li><a href="#">Next</a></li>
+                            <li><a href="#">Далее</a></li>
                         </ul>
                     </nav>
                 </div>
