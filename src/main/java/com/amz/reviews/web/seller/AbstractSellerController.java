@@ -4,6 +4,7 @@ import com.amz.reviews.model.Order;
 import com.amz.reviews.model.Product;
 import com.amz.reviews.service.OrderService;
 import com.amz.reviews.service.ProductService;
+import com.amz.reviews.service.UserService;
 import com.amz.reviews.to.OrderTo;
 import com.amz.reviews.web.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,14 @@ public abstract class AbstractSellerController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private UserService userService;
+
+    String sellerGetBalance() {
+        int userId = SecurityUtil.authUserId();
+        return userService.sellerGetBalance(userId);
+    }
 
     void sellerCreateProduct(String asin) {
         int userId = SecurityUtil.authUserId();

@@ -5,6 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 class DataJpaUserServiceTest extends AbstractServiceTest {
 
+    @Autowired
+    private UserService service;
+
+    @Test
+    void getBalanceTest() {
+        String balance = service.sellerGetBalance(58);
+        System.out.println(balance);
+    }
+
 //    @Test
 //    void getAllTest() {
 //        List<User> allUsers = service.getAll();

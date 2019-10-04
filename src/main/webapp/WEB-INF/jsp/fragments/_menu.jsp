@@ -28,6 +28,11 @@
                                     <li><span class="icon novi-icon mdi mdi-account"></span>
                                         <small>Привет, <sec:authentication property="principal.name" /></small>
                                     </li>
+                                    <sec:authorize access="hasRole('ROLE_SELLER')">
+                                        <li>
+                                            Баланс: <small class="price-red"></small>
+                                        </li>
+                                    </sec:authorize>
                                     <li>
                                         <%--<form:form method="POST" action="/logout">--%>
                                             <%--<button class="btn-exit"><span class="icon novi-icon mdi"></span></button>--%>

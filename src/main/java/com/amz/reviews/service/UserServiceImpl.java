@@ -61,6 +61,18 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         mailSender.send(mail);
     }
 
+
+    @Override
+    public String sellerGetBalance(int userId) {
+        User user = getUser(userId);
+
+        if(Objects.nonNull(user)) {
+            return String.format("$%s", user.getBalance());
+        }
+
+        return null;
+    }
+
     @Override
     @Transactional
     public void updateUser(String name, String payPal, int userId) {

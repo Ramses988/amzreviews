@@ -23,6 +23,11 @@ public class SellerRestController extends AbstractSellerController {
         return super.sellerGetAllProducts();
     }
 
+    @GetMapping("/get-balance")
+    public String getBalance() {
+        return super.sellerGetBalance();
+    }
+
     @GetMapping("/active-orders/{id}")
     public List<Order> getActiveOrder(@PathVariable("id") int id) {
         return super.sellerGetActiveOrders(id);

@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Page Footer-->
@@ -100,6 +101,9 @@
 <!-- Java script-->
     <script src="/resources/js/core.min.js"></script>
     <script src="/resources/js/script.js"></script>
+    <sec:authorize access="hasRole('ROLE_SELLER')">
+        <script src="/resources/js/balance.js"></script>
+    </sec:authorize>
     <%--<script src="/resources/js/amz.reviews.min.js"></script>--%>
 </div>
 </body>

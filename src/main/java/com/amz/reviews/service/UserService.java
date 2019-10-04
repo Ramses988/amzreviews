@@ -8,6 +8,10 @@ import java.util.List;
 
 public interface UserService {
 
+    /* Sellers methods */
+
+    String sellerGetBalance(int userId);
+
     User getOne(int userId);
 
     User getUser(int id);

@@ -1,9 +1,27 @@
 "use strict"; 
-var userAgent = navigator.userAgent.toLowerCase(), initialDate = new Date(), $document = $(document), $window = $(window), $html = $("html"), isDesktop = $html.hasClass("desktop"), isIE = userAgent.indexOf("msie") != -1 ? parseInt(userAgent.split("msie")[1]) : userAgent.indexOf("trident") != -1 ? 11 : userAgent.indexOf("edge") != -1 ? 12 : false, isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent), isNoviBuilder, plugins = { responsiveTabs: $(".responsive-tabs"), rdInputLabel: $(".form-label"), rdNavbar: $(".rd-navbar"), regula: $("[data-constraints]"), owl: $(".owl-carousel"), swiper: $(".swiper-slider"), selectFilter: $("select"), rdMailForm: $(".rd-mailform"), additionalFields: $(".additional-fields"), materialParallax: $(".parallax-container"), copyrightYear: $("#copyright-year"), maps: $(".google-map-container"), lightGallery: $("[data-lightgallery='group']"), lightGalleryItem: $("[data-lightgallery='item']"), lightDynamicGalleryItem: $("[data-lightgallery='dynamic']") }; function isScrolledIntoView(elem) { if (isNoviBuilder) return true; return elem.offset().top + elem.outerHeight() >= $window.scrollTop() && elem.offset().top <= $window.scrollTop() + $window.height(); }
+var userAgent = navigator.userAgent.toLowerCase(), initialDate = new Date(), $document = $(document), $window = $(window), $html = $("html"),
+    isDesktop = $html.hasClass("desktop"),
+    isIE = userAgent.indexOf("msie") != -1 ? parseInt(userAgent.split("msie")[1]) : userAgent.indexOf("trident") != -1 ? 11 : userAgent.indexOf("edge") != -1 ? 12 : false,
+    isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent), isNoviBuilder, plugins = { responsiveTabs: $(".responsive-tabs"), rdInputLabel: $(".form-label"),
+        rdNavbar: $(".rd-navbar"), regula: $("[data-constraints]"), owl: $(".owl-carousel"), swiper: $(".swiper-slider"),
+        selectFilter: $("select"), rdMailForm: $(".rd-mailform"),
+        additionalFields: $(".additional-fields"),
+        materialParallax: $(".parallax-container"), copyrightYear: $("#copyright-year"),
+        maps: $(".google-map-container"), lightGallery: $("[data-lightgallery='group']"),
+        lightGalleryItem: $("[data-lightgallery='item']"), lightDynamicGalleryItem: $("[data-lightgallery='dynamic']") };
 
-function lazyInit(element, func) { var scrollHandler = function () { if ((!element.hasClass('lazy-loaded') && (isScrolledIntoView(element)))) { func.call(); element.addClass('lazy-loaded'); } }; scrollHandler(); $window.on('scroll', scrollHandler); }
+function isScrolledIntoView(elem) { if (isNoviBuilder) return true;
+return elem.offset().top + elem.outerHeight() >= $window.scrollTop() && elem.offset().top <= $window.scrollTop() + $window.height();
+}
+
+function lazyInit(element, func) {
+    var scrollHandler = function () {
+        if ((!element.hasClass('lazy-loaded') && (isScrolledIntoView(element)))) {
+            func.call(); element.addClass('lazy-loaded'); } }; scrollHandler(); $window.on('scroll', scrollHandler);
+}
 
 $document.ready(function () {
+
     // isNoviBuilder = window.xMode; function getLatLngObject(str, marker, map, callback) { var coordinates = {}; try { coordinates = JSON.parse(str); callback(new google.maps.LatLng(coordinates.lat, coordinates.lng), marker, map) } catch (e) { map.geocoder.geocode({ 'address': str }, function (results, status) { if (status === google.maps.GeocoderStatus.OK) { var latitude = results[0].geometry.location.lat(); var longitude = results[0].geometry.location.lng(); callback(new google.maps.LatLng(parseFloat(latitude), parseFloat(longitude)), marker, map) } }) } }
 
         function toggleSwiperInnerVideos(swiper) {
@@ -23,7 +41,7 @@ $document.ready(function () {
             });
         }
 
-        function toggleSwiperCaptionAnimation(swiper) {
+    function toggleSwiperCaptionAnimation(swiper) {
             if (isIE && isIE < 10) {
                 return;
             }
@@ -86,7 +104,6 @@ $document.ready(function () {
             //     initLightGalleryItem(c.find('[data-lightgallery="item"]'), 'lightGallery-in-carousel'); });
             //     c.owlCarousel({ autoplay: isNoviBuilder ? false : c.attr("data-autoplay") === "true", loop: isNoviBuilder ? false : c.attr("data-loop") !== "false", items: 1, center: c.attr("data-center") === "true", dotsContainer: c.attr("data-pagination-class") || false, navContainer: c.attr("data-navigation-class") || false, mouseDrag: isNoviBuilder ? false : c.attr("data-mouse-drag") !== "false", nav: c.attr("data-nav") === "true", dots: (isNoviBuilder && c.attr("data-nav") !== "true") ? true : c.attr("data-dots") === "true", dotsEach: c.attr("data-dots-each") ? parseInt(c.attr("data-dots-each"), 10) : false, animateIn: c.attr('data-animation-in') ? c.attr('data-animation-in') : false, animateOut: c.attr('data-animation-out') ? c.attr('data-animation-out') : false, responsive: responsive, navText: c.attr("data-nav-text") ? $.parseJSON(c.attr("data-nav-text")) : [], navClass: c.attr("data-nav-class") ? $.parseJSON(c.attr("data-nav-class")) : ['owl-prev', 'owl-next'] });
         }
-
 
        $('#reset-password').click(function () {
             $(':input[type=text]').val("");
