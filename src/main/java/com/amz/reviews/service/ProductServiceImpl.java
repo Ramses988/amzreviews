@@ -94,12 +94,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product customerGetProduct(int productId) {
         Product product = productRepository.getCustomer(productId);
-
-        if(Objects.nonNull(product) && product.getCountOrders() > 0)
-            return product;
-
         ValidationUtil.checkNotFound(product);
-        return null;
+
+        if(product.getCountOrders() > 0) {
+            return product;
+        }
+        throw new ApplicationException("Продукт закончился!");
     }
 
     @Override
@@ -117,18 +117,20 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public void customerReserve(Integer productId, int userId) {
+    public void customerReserve(String productId, int userId) {
         if(Objects.nonNull(productId)) {
-            Product product = customerGetProduct(productId);
+            Product product = customerGetProduct(Integer.parseInt(productId.replace("id=", "")));
+            Order order = orderService.customerGetOrderForProduct(product, getUser(userId));
 
-            if(Objects.nonNull(product)) {
-                Order order = new Order(null, LocalDateTime.now(), product.getName(), product.getPrice(),
+            if(Objects.isNull(order)) {
+                Order newOrder = new Order(null, LocalDateTime.now(), product.getName(), product.getPrice(),
                         Status.RESERVED.getStatus(), product.getKey(), product.isReviewEnable(), getUser(userId), product);
                 product.setCountOrders(product.getCountOrders() - 1);
                 product.setActiveOrders(product.getActiveOrders() + 1);
                 productRepository.save(product);
-                orderService.save(order);
-            }
+                orderService.save(newOrder);
+            } else
+                throw new ApplicationException("Вы уже выкупали этот продукт!");
         }
     }
 

@@ -55,6 +55,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Order customerGetOrderForProduct(Product product, User user) {
+        return repository.customerGetOrderForProduct(product, user);
+    }
+
+    @Override
     @Transactional
     public void customerAddReview(OrderReviewTo orderReviewTo, int userId) {
         if (Objects.nonNull(orderReviewTo)) {

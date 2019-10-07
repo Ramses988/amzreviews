@@ -30,7 +30,7 @@
                                     </li>
                                     <sec:authorize access="hasRole('ROLE_SELLER')">
                                         <li>
-                                            Баланс: <small class="price-red"></small>
+                                            Баланс: <small class="balance"></small>
                                         </li>
                                     </sec:authorize>
                                     <li>

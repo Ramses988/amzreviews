@@ -11,6 +11,8 @@
     </jsp:attribute>
     <jsp:attribute name="scripts">
         <script src="/resources/js/owl.carousel.min.js"></script>
+        <script src="/resources/js/noty.min.js"></script>
+        <script src="/resources/js/noty.valid.js"></script>
     </jsp:attribute>
     <jsp:body>
 
@@ -52,10 +54,10 @@
                                 </div>
                                 <div class="col-sm-12">
 
-                                    <form method="POST" action="/customer/product">
+                                    <form id="reserveProduct">
                                         <input type="hidden" id="id" name="id" value="${product.id}">
-                                        <button type="submit" class="btn btn-primary-orange">Выкупить продукт</button>
                                     </form>
+                                    <button type="button" class="btn btn-primary-orange btn-reserveProduct">Выкупить продукт</button>
                                 </div>
                             </div>
                         </div>

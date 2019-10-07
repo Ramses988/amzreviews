@@ -32,11 +32,11 @@ public class CustomerUIController extends AbstractCustomerController {
         return "customer/product";
     }
 
-    @PostMapping("/customer/product")
-    public String reserve(@RequestParam("id") Integer id) {
-        super.customerReserve(id);
-        return "redirect:/customer/history";
-    }
+//    @PostMapping("/customer/product")
+//    public String reserve(@RequestParam("id") Integer id) {
+//        super.customerReserve(id);
+//        return "redirect:/customer/history";
+//    }
 
     @GetMapping("/customer/order/{id}")
     public String getOrder(@PathVariable("id") int id, Model model) {

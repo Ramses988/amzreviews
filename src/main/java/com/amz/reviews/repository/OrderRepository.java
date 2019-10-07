@@ -25,6 +25,8 @@ public interface OrderRepository {
 
     Order customerGetOrder(int id, User user);
 
+    Order customerGetOrderForProduct(Product product, User user);
+
     Order customerGetOrderWithProduct(int id, int userId);
 
 }

@@ -33,6 +33,16 @@ function failNoty(msg) {
 
 $(function () {
 
+    $('.btn-reserveProduct').click(function () {
+        $.ajax({
+            type: "POST",
+            url: "/rest/customer/product-reserve",
+            data: $('#reserveProduct').serialize()
+        }).done(function () {
+            window.location.href = "/customer/history";
+        })
+    });
+
     $('.btn-updateProfile').click(function () {
         if(validForm("#userProfile")) {
             $.ajax({

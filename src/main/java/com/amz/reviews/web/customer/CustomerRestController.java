@@ -36,4 +36,10 @@ public class CustomerRestController extends AbstractCustomerController {
     public void addReviews(OrderReviewTo orderReviewTo) {
         super.customerAddReview(orderReviewTo);
     }
+
+    @PostMapping("/product-reserve")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void reserve(@RequestBody String id) {
+        super.customerReserve(id);
+    }
 }

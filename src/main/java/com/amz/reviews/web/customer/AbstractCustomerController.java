@@ -42,7 +42,7 @@ public abstract class AbstractCustomerController {
         return orderService.customerGetOrderWithProduct(orderId, userId);
     }
 
-    void customerReserve(Integer productId) {
+    void customerReserve(String productId) {
         int userId = SecurityUtil.authUserId();
         productService.customerReserve(productId, userId);
     }

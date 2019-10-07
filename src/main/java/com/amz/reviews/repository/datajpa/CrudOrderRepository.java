@@ -24,6 +24,8 @@ public interface CrudOrderRepository extends JpaRepository<Order, Integer> {
 
     Optional<Order> findByIdAndUser(Integer id, User user);
 
+    Optional<Order> findByProductAndUser(Product product, User user);
+
     @EntityGraph(attributePaths = "product.images", type = EntityGraph.EntityGraphType.LOAD)
     @Query("SELECT o FROM Order o WHERE o.id=:id AND o.user.id=:userId")
     Order getOrderWithProduct(@Param("id") int id, @Param("userId") int userId);

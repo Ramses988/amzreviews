@@ -9,7 +9,7 @@ public interface ProductService {
 
     /* Customers methods */
 
-    void customerReserve(Integer productId, int userId);
+    void customerReserve(String productId, int userId);
 
     Product customerGetProduct(int productId);
 

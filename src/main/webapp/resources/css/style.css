@@ -35867,8 +35867,12 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
     padding-left: 5px;
 }
 
-#balance {
-    color: #9b9b9b
+span[balance-status="false"] {
+    color: indianred;
+}
+
+span[balance-status="true"] {
+    color: #28a745;
 }
 
 /* Add size */

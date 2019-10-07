@@ -24,7 +24,7 @@
                                 <h6 class="offset-top-10">&#36;${product.price}</h6>
                             </div>
                             <div>
-                                <a class="btn btn-primary-catalog" href="/customer/product/${product.id}">View Product</a>
+                                <a class="btn btn-primary-catalog" href="/customer/product/${product.id}">Подробнее</a>
                             </div>
                         </div>
                     </c:forEach>

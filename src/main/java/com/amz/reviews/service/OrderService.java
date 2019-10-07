@@ -2,6 +2,8 @@ package com.amz.reviews.service;
 
 
 import com.amz.reviews.model.Order;
+import com.amz.reviews.model.Product;
+import com.amz.reviews.model.User;
 import com.amz.reviews.to.OrderIdTo;
 import com.amz.reviews.to.OrderReviewTo;
 
@@ -21,6 +23,8 @@ public interface OrderService {
     /* Customers methods */
 
     Order customerGetOrderWithProduct(int orderId, int userId);
+
+    Order customerGetOrderForProduct(Product product, User user);
 
     List<Order> customerGetActiveOrders(int userId);
 
