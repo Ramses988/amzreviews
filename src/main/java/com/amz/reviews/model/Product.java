@@ -22,6 +22,10 @@ public class Product extends AbstractNamedEntity {
     private String description;
     private String image;
     private String key;
+    private String category;
+
+    @Column(name = "price_with_interest")
+    private double priceWithInterest;
 
     @Column(name = "review_enable")
     private boolean reviewEnable;
@@ -56,6 +60,22 @@ public class Product extends AbstractNamedEntity {
         this.description = description;
         this.image = image;
         this.images = images;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public double getPriceWithInterest() {
+        return priceWithInterest;
+    }
+
+    public void setPriceWithInterest(double priceWithInterest) {
+        this.priceWithInterest = priceWithInterest;
     }
 
     public boolean isReviewEnable() {

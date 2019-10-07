@@ -68,9 +68,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
         if(Objects.nonNull(user)) {
             if(user.getBalance() >= 0)
-                return String.format("<span balance-status='true'>$%d</span>", user.getBalance());
+                return String.format("<span balance-status='true'>$%.2f</span>", user.getBalance());
             else
-                return String.format("<span balance-status='false'>%d$</span>", user.getBalance());
+                return String.format("<span balance-status='false'>%.2f$</span>", user.getBalance());
         }
 
         return "";

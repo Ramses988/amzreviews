@@ -59,6 +59,7 @@ public class ProductServiceImpl implements ProductService {
             product.setCountOrders(orderTo.getCount());
             product.setReviewEnable(orderTo.isReview());
             product.setDateOfChange(LocalDateTime.now());
+//            product.setPriceWithInterest();
             productRepository.save(product);
         }
     }

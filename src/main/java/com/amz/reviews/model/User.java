@@ -14,7 +14,7 @@ public class User extends AbstractNamedEntity {
     private String password;
     private boolean enabled;
     private String country;
-    private int balance;
+    private double balance;
     private String payPal;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
@@ -31,7 +31,7 @@ public class User extends AbstractNamedEntity {
 
     public User() {}
 
-    public User(int id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, int balance) {
+    public User(int id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, double balance) {
         super(id, date, name);
         this.email = email;
         this.password = password;
@@ -40,7 +40,7 @@ public class User extends AbstractNamedEntity {
         this.balance = balance;
     }
 
-    public User(Integer id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, int balance, Role... rolesSet) {
+    public User(Integer id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, double balance, Role... rolesSet) {
         super(id, date, name);
         this.email = email;
         this.password = password;
@@ -98,11 +98,11 @@ public class User extends AbstractNamedEntity {
         this.country = country;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 

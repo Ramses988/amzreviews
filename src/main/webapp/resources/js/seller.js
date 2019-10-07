@@ -87,10 +87,11 @@ $(function() {
                 {
                     "data": "payment",
                     "render": function (data) {
-                        if(data == "Not paid") {
-                            return '<label>'+data+'</label>';
+                        if(data) {
+                            return '<label class="paid">Paid</label>'
+                        } else {
+                            return "No Paid";
                         }
-                        return '<label class="paid">'+data+'</label>';
                     }
                 }
             ]

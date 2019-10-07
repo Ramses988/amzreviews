@@ -13,7 +13,7 @@ public class Order extends AbstractNamedEntity {
 
     private double price;
     private String status;
-    private String payment;
+    private boolean payment;
     private String reviews;
     private String key;
     private boolean refund;
@@ -44,7 +44,7 @@ public class Order extends AbstractNamedEntity {
         this.user = user;
         this.product = product;
         this.reviewEnable = reviewEnable;
-        this.payment = "Not paid";
+        this.payment = false;
         this.refund = false;
     }
 
@@ -72,11 +72,11 @@ public class Order extends AbstractNamedEntity {
         this.status = status;
     }
 
-    public String getPayment() {
+    public boolean isPayment() {
         return payment;
     }
 
-    public void setPayment(String payment) {
+    public void setPayment(boolean payment) {
         this.payment = payment;
     }
 
