@@ -89,6 +89,7 @@ $(function () {
             }).done(function () {
                 $('.modal').fadeOut();
                 angular.element('#getAllController').scope().updateProducts();
+                getBalance();
                 successNoty("Выкупы успешно добавлены");
             })
         } else {

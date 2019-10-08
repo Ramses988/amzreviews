@@ -112,6 +112,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     @Transactional
+    public void save(User user) {
+        repository.save(user);
+    }
+
+    @Override
+    @Transactional
     public void resetPassword(String email) {
         User user = repository.getByEmail(email.toLowerCase().trim());
 

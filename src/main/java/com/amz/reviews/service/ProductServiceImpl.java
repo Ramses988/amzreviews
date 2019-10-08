@@ -7,6 +7,7 @@ import com.amz.reviews.repository.ProductRepository;
 import com.amz.reviews.to.OrderTo;
 import com.amz.reviews.util.Mail;
 import com.amz.reviews.util.Status;
+import com.amz.reviews.util.Util;
 import com.amz.reviews.util.ValidationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,22 +46,29 @@ public class ProductServiceImpl implements ProductService {
         User user = getUser(userId);
 
         if(Objects.nonNull(product) && Objects.nonNull(user)) {
+            double fees = (orderTo.isReview()) ? 5 : 3;
+            double priceAndFees = product.getPrice() + fees;
+            double priceFees = (priceAndFees / 100) * 5;
+            double totalPrice = priceAndFees + priceFees;
+            double totalPriceWithCount = totalPrice * orderTo.getCount();
+
             if(product.getCountOrders() > 0)
                 throw new ApplicationException("У Вас уже есть заявки на выкуп в очереди!");
             if(user.getBalance() < 0)
-                throw new ApplicationException("У Вас недостаточно денег для выкупов. Пополните баланс!");
+                throw new ApplicationException("У Вас недостаточно средств для выкупов. Пополните баланс!");
             if(user.getBalance() == 0 && orderTo.getCount() > 1)
                 throw new ApplicationException("При нулевом балансе Вы можете сделать только один выкуп!");
-//            int totalPrice = 0;
-//            int fees = (orderTo.isReview()) ? 5 : 3;
-//            double priceFees = (product.getPrice() + fees) * orderTo.getCount();
+            if(user.getBalance() > 0 && (user.getBalance() - totalPriceWithCount) < 0 && orderTo.getCount() > 1)
+                throw new ApplicationException(String.format("Недостаточно средств для %d выкупов, уменьшите количество!", orderTo.getCount()));
 
             product.setKey(orderTo.getKey());
             product.setCountOrders(orderTo.getCount());
             product.setReviewEnable(orderTo.isReview());
             product.setDateOfChange(LocalDateTime.now());
-//            product.setPriceWithInterest();
+            product.setPriceWithInterest(Util.round(totalPrice));
             productRepository.save(product);
+            user.setBalance(Util.round(user.getBalance() - totalPriceWithCount));
+            userService.save(user);
         }
     }
 

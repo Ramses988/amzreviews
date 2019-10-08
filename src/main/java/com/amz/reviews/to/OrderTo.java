@@ -14,7 +14,7 @@ public class OrderTo extends AbstractBaseEntity {
     private Double price;
 
     @NotBlank
-    @Size(min = 3, max = 50)
+    @Size(max = 50)
     @SafeHtml
     private String key;
 

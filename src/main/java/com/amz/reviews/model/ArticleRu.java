@@ -5,5 +5,5 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "articles_ru")
-public class ArticleRu extends AbstractArticleEntity {
+public class ArticleRu extends AbstractArticlesEntity {
 }

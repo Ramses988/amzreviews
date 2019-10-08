@@ -16,6 +16,8 @@ public interface UserService {
 
     User getUser(int id);
 
+    void save(User user);
+
     void feedback(FeedbackTo feedback);
 
     void userRegister(UserRegisterTo newUser);

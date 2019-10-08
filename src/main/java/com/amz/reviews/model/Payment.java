@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "payments")
-public class Payment {
+public class Payment extends AbstractNamedEntity {
     private double payment;
 
     @ManyToOne(fetch = FetchType.LAZY)
