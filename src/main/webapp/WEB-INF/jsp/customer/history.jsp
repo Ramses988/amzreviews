@@ -13,6 +13,8 @@
         <script src="/resources/js/bootstrap.bundle.min.js"></script>
         <script src="/resources/js/jquery.dataTables.min.js"></script>
         <script src="/resources/js/customer.js"></script>
+        <script src="/resources/js/noty.min.js"></script>
+        <script src="/resources/js/noty.valid.js"></script>
     </jsp:attribute>
     <jsp:body>
         <section class="section section-top-34">
@@ -80,9 +82,12 @@
                 </div>
                 <div class="modal-body">
                     <form id="detailsFormOrderId">
-                        <input type="hidden" id="number" name="id">
-                        <label class="col-form-label">Укажите номер заказа<span id="help-orderid" class="icon novi-icon mdi mdi-help-circle-outline" title="Номер заказа появится в личном кабинете, после покупки продукта."></span></label>
-                        <input id="orderid" name="orderId" class="form-control" placeholder="Введите номер заказа" autocomplete="off" type="text">
+                        <div class="form-group">
+                            <input type="hidden" id="number" name="id">
+                            <label class="col-form-label">Укажите номер заказа:<span id="help-orderid" class="icon novi-icon mdi mdi-help-circle-outline" title="Номер заказа появится в личном кабинете, после покупки продукта."></span></label>
+                            <input class="form-control required" id="orderId" name="orderId" placeholder="Введите номер заказа" autocomplete="off" type="text">
+                            <span class="form-validation"></span>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -100,9 +105,12 @@
                 </div>
                 <div class="modal-body">
                     <form id="detailsFormReviews">
-                        <input type="hidden" id="reviews1" name="id">
-                        <label class="col-form-label">Укажите ссылку на отзыв<span id="help-reviews" class="icon novi-icon mdi mdi-help-circle-outline" title="Скопировать URL ссылку на отзыв в Амазон. Пример: https://www.amazon.com/..."></span></label>
-                        <input id="reviews" name="reviews" class="form-control" placeholder="Введите ссылку на отзыв" autocomplete="off" type="text">
+                        <div class="form-group">
+                            <input type="hidden" id="reviews1" name="id">
+                            <label class="col-form-label">Укажите ссылку на отзыв:<span id="help-reviews" class="icon novi-icon mdi mdi-help-circle-outline" title="Скопировать URL ссылку на отзыв в Амазон. Пример: https://www.amazon.com/..."></span></label>
+                            <input class="form-control required" id="reviews" name="reviews" placeholder="Введите ссылку на отзыв" autocomplete="off" type="text">
+                            <span class="form-validation"></span>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">

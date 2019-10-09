@@ -67,9 +67,28 @@ public class ProductServiceImpl implements ProductService {
             product.setDateOfChange(LocalDateTime.now());
             product.setPriceWithInterest(Util.round(totalPrice));
             productRepository.save(product);
-            user.setBalance(Util.round(user.getBalance() - totalPriceWithCount));
-            userService.save(user);
         }
+    }
+
+    @Override
+    public Product customerGetProduct(int productId) {
+        Product product = productRepository.getCustomer(productId);
+        ValidationUtil.checkNotFound(product);
+
+        if(product.getCountOrders() > 0) {
+            return product;
+        }
+        throw new ApplicationException("Продукт закончился!");
+    }
+
+    private Product getProductWithUser(int productId) {
+        Product product = productRepository.getProductWithUser(productId);
+        ValidationUtil.checkNotFound(product);
+
+        if(product.getCountOrders() > 0) {
+            return product;
+        }
+        throw new ApplicationException("Продукт закончился!");
     }
 
     private User getUser(int userId) {
@@ -101,17 +120,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product customerGetProduct(int productId) {
-        Product product = productRepository.getCustomer(productId);
-        ValidationUtil.checkNotFound(product);
-
-        if(product.getCountOrders() > 0) {
-            return product;
-        }
-        throw new ApplicationException("Продукт закончился!");
-    }
-
-    @Override
     @Transactional
     public void sellerDeleteProduct(Integer id, int userId) {
         if (Objects.nonNull(id)) {
@@ -128,14 +136,16 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public void customerReserve(String productId, int userId) {
         if(Objects.nonNull(productId)) {
-            Product product = customerGetProduct(Integer.parseInt(productId.replace("id=", "")));
+            Product product = getProductWithUser(Integer.parseInt(productId.replace("id=", "")));
             Order order = orderService.customerGetOrderForProduct(product, getUser(userId));
 
             if(Objects.isNull(order)) {
                 Order newOrder = new Order(null, LocalDateTime.now(), product.getName(), product.getPrice(),
-                        Status.RESERVED.getStatus(), product.getKey(), product.isReviewEnable(), getUser(userId), product);
+                        Status.RESERVED.getStatus(), product.getKey(), product.isReviewEnable(), getUser(userId), product,
+                        product.getUser().getBalance() - product.getPriceWithInterest() >= 0);
                 product.setCountOrders(product.getCountOrders() - 1);
                 product.setActiveOrders(product.getActiveOrders() + 1);
+                product.getUser().setBalance(Util.round(product.getUser().getBalance() - product.getPriceWithInterest()));
                 productRepository.save(product);
                 orderService.save(newOrder);
             } else

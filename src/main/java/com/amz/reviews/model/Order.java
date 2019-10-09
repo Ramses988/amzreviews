@@ -1,5 +1,6 @@
 package com.amz.reviews.model;
 
+import com.amz.reviews.util.exception.ApplicationException;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -35,7 +36,7 @@ public class Order extends AbstractNamedEntity {
 
     public Order() {}
 
-    public Order(Integer id, LocalDateTime date, String name, double price, String status, String key, boolean reviewEnable, User user, Product product) {
+    public Order(Integer id, LocalDateTime date, String name, double price, String status, String key, boolean reviewEnable, User user, Product product, boolean payment) {
         super(id, date, name);
         this.price = price;
         this.status = status;
@@ -43,7 +44,7 @@ public class Order extends AbstractNamedEntity {
         this.user = user;
         this.product = product;
         this.reviewEnable = reviewEnable;
-        this.payment = false;
+        this.payment = payment;
         this.refund = false;
     }
 
@@ -87,6 +88,8 @@ public class Order extends AbstractNamedEntity {
         String tmp = reviews.trim();
         if (tmp.startsWith("https://www.amazon.com/") || tmp.startsWith("https://amazon.com/"))
             this.reviews = tmp;
+        else
+            throw new ApplicationException("Неверный формат. Ссылка должна указывать на Amazon");
     }
 
     public String getOrderId() {

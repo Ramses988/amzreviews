@@ -22,6 +22,11 @@ public class DataJpaProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
+    public Product getProductWithUser(int productId) {
+        return crudRepository.getProductWithUser(productId);
+    }
+
+    @Override
     public Product sellerGetProductWithImages(int productId, int userId) {
         return crudRepository.sellerGetProductWithImages(productId, userId);
     }

@@ -7,28 +7,6 @@ $(function() {
     loading("#datatable", "active");
     loading("#datatable1", "completed");
 
-    $('.btn-orderid').click(function () {
-        $.ajax({
-            type: "POST",
-            url: "/rest/customer/add-orderid",
-            data: $('#detailsFormOrderId').serialize()
-        }).done(function () {
-            $('.modal').fadeOut();
-            loading("#datatable", "active");
-        })
-    });
-
-    $('.btn-reviews').click(function () {
-        $.ajax({
-            type: "POST",
-            url: "/rest/customer/add-review",
-            data: $('#detailsFormReviews').serialize()
-        }).done(function () {
-            $('.modal').fadeOut();
-            loading("#datatable", "active");
-        })
-    });
-
 });
 
 function orderid(id) {
@@ -65,9 +43,9 @@ function loading(name, url) {
             {
                 "data": function (row) {
                     if(row.status == "Completed") {
-                        return '<label>'+(row.name).substring(0, 33) + "..."+'</label>';
+                        return '<label>'+(row.name).substring(0, 25) + "..."+'</label>';
                     } else {
-                        return '<a href="/customer/order/'+row.id+'" class="a-orange">'+(row.name).substring(0, 33) + "..."+'</a>';
+                        return '<a href="/customer/order/'+row.id+'" class="a-orange">'+(row.name).substring(0, 25) + "..."+'</a>';
                     }
                 }
             },

@@ -89,7 +89,6 @@ $(function () {
             }).done(function () {
                 $('.modal').fadeOut();
                 angular.element('#getAllController').scope().updateProducts();
-                getBalance();
                 successNoty("Выкупы успешно добавлены");
             })
         } else {
@@ -106,6 +105,36 @@ $(function () {
             }).done(function () {
                 $('#changePassword').trigger('reset');
                 successNoty("Пароль успешно изменен");
+            })
+        } else {
+            failNoty("Проверьте правильность заплонения полей!");
+        }
+    });
+
+    $('.btn-orderid').click(function () {
+        if(validForm("#detailsFormOrderId")) {
+            $.ajax({
+                type: "POST",
+                url: "/rest/customer/add-orderid",
+                data: $('#detailsFormOrderId').serialize()
+            }).done(function () {
+                $('.modal').fadeOut();
+                loading("#datatable", "active");
+            })
+        } else {
+            failNoty("Проверьте правильность заплонения полей!");
+        }
+    });
+
+    $('.btn-reviews').click(function () {
+        if(validForm("#detailsFormReviews")) {
+            $.ajax({
+                type: "POST",
+                url: "/rest/customer/add-review",
+                data: $('#detailsFormReviews').serialize()
+            }).done(function () {
+                $('.modal').fadeOut();
+                loading("#datatable", "active");
             })
         } else {
             failNoty("Проверьте правильность заплонения полей!");
