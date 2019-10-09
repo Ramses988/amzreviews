@@ -1105,6 +1105,10 @@ pre code {
         flex: 0 0 16.66667%;
         max-width: 16.66667%
     }
+    .col-lg-2-new {
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%
+    }
     .col-lg-3 {
         flex: 0 0 25%;
         max-width: 25%
@@ -35823,6 +35827,14 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 .col-lg-3-new p {
     text-align: left;
     padding-left: 30px;
+}
+
+.col-lg-2-new p {
+    text-align: left;
+}
+
+.text-align-left p {
+    text-align: left;
 }
 
 .col-lg-3-new hr {
