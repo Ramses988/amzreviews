@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.HttpClientErrorException;
@@ -28,6 +29,8 @@ import java.util.Objects;
 @Transactional(readOnly = true)
 public class UserServiceImpl implements UserService, UserDetailsService {
 
+    private final PasswordEncoder passwordEncoder;
+
     @Autowired
     private UserRepository repository;
 
@@ -36,6 +39,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Autowired
     private CrudConfirmRepository crudConfirmRepository;
+
+    @Autowired
+    public UserServiceImpl(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public User getOne(int userId) {
@@ -49,6 +57,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             throw new ApplicationException("Пароли не совпадают!");
 
         User user = UserUtil.createNewFromTo(newUser);
+        user.setPassword(UserUtil.prepareToPassword(newUser.getPassword(), passwordEncoder));
         repository.save(user);
         ConfirmToken token = new ConfirmToken(user);
         crudConfirmRepository.save(token);
@@ -101,12 +110,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public void changePassword(String oldPassword, String newPassword, String confirmPassword, int userId) {
         User user = getUser(userId);
 
-        if (!user.getPassword().equals(oldPassword))
+        if (!passwordEncoder.matches(oldPassword, user.getPassword()))
             throw new ApplicationException("Неверный пароль");
         if (newPassword.length() < 7 || !newPassword.equals(confirmPassword))
             throw new ApplicationException("Пароли не совподают");
 
-        user.setPassword(newPassword);
+        user.setPassword(UserUtil.prepareToPassword(newPassword, passwordEncoder));
         repository.save(user);
     }
 
@@ -142,7 +151,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         // Проверка значений
 
         if(Objects.nonNull(confirmToken) && password.equals(confirmPassword)) {
-            confirmToken.getUser().setPassword(password);
+            confirmToken.getUser().setPassword(UserUtil.prepareToPassword(password, passwordEncoder));
             repository.save(confirmToken.getUser());
             crudConfirmRepository.delete(confirmToken);
         }

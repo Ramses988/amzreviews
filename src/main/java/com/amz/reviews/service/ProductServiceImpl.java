@@ -136,7 +136,8 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public void customerReserve(String productId, int userId) {
         if(Objects.nonNull(productId)) {
-            Product product = getProductWithUser(Integer.parseInt(productId.replace("id=", "")));
+//            Product product = getProductWithUser(Integer.parseInt(productId.replace("id=", "")));
+            Product product = getProductWithUser(Integer.parseInt(productId));
             Order order = orderService.customerGetOrderForProduct(product, getUser(userId));
 
             if(Objects.isNull(order)) {

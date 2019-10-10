@@ -1,6 +1,9 @@
 package com.amz.reviews.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.List;
@@ -11,7 +14,11 @@ import java.util.Set;
 public class User extends AbstractNamedEntity {
 
     private String email;
+
+    @NotBlank
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+
     private boolean enabled;
     private String country;
     private double balance;
@@ -31,19 +38,17 @@ public class User extends AbstractNamedEntity {
 
     public User() {}
 
-    public User(int id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, double balance) {
+    public User(int id, LocalDateTime date, String name, String email, boolean enabled, String country, double balance) {
         super(id, date, name);
         this.email = email;
-        this.password = password;
         this.enabled = enabled;
         this.country = country;
         this.balance = balance;
     }
 
-    public User(Integer id, LocalDateTime date, String name, String email, String password, boolean enabled, String country, double balance, Role... rolesSet) {
+    public User(Integer id, LocalDateTime date, String name, String email, boolean enabled, String country, double balance, Role... rolesSet) {
         super(id, date, name);
         this.email = email;
-        this.password = password;
         this.enabled = enabled;
         this.country = country;
         this.balance = balance;

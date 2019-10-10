@@ -48,7 +48,7 @@ public class CustomerRestController extends AbstractCustomerController {
 
     @PostMapping("/product-reserve")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void reserve(@RequestBody String id) {
+    public void reserve(@RequestParam("id") String id) {
         super.customerReserve(id);
     }
 }
