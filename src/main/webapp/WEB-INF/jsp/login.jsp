@@ -15,6 +15,9 @@
             <div class="container">
                 <h3>Личный кабинет</h3>
                 <hr class="divider bg-saffron">
+                <c:if test="${param.error}">
+                    <div class="error-enter">${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</div>
+                </c:if>
                 <div>
                     <div class="responsive-tabs responsive-tabs-classic">
                         <div class="resp-tabs-container tabs-group-default">
@@ -25,11 +28,11 @@
                                         <form:form class="rd-form text-left" method="POST" action="spring_security_check">
                                             <div class="form-group">
                                                 <label class="form-label form-label-outside" for="form-login-username">E-mail:</label>
-                                                <input class="form-control bg-white" id="form-login-username" type="text" name="username" data-constraints="@Required">
+                                                <input class="form-control bg-white" id="form-login-username" type="text" name="username" required="true">
                                             </div>
                                             <div class="form-group offset-top-24">
                                                 <label class="form-label form-label-outside" for="form-login-password">Пароль:</label>
-                                                <input class="form-control bg-white" id="form-login-password" type="password" name="password" data-constraints="@Required">
+                                                <input class="form-control bg-white" id="form-login-password" type="password" name="password" required="true">
                                             </div>
                                             <div class="offset-top-24">
                                                 <button class="btn btn-primary-orange btn-block" type="submit">Вход</button>

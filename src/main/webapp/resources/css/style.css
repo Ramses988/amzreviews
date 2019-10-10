@@ -35905,6 +35905,14 @@ span[balance-status="true"] {
     color: #28a745;
 }
 
+.error-enter {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #dc3545!important;
+    padding: 0 0 20px 0;
+}
+
 /* Add size */
 
 @media(min-width:1px) and (max-width:480px) {
