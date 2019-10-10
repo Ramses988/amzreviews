@@ -35829,12 +35829,30 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
     padding-left: 30px;
 }
 
-.col-lg-2-new p {
-    text-align: left;
-}
-
 .text-align-left p {
     text-align: left;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.text-align-left img {
+    padding: 30px 0 40px 0;
+}
+
+.articles {
+    background-color: #f7f7f7;
+    font-size: 14px;
+
+}
+
+.articles-inner {
+    text-align: left!important;
+    padding: 20px 0 20px 0;
+}
+
+#thems {
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .col-lg-3-new hr {

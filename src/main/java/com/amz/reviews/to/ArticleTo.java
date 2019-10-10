@@ -1,12 +1,16 @@
-package com.amz.reviews.model;
+package com.amz.reviews.to;
 
-import javax.persistence.MappedSuperclass;
-
-@MappedSuperclass
-public abstract class AbstractArticlesEntity extends AbstractNamedEntity {
+public class ArticleTo {
 
     private String headline;
     private String text;
+
+    public ArticleTo() {}
+
+    public ArticleTo(String headline, String text) {
+        this.headline = headline;
+        this.text = text;
+    }
 
     public String getHeadline() {
         return headline;

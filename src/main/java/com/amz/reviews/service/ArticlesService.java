@@ -1,9 +1,9 @@
 package com.amz.reviews.service;
 
-import com.amz.reviews.model.AbstractArticlesEntity;
+import com.amz.reviews.to.ArticleTo;
 
 public interface ArticlesService {
 
-    AbstractArticlesEntity getArticle(String language, String name);
+    ArticleTo getArticle(String language, String name);
 
 }

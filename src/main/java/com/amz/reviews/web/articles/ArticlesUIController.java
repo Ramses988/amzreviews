@@ -14,7 +14,7 @@ public class ArticlesUIController {
     private ArticlesService service;
 
     @GetMapping("/article/{language}/{name}")
-    public String getArticles(@PathVariable("language") String language, @PathVariable("name") String name, Model model) {
+    public String getArticle(@PathVariable("language") String language, @PathVariable("name") String name, Model model) {
         model.addAttribute("article", service.getArticle(language, name));
         return "article";
     }

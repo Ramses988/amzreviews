@@ -4,19 +4,29 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "payments")
-public class Payment extends AbstractNamedEntity {
-    private double payment;
+public class Payment extends AbstractDateEntity {
+
+    private double price;
+    private boolean status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    public double getPayment() {
-        return payment;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPayment(double payment) {
-        this.payment = payment;
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public User getUser() {
