@@ -16699,6 +16699,10 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     content: "\f1ef"
 }
 
+.mdi-earth:before {
+    content: "\f1e7";
+}
+
 .mdi-help-circle-outline:before {
     content: "\f625";
     color: #055596;
@@ -25589,7 +25593,7 @@ html .row-65-new>* {
 
 .rd-navbar-top-panel .contact-info .icon {
     font-size: 20px;
-    margin-right: 11px;
+    margin-left: 15px;
     line-height: 1;
     vertical-align: middle
 }
@@ -35917,6 +35921,12 @@ span[balance-status="true"] {
 
 @media(min-width:1px) and (max-width:480px) {
 
+
+    .rd-navbar-top-panel .contact-info .icon {
+        margin-left: 0px;
+        margin-right: 11px;
+    }
+
     .col-md-6-new1 {
         margin: 0 auto;
         flex: 0 0 75%;
@@ -36003,6 +36013,11 @@ span[balance-status="true"] {
 
 @media(min-width:481px) and (max-width:768px) {
 
+    .rd-navbar-top-panel .contact-info .icon {
+        margin-left: 0px;
+        margin-right: 11px;
+    }
+
     .col-md-6-new1 {
         margin: 0 auto;
         flex: 0 0 80%;
@@ -36073,6 +36088,11 @@ span[balance-status="true"] {
 
 @media(min-width:768px) and (max-width:991px) {
 
+    .rd-navbar-top-panel .contact-info .icon {
+        margin-left: 0px;
+        margin-right: 11px;
+    }
+
     .col-lg-3-new {
         display: none;
     }
@@ -36105,6 +36125,10 @@ span[balance-status="true"] {
 }
 
 @media(min-width:992px) and (max-width:1199px) {
+    .rd-navbar-top-panel .contact-info .icon {
+        margin-left: 0px;
+        margin-right: 11px;
+    }
 
     #container-public a {
         margin-bottom: 9%;

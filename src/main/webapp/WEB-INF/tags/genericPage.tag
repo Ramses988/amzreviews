@@ -1,5 +1,6 @@
 <%@tag description="Page tamplate" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@attribute name="title" fragment="true" %>
 <%@attribute name="styles" fragment="true" %>
@@ -33,9 +34,9 @@
 
     <!-- RD Navbar Nav-->
     <ul class="rd-navbar-nav">
-        <li ${menu == 'index' ? "class='active'" : ""}><a href="/"><span>Главная</span></a></li>
+        <li ${menu == 'index' ? "class='active'" : ""}><a href="/"><span><spring:message code="menu.home"/></span></a></li>
         <sec:authorize access="isAnonymous()">
-            <li ${menu == 'articles' ? "class='active'" : ""}><a href="/articles"><span>Статьи</span></a></li>
+            <li ${menu == 'articles' ? "class='active'" : ""}><a href="/articles"><span><spring:message code="menu.articles"/></span></a></li>
             <li ${menu == 'help' ? "class='active'" : ""}><a href="/help"><span>FAQ</span></a></li>
         </sec:authorize>
 
@@ -46,12 +47,12 @@
         </sec:authorize>
 
         <sec:authorize access="hasRole('ROLE_CUSTOMER')">
-            <li ${menu == 'catalog' ? "class='active'" : ""}><a href="/customer"><span>Каталог</span></a></li>
+            <li ${menu == 'catalog' ? "class='active'" : ""}><a href="/customer"><span><spring:message code="menu.catalog"/></span></a></li>
             <li ${menu == 'history' ? "class='active'" : ""}><a href="/customer/history"><span>История</span></a></li>
             <li ${menu == 'help' ? "class='active'" : ""}><a href="/customer/help"><span>FAQ</span></a></li>
             <li ${menu == 'profile' ? "class='active'" : ""}><a href="/profile"><span>Профиль</span></a></li>
         </sec:authorize>
-        <li ${menu == 'contacts' ? "class='active'" : ""}><a href="/contacts"><span>Контакты</span></a></li>
+        <li ${menu == 'contacts' ? "class='active'" : ""}><a href="/contacts"><span><spring:message code="menu.contacts"/></span></a></li>
 
     </ul>
 </div></div></div></div></div></nav></div>

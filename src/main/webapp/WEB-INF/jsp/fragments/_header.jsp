@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
-<html class="wow-animation" lang="ru">
+<html class="wow-animation">
 <head>
     <title>Catalog</title>
 

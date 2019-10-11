@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!-- IE panel-->
 <!-- <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div> -->
@@ -19,9 +20,9 @@
 
                                 <sec:authorize access="isAnonymous()">
                                     <li><span class="icon novi-icon mdi mdi-account"></span>
-                                        <a class="text-uppercase text-ubold" href="/login"><small>Войти</small></a></li>
+                                        <a class="text-uppercase text-ubold" href="/login"><small><spring:message code="user.login"/></small></a></li>
                                     <li><span class="icon novi-icon mdi mdi-key"></span>
-                                        <a class="text-uppercase text-ubold" href="/register"><small>Регистрация</small></a></li>
+                                        <a class="text-uppercase text-ubold" href="/register"><small><spring:message code="user.register"/></small></a></li>
                                 </sec:authorize>
 
                                 <sec:authorize access="isAuthenticated()">
@@ -51,10 +52,9 @@
                             <address class="contact-info text-left">
                                 <div class="p">
                                     <span class="icon novi-icon mdi mdi-email-open"></span>
-                                    <!-- <a href="/cdn-cgi/l/email-protection#f1d2"><span class="__cf_email__" data-cfemail="7d14131b123d191810121114131653120f1a">[email&#160;protected]</span></a> -->
                                     <a id="inf-small" href="info@amzreviews.com">info@amzreviews.com</a>
-                                    <!-- <a href=""> ENG</a>
-                                    <a href=""> RUS</a> -->
+                                    <span class="icon novi-icon mdi mdi-earth"></span>
+                                    ${(pageContext.response.locale == "en") ? "<a href='?lang=ru'>RUS</a>" : "<a href='?lang=en'>ENG</a>"}
                                 </div>
                             </address>
                         </div>
