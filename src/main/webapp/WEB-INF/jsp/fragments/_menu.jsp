@@ -53,8 +53,8 @@
                                 <div class="p">
                                     <span class="icon novi-icon mdi mdi-email-open"></span>
                                     <a id="inf-small" href="info@amzreviews.com">info@amzreviews.com</a>
-                                    <span class="icon novi-icon mdi mdi-earth"></span>
-                                    ${(pageContext.response.locale == "en") ? "<a href='?lang=ru'>RUS</a>" : "<a href='?lang=en'>ENG</a>"}
+                                    ${(pageContext.response.locale == "en") ? "<img id='language' src='/resources/images/us.png'/><a id='language-a' href='?lang=ru'>ENG</a>" :
+                                    "<img id='language' src='/resources/images/ru.png'/><a id='language-a' href='?lang=en'>RUS</a>"}
                                 </div>
                             </address>
                         </div>
