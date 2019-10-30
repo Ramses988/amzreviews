@@ -6,6 +6,11 @@ import java.util.List;
 
 public interface UserRepository {
 
+    /* Admins methods */
+
+    List<User> adminGetUsers();
+
+
     User getOne(int id);
 
     User getByEmail(String email);

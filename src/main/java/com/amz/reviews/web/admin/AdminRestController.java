@@ -14,10 +14,4 @@ import java.util.List;
 public class AdminRestController extends AbstractAdminController {
 
     static final String REST_URL = "/rest/admin";
-
-//    @Override
-//    @GetMapping
-//    public List<User> getAll() {
-//        return super.getAll();
-//    }
 }

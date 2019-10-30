@@ -22,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -43,6 +44,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired
     public UserServiceImpl(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
+    }
+
+    @Override
+    public List<User> adminGetUsers() {
+        return repository.adminGetUsers();
     }
 
     @Override

@@ -13,6 +13,12 @@ public class DataJpaUserRepositoryImpl implements UserRepository {
     @Autowired
     private CrudUserRepository crudRepository;
 
+
+    @Override
+    public List<User> adminGetUsers() {
+        return crudRepository.findAll();
+    }
+
     @Override
     public void save(User user) {
         crudRepository.save(user);

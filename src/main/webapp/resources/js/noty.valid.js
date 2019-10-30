@@ -53,7 +53,7 @@ $(function () {
                 successNoty("Профиль обновлен");
             })
         } else {
-            failNoty("Проверьте правильность заплонения полей!");
+            failNoty("Проверьте правильность заполнения полей!");
         }
     });
 
@@ -68,7 +68,7 @@ $(function () {
                 $('.info-modal').fadeIn();
             })
         } else {
-            failNoty("Проверьте правильность заплонения полей!");
+            failNoty("Проверьте правильность заполнения полей!");
         }
     });
 
@@ -92,7 +92,7 @@ $(function () {
                 successNoty("Выкупы успешно добавлены");
             })
         } else {
-            failNoty("Проверьте правильность заплонения полей!");
+            failNoty("Проверьте правильность заполнения полей!");
         }
     });
 
@@ -107,7 +107,7 @@ $(function () {
                 successNoty("Пароль успешно изменен");
             })
         } else {
-            failNoty("Проверьте правильность заплонения полей!");
+            failNoty("Проверьте правильность заполнения полей!");
         }
     });
 
@@ -122,7 +122,7 @@ $(function () {
                 loading("#datatable", "active");
             })
         } else {
-            failNoty("Проверьте правильность заплонения полей!");
+            failNoty("Проверьте правильность заполнения полей!");
         }
     });
 
@@ -137,7 +137,7 @@ $(function () {
                 loading("#datatable", "active");
             })
         } else {
-            failNoty("Проверьте правильность заплонения полей!");
+            failNoty("Проверьте правильность заполнения полей!");
         }
     });
 
@@ -152,7 +152,7 @@ $(function () {
                 successNoty("Запрос отправлен");
             })
         } else {
-            failNoty("Проверьте правильность заплонения полей!");
+            failNoty("Проверьте правильность заполнения полей!");
         }
     });
 
@@ -166,7 +166,7 @@ $(function () {
                 window.location.href = "/success";
             })
         } else {
-            failNoty("Проверьте правильность заплонения полей!");
+            failNoty("Проверьте правильность заполнения полей!");
         }
     });
 
@@ -247,14 +247,14 @@ $(function () {
         if($(this).hasClass("lenth")) {
             if(lenth(data, 50)) {
                 $(this).closest('.form-group').addClass('has-error');
-                $(this).closest('.form-group').find('.form-validation').text("Значение поля не может привышать 50 символов");
+                $(this).closest('.form-group').find('.form-validation').text("Значение поля не может превышать 50 символов");
                 return false;
             }
         }
         if($(this).hasClass("textarea")) {
             if(lenth(data, 500)) {
                 $(this).closest('.form-group').addClass('has-error');
-                $(this).closest('.form-group').find('.form-validation').text("Текст не может привышать 500 символов");
+                $(this).closest('.form-group').find('.form-validation').text("Текст не может превышать 500 символов");
                 return false;
             }
         }

@@ -35926,10 +35926,27 @@ span[balance-status="true"] {
     color: #9c9c9c;
 }
 
+.text-align {
+    text-align: center;
+}
+
+.row1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 /* Add size */
 
 @media(min-width:1px) and (max-width:480px) {
 
+    .row1 {
+        margin-right: -15px;
+        margin-left: -15px
+    }
+
+    .text-align {
+        text-align: left;
+    }
 
     .rd-navbar-top-panel .contact-info .icon {
         margin-left: 0px;
@@ -36030,6 +36047,15 @@ span[balance-status="true"] {
 
 @media(min-width:481px) and (max-width:768px) {
 
+    .row1 {
+        margin-right: -15px;
+        margin-left: -15px
+    }
+
+    .text-align {
+        text-align: left;
+    }
+
     .rd-navbar-top-panel .contact-info .icon {
         margin-left: 0px;
         margin-right: 5px;
@@ -36113,6 +36139,11 @@ span[balance-status="true"] {
 
 @media(min-width:768px) and (max-width:991px) {
 
+    .row1 {
+        margin-right: -15px;
+        margin-left: -15px
+    }
+
     .rd-navbar-top-panel .contact-info .icon {
         margin-left: 0px;
         margin-right: 5px;
@@ -36158,6 +36189,11 @@ span[balance-status="true"] {
 }
 
 @media(min-width:992px) and (max-width:1199px) {
+    .row1 {
+        margin-right: -15px;
+        margin-left: -15px
+    }
+
     .rd-navbar-top-panel .contact-info .icon {
         margin-left: 0px;
         margin-right: 5px;
@@ -36197,6 +36233,7 @@ span[balance-status="true"] {
 }
 
 @media(min-width:1501px) and (max-width:1700px) {
+
     .image-main {
         height: 500px;
         padding-bottom: 0;

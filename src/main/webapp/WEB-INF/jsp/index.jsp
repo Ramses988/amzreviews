@@ -85,13 +85,13 @@
                 <div class="section-header">
                     <h2 class="section-title text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">Последние публикации</h2>
                     <hr class="divider bg-saffron">
-                    <p class="text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <p class="text-align wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
                         Мы всегда стараемся быть в тренде последних новостей и событий, связанных с торговой площадкой Amazon. Здесь мы делимся с Вами знаниями и опытом. В этих публикациях, вы
                         найдете полезные советы по работе с площадкой.
                     </p>
                 </div>
                 <div id="container-public">
-                    <div class="row col-lg-borders">
+                    <div class="row1 col-lg-borders">
                         <div class="col-lg-6 top-block wow fadeInLeft animated" data-wow-duration="300ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 0ms; animation-name: fadeInLeft;">
                             <div class="fl-all">
                                 <img id="first-article" src="/resources/images/publications/public1.png" alt="" /></div>

@@ -7,7 +7,7 @@
         <section class="section section-34 section-bottom-66 bg-default novi-background">
             <div class="container">
                 <diV class="col-sm-8 col-center">
-                    <h3><img id="Success" src="/resources/images/ok.png" alt="OK"/>Регистрация звершена.</h3>
+                    <h3><img id="Success" src="/resources/images/ok.png" alt="OK"/>Регистрация завершена.</h3>
                     <h5 class="font-weight-bold">На вашу почту отправлено подтверждение</h5>
                     <div>
                         <div class="responsive-tabs-classic modal-body">
