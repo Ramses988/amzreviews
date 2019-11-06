@@ -41,16 +41,16 @@
         </sec:authorize>
 
         <sec:authorize access="hasRole('ROLE_SELLER')">
-            <li ${menu == 'products' ? "class='active'" : ""}><a href="/seller"><span>Продукты</span></a></li>
+            <li ${menu == 'products' ? "class='active'" : ""}><a href="/seller"><span><spring:message code="menu.products"/></span></a></li>
             <li ${menu == 'help' ? "class='active'" : ""}><a href="/seller/help"><span>FAQ</span></a></li>
-            <li ${menu == 'profile' ? "class='active'" : ""}><a href="/profile"><span>Профиль</span></a></li>
+            <li ${menu == 'profile' ? "class='active'" : ""}><a href="/profile"><span><spring:message code="menu.profile"/></span></a></li>
         </sec:authorize>
 
         <sec:authorize access="hasRole('ROLE_CUSTOMER')">
             <li ${menu == 'catalog' ? "class='active'" : ""}><a href="/customer"><span><spring:message code="menu.catalog"/></span></a></li>
-            <li ${menu == 'history' ? "class='active'" : ""}><a href="/customer/history"><span>История</span></a></li>
+            <li ${menu == 'history' ? "class='active'" : ""}><a href="/customer/history"><span><spring:message code="menu.history"/></span></a></li>
             <li ${menu == 'help' ? "class='active'" : ""}><a href="/customer/help"><span>FAQ</span></a></li>
-            <li ${menu == 'profile' ? "class='active'" : ""}><a href="/profile"><span>Профиль</span></a></li>
+            <li ${menu == 'profile' ? "class='active'" : ""}><a href="/profile"><span><spring:message code="menu.profile"/></span></a></li>
         </sec:authorize>
         <li ${menu == 'contacts' ? "class='active'" : ""}><a href="/contacts"><span><spring:message code="menu.contacts"/></span></a></li>
 

@@ -1,5 +1,6 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!-- Page Footer-->
 <!-- Default footer-->
@@ -20,29 +21,29 @@
                         </ul>
                     </div>
                     <div class="col-sm-12 col-lg-5 text-lg-left col-xl-4">
-                        <h6 class="text-uppercase text-spacing-60">Подпишись на рассылку</h6>
-                        <p>Будьте в курсе последних новостей и событий компании. Введите свой адрес электронной почты и подпишитесь на нашу рассылку.</p>
+                        <h6 class="text-uppercase text-spacing-60"><spring:message code="footer.newsletter"/></h6>
+                        <p><spring:message code="footer.subscribe"/></p>
                         <div class="offset-top-30">
                             <form class="rd-mailform rd-form" data-form-output="form-subscribe-footer" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                                 <div class="form-output" id="form-subscribe-footer"></div>
                                 <div class="form-group">
                                     <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon"><span class="form-icon mdi mdi-email novi-icon"></span></span></span>
-                                        <input class="form-control" placeholder="Введите свой E-Mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-append">
-                                  <button class="btn btn-sm btn-primary" type="submit">Отправить</button></span>
+                                        <input class="form-control" placeholder='<spring:message code="footer.email"/>' type="email" name="email" data-constraints="@Required @Email"><span class="input-group-append">
+                                  <button class="btn btn-sm btn-primary" type="submit"><spring:message code="footer.subscribe_btn"/></button></span>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="col-sm-5 text-sm-left col-lg-3 col-xl-2 col-menu">
-                        <h6 class="text-uppercase text-spacing-60">Меню</h6>
+                        <h6 class="text-uppercase text-spacing-60"><spring:message code="footer.menu"/></h6>
                         <div class="d-block">
                             <div class="d-inline-block">
                                 <ul class="list list-marked">
-                                    <li><a href="/">Гавная</a></li>
-                                    <li><a href="/articles">Статьи</a></li>
-                                    <li><a href="/contacts">Контакты</a></li>
-                                    <li><a href="/profile">Профиль</a></li>
+                                    <li><a href="/"><spring:message code="menu.home"/></a></li>
+                                    <li><a href="/articles"><spring:message code="menu.articles"/></a></li>
+                                    <li><a href="/contacts"><spring:message code="menu.contacts"/></a></li>
+                                    <li><a href="/profile"><spring:message code="menu.profile"/></a></li>
                                 </ul>
                             </div>
                         </div>

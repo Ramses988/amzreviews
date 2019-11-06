@@ -2,10 +2,11 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="reviews" tagdir="/WEB-INF/tags" %>
 
 <reviews:genericPage>
-    <jsp:attribute name="title">Регистрация</jsp:attribute>
+    <jsp:attribute name="title"><spring:message code="register.register"/></jsp:attribute>
     <jsp:attribute name="scripts">
         <script src="/resources/js/noty.min.js"></script>
         <script src="/resources/js/noty.valid.js"></script>
@@ -15,7 +16,7 @@
 
         <section class="section section-34 section-bottom-66 bg-default novi-background">
             <div class="container">
-                <h3>Регистрация</h3>
+                <h3><spring:message code="register.register"/></h3>
                 <hr class="divider bg-saffron">
                 <div>
                     <div class="row row-fix justify-content-sm-center">
@@ -23,7 +24,7 @@
                             <!-- RD Mailform-->
                             <form:form class="rd-form text-left" id="userRegister">
                                 <div class="form-group">
-                                    <label class="form-label form-label-outside" for="name">Имя:</label>
+                                    <label class="form-label form-label-outside" for="name"><spring:message code="register.name"/>:</label>
                                     <input class="form-control bg-white required lenth" id="name" type="text" name="name" autocomplete="off">
                                     <span class="form-validation"></span>
                                 </div>
@@ -33,26 +34,26 @@
                                     <span class="form-validation"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label form-label-outside" for="password">Пароль:</label>
+                                    <label class="form-label form-label-outside" for="password"><spring:message code="register.password"/>:</label>
                                     <input class="form-control bg-white required password" id="password" type="password" name="password">
                                     <span class="form-validation"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label form-label-outside" for="confirmPassword">Подтвердите пароль:</label>
+                                    <label class="form-label form-label-outside" for="confirmPassword"><spring:message code="register.repeat"/>:</label>
                                     <input class="form-control bg-white required password" id="confirmPassword" type="password" name="confirmPassword">
                                     <span class="form-validation"></span>
                                 </div>
                                 <div class="form-group offset-top-24">
-                                    <label class="form-label-outside registr">Выберите Роль:
-                                        <span id="help-role" class="icon novi-icon mdi mdi-help-circle-outline" title="Выберите роль Продавец, если будете продавать продукт. Роль Покупатель, если будете покупать продукт."></span>
+                                    <label class="form-label-outside registr"><spring:message code="register.select"/>:
+                                        <span id="help-role" class="icon novi-icon mdi mdi-help-circle-outline" title='<spring:message code="register.role_text"/>'></span>
                                     </label>
                                     <select name="roles">
-                                        <option value="shopper">Покупатель</option>
-                                        <option value="seller">Продавец</option>
+                                        <option value="shopper"><spring:message code="register.shopper"/></option>
+                                        <option value="seller"><spring:message code="register.seller"/></option>
                                     </select>
                                 </div>
                                 <div class="form-group offset-top-24">
-                                    <label class="form-label-outside registr">Страна:</label>
+                                    <label class="form-label-outside registr"><spring:message code="register.country"/>:</label>
                                     <select name="country">
                                         <option value="US">United States</option>
                                         <option value="UK">United Kingdom</option>
@@ -70,7 +71,7 @@
                                     </select>
                                 </div>
                                 <div class="offset-top-24">
-                                    <button class="btn btn-primary-orange btn-block btn-register" type="button">Создать</button>
+                                    <button class="btn btn-primary-orange btn-block btn-register" type="button"><spring:message code="user.register"/></button>
                                 </div>
                             </form:form>
                         </div>

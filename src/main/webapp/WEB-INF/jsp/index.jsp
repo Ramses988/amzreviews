@@ -5,7 +5,7 @@
 <%@taglib prefix="reviews" tagdir="/WEB-INF/tags" %>
 
 <reviews:genericPage menu="index">
-    <jsp:attribute name="title">AmzReviews - Надежный инструмент для обмена</jsp:attribute>
+    <jsp:attribute name="title">AmzReviews - <spring:message code="index.reliable"/></jsp:attribute>
     <jsp:attribute name="styles">
         <link rel="stylesheet" href="/resources/css/owl-main-page.css">
     </jsp:attribute>
@@ -15,29 +15,29 @@
     <jsp:body>
         <section>
             <div class="image-main">
-                <h1 class="slider-text"><b>Надежный сервис для твоего бизнеса</b></h1>
+                <h1 class="slider-text"><b><spring:message code="index.reliable"/></b></h1>
                 <div id="services-list">
-                    <a href="#Services">СПИСОК УСЛУГ</a>
+                    <a href="#Services"><spring:message code="index.services"/></a>
                 </div>
             </div>
         </section>
 
         <section id="Services" class="section top-5 bg-default novi-background">
             <div class="container line-bot">
-                <h2>Наши услуги</h2>
+                <h2><spring:message code="index.our_services"/></h2>
                 <hr class="divider bg-saffron">
                 <div class="row">
                     <div class="col-md-6 col-lg-4"><img class="img-fluid d-inline-block" src="/resources/images/five.png" alt="">
                         <div class="text-md-left offset-top-24">
                             <div>
-                                <h5 class="font-weight-bold orange-text">ВЕРИФИЦИРОВАННЫЕ ОТЗЫВЫ</h5>
+                                <h5 class="font-weight-bold orange-text"><spring:message code="index.verified"/></h5>
                             </div>
                             <div class="list">
                                 <p>
                                 <ul>
-                                    <li>&#9913; От 1 до 100 выкупов за раз</li>
-                                    <li>&#9913; Своя база проверенных ревюверов</li>
-                                    <li>&#9913; Цена $5 + стоимость товара</li>
+                                    <li>&#9913; <spring:message code="index.from1-100"/></li>
+                                    <li>&#9913; <spring:message code="index.database"/></li>
+                                    <li>&#9913; <spring:message code="index.price5"/></li>
                                 </ul>
                                 </p>
                             </div>
@@ -46,14 +46,14 @@
                     <div class="col-md-6 col-lg-4"><img class="img-fluid d-inline-block" src="/resources/images/reviews.png" alt="">
                         <div class="text-md-left offset-top-24">
                             <div>
-                                <h5 class="font-weight-bold orange-text">ВЫКУП ТОВАРА НА AMAZON БЕЗ ОТЗЫВОВ</h5>
+                                <h5 class="font-weight-bold orange-text"><spring:message code="index.buyout_goods"/></h5>
                             </div>
                             <div class="list">
                                 <p>
                                 <ul>
-                                    <li>&#9913; Выкуп по Вашим ключевым словам</li>
-                                    <li>&#9913; От 1 до 100 выкупов за раз</li>
-                                    <li>&#9913; Цена $3 + стоимость товара</li>
+                                    <li>&#9913; <spring:message code="index.keywords"/></li>
+                                    <li>&#9913; <spring:message code="index.from1-100"/></li>
+                                    <li>&#9913; <spring:message code="index.price3"/></li>
                                 </ul>
                                 </p>
                             </div>
@@ -62,15 +62,15 @@
                     <div class="col-md-6 col-lg-4"><img class="img-fluid d-inline-block" src="/resources/images/guarantee.png" alt="">
                         <div class="text-md-left offset-top-24">
                             <div>
-                                <h5 class="font-weight-bold orange-text">ГАРАНТИЯ СДЕЛОК</h5>
+                                <h5 class="font-weight-bold orange-text"><spring:message code="index.transaction"/></h5>
                             </div>
                             <div class="list">
                                 <p>
                                 <ul>
                                     <li> </li>
-                                    <li>&#9913; Контроль каждой сделки</li>
-                                    <li>&#9913; Своя база проверенных ревюверов</li>
-                                    <li>&#9913; Защита от мошенников</li>
+                                    <li>&#9913; <spring:message code="index.control"/></li>
+                                    <li>&#9913; <spring:message code="index.database"/></li>
+                                    <li>&#9913; <spring:message code="index.protection"/></li>
                                 </ul>
                                 </p>
                             </div>
