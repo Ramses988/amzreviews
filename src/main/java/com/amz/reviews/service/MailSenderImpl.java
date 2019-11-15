@@ -34,7 +34,7 @@ public class MailSenderImpl implements MailSender {
             MimeMessagePreparator messagePreparator = mimeMessage -> {
                 MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
 
-                messageHelper.setFrom("www-75@list.ru");
+                messageHelper.setFrom("noreply@amzreviews.biz");
                 messageHelper.setTo(mail.getEmail());
                 messageHelper.setSubject(mail.getTitle());
                 messageHelper.setText(message, true);

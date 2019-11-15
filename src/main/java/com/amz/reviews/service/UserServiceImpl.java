@@ -107,7 +107,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         values.put("email", feedback.getEmail());
         values.put("text", feedback.getText());
 
-        Mail mail = new Mail("Ramses988@gmail.com", "Запрос из формы обратной связи", "feedback", values);
+        Mail mail = new Mail("info@amzreviews.biz", "Запрос из формы обратной связи", "feedback", values);
         mailSender.send(mail);
     }
 

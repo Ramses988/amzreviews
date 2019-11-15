@@ -4912,7 +4912,11 @@ img.not-found {
 }
 
 .image-main {
-    background: url("/resources/images/main.png") no-repeat;
+    background: url('/resources/images/main.png') no-repeat;
+    background: -webkit-image-set(url('/resources/images/main.webp')1x ) no-repeat;
+}
+
+.image-main {
     background-size: 100%;
     padding-bottom: 15%;
 }

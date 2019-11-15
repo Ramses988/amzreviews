@@ -1,6 +1,7 @@
 .idea
 out
 target
+*5e2ee44e.html
 *.iml
 *.log
 postgres.properties

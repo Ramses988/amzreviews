@@ -11,8 +11,8 @@
                 <div class="row row-50 justify-content-sm-center">
                     <div class="col-sm-12 col-xl-3">
                         <!-- Footer brand-->
-                        <div class="footer-brand"><a href="index.html"><img width='170' height='30' src='/resources/images/logo-light.png' alt=''/></a></div>
-                        <p class="text-darker offset-top-4 inset-right-15 inset-xl-right-0 inset-xl-left-15">Real Estate</p>
+                        <div class="footer-brand"><a href="index.html"><img width='170' height='50' src='/resources/images/logo-light.png' alt=''/></a></div>
+                        <br />
                         <ul class="list-inline">
                             <li class="list-inline-item"><a class="icon novi-icon fa fa-facebook icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
                             <li class="list-inline-item"><a class="icon novi-icon fa fa-twitter icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
@@ -24,7 +24,7 @@
                         <h6 class="text-uppercase text-spacing-60"><spring:message code="footer.newsletter"/></h6>
                         <p><spring:message code="footer.subscribe"/></p>
                         <div class="offset-top-30">
-                            <form class="rd-mailform rd-form" data-form-output="form-subscribe-footer" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                            <form>
                                 <div class="form-output" id="form-subscribe-footer"></div>
                                 <div class="form-group">
                                     <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon"><span class="form-icon mdi mdi-email novi-icon"></span></span></span>

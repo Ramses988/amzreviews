@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
 
-    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+<!--        <file>C:/Users/TambovtsevRA/Desktop/amzreviews/log/amzreviews.log</file>-->
+<!--        <file>/var/log/amzreviews/amzreviews.log</file>-->
+
         <encoder>
             <charset>UTF-8</charset>
-            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %cyan(%class{50}.%M:%L) - %msg%n</pattern>
+            <pattern>%date %-5level %logger{50}.%M:%L - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!--<logger name="com.amz.reviews" level="debug"/>-->
-    <logger name="javax.validation" level="debug"/>
-    <!--<logger name="org.springframework.security" level="debug"/>-->
-    <!--<logger name="org.springframework.mail" level="debug"/>-->
-
-    <root level="info">
-        <appender-ref ref="console"/>
+    <root level="debug">
+        <appender-ref ref="file"/>
     </root>
 
 </configuration>

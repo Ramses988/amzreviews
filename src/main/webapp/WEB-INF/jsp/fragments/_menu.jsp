@@ -52,8 +52,8 @@
                             <address class="contact-info text-left">
                                 <div class="p">
                                     <span class="icon novi-icon mdi mdi-email-open"></span>
-                                    <a id="inf-small" href="info@amzreviews.com">info@amzreviews.com</a>
-                                    ${(pageContext.response.locale == "en") ? "<img id='language' src='/resources/images/us.png'/><a id='language-a' href='?lang=ru'>ENG</a>" :
+                                    <a id="inf-small" href="mailto:info@amzreviews.biz">info@amzreviews.biz</a>
+                                ${(pageContext.response.locale == "en") ? "<img id='language' src='/resources/images/us.png'/><a id='language-a' href='?lang=ru'>ENG</a>" :
                                     "<img id='language' src='/resources/images/ru.png'/><a id='language-a' href='?lang=en'>RUS</a>"}
                                 </div>
                             </address>
@@ -66,10 +66,24 @@
                         <!-- RD Navbar Top Panel Toggle-->
                         <button class="rd-navbar-top-panel-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-top-panel"><span></span></button>
                         <!--Navbar Brand-->
-                        <div class="rd-navbar-brand"><a href="/"><img width='217' height='36' src='/resources/images/logo-dark.png' alt=''/></a></div>
+                        <div class="rd-navbar-brand">
+                            <a href="/">
+                                <picture>
+                                    <source srcset="/resources/images/logo-dark.webp" type="image/webp">
+                                    <source srcset="/resources/images/logo-dark.png" type="image/png">
+                                    <img width='170' height='36' src='/resources/images/logo-dark.png' alt=''/>
+                                </picture>
+                        </a>
+                        </div>
                     </div>
                     <div class="rd-navbar-menu-wrap">
                         <div class="rd-navbar-nav-wrap">
                             <div class="rd-navbar-mobile-scroll">
                                 <!--Navbar Brand Mobile-->
-                                <div class="rd-navbar-mobile-brand"><a href="/"><img width='217' height='36' src='/resources/images/logo-dark.png' alt=''/></a></div>
+                                <div class="rd-navbar-mobile-brand"><a href="/">
+                                    <picture>
+                                        <source srcset="/resources/images/logo-dark.webp" type="image/webp">
+                                        <source srcset="/resources/images/logo-dark.png" type="image/png">
+                                        <img width='170' height='36' src='/resources/images/logo-dark.png' alt=''/>
+                                    </picture>
+                                </a></div>

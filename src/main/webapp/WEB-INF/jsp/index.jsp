@@ -27,7 +27,12 @@
                 <h2><spring:message code="index.our_services"/></h2>
                 <hr class="divider bg-saffron">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4"><img class="img-fluid d-inline-block" src="/resources/images/five.png" alt="">
+                    <div class="col-md-6 col-lg-4">
+                        <picture>
+                            <source srcset="/resources/images/five.webp" type="image/webp">
+                            <source srcset="/resources/images/five.png" type="image/png">
+                            <img class="img-fluid d-inline-block" src="/resources/images/five.png" alt="">
+                        </picture>
                         <div class="text-md-left offset-top-24">
                             <div>
                                 <h5 class="font-weight-bold orange-text"><spring:message code="index.verified"/></h5>
@@ -43,7 +48,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4"><img class="img-fluid d-inline-block" src="/resources/images/reviews.png" alt="">
+                    <div class="col-md-6 col-lg-4">
+                        <picture>
+                            <source srcset="/resources/images/reviews.webp" type="image/webp">
+                            <source srcset="/resources/images/reviews.png" type="image/png">
+                            <img class="img-fluid d-inline-block" src="/resources/images/reviews.png" alt="">
+                        </picture>
                         <div class="text-md-left offset-top-24">
                             <div>
                                 <h5 class="font-weight-bold orange-text"><spring:message code="index.buyout_goods"/></h5>
@@ -59,7 +69,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4"><img class="img-fluid d-inline-block" src="/resources/images/guarantee.png" alt="">
+                    <div class="col-md-6 col-lg-4">
+                        <picture>
+                            <source srcset="/resources/images/guarantee.webp" type="image/webp">
+                            <source srcset="/resources/images/guarantee.png" type="image/png">
+                            <img class="img-fluid d-inline-block" src="/resources/images/guarantee.png" alt="">
+                        </picture>
                         <div class="text-md-left offset-top-24">
                             <div>
                                 <h5 class="font-weight-bold orange-text"><spring:message code="index.transaction"/></h5>
@@ -94,7 +109,12 @@
                     <div class="row1 col-lg-borders">
                         <div class="col-lg-6 top-block wow fadeInLeft animated" data-wow-duration="300ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 0ms; animation-name: fadeInLeft;">
                             <div class="fl-all">
-                                <img id="first-article" src="/resources/images/publications/public1.png" alt="" /></div>
+                                <picture>
+                                    <source srcset="/resources/images/publications/public1.webp" type="image/webp">
+                                    <source srcset="/resources/images/publications/public1.png" type="image/png">
+                                    <img id="first-article" src="/resources/images/publications/public1.png" alt="">
+                                </picture>
+                            </div>
                             <div class="fl-all">
                                 <span class="bl">20 Сентебря 2019</span>
                                 <h2 class="entry-title">Топ-10 частых ошибок продовцов на Amazone</h2>
@@ -108,7 +128,11 @@
 
                         <div class="col-lg-6 text-lg-left wow fadeInLeft animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInRight;">
                             <div class="first-block">
-                                <img src="/resources/images/publications/public2.png" alt="" />
+                                <picture>
+                                    <source srcset="/resources/images/publications/public2.webp" type="image/webp">
+                                    <source srcset="/resources/images/publications/public2.png" type="image/png">
+                                    <img src="/resources/images/publications/public2.png" alt="">
+                                </picture>
                             </div>
                             <div class="first-block text-block">
                                 <span class="bl">20 Сентебря 2019</span>
@@ -119,7 +143,11 @@
                                 <a href="#">Читать дальше</a>
                             </div>
                             <div class="first-block">
-                                <img src="/resources/images/publications/public3.png" alt="" />
+                                <picture>
+                                    <source srcset="/resources/images/publications/public3.webp" type="image/webp">
+                                    <source srcset="/resources/images/publications/public3.png" type="image/png">
+                                    <img src="/resources/images/publications/public3.png" alt="">
+                                </picture>
                             </div>
                             <div class="first-block text-block">
                                 <span class="bl">20 Сентебря 2019</span>
@@ -145,7 +173,11 @@
                         <div>
                             <blockquote class="quote quote-slider-4 unit uni-spacing-sm flex-md-row">
                                 <div class="unit-left">
-                                    <img class="quote-img rounded-circle" width="100" height="100" src="/resources/images/feedback/facebook.png" alt="Reviews facebook"/>
+                                    <picture>
+                                        <source srcset="/resources/images/feedback/facebook.webp" type="image/webp">
+                                        <source srcset="/resources/images/feedback/facebook.png" type="image/png">
+                                        <img class="quote-img rounded-circle" width="100" height="100" src="/resources/images/feedback/facebook.png" alt="Reviews facebook">
+                                    </picture>
                                 </div>
                                 <div class="unit-body text-left">
                                     <div>
@@ -161,7 +193,13 @@
                         </div>
                         <div>
                             <blockquote class="quote quote-slider-4 unit uni-spacing-sm flex-md-row">
-                                <div class="unit-left"><img class="quote-img rounded-circle" width="100" height="100" src="/resources/images/feedback/facebook.png" alt="Reviews facebook"/></div>
+                                <div class="unit-left">
+                                    <picture>
+                                        <source srcset="/resources/images/feedback/facebook.webp" type="image/webp">
+                                        <source srcset="/resources/images/feedback/facebook.png" type="image/png">
+                                        <img class="quote-img rounded-circle" width="100" height="100" src="/resources/images/feedback/facebook.png" alt="Reviews facebook">
+                                    </picture>
+                                </div>
                                 <div class="unit-body text-left">
                                     <div>
                                         <p>
@@ -176,7 +214,13 @@
                         </div>
                         <div>
                             <blockquote class="quote quote-slider-4 unit uni-spacing-sm flex-md-row">
-                                <div class="unit-left"><img class="quote-img" width="100" height="100" src="/resources/images/feedback/instagram.png" alt="Reviews instagram"/></div>
+                                <div class="unit-left">
+                                    <picture>
+                                        <source srcset="/resources/images/feedback/instagram.webp" type="image/webp">
+                                        <source srcset="/resources/images/feedback/instagram.png" type="image/png">
+                                        <img class="quote-img" width="100" height="100" src="/resources/images/feedback/instagram.png" alt="Reviews instagram">
+                                    </picture>
+                                </div>
                                 <div class="unit-body text-left">
                                     <div>
                                         <p>
