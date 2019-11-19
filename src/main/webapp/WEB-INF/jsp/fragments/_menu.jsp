@@ -3,10 +3,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<!-- IE panel-->
-<!-- <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div> -->
-<!-- Page-->
-
 <!-- Page Head-->
 <header class="section page-head">
     <!-- RD Navbar Transparent-->
@@ -27,11 +23,11 @@
 
                                 <sec:authorize access="isAuthenticated()">
                                     <li><span class="icon novi-icon mdi mdi-account"></span>
-                                        <small>Привет, <sec:authentication property="principal.name" /></small>
+                                        <small><spring:message code="user.hello"/>, <sec:authentication property="principal.name" /></small>
                                     </li>
                                     <sec:authorize access="hasRole('ROLE_SELLER')">
                                         <li>
-                                            Баланс: <small class="balance"></small>
+                                            <spring:message code="user.balance"/>: <small class="balance"></small>
                                         </li>
                                     </sec:authorize>
                                     <li>
@@ -39,7 +35,7 @@
                                             <%--<button class="btn-exit"><span class="icon novi-icon mdi"></span></button>--%>
                                         <%--</form:form>--%>
                                         <div>
-                                            <small><a href="/logout">Выход</a></small>
+                                            <small><a href="/logout"><spring:message code="user.logout"/></a></small>
                                         </div>
                                     </li>
                                     <%--<li><span class="icon novi-icon mdi mdi-wallet"></span>--%>

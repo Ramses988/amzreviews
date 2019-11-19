@@ -1,8 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="reviews" tagdir="/WEB-INF/tags" %>
 
 <reviews:genericPage menu="help">
-    <jsp:attribute name="title">Инструкции и частые вопросы</jsp:attribute>
+    <jsp:attribute name="title"><spring:message code="help.faq"/></jsp:attribute>
     <jsp:body>
         <section class="section context-dark">
             <div class="parallax-container">
@@ -11,10 +12,10 @@
                 <div class="parallax-content">
                     <div class="container section-top-34 section-md-top-98 section-bottom-34">
                         <div>
-                            <h1 class="font-weight-bold">Частые вопросы</h1>
+                            <h1 class="font-weight-bold"><spring:message code="help.faq"/></h1>
                         </div>
                         <ul class="list-inline list-inline-dashed p text-light breadcrumb-modern offset-top-10 offset-md-top-66">
-                            <li class="list-inline-item"><a href="/">Главная</a></li>
+                            <li class="list-inline-item"><a href="/"><spring:message code="menu.home"/></a></li>
                             <li class="list-inline-item">FAQ</li>
                         </ul>
                     </div>
@@ -29,69 +30,67 @@
                         <div class="faq_item" id="ques1">
                             <div class="faq_ans">
                                 <p>
-                                    Как я могу воспользоваться сайтом ?
+                                    <spring:message code="help.q1"/>
                                 </p>
                                 <img src="/resources/images/faq_gues.png" />
                             </div>
                             <div class="clear"></div>
                             <div class="faq_ques">
                                 <img src="/resources/images/faq_ans.png" />
-                                <p>Для того чтобы воспользоваться сайтом, необходимо зарегистрироваться в качестве продавца или покупателя. Продавцы могут выставлять свой продукт на выкуп, а
-                                    покупатели выкупают товар. Для регистрации перейдите по <a href="/register">ссылке</a>.</p>
+                                <p><spring:message code="help.a1"/></p>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="faq_item" id="ques2">
                             <div class="faq_ans">
                                 <p>
-                                    Сколько стоит регистрация на сайте ?
+                                    <spring:message code="help.q2"/>
                                 </p>
                                 <img src="/resources/images/faq_gues.png" />
                             </div>
                             <div class="clear"></div>
                             <div class="faq_ques">
                                 <img src="/resources/images/faq_ans.png" />
-                                <p>Регистрация на сайте бесплатная. Плата берется только с продавцов, за каждый выкуп. Стоимость выкупа для продавцов, стоит от $3-$5 + стоимость товара,
-                                    в зависимости от выбранной услуги.</p>
+                                <p><spring:message code="help.a2"/></p>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="faq_item" id="ques3">
                             <div class="faq_ans">
                                 <p>
-                                    Я хочу зарегистрироваться в качестве покупателя, что для этого надо ?
+                                    <spring:message code="help.q3"/>
                                 </p>
                                 <img src="/resources/images/faq_gues.png" />
                             </div>
                             <div class="clear"></div>
                             <div class="faq_ques">
                                 <img src="/resources/images/faq_ans.png" />
-                                <p>Для регистрации в качестве покупателя, необходимо проживать на территории США или Канады. Иметь активный аккаунт на Amazon и PayPal.</p>
+                                <p><spring:message code="help.a3"/></p>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="faq_item" id="ques4">
                             <div class="faq_ans">
                                 <p>
-                                    Сколько времени нужно чтобы получить верифай отзывы ?
+                                    <spring:message code="help.q4"/>
                                 </p>
                                 <img src="/resources/images/faq_gues.png" />
                             </div>
                             <div class="clear"></div>
                             <div class="faq_ques">
                                 <img src="/resources/images/faq_ans.png" />
-                                <p>Все зависит от Вашего товара, если товар популярный, то выкуп происходит быстро. После выкупа товара, ревьювер обычно пишет отзыв через 10-25 дней.</p>
+                                <p><spring:message code="help.a4"/></p>
                             </div>
                             <div class="clear"></div>
                         </div>
                     </div>
                     <div class="col-lg-3-new">
-                        <h6>ТЕМЫ:</h6>
+                        <h6><spring:message code="help.topics"/>:</h6>
                         <hr>
-                        <p><b><a href="#ques1" class="blue-text">Как воспользоваться сайтом</a></b></p>
-                        <p><b><a href="#ques2" class="blue-text">Сколько стоит регистрация</a></b></p>
-                        <p><b><a href="#ques3" class="blue-text">Регистрация как Покупатель</a></b></p>
-                        <p><b><a href="#ques4" class="blue-text">Через сколько появится отзыв</a></b></p>
+                        <p><b><a href="#ques1" class="blue-text"><spring:message code="help.t1"/></a></b></p>
+                        <p><b><a href="#ques2" class="blue-text"><spring:message code="help.t2"/></a></b></p>
+                        <p><b><a href="#ques3" class="blue-text"><spring:message code="help.t3"/></a></b></p>
+                        <p><b><a href="#ques4" class="blue-text"><spring:message code="help.t4"/></a></b></p>
                     </div>
                 </div>
             </div>

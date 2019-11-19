@@ -57,12 +57,12 @@
         <div class="modal reset-modal">
             <div class="modal-container">
                 <div class="modal-header">
-                    <h4 class="modal-title modalTitle"><spring:message code="footer.email"/></h4>
+                    <h4 class="modal-title modalTitle"><spring:message code="customer.recovery"/></h4>
                     <button type="button" class="close popup-close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form id="detailsFormReset">
-                        <label class="col-form-label"><spring:message code="footer.email"/><span id="help-reset" class="icon novi-icon mdi mdi-help-circle-outline" title="Введите email, на который будет отправлена инструкция по восстановлению пароля."></span></label>
+                        <label class="col-form-label"><spring:message code="customer.enter-email"/><span id="help-reset" class="icon novi-icon mdi mdi-help-circle-outline" title='<spring:message code="customer.reset"/>'></span></label>
                         <input name="email" class="form-control" placeholder="Email" autocomplete="off" type="text">
                     </form>
                 </div>
@@ -77,11 +77,11 @@
             <div class="modal-container">
                 <div class="modal-header">
                     <h4 class="modal-title modalTitle"><img id="Success" src="/resources/images/ok.png" alt="OK"/>
-                        Запрос принят!</h4>
+                        <spring:message code="customer.received"/></h4>
                     <button type="button" class="close popup-close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p>Инстркуция по восстановлению пароля отправлена на указанный email.</p>
+                    <p><spring:message code="customer.send-ins"/></p>
                 </div>
                 <div class="modal-footer">
                     <button class="btn-small btn-primary-orange btn-cancel">Ok</button>

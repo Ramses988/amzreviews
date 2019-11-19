@@ -11,7 +11,7 @@
                 <div class="row row-50 justify-content-sm-center">
                     <div class="col-sm-12 col-xl-3">
                         <!-- Footer brand-->
-                        <div class="footer-brand"><a href="index.html"><img width='170' height='50' src='/resources/images/logo-light.png' alt=''/></a></div>
+                        <div class="footer-brand"><a href="/"><img width='170' height='50' src='/resources/images/logo-light.png' alt=''/></a></div>
                         <br />
                         <ul class="list-inline">
                             <li class="list-inline-item"><a class="icon novi-icon fa fa-facebook icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
@@ -49,9 +49,9 @@
                         </div>
                     </div>
                     <div class="col-sm-7 text-sm-left col-lg-4 col-xl-3">
-                        <h6 class="text-uppercase text-spacing-60">Новости</h6>
+                        <!-- <h6 class="text-uppercase text-spacing-60">Новости</h6> -->
                         <div class="widget-post-wrap">
-                            <!-- Post Widget-->
+                            <!-- Post Widget
                             <article class="post widget-post text-left"><a href="#">
                                 <div class="unit flex-row unit-spacing-xs align-items-center">
                                     <div class="unit-body">
@@ -62,8 +62,8 @@
                                             <h6 class="text-regular">10 лучших аппартоментов</h6>
                                         </div>
                                     </div>
-                                </div></a></article>
-                            <!-- Post Widget-->
+                                </div></a></article> -->
+                            <!-- Post Widget
                             <article class="post widget-post text-left"><a href="#">
                                 <div class="unit flex-row unit-spacing-xs align-items-center">
                                     <div class="unit-body">
@@ -74,8 +74,8 @@
                                             <h6 class="text-regular">Как правильно выбрать недвижимость</h6>
                                         </div>
                                     </div>
-                                </div></a></article>
-                            <!-- Post Widget-->
+                                </div></a></article> -->
+                            <!-- Post Widget
                             <article class="post widget-post text-left"><a href="#">
                                 <div class="unit flex-row unit-spacing-xs align-items-center">
                                     <div class="unit-body">
@@ -86,7 +86,7 @@
                                             <h6 class="text-regular">Особенности ипотечных кредитов</h6>
                                         </div>
                                     </div>
-                                </div></a></article>
+                                </div></a></article> -->
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
         </div>
     </div>
     <div class="container offset-top-50">
-        <p class="small text-darker">Intense Real Estate &copy; <span id="copyright-year"></span> . <a href="privacy.html">Privacy Policy</a></p>
+        <p class="small text-darker">Amz Reviews &copy; 2019. <a href="privacy.html">Privacy Policy</a></p>
     </div>
 </footer>
 <!-- Global Mailform Output-->

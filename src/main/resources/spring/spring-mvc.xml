@@ -19,6 +19,7 @@
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
     <mvc:resources mapping="/robots.txt" location="/robots.txt" order="0"/>
+    <mvc:resources mapping="/favicon.ico" location="/favicon.ico"/>
     <mvc:resources mapping="/yandex_6ed5d0cf5e2ee44e.html" location="/yandex_6ed5d0cf5e2ee44e.html"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"

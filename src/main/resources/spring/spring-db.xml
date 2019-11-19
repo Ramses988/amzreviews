@@ -15,10 +15,9 @@
     <jpa:repositories base-package="com.amz.reviews.**.repository.datajpa" />
 
         <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource"
-        p:driverClassName="org.postgresql.Driver"
-        p:url="jdbc:postgresql://localhost:5432/amzreviews"
-        p:username="user"
-        p:password="password" />
+        p:driverClassName="org.postgresql.Driver" />
+
+
 
 <!--    <context:property-placeholder location="classpath:/db/heroku.properties" system-properties-mode="OVERRIDE"/>-->
 

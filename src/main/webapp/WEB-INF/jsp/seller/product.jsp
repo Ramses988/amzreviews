@@ -1,10 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="reviews" tagdir="/WEB-INF/tags" %>
 
 <reviews:genericPage>
-    <jsp:attribute name="title">Продукт</jsp:attribute>
+    <jsp:attribute name="title"><spring:message code="product.product"/></jsp:attribute>
     <jsp:attribute name="styles">
         <link rel="stylesheet" href="/resources/css/owl.carousel.min.css">
         <link rel="stylesheet" href="/resources/css/owl.theme.default.min.css">
@@ -30,7 +31,7 @@
                     <div class="row row-65 row-fix">
                         <div class="col-lg-7 col-xl-8">
                             <div class="text-md-left offset-top-50">
-                                <h5 class="font-weight-bold">Описание</h5>
+                                <h5 class="font-weight-bold"><spring:message code="product.description"/></h5>
                                 <ul>
                                         ${product.description}
                                 </ul>
@@ -47,20 +48,20 @@
                                         ASIN: ${product.asin}
                                     </div>
                                     <div class="offset-top-20">
-                                        <h5 class="font-weight-bold price">Цена: <span class="price-red">&#36;${product.price}</span></h5>
+                                        <h5 class="font-weight-bold price"><spring:message code="product.price"/>: <span class="price-red">&#36;${product.price}</span></h5>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
 
                                     <form method="POST" action="/rest/seller/product/update">
                                         <input type="hidden" name="id" value="${product.id}">
-                                        <button type="submit" class="btn btn-md btn-info">Обновить</button>
+                                        <button type="submit" class="btn btn-md btn-info"><spring:message code="product.update"/></button>
                                     </form>
 
                                     <div class="offset-top-10">
                                         <form method="POST" action="/seller/product/delete">
                                             <input type="hidden" name="id" value="${product.id}">
-                                            <button type="submit" class="btn btn-md btn-delete">Удалить</button>
+                                            <button type="submit" class="btn btn-md btn-delete"><spring:message code="btn.delete"/></button>
                                         </form>
                                     </div>
                                 </div>
