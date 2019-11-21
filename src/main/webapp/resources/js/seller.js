@@ -57,12 +57,12 @@ $(function() {
                     "data": function (row) {
                         if(row.reviewEnable) {
                             if(row.reviews != null) {
-                                return '<a class="original" href="'+row.reviews+'">Отзыв</a>';
+                                return '<a class="original" href="'+row.reviews+'">Review</a>';
                             } else {
                                 return "";
                             }
                         } else {
-                            return "Выкуп без отзыва";
+                            return "Buyout without feedback";
                         }
                     }
                 },

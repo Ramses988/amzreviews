@@ -34834,6 +34834,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     opacity: 1
 }
 
+.btn-reserveProduct {
+    min-width: 170px;
+}
+
 .rd-video-playlist {
     position: absolute;
     left: 0;

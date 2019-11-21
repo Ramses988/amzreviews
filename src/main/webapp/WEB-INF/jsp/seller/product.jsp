@@ -5,7 +5,7 @@
 <%@taglib prefix="reviews" tagdir="/WEB-INF/tags" %>
 
 <reviews:genericPage>
-    <jsp:attribute name="title"><spring:message code="product.product"/></jsp:attribute>
+    <jsp:attribute name="title">${product.name}</jsp:attribute>
     <jsp:attribute name="styles">
         <link rel="stylesheet" href="/resources/css/owl.carousel.min.css">
         <link rel="stylesheet" href="/resources/css/owl.theme.default.min.css">

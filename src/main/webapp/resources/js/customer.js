@@ -66,7 +66,7 @@ function loading(name, url) {
                     if(row.orderId != null) {
                         return row.orderId
                     } else {
-                        return '<button class="btn-border" onclick="orderid('+row.id+')">Добавить Номер</button>';
+                        return '<button class="btn-border" onclick="orderid('+row.id+')">Add Order ID</button>';
                     }
                 }
             },
@@ -74,12 +74,12 @@ function loading(name, url) {
                 "data": function (row) {
                     if(row.reviewEnable) {
                         if(row.reviews != null) {
-                            return '<a class="original" href="'+row.reviews+'">Отзыв</a>';
+                            return '<a class="original" href="'+row.reviews+'">Review</a>';
                         } else {
-                            return '<button class="btn-border" onclick="reviews('+row.id+')">Добавить ссылку</button>';
+                            return '<button class="btn-border" onclick="reviews('+row.id+')">Add Review</button>';
                         }
                     } else {
-                        return "Выкуп без отзыва";
+                        return "Buyout without feedback";
                     }
                 }
             },
@@ -105,9 +105,9 @@ function loading(name, url) {
                 "data": "refund",
                 "render": function (data) {
                     if(data) {
-                        return '<label class="paid">Возмещено</label>'
+                        return '<label class="paid">Refunded</label>'
                     } else {
-                        return "Не возмещено";
+                        return "Wait refund";
                     }
                 }
             }
