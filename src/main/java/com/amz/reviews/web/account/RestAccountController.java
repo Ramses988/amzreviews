@@ -30,7 +30,7 @@ public class RestAccountController {
     @PostMapping("/feedback")
     public void feedback(@Valid FeedbackTo feedback, BindingResult result) {
         if (result.hasErrors())
-            throw new ApplicationException("Проверьте правильность заплонения полей!");
+            throw new ApplicationException("Check that the fields are filled correctly!");
 
         service.feedback(feedback);
     }
@@ -38,7 +38,7 @@ public class RestAccountController {
     @PostMapping("/register")
     public void registerCreate(@Valid UserRegisterTo register, BindingResult result) {
         if (result.hasErrors())
-            throw new ApplicationException("Проверьте правильность заплонения полей!");
+            throw new ApplicationException("Check that the fields are filled correctly!");
 
         service.userRegister(register);
     }

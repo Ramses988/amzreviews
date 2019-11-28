@@ -53,7 +53,7 @@ public class SellerRestController extends AbstractSellerController {
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void createOrders(@Valid OrderTo orderTo, BindingResult result) {
         if(result.hasErrors())
-            throw new ApplicationException("Проверьте правильность заплонения полей!");
+            throw new ApplicationException("Check that the fields are filled correctly!");
 
         super.sellerCreateOrders(orderTo);
     }

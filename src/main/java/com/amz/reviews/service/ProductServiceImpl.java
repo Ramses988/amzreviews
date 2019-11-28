@@ -53,13 +53,13 @@ public class ProductServiceImpl implements ProductService {
             double totalPriceWithCount = totalPrice * orderTo.getCount();
 
             if(product.getCountOrders() > 0)
-                throw new ApplicationException("У Вас уже есть заявки на выкуп в очереди!");
+                throw new ApplicationException("You already have buyout requests in progress!");
             if(user.getBalance() < 0)
-                throw new ApplicationException("У Вас недостаточно средств для выкупов. Пополните баланс!");
+                throw new ApplicationException("You don't have enough money for buyouts. Please, make a deposit!");
             if(user.getBalance() == 0 && orderTo.getCount() > 1)
-                throw new ApplicationException("При нулевом балансе Вы можете сделать только один выкуп!");
+                throw new ApplicationException("If your balance is zero, you can make only one buyout!");
             if(user.getBalance() > 0 && (user.getBalance() - totalPriceWithCount) < 0 && orderTo.getCount() > 1)
-                throw new ApplicationException(String.format("Недостаточно средств для %d выкупов, уменьшите количество!", orderTo.getCount()));
+                throw new ApplicationException(String.format("Insufficient funds for %d buyouts, please reduce the amount!", orderTo.getCount()));
 
             product.setKey(orderTo.getKey());
             product.setCountOrders(orderTo.getCount());
@@ -78,7 +78,7 @@ public class ProductServiceImpl implements ProductService {
         if(product.getCountOrders() > 0) {
             return product;
         }
-        throw new ApplicationException("Продукт закончился!");
+        throw new ApplicationException("This product is out of stock!");
     }
 
     private Product getProductWithUser(int productId) {
@@ -88,7 +88,7 @@ public class ProductServiceImpl implements ProductService {
         if(product.getCountOrders() > 0) {
             return product;
         }
-        throw new ApplicationException("Продукт закончился!");
+        throw new ApplicationException("This product is out of stock!");
     }
 
     private User getUser(int userId) {
@@ -150,7 +150,7 @@ public class ProductServiceImpl implements ProductService {
                 productRepository.save(product);
                 orderService.save(newOrder);
             } else
-                throw new ApplicationException("Вы уже выкупали этот продукт!");
+                throw new ApplicationException("You have already purchased this product!");
         }
     }
 
@@ -161,7 +161,7 @@ public class ProductServiceImpl implements ProductService {
             values.put("user", userId);
             values.put("asin", asin);
 
-            Mail mail = new Mail("Ramses988@gmail.com", "Запрос на добавление продукта", "add_product", values);
+            Mail mail = new Mail("info@amzreviews.biz", "Запрос на добавление продукта", "add_product", values);
             mailSender.send(mail);
         }
 

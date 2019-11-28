@@ -32,7 +32,7 @@ public class CustomerRestController extends AbstractCustomerController {
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void addOrderId(@Valid OrderIdTo orderid, BindingResult result) {
         if(result.hasErrors())
-            throw new ApplicationException("Проверьте правильность заплонения полей!");
+            throw new ApplicationException("Check that the fields are filled correctly!");
 
         super.customerAddOrderId(orderid);
     }
@@ -41,7 +41,7 @@ public class CustomerRestController extends AbstractCustomerController {
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void addReviews(@Valid OrderReviewTo orderReviewTo, BindingResult result) {
         if(result.hasErrors())
-            throw new ApplicationException("Проверьте правильность заплонения полей!");
+            throw new ApplicationException("Check that the fields are filled correctly!");
 
         super.customerAddReview(orderReviewTo);
     }

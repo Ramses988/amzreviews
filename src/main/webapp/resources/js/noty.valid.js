@@ -2,6 +2,8 @@ $(document).ajaxError(function (event, jqXHR, options, jsExc) {
     warningNoty(jqXHR);
 });
 
+$msgError = "Check that the fields are filled correctly!";
+
 function successNoty(msg) {
     new Noty({
         theme: 'relax',
@@ -50,10 +52,10 @@ $(function () {
                 url: "/rest/account/update-profile",
                 data: $('#userProfile').serialize()
             }).done(function () {
-                successNoty("Профиль обновлен");
+                successNoty("Profile updated!");
             })
         } else {
-            failNoty("Проверьте правильность заполнения полей!");
+            failNoty($msgError);
         }
     });
 
@@ -68,7 +70,7 @@ $(function () {
                 $('.info-modal').fadeIn();
             })
         } else {
-            failNoty("Проверьте правильность заполнения полей!");
+            failNoty($msgError);
         }
     });
 
@@ -89,10 +91,10 @@ $(function () {
             }).done(function () {
                 $('.modal').fadeOut();
                 angular.element('#getAllController').scope().updateProducts();
-                successNoty("Выкупы успешно добавлены");
+                successNoty("Buyouts have been successfully added!");
             })
         } else {
-            failNoty("Проверьте правильность заполнения полей!");
+            failNoty($msgError);
         }
     });
 
@@ -104,10 +106,10 @@ $(function () {
                 data: $('#changePassword').serialize()
             }).done(function () {
                 $('#changePassword').trigger('reset');
-                successNoty("Пароль успешно изменен");
+                successNoty("Password successfully changed!");
             })
         } else {
-            failNoty("Проверьте правильность заполнения полей!");
+            failNoty($msgError);
         }
     });
 
@@ -122,7 +124,7 @@ $(function () {
                 loading("#datatable", "active");
             })
         } else {
-            failNoty("Проверьте правильность заполнения полей!");
+            failNoty($msgError);
         }
     });
 
@@ -137,7 +139,7 @@ $(function () {
                 loading("#datatable", "active");
             })
         } else {
-            failNoty("Проверьте правильность заполнения полей!");
+            failNoty($msgError);
         }
     });
 
@@ -149,10 +151,10 @@ $(function () {
                 data: $('#fromFeedback').serialize()
             }).done(function () {
                 $('#fromFeedback').trigger('reset');
-                successNoty("Запрос отправлен");
+                successNoty("Request sent!");
             })
         } else {
-            failNoty("Проверьте правильность заполнения полей!");
+            failNoty($msgError);
         }
     });
 
@@ -166,7 +168,7 @@ $(function () {
                 window.location.href = "/success";
             })
         } else {
-            failNoty("Проверьте правильность заполнения полей!");
+            failNoty($msgError);
         }
     });
 
@@ -241,48 +243,48 @@ $(function () {
 
             if(required(data)) {
                 $(this).closest('.form-group').addClass('has-error');
-                $(this).closest('.form-group').find('.form-validation').text("Это поле не может быть пустым.");
+                $(this).closest('.form-group').find('.form-validation').text("This is a required field.");
                 return false;
             }
         if($(this).hasClass("lenth")) {
             if(lenth(data, 50)) {
                 $(this).closest('.form-group').addClass('has-error');
-                $(this).closest('.form-group').find('.form-validation').text("Значение поля не может превышать 50 символов");
+                $(this).closest('.form-group').find('.form-validation').text("The value of this field cannot exceed 50 characters.");
                 return false;
             }
         }
         if($(this).hasClass("textarea")) {
             if(lenth(data, 500)) {
                 $(this).closest('.form-group').addClass('has-error');
-                $(this).closest('.form-group').find('.form-validation').text("Текст не может превышать 500 символов");
+                $(this).closest('.form-group').find('.form-validation').text("Text cannot exceed 500 characters.");
                 return false;
             }
         }
         if($(this).hasClass("email")) {
             if(email(data)) {
                 $(this).closest('.form-group').addClass('has-error');
-                $(this).closest('.form-group').find('.form-validation').text("Неверный формат email");
+                $(this).closest('.form-group').find('.form-validation').text("Please enter a valid email address!");
                 return false;
             }
         }
         if($(this).hasClass("number")) {
             if(number(data)) {
                 $(this).closest('.form-group').addClass('has-error');
-                $(this).closest('.form-group').find('.form-validation').text("Должно быть только целое число");
+                $(this).closest('.form-group').find('.form-validation').text("Must be an integer.");
                 return false;
             }
         }
         if($(this).hasClass("range")) {
             if(range(data, 100)) {
                 $(this).closest('.form-group').addClass('has-error');
-                $(this).closest('.form-group').find('.form-validation').text("Число должно быть от 1 до 100");
+                $(this).closest('.form-group').find('.form-validation').text("The number should be from 1 to 100");
                 return false;
             }
         }
         if($(this).hasClass("password")) {
             if(password(data)) {
                 $(this).closest('.form-group').addClass('has-error');
-                $(this).closest('.form-group').find('.form-validation').text("Пароль должен быть от 7 до 15 символов");
+                $(this).closest('.form-group').find('.form-validation').text("Password must contain at least 7 character.");
                 return false;
             }
         }

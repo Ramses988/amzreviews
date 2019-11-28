@@ -42,10 +42,10 @@ public class UserAccountController {
     @RequestMapping(value = "/confirm-account/{token}", method = {RequestMethod.GET, RequestMethod.POST})
     public String confirmUserAccount(@PathVariable("token") String token, Model model) {
         service.userActive(token);
-        model.addAttribute("title", "Ваш email адрес успешно подтвержден");
-        model.addAttribute("headline", "Спасибо за регистрацию на нашем сайте");
-        model.addAttribute("text", "Спасибо за регистрацию на нашем сайте. Ваш email успешно подтвержден, теперь вы можете войти в Личный кабинет. Для входа в Личный кабинет перейдите по\n" +
-                "                                <a class=\"original\" href=\"/login\">ссылке</a>");
+        model.addAttribute("title", "Your email address has been successfully confirmed");
+        model.addAttribute("headline", "Thank you for registering on our site");
+        model.addAttribute("text", "Thank you for registering on our site. Your email has been successfully confirmed, and now you can log in to your account. To login to your account follow the \n" +
+                                          "<a class=\"original\" href=\"/login\">link</a>");
         return "info";
     }
 
@@ -60,9 +60,9 @@ public class UserAccountController {
     public String confirmResetPassword(@RequestParam("token") String token, @RequestParam("password") String password,
                                        @RequestParam("confirmPassword") String confirmPassword, Model model) {
         service.changeResetPassword(token, password, confirmPassword);
-        model.addAttribute("title", "Пароль успешно изменен!");
+        model.addAttribute("title", "Password successfully changed!");
         model.addAttribute("headline", " ");
-        model.addAttribute("text", "Вы успешно изменили пароль для входа в Личный кабинет. Для входа в Личный кабинет перейдите по <a class=\"original\" href=\"/login\">ссылке</a>");
+        model.addAttribute("text", "You have successfully changed the password for logging in to your account. To login to your account follow the <a class=\"original\" href=\"/login\">link</a>");
         return "info";
     }
 }

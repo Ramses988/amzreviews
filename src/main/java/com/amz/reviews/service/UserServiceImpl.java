@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Transactional
     public void userRegister(UserRegisterTo newUser) {
         if(Objects.isNull(newUser) || !(newUser.getPassword().equals(newUser.getConfirmPassword())))
-            throw new ApplicationException("Пароли не совпадают!");
+            throw new ApplicationException("Passwords do not match!");
 
         User user = UserUtil.createNewFromTo(newUser);
         user.setPassword(UserUtil.prepareToPassword(newUser.getPassword(), passwordEncoder));
@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         Map<String, Object> values = new HashMap<>();
         values.put("name", user.getName());
         values.put("token", token.getConfirmToken());
-        Mail mail = new Mail(user.getEmail(), "Пожалуйста, подтвердите Вашу электронную почту", "verification_email", values);
+        Mail mail = new Mail(user.getEmail(), "Please confirm your email address", "verification_email", values);
 
         mailSender.send(mail);
     }
@@ -117,9 +117,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         User user = getUser(userId);
 
         if (!passwordEncoder.matches(oldPassword, user.getPassword()))
-            throw new ApplicationException("Неверный пароль");
+            throw new ApplicationException("Wrong password!");
         if (newPassword.length() < 7 || !newPassword.equals(confirmPassword))
-            throw new ApplicationException("Пароли не совподают");
+            throw new ApplicationException("Passwords do not match!");
 
         user.setPassword(UserUtil.prepareToPassword(newPassword, passwordEncoder));
         repository.save(user);
@@ -144,7 +144,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             values.put("name", user.getName());
             values.put("token", token.getConfirmToken());
 
-            Mail mail = new Mail(user.getEmail(), "Сброс пароля", "reset_password", values);
+            Mail mail = new Mail(user.getEmail(), "Reset your password", "reset_password", values);
             mailSender.send(mail);
         }
     }
