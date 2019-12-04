@@ -1,7 +1,19 @@
 User-agent: Yandex
-Disallow: /
+Disallow: /login
+Disallow: /register
+Disallow: /help
+Disallow: /contacts
+Disallow: /customer
+Disallow: /seller
+Disallow: /account
 
 User-agent: *
-Disallow: /
+Disallow: /login
+Disallow: /register
+Disallow: /help
+Disallow: /contacts
+Disallow: /customer
+Disallow: /seller
+Disallow: /account
 
 Host: https://amzreviews.biz

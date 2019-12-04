@@ -42,8 +42,8 @@ public class UserAccountController {
     @RequestMapping(value = "/confirm-account/{token}", method = {RequestMethod.GET, RequestMethod.POST})
     public String confirmUserAccount(@PathVariable("token") String token, Model model) {
         service.userActive(token);
-        model.addAttribute("title", "Your email address has been successfully confirmed");
-        model.addAttribute("headline", "Thank you for registering on our site");
+        model.addAttribute("title", "Thank you for registering on our site");
+        model.addAttribute("headline", "Your email address has been successfully confirmed");
         model.addAttribute("text", "Thank you for registering on our site. Your email has been successfully confirmed, and now you can log in to your account. To login to your account follow the \n" +
                                           "<a class=\"original\" href=\"/login\">link</a>");
         return "info";

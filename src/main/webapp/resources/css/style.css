@@ -13256,6 +13256,7 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     color: #fff;
     background-color: #ccc;
     border-color: #ccc;
+    min-width: 200px;
 }
 
 .btn-primary-grey:hover {
@@ -35930,7 +35931,7 @@ span[balance-status="true"] {
     height: 19px;
 }
 
-#language-a {
+#language-a, #a-grey {
     color: #9c9c9c;
 }
 
@@ -35941,6 +35942,27 @@ span[balance-status="true"] {
 .row1 {
     display: flex;
     flex-wrap: wrap;
+}
+
+.article {
+    text-align: left!important;
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.article-chapter {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.article-title {
+    font-weight: 700;
+}
+
+.article-image {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px!important;
 }
 
 /* Add size */
@@ -35966,7 +35988,7 @@ span[balance-status="true"] {
     }
 
     a#inf-small {
-        margin-right: 10px;
+        margin-right: 15px;
     }
 
     .col-md-6-new1 {
@@ -36074,7 +36096,7 @@ span[balance-status="true"] {
     }
 
     a#inf-small {
-        margin-right: 10px;
+        margin-right: 15px;
     }
 
     .col-md-6-new1 {
@@ -36162,7 +36184,7 @@ span[balance-status="true"] {
     }
 
     a#inf-small {
-        margin-right: 10px;
+        margin-right: 15px;
     }
 
     .col-lg-3-new {

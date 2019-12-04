@@ -43,7 +43,7 @@
                 <div id="getAllController" ng-app="sellerApp" ng-controller="getAllController">
                     <div class="row col-lg-borders" ng-repeat="product in products">
                         <div class="col-lg-4">
-                            <img ng-src="{{product.image}}" alt="" width="270" height="250" />
+                            <img ng-src="{{product.image}}" alt="" width="250" height="250" />
                         </div>
 
                         <div class="col-lg-4 text-lg-left">

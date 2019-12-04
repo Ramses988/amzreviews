@@ -63,12 +63,12 @@
                                         <h5 class="font-weight-bold price"><spring:message code="product.price"/>: <span class="price-red">&#36;${order.price}</span></h5>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <form method="POST" action="/customer/cancel">
-                                        <input type="hidden" id="id" name="id" value="${order.id}">
-                                        <button type="submit" class="btn btn-md btn-primary-orange">Отказатся</button>
-                                    </form>
-                                </div>
+<%--                                <div class="col-sm-12">--%>
+<%--                                    <form method="POST" action="/customer/cancel">--%>
+<%--                                        <input type="hidden" id="id" name="id" value="${order.id}">--%>
+<%--                                        <button type="submit" class="btn btn-md btn-primary-orange">Отказатся</button>--%>
+<%--                                    </form>--%>
+<%--                                </div>--%>
                             </div>
                         </div>
                     </div>
