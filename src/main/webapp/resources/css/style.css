@@ -4912,14 +4912,20 @@ img.not-found {
 }
 
 .image-main {
-    background: url('/resources/images/main.png') no-repeat;
-    background: -webkit-image-set(url('/resources/images/main.webp')1x ) no-repeat;
-}
-
-.image-main {
+    background: url("/resources/images/main.png") no-repeat;
     background-size: 100%;
     padding-bottom: 15%;
 }
+
+/*.image-main {*/
+/*    background: url('/resources/images/main.png') no-repeat;*/
+/*    background: -webkit-image-set(url('/resources/images/main.webp')1x ) no-repeat;*/
+/*}*/
+
+/*.image-main {*/
+/*    background-size: 100%;*/
+/*    padding-bottom: 15%;*/
+/*}*/
 
 .slider-text {
     color: #fff;
@@ -16699,6 +16705,12 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
 }
 
 /* MDI icons */
+
+.mdi-multiplication:before {
+    content: "\f382";
+    font-size: 10px;
+    padding: 0 0 10px 0;
+}
 
 .mdi-email-open:before {
     content: "\f1ef"
