@@ -20,6 +20,16 @@ public class DataJpaUserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public List<User> adminGetUsersEnabledOrDisabled(boolean enabled) {
+        return crudRepository.findAllByEnabledEquals(enabled);
+    }
+
+    @Override
+    public User adminGetUserWithProducts(int id) {
+        return crudRepository.getUserWithProducts(id);
+    }
+
+    @Override
     public void save(User user) {
         crudRepository.save(user);
     }

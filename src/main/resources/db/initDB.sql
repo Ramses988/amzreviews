@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS user_roles;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS articles;
 DROP TABLE IF EXISTS subscriptions;
+DROP TABLE IF EXISTS persistent_logins;
 
 CREATE TABLE users
 (
@@ -118,4 +119,12 @@ CREATE TABLE subscriptions
     date        TIMESTAMP        NOT NULL,
     email       VARCHAR          NOT NULL,
     status      VARCHAR          NOT NULL
+);
+
+CREATE TABLE persistent_logins
+(
+    username    VARCHAR(64)     NOT NULL,
+    series      VARCHAR(64)     PRIMARY KEY,
+    token       VARCHAR(64)     NOT NULL,
+    last_used   TIMESTAMP       NOT NULL
 );

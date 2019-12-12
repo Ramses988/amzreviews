@@ -52,6 +52,36 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
+    public List<User> adminGetUsersEnabled() {
+        return repository.adminGetUsersEnabledOrDisabled(true);
+    }
+
+    @Override
+    public List<User> adminGetUsersDisabled() {
+        return repository.adminGetUsersEnabledOrDisabled(false);
+    }
+
+    @Override
+    public User adminGetUserWithProducts(int id) {
+        return repository.adminGetUserWithProducts(id);
+    }
+
+    @Override
+    public User getUserIdOrEmail(String find) {
+        User user = null;
+        int id = 0;
+        try {
+            id = Integer.parseInt(find);
+        } catch (Exception ex) {
+            id = repository.getByEmail(find).getId();
+        }
+
+        user = this.adminGetUserWithProducts(id);
+        ValidationUtil.checkNotFound(user);
+        return user;
+    }
+
+    @Override
     public User getOne(int userId) {
         return repository.getOne(userId);
     }

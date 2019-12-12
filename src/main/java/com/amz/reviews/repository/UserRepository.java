@@ -10,6 +10,10 @@ public interface UserRepository {
 
     List<User> adminGetUsers();
 
+    List<User> adminGetUsersEnabledOrDisabled(boolean enabled);
+
+    User adminGetUserWithProducts(int id);
+
 
     User getOne(int id);
 

@@ -60,6 +60,11 @@ public class Product extends AbstractNamedEntity {
         this.description = description;
         this.image = image;
         this.images = images;
+        priceWithInterest = 0;
+        reviewEnable = false;
+        countOrders = 0;
+        activeOrders = 0;
+        completedOrders = 0;
     }
 
     public String getCategory() {

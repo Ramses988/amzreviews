@@ -5,10 +5,8 @@ import com.amz.reviews.model.Product;
 import com.amz.reviews.model.User;
 import com.amz.reviews.repository.ProductRepository;
 import com.amz.reviews.to.OrderTo;
-import com.amz.reviews.util.Mail;
-import com.amz.reviews.util.Status;
-import com.amz.reviews.util.Util;
-import com.amz.reviews.util.ValidationUtil;
+import com.amz.reviews.to.ProductTo;
+import com.amz.reviews.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -152,6 +150,17 @@ public class ProductServiceImpl implements ProductService {
             } else
                 throw new ApplicationException("You have already purchased this product!");
         }
+    }
+
+    @Override
+    @Transactional
+    public Product adminAddProduct(ProductTo productTo) {
+        Product product = ProductUtil.createProductFromTo(productTo);
+        product.setUser(getUser(1));
+        productRepository.save(product);
+        product.getImages().forEach(i -> i.setProduct(product));
+        imageService.saveAll(product.getImages());
+        return product;
     }
 
     @Override

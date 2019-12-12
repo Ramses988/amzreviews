@@ -7,7 +7,7 @@
 
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-4">Список всех пользователей</h1>
+            <h1 class="display-4">Список пользователей</h1>
         </div>
     </div>
 
@@ -34,10 +34,11 @@
                             <td>${user.date}</td>
                             <td>${user.name}</td>
                             <td>${user.email}</td>
-                            <td>${user.enabled}</td>
+                            <td><input type="checkbox"
+                                       <c:if test="${user.enabled}">checked</c:if> /></td>
                             <td>${user.country}</td>
                             <td>${user.balance}</td>
-                            <td>view</td>
+                            <td><a href="/admin/user/${user.id}">View</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>

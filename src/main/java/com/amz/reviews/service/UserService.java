@@ -12,6 +12,14 @@ public interface UserService {
 
     List<User> adminGetUsers();
 
+    List<User> adminGetUsersEnabled();
+
+    List<User> adminGetUsersDisabled();
+
+    User adminGetUserWithProducts(int id);
+
+    User getUserIdOrEmail(String find);
+
     /* Sellers methods */
 
     String sellerGetBalance(int userId);

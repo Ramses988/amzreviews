@@ -39,6 +39,7 @@
                                                 <button class="btn btn-primary-orange btn-block" type="submit"><spring:message code="user.login"/></button>
                                             </div>
                                             <div class="form-group offset-top-24">
+                                                <input type="hidden" name="remember-me" value="true">
                                                 <a href="/register" class="page-login"><spring:message code="user.register"/></a>
                                                 <a href="javascript:void(0)" class="page-login" id="reset-password"><spring:message code="login.forgot"/></a>
                                             </div>

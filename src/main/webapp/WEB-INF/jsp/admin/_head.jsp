@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -25,24 +26,28 @@
                 <a class="nav-link dropdown-toggle" id="users" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Пользователи</a>
                 <div class="dropdown-menu" aria-labelledby="users">
                     <a class="dropdown-item" href="/admin/users">Все пользователи</a>
+                    <a class="dropdown-item" href="/admin/users-enabled">Включенные</a>
+                    <a class="dropdown-item" href="/admin/users-disabled">Выключенные</a>
+                    <a class="dropdown-item" href="/admin/user-search">Поиск</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Продукты</a>
                 <div class="dropdown-menu" aria-labelledby="products">
+                    <a class="dropdown-item" href="/admin/product-add">Добавить продукт</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="orders" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Заказы</a>
                 <div class="dropdown-menu" aria-labelledby="orders">
-                    <a class="dropdown-item" href="#">Все заказы</a>
-                    <a class="dropdown-item" href="#">Заказы требующие подтверждения</a>
+<%--                    <a class="dropdown-item" href="#">Все заказы</a>--%>
+<%--                    <a class="dropdown-item" href="#">Заказы требующие подтверждения</a>--%>
                 </div>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <span id="admin-name">Привет, <sec:authentication property="principal.name" /></span>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="/logout">Выйти</a>
         </form>
     </div>
 </nav>

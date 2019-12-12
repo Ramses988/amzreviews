@@ -2,10 +2,15 @@ package com.amz.reviews.service;
 
 import com.amz.reviews.model.Product;
 import com.amz.reviews.to.OrderTo;
+import com.amz.reviews.to.ProductTo;
 
 import java.util.List;
 
 public interface ProductService {
+
+    /* Admins methods */
+
+    Product adminAddProduct(ProductTo productTo);
 
     /* Customers methods */
 

@@ -6,6 +6,8 @@ Disallow: /contacts
 Disallow: /customer
 Disallow: /seller
 Disallow: /account
+Disallow: /success
+Disallow: /confirm-account
 
 User-agent: *
 Disallow: /login
@@ -15,5 +17,9 @@ Disallow: /contacts
 Disallow: /customer
 Disallow: /seller
 Disallow: /account
+Disallow: /success
+Disallow: /confirm-account
 
 Host: https://amzreviews.biz
+
+Sitemap: https://amzreviews.biz/sitemap.xml

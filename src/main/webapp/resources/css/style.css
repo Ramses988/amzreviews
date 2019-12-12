@@ -13262,6 +13262,9 @@ html.ie-edge .btn-santos-svg:hover, html.ie-11 .btn-santos-svg:hover, html.lt-ie
     color: #fff;
     background-color: #ccc;
     border-color: #ccc;
+}
+
+.grey-size {
     min-width: 200px;
 }
 
