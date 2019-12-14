@@ -82,7 +82,7 @@ $document.ready(function () {
                 dots: true,
                 autoplay: true, //Автозапуск слайдера
                 smartSpeed: 1000, //Время движения слайда
-                autoplayTimeout: 5000, //Время смены слайда
+                autoplayTimeout: 9000, //Время смены слайда
                 nav: true,
                 navSpeed: 1000,
                 navText: ["<img src=\"/resources/images/left-button.png\" alt=\"left\"/>", "<img src=\"/resources/images/right-button.png\" alt=\"right\"/>"],
@@ -90,10 +90,10 @@ $document.ready(function () {
                     0: {
                         items: 1
                     },
-                    700: {
+                    900: {
                         items: 2
                     },
-                    1000: {
+                    1200: {
                         items: 3
                     }
                 }

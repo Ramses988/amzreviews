@@ -20,6 +20,9 @@
     <mvc:resources mapping="/resources/**" location="/resources/"/>
     <mvc:resources mapping="/robots.txt" location="/robots.txt"/>
     <mvc:resources mapping="/sitemap.xml" location="/sitemap.xml"/>
+    <mvc:resources mapping="/favicon.ico" location="/favicon.ico"/>
+    <mvc:resources mapping="/yandex_6ed5d0cf5e2ee44e.html" location="/yandex_6ed5d0cf5e2ee44e.html"/>
+    <mvc:resources mapping="/google5bad3e18ec670f81.html" location="/google5bad3e18ec670f81.html"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"

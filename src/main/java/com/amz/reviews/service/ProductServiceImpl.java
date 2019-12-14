@@ -156,7 +156,7 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public Product adminAddProduct(ProductTo productTo) {
         Product product = ProductUtil.createProductFromTo(productTo);
-        product.setUser(getUser(1));
+        product.setUser(getUser(3));
         productRepository.save(product);
         product.getImages().forEach(i -> i.setProduct(product));
         imageService.saveAll(product.getImages());

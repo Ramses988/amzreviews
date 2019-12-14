@@ -14,18 +14,17 @@
         <script src="/resources/js/owl.carousel.min.js"></script>
     </jsp:attribute>
     <jsp:body>
-
+        <div class="container">
         <section class="section section-50 bg-lighter novi-background">
             <jsp:useBean id="product" scope="request" type="com.amz.reviews.model.Product" />
 
             <div class="owl-carousel slider-product owl-theme">
-                <div><img src="${product.image}" alt="" /></div>
+                <div><img src="${product.image}" class="width-min-65p" alt="" /></div>
                 <c:forEach items="${product.images}" var="image">
-                    <div><img src="${image.getUrl()}" alt="" /></div>
+                    <div><img src="${image.getUrl()}" class="width-min-65p" alt="" /></div>
                 </c:forEach>
             </div>
 
-            <div class="container">
                 <h2 class="text-left">${product.title}</h2>
                 <div>
                     <div class="row row-65 row-fix">
@@ -69,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
+            </div>
     </jsp:body>
 </reviews:genericPage>

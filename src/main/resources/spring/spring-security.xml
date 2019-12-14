@@ -9,6 +9,8 @@
     <http pattern="/robots.txt" security="none"/>
     <http pattern="/sitemap.xml" security="none"/>
     <http pattern="/favicon.ico" security="none"/>
+    <http pattern="/yandex_6ed5d0cf5e2ee44e.html" security="none"/>
+    <http pattern="/google5bad3e18ec670f81.html" security="none"/>
 
     <beans:bean class="org.springframework.security.crypto.factory.PasswordEncoderFactories" id="passwordEncoder" factory-method="createDelegatingPasswordEncoder"/>
 
