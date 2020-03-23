@@ -41,4 +41,8 @@ public abstract class AbstractAdminController {
         return productService.adminAddProduct(productTo);
     }
 
+    void changeOwner(int product, int user) {
+        productService.adminChangeOwner(product, user);
+    }
+
 }

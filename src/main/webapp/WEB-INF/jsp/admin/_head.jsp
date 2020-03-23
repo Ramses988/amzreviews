@@ -35,6 +35,7 @@
                 <a class="nav-link dropdown-toggle" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Продукты</a>
                 <div class="dropdown-menu" aria-labelledby="products">
                     <a class="dropdown-item" href="/admin/product-add">Добавить продукт</a>
+                    <a class="dropdown-item" href="/admin/сhange-owner">Поменять владельца</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

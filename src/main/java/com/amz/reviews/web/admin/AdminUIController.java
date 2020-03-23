@@ -29,6 +29,17 @@ public class AdminUIController extends AbstractAdminController {
         return "admin/product";
     }
 
+    @GetMapping("/admin/сhange-owner")
+    public String changeOwner() {
+        return "admin/сhange";
+    }
+
+    @PostMapping("/admin/сhange-owner")
+    public String changeOwner(@RequestParam("product") int product, @RequestParam("user") int user, Model model) {
+        super.changeOwner(product, user);
+        return "admin/сhange";
+    }
+
     @GetMapping("/admin/user-search")
     public String userSearch() {
         return "admin/user_search";

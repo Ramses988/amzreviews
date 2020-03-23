@@ -15,7 +15,8 @@
 
     <properties>
         <java.version>11</java.version>
-        <spring.version>5.1.4.RELEASE</spring.version>
+        <spring.version>5.2.4.RELEASE</spring.version>
+        <spring.security>5.3.0.RELEASE</spring.security>
         <spring-data-jpa.version>2.1.11.RELEASE</spring-data-jpa.version>
         <tomcat.version>9.0.27</tomcat.version>
         <jackson-json.version>2.10.0</jackson-json.version>
@@ -28,8 +29,8 @@
         <postgresql.version>42.2.5</postgresql.version>
 
         <!-- Hibernate -->
-        <hibernate.version>5.4.1.Final</hibernate.version>
-        <hibernate-validator.version>6.0.15.Final</hibernate-validator.version>
+        <hibernate.version>5.4.12.Final</hibernate.version>
+        <hibernate-validator.version>6.1.2.Final</hibernate-validator.version>
 
         <!-- Test -->
         <junit.jupiter.version>5.4.1</junit.jupiter.version>
@@ -92,19 +93,19 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.security}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.security}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.security}</version>
         </dependency>
 
         <!-- Java Mail API -->

@@ -9,6 +9,8 @@ import com.amz.reviews.to.ProductTo;
 import com.amz.reviews.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
@@ -118,7 +120,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    @Transactional
+    @Transactional()
     public void sellerDeleteProduct(Integer id, int userId) {
         if (Objects.nonNull(id)) {
             Product product = productRepository.sellerGetProduct(id, getUser(userId));
@@ -128,6 +130,15 @@ public class ProductServiceImpl implements ProductService {
                 productRepository.save(product);
             }
         }
+    }
+
+    @Override
+    @Transactional()
+    public void adminChangeOwner(int product, int user) {
+        Product p = productRepository.getCustomer(product);
+        User u = userService.getOne(user);
+        p.setUser(u);
+        productRepository.save(p);
     }
 
     @Override

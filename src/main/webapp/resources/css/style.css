@@ -1124,11 +1124,6 @@ pre code {
         max-width: 33.33333%
     }
 
-    .col-lg-4-new {
-        flex: 0 0 23%;
-        max-width: 27%;
-    }
-
     .col-lg-5 {
         flex: 0 0 41.66667%;
         max-width: 41.66667%
@@ -1245,6 +1240,11 @@ pre code {
 }
 
 @media(min-width:1200px) {
+
+    .col-lg-4-new {
+        flex: 0 0 23%;
+        max-width: 27%;
+    }
 
     .img-fluid {
         height: 200px
@@ -8951,7 +8951,7 @@ a.bg-dark:hover, a.bg-dark:focus, button.bg-dark:hover, button.bg-dark:focus {
 }
 
 .fixed-md-title {
-    min-height: 80px
+    min-height: 103px
 }
 
 @media(min-width:480px) {
@@ -10553,6 +10553,7 @@ a.a-orange-un:hover {
     background-color: #fe9900;
     border-color: #f8d9aa;
     width: 100%;
+    vertical-align:bottom;
 }
 
 .btn-primary-catalog:hover {
@@ -36045,7 +36046,6 @@ span[balance-status="true"] {
     }
 
     .img-fluid {
-        width: 150px;
         height: 150px;
     }
 
@@ -36093,6 +36093,11 @@ span[balance-status="true"] {
 }
 
 @media(min-width:481px) and (max-width:768px) {
+
+    .col-lg-4-new {
+        flex: 0 0 45%;
+        max-width: 50%;
+    }
 
     .row1 {
         margin-right: -15px;
@@ -36149,7 +36154,6 @@ span[balance-status="true"] {
     }
 
     .img-fluid {
-        width: 200px;
         height: 200px;
     }
 
@@ -36180,6 +36184,11 @@ span[balance-status="true"] {
 }
 
 @media(min-width:768px) and (max-width:991px) {
+
+    .col-lg-4-new {
+        flex: 0 0 45%;
+        max-width: 50%;
+    }
 
     .row1 {
         margin-right: -15px;
@@ -36230,6 +36239,11 @@ span[balance-status="true"] {
     .row1 {
         margin-right: -15px;
         margin-left: -15px
+    }
+
+    .col-lg-4-new {
+        flex: 0 0 50%;
+        max-width: 30%;
     }
 
     .rd-navbar-top-panel .contact-info .icon {

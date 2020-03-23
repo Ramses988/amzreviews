@@ -12,6 +12,8 @@ public interface ProductService {
 
     Product adminAddProduct(ProductTo productTo);
 
+    void adminChangeOwner(int product, int user);
+
     /* Customers methods */
 
     void customerReserve(String productId, int userId);
