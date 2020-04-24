@@ -37,7 +37,7 @@
                             <p><b><spring:message code="contacts.help"/></b></p>
                             <p>
                                 <img src="/resources/images/feedback/facebook.png" alt="" width="23px" height="23px" />
-                                <a class="facebook-a" href="">Facebook</a>
+                                <a class="facebook-a" href="https://facebook.com/groups/215638179673806/" target="_blank">Facebook</a>
                             </p>
                         </div>
 

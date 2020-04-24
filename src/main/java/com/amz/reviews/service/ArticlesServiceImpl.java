@@ -17,9 +17,9 @@ public class ArticlesServiceImpl implements ArticlesService {
     @Override
     public ArticleTo getArticle(String language, String name) {
         ArticleTo article = null;
-        if("ru".equals(language))
+        if("ru-ru".equals(language))
             article = repository.getArticleRu(name).orElse(null);
-        if("us".equals(language))
+        if("en-us".equals(language))
             article = repository.getArticleUs(name).orElse(null);
 
         ValidationUtil.checkNotFound(article);

@@ -80,7 +80,7 @@
                                 <a href="/seller/history/{{product.id}}" class="btn btn-primary-grey grey-size"><spring:message code="product.hystory"/></a>
                             </p>
                             <p>
-                                Заявки на выкуп: {{product.countOrders}}
+                                <spring:message code="product.request-buyout"/>: {{product.countOrders}}
                             </p>
                         </div>
                     </div>

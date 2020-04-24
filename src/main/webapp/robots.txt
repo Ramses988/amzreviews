@@ -1,6 +1,7 @@
 User-agent: Yandex
 Disallow: /login
 Disallow: /register
+Disallow: /profile
 Disallow: /help
 Disallow: /contacts
 Disallow: /customer
@@ -12,6 +13,7 @@ Disallow: /confirm-account
 User-agent: *
 Disallow: /login
 Disallow: /register
+Disallow: /profile
 Disallow: /help
 Disallow: /contacts
 Disallow: /customer

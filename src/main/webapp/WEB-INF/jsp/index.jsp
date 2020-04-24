@@ -5,7 +5,9 @@
 <%@taglib prefix="reviews" tagdir="/WEB-INF/tags" %>
 
 <reviews:genericPage menu="index">
-    <jsp:attribute name="title">AmzReviews - <spring:message code="index.reliable"/></jsp:attribute>
+    <jsp:attribute name="title">Receive free products in exchange for a quality reviews - AmzReviews</jsp:attribute>
+    <jsp:attribute name="description">Get Free Products For Review, Or Get Amazon Reviews For Your Products - Reviewers Get Free Products  - Sellers Get Amazon Reviews</jsp:attribute>
+    <jsp:attribute name="keywords">free products, Amazon, incredible discounts, increasing the sales, quality reviews, sales, free, coupons, promo codes</jsp:attribute>
     <jsp:attribute name="styles">
         <link rel="stylesheet" href="/resources/css/owl-main-page.css">
     </jsp:attribute>

@@ -3,17 +3,21 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@attribute name="title" fragment="true" %>
+<%@attribute name="description" fragment="true" %>
+<%@attribute name="keywords" fragment="true" %>
 <%@attribute name="styles" fragment="true" %>
 <%@attribute name="scripts" fragment="true" %>
 
 <%@attribute name="menu" required="false" description="Generic menu" %>
 
 <!DOCTYPE html>
-<html class="wow-animation" lang="ru">
+<html class="wow-animation">
 <head>
     <title><jsp:invoke fragment="title"/></title>
 
     <meta charset="utf-8">
+    <meta name="description" content="<jsp:invoke fragment="description"/>" />
+    <meta name="keywords" content="<jsp:invoke fragment="keywords"/>" />
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">

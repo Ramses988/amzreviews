@@ -35987,6 +35987,10 @@ span[balance-status="true"] {
     margin: 0 auto;
 }
 
+#a-grey {
+    cursor: pointer;
+}
+
 /* Add size */
 
 @media(min-width:1px) and (max-width:480px) {
