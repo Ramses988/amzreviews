@@ -49,8 +49,10 @@
                                 <div class="p">
                                     <span class="icon novi-icon mdi mdi-email-open"></span>
                                     <a id="inf-small" href="mailto:info@amzreviews.biz">info@amzreviews.biz</a>
-                                ${(pageContext.response.locale == "en") ? "<img id='language' src='/resources/images/us.png'/><a id='language-a' href='?lang=ru'>ENG</a>" :
-                                    "<img id='language' src='/resources/images/ru.png'/><a id='language-a' href='?lang=en'>RUS</a>"}
+                                ${(pageContext.response.locale == "en") ?
+                                "<img id='language' src='/resources/images/us.png'/><!-- noindex --><a id='language-a' href='?lang=ru'>ENG</a><!--/ noindex -->" :
+                                "<img id='language' src='/resources/images/ru.png'/><!-- noindex --><a id='language-a' href='?lang=en'>RUS</a><!--/ noindex -->"
+                                }
                                 </div>
                             </address>
                         </div>

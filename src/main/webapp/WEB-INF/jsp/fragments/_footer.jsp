@@ -49,44 +49,47 @@
                         </div>
                     </div>
                     <div class="col-sm-7 text-sm-left col-lg-4 col-xl-3">
-                        <!-- <h6 class="text-uppercase text-spacing-60">Новости</h6> -->
+                        <h6 class="text-uppercase text-spacing-60"><spring:message code="menu.articles"/></h6>
                         <div class="widget-post-wrap">
-                            <!-- Post Widget
-                            <article class="post widget-post text-left"><a href="#">
+                            <!-- Post Widget -->
+                            <article class="post widget-post text-left">
+                                <a href="/article/en-us/how_to_optimize_your_amazon_product_listings">
+                                    <div class="unit flex-row unit-spacing-xs align-items-center">
+                                        <div class="unit-body">
+                                            <div class="post-meta"><span class="icon-xxs novi-icon text-primary mdi mdi-arrow-right"></span>
+                                                <time class="text-dark" datetime="2018-01-01">09.02.2020</time>
+                                            </div>
+                                            <div class="post-title">
+                                                <h6 class="text-regular">Optimize Your Amazon Product Listings</h6>
+                                            </div>
+                                        </div>
+                                    </div></a></article>
+                            <!-- Post Widget -->
+                            <article class="post widget-post text-left">
+                                <a href="<spring:message code="post.link2"/>">
                                 <div class="unit flex-row unit-spacing-xs align-items-center">
                                     <div class="unit-body">
                                         <div class="post-meta"><span class="icon-xxs novi-icon text-primary mdi mdi-arrow-right"></span>
-                                            <time class="text-dark" datetime="2018-01-01">05.07.2018</time>
+                                            <time class="text-dark" datetime="2018-01-01">23.01.2020</time>
                                         </div>
                                         <div class="post-title">
-                                            <h6 class="text-regular">10 лучших аппартоментов</h6>
+                                            <h6 class="text-regular"><spring:message code="post.topic2"/></h6>
                                         </div>
                                     </div>
-                                </div></a></article> -->
-                            <!-- Post Widget
-                            <article class="post widget-post text-left"><a href="#">
+                                </div></a></article>
+                            <!-- Post Widget -->
+                            <article class="post widget-post text-left">
+                                <a href="<spring:message code="post.link1"/>">
                                 <div class="unit flex-row unit-spacing-xs align-items-center">
                                     <div class="unit-body">
                                         <div class="post-meta"><span class="icon-xxs novi-icon text-primary mdi mdi-arrow-right"></span>
-                                            <time class="text-dark" datetime="2018-01-01">05.05.2018</time>
+                                            <time class="text-dark" datetime="2018-01-01">15.12.2019</time>
                                         </div>
                                         <div class="post-title">
-                                            <h6 class="text-regular">Как правильно выбрать недвижимость</h6>
+                                            <h6 class="text-regular"><spring:message code="post.topic1"/></h6>
                                         </div>
                                     </div>
-                                </div></a></article> -->
-                            <!-- Post Widget
-                            <article class="post widget-post text-left"><a href="#">
-                                <div class="unit flex-row unit-spacing-xs align-items-center">
-                                    <div class="unit-body">
-                                        <div class="post-meta"><span class="icon-xxs novi-icon text-primary mdi mdi-arrow-right"></span>
-                                            <time class="text-dark" datetime="2018-01-01">01.07.2018</time>
-                                        </div>
-                                        <div class="post-title">
-                                            <h6 class="text-regular">Особенности ипотечных кредитов</h6>
-                                        </div>
-                                    </div>
-                                </div></a></article> -->
+                                </div></a></article>
                         </div>
                     </div>
                 </div>
@@ -107,5 +110,6 @@
     </sec:authorize>
     <%--<script src="/resources/js/amz.reviews.min.js"></script>--%>
 </div>
+
 </body>
 </html>

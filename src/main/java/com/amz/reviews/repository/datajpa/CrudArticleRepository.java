@@ -10,10 +10,10 @@ import java.util.Optional;
 
 public interface CrudArticleRepository extends JpaRepository<Article, Integer> {
 
-    @Query("SELECT NEW com.amz.reviews.to.ArticleTo(a.headlineRu, a.textRu) FROM Article a WHERE a.name=:name")
+    @Query("SELECT NEW com.amz.reviews.to.ArticleTo(a.descriptionRu, a.keywordsRu, a.headlineRu, a.textRu) FROM Article a WHERE a.name=:name")
     Optional<ArticleTo> getArticleRu(@Param("name") String name);
 
-    @Query("SELECT NEW com.amz.reviews.to.ArticleTo(a.headlineUs, a.textUS) FROM Article a WHERE a.name=:name")
+    @Query("SELECT NEW com.amz.reviews.to.ArticleTo(a.descriptionUs, a.keywordsUs, a.headlineUs, a.textUS) FROM Article a WHERE a.name=:name")
     Optional<ArticleTo> getArticleUs(@Param("name") String name);
 
 }

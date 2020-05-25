@@ -97,73 +97,65 @@
             </div>
         </section>
 
-<%--        <section class="section-bottom-98">--%>
-<%--            <div class="container">--%>
-<%--                <div class="section-header">--%>
-<%--                    <h2 class="section-title text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">Последние публикации</h2>--%>
-<%--                    <hr class="divider bg-saffron">--%>
-<%--                    <p class="text-align wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">--%>
-<%--                        Мы всегда стараемся быть в тренде последних новостей и событий, связанных с торговой площадкой Amazon. Здесь мы делимся с Вами знаниями и опытом. В этих публикациях, вы--%>
-<%--                        найдете полезные советы по работе с площадкой.--%>
-<%--                    </p>--%>
-<%--                </div>--%>
-<%--                <div id="container-public">--%>
-<%--                    <div class="row1 col-lg-borders">--%>
-<%--                        <div class="col-lg-6 top-block wow fadeInLeft animated" data-wow-duration="300ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 0ms; animation-name: fadeInLeft;">--%>
-<%--                            <div class="fl-all">--%>
-<%--                                <picture>--%>
-<%--                                    <source srcset="/resources/images/publications/public1.webp" type="image/webp">--%>
-<%--                                    <source srcset="/resources/images/publications/public1.png" type="image/png">--%>
-<%--                                    <img id="first-article" src="/resources/images/publications/public1.png" alt="">--%>
-<%--                                </picture>--%>
-<%--                            </div>--%>
-<%--                            <div class="fl-all">--%>
-<%--                                <span class="bl">20 Сентебря 2019</span>--%>
-<%--                                <h2 class="entry-title">Топ-10 частых ошибок продовцов на Amazone</h2>--%>
-<%--                                <p>--%>
-<%--                                    Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить склад, как продавать и все продать и потом продавать--%>
-<%--                                    Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить склад, как продавать...--%>
-<%--                                </p>--%>
-<%--                                <a href="#">Читать дальше</a>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+        <section class="section-bottom-98">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"><spring:message code="home.publications"/></h2>
+                    <hr class="divider bg-saffron">
+                    <p class="text-align wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"><spring:message code="home.textpublic"/></p>
+                </div>
+                <div id="container-public">
+                    <div class="row1 col-lg-borders">
+                        <div class="col-lg-6 top-block wow fadeInLeft animated" data-wow-duration="300ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 0ms; animation-name: fadeInLeft;">
+                            <div class="fl-all">
+                                <picture>
+                                    <source srcset="/resources/images/publications/how_to_optimize.webp" type="image/webp">
+                                    <source srcset="/resources/images/publications/how_to_optimize.png" type="image/png">
+                                    <img id="first-article" src="/resources/images/publications/how_to_optimize.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="fl-all">
+                                <span class="bl">9 <spring:message code="post.february"/> 2020</span>
+                                <h2 class="entry-title">How to Optimize Your Amazon Product Listings</h2>
+                                <p>
+                                    Want your product to rank higher in the Amazon search results? You can improve the ranking (Amazon SEO, or search engine optimization) as well as increase traffic and sales simply by carefully optimizing your product listing...
+                                </p>
+                                <a href="/article/en-us/how_to_optimize_your_amazon_product_listings"><spring:message code="post.read"/></a>
+                            </div>
+                        </div>
 
-<%--                        <div class="col-lg-6 text-lg-left wow fadeInLeft animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInRight;">--%>
-<%--                            <div class="first-block">--%>
-<%--                                <picture>--%>
-<%--                                    <source srcset="/resources/images/publications/public2.webp" type="image/webp">--%>
-<%--                                    <source srcset="/resources/images/publications/public2.png" type="image/png">--%>
-<%--                                    <img src="/resources/images/publications/public2.png" alt="">--%>
-<%--                                </picture>--%>
-<%--                            </div>--%>
-<%--                            <div class="first-block text-block">--%>
-<%--                                <span class="bl">20 Сентебря 2019</span>--%>
-<%--                                <h2 class="entry-title">С чего начать бизнес на Amazon, лучшие советы</h2>--%>
-<%--                                <p>--%>
-<%--                                    Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить...--%>
-<%--                                </p>--%>
-<%--                                <a href="#">Читать дальше</a>--%>
-<%--                            </div>--%>
-<%--                            <div class="first-block">--%>
-<%--                                <picture>--%>
-<%--                                    <source srcset="/resources/images/publications/public3.webp" type="image/webp">--%>
-<%--                                    <source srcset="/resources/images/publications/public3.png" type="image/png">--%>
-<%--                                    <img src="/resources/images/publications/public3.png" alt="">--%>
-<%--                                </picture>--%>
-<%--                            </div>--%>
-<%--                            <div class="first-block text-block">--%>
-<%--                                <span class="bl">20 Сентебря 2019</span>--%>
-<%--                                <h2 class="entry-title">Не продается товар, залежался на складе ?</h2>--%>
-<%--                                <p>--%>
-<%--                                    Как продать товар и не совершить ошибки. Тут ответим на частые вопросы и т.д. Как продать и орустошить...--%>
-<%--                                </p>--%>
-<%--                                <a href="#">Читать дальше</a>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </section>--%>
+                        <div class="col-lg-6 text-lg-left wow fadeInLeft animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInRight;">
+                            <div class="first-block">
+                                <picture>
+                                    <source srcset="/resources/images/publications/how_to_sell.webp" type="image/webp">
+                                    <source srcset="/resources/images/publications/how_to_sell.png" type="image/png">
+                                    <img src="/resources/images/publications/how_to_sell.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="first-block text-block">
+                                <span class="bl">23 <spring:message code="post.january"/> 2020</span>
+                                <h2 class="entry-title"><spring:message code="post.head2"/></h2>
+                                <p><spring:message code="post.text2"/></p>
+                                <a href="<spring:message code="post.link2"/>"><spring:message code="post.read"/></a>
+                            </div>
+                            <div class="first-block">
+                                <picture>
+                                    <source srcset="/resources/images/publications/7_tips.webp" type="image/webp">
+                                    <source srcset="/resources/images/publications/7_tips.png" type="image/png">
+                                    <img src="/resources/images/publications/7_tips.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="first-block text-block">
+                                <span class="bl">15 <spring:message code="post.december"/> 2019</span>
+                                <h2 class="entry-title"><spring:message code="post.head1"/></h2>
+                                <p><spring:message code="post.text1"/></p>
+                                <a href="<spring:message code="post.link1"/>"><spring:message code="post.read"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 <%--        <section class="section section-50 section-bottom-98 bg-lighter-new novi-background">--%>
 <%--            <div class="container">--%>

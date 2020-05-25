@@ -9,6 +9,7 @@ Disallow: /seller
 Disallow: /account
 Disallow: /success
 Disallow: /confirm-account
+Disallow: /*?lang=*
 
 User-agent: *
 Disallow: /login
@@ -21,6 +22,7 @@ Disallow: /seller
 Disallow: /account
 Disallow: /success
 Disallow: /confirm-account
+Disallow: /*?lang=*
 
 Host: https://amzreviews.biz
 

@@ -4,7 +4,8 @@
 
 <reviews:genericPage>
     <jsp:attribute name="title">${article.headline}</jsp:attribute>
-    <jsp:attribute name="description">${article.headline}</jsp:attribute>
+    <jsp:attribute name="description">${article.description}</jsp:attribute>
+    <jsp:attribute name="keywords">${article.keywords}</jsp:attribute>
     <jsp:body>
         <section class="section-top-50">
             <div class="container">
@@ -22,8 +23,8 @@
                                 <p id="thems"><spring:message code="help.topics"/>:</p>
                                 <hr>
                                 <p><b><a href="<spring:message code="post.link1"/>" class="blue-text"><spring:message code="post.topic1"/></a></b></p>
-                                <%--<p><b><a href="#" class="blue-text">С чего начать бизнес на Amazon, лучшие советы</a></b></p>--%>
-                                <%--<p><b><a href="#" class="blue-text">Не продается товар, залежался на складе ?</a></b></p>--%>
+                                <p><b><a href="<spring:message code="post.link2"/>" class="blue-text"><spring:message code="post.topic2"/></a></b></p>
+                                <p><b><a href="/article/en-us/how_to_optimize_your_amazon_product_listings" class="blue-text">Optimize your amazon product listings</a></b></p>
                             </div>
                         </div>
                     </div>

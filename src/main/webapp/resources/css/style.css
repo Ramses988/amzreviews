@@ -9606,7 +9606,7 @@ h5, .h5 {
 h6, .h6 {
     margin-top: 29px;
     margin-bottom: 18px;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.5
 }
@@ -9618,7 +9618,7 @@ h6 *+.icon, h6 .icon+*, .h6 *+.icon, .h6 .icon+* {
 @media(min-width:768px) {
     h6, .h6 {
         line-height: 1.47059;
-        font-size: 17px
+        font-size: 15px
     }
 }
 
@@ -35946,6 +35946,11 @@ span[balance-status="true"] {
     color: #9c9c9c;
 }
 
+.a-blue {
+    color: #0000FF;
+    cursor: pointer;
+}
+
 .text-align {
     text-align: center;
 }
@@ -35964,6 +35969,14 @@ span[balance-status="true"] {
 .article-chapter {
     font-size: 29px;
     font-weight: 700;
+}
+
+.without-marker {
+    list-style:none;
+}
+
+.article-chapter-two {
+    font-size: 27px;
 }
 
 .article-title {

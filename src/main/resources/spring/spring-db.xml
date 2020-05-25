@@ -14,7 +14,7 @@
     <context:component-scan base-package="com.amz.reviews.**.repository" />
     <jpa:repositories base-package="com.amz.reviews.**.repository.datajpa" />
 
-    <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource"/>
+    <bean id="dataSource" />
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
         p:dataSource-ref="dataSource"
